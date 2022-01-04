@@ -7,7 +7,7 @@ export const THUNK_ACTION_getPlayerFromDb = () => async (dispatch) => {
   dispatch(setLoader())
   try {
     const response = await axios.get(
-      `https://dbforgame.herokuapp.com/get-specific-equipment/1`,
+      `https://dbforgame.herokuapp.com/ready-for-fun/2`,
       {
         withCredentials: true,
       }
@@ -23,7 +23,7 @@ export const THUNK_ACTION_getEnemyPlayerFromDb = () => async (dispatch) => {
   dispatch(setLoader())
   try {
     const response = await axios.get(
-      `https://dbforgame.herokuapp.com/get-specific-equipment/2`,
+      `https://dbforgame.herokuapp.com/ready-for-fun/1`,
       {
         withCredentials: true,
       }

@@ -40,12 +40,13 @@ const MainPage = () => {
       id: 5,
     },
   ]
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     dispatch(ACTION_PlayerRegenerate())
-  //   }, 3000)
-  // }, [player])
-  useEffect(() => setTimeout(() => dispatch(ACTION_PlayerRegenerate()), 3000), [player])
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(ACTION_PlayerRegenerate())
+    }, 3000)
+  }, [player])
+
   return (
     <div className="container row justify-content-center, align-items-center m-auto my-3">
       {castles.map((castle) => (
