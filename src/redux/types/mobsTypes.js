@@ -1,0 +1,4 @@
+export const SET_MOBS = 'SET_MOBS'
+export const UNSET_MOBS = 'UNSET_MOBS'
+export const PUNCH_FROM_PLAYER_TO_MOB = 'PUNCH_FROM_PLAYER_TO_MOB'
+
