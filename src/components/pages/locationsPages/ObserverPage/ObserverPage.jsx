@@ -3,7 +3,8 @@ import React from 'react'
 const ObserverPage = () => {
     return (
         <div>
-            ObserverPage ///asd
+            ObserverPage
+            <p>ewqe</p>
         </div>
     )
 }
