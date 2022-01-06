@@ -14,6 +14,7 @@ export const playerReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_PLAYER:
+            console.log(action.payload)
             return action.payload
 
         case UNSET_PLAYER:

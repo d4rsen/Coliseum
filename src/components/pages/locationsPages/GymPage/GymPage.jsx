@@ -30,7 +30,7 @@ const GymPage = () => {
     const room = useSelector(state => state.room)
 
     // WEBSOCKET
-    const socket = new WebSocket('ws://herokuws.herokuapp.com/')
+    const socket = new WebSocket('wss://herokuws.herokuapp.com/')
     useEffect(() => {
         socket.onopen = () => {
             socket.send(JSON.stringify({
