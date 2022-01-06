@@ -4,7 +4,6 @@ const ObserverPage = () => {
     return (
         <div>
             ObserverPage
-            <p>ewqe</p>
         </div>
     )
 }

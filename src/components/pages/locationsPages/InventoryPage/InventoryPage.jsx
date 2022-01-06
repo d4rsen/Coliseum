@@ -1,7 +1,10 @@
-import React from "react"
+import React from 'react'
 
 const InventoryPage = () => {
-    return <div>InventoryPage</div>
+
+    return (<div>
+        Inventrory
+    </div>)
 }
 
 export default InventoryPage
