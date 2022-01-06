@@ -1,13 +1,13 @@
 import axios from 'axios'
-import { ACTION_getEnemyPlayer } from './enemyPlayerActions'
-import { setLoader, unSetLoader } from './loaderActions'
-import { ACTION_getPlayer } from './playerActions'
+import { ACTION_getEnemyPlayer } from '../enemyPlayerActions'
+import { setLoader, unSetLoader } from '../loaderActions'
+import { ACTION_getPlayer } from '../playerActions'
 
-export const THUNK_ACTION_getPlayerFromDb = () => async (dispatch) => {
+export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
     dispatch(setLoader())
     try {
         const response = await axios.get(
-            `https://dbforgame.herokuapp.com/ready-for-fun/2`,
+            `https://dbforgame.herokuapp.com/ready-for-fun/${userId}`,
             {
                 withCredentials: true,
             }

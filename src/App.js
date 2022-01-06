@@ -15,14 +15,20 @@ import Loader from './components/UI/Loader/Loader'
 import Navbar from './components/UI/Navbar/Navbar'
 import NotFound from './components/UI/NotFound/NotFound'
 import { ACTION_getMobs } from './redux/actions/mobsActions'
-import { THUNK_ACTION_getAllRoomsFromDb } from './redux/actions/thunkGetAllRoomsFromDbActions'
-import { THUNK_ACTION_getPlayerFromDb } from './redux/actions/thunkPlayersFromDbActions'
+import { THUNK_ACTION_checkAuth } from './redux/actions/thunk/thunkAuthActions'
+import { THUNK_ACTION_getAllRoomsFromDb } from './redux/actions/thunk/thunkGetAllRoomsFromDbActions'
+import { THUNK_ACTION_getPlayerFromDb } from './redux/actions/thunk/thunkPlayersFromDbActions'
 
 function App() {
     const dispatch = useDispatch()
+    const user = useSelector(state => state.user)
+    const isAuth = useSelector(state => state.isAuth)
     const isLoading = useSelector((state) => state.isLoading)
+    useEffect(() => localStorage.getItem('token') && dispatch(THUNK_ACTION_checkAuth()), [])
     useEffect(() => {
-        dispatch(THUNK_ACTION_getPlayerFromDb())
+        if (user) {
+            dispatch(THUNK_ACTION_getPlayerFromDb(user.id))
+        }
         dispatch(ACTION_getMobs())
         dispatch(THUNK_ACTION_getAllRoomsFromDb())
     }, [])
@@ -39,15 +45,15 @@ function App() {
     return (<BrowserRouter>
         <Navbar/>
         <Routes>
-            <Route path="/" element={<MainPage/>}/>
+            <Route path="/" element={isAuth ? <MainPage/> : <RegistrationPage/>}/>
             <Route path="/register" element={<RegistrationPage/>}/>
             <Route path="/login" element={<AuthorizationPage/>}/>
-            <Route path="/train" element={<TrainPage/>}/>
-            <Route path="/observer" element={<ObserverPage/>}/>
-            <Route path="/rooms" element={<RoomsPage/>}/>
-            {/*<Route path="/main-tower" element={<MainTowerPage/>}/>*/}
-            <Route path="/gym" element={<GymPage/>}/>
-            <Route path="/inventory" element={<InventoryPage/>}/>
+            <Route path="/train" element={isAuth ? <TrainPage/> : <AuthorizationPage/>}/>
+            <Route path="/observer" element={isAuth ? <ObserverPage/> : <AuthorizationPage/>}/>
+            <Route path="/rooms" element={isAuth ? <RoomsPage/> : <AuthorizationPage/>}/>
+            {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <AuthorizationPage/>}/>*/}
+            <Route path="/gym" element={isAuth ? <GymPage/> : <AuthorizationPage/>}/>
+            <Route path="/inventory" element={isAuth ? <InventoryPage/> : <AuthorizationPage/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
         <Footer/>

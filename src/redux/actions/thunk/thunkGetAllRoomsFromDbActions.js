@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { ACTION_getAllRooms } from './allRoomsActions'
-import { setLoader, unSetLoader } from './loaderActions'
+import { ACTION_getAllRooms } from '../allRoomsActions'
+import { setLoader, unSetLoader } from '../loaderActions'
 
 export const THUNK_ACTION_getAllRoomsFromDb = () => async (dispatch) => {
     dispatch(setLoader())

@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ACTION_setRoom } from '../../../../redux/actions/roomActions'
-import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunkGetRoomFromDbActions'
+import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunk/thunkGetRoomFromDbActions'
 
 const RoomsPage = () => {
     const dispatch = useDispatch()
