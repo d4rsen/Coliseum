@@ -6,7 +6,7 @@ export const THUNK_ACTION_getAllRoomsFromDb = () => async (dispatch) => {
     dispatch(setLoader())
     try {
         const response = await axios.get(
-            `https://dbforgame.herokuapp.com/get-all-rooms`,
+            `https://dbforgame.herokuapp.com/db/get-all-rooms`,
             {
                 withCredentials: true,
             }

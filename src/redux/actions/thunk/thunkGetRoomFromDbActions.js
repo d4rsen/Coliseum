@@ -6,7 +6,7 @@ export const THUNK_ACTION_getRoomFromDb = () => async (dispatch) => {
     dispatch(setLoader())
     try {
         const response = await axios.post(
-            `https://dbforgame.herokuapp.com/post-battle-room/1`,
+            `https://dbforgame.herokuapp.com/db/post-battle-room/1`,
             {
                 withCredentials: true,
             }
