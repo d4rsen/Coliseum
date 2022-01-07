@@ -19,6 +19,7 @@ import {
     DEFEND_LEGS_PLAYER,
     DEFEND_RIGHT_HAND_ENEMY_PLAYER,
     DEFEND_RIGHT_HAND_PLAYER,
+    GET_ENEMY_STATE_FROM_WS,
     UNSET_ATTACK_BODY_PLAYER,
     UNSET_ATTACK_HEAD_PLAYER,
     UNSET_ATTACK_LEFT_HAND_PLAYER,
@@ -76,3 +77,10 @@ export const ACTION_unsetDefendBodyPlayer = () => ({type: UNSET_DEFEND_BODY_PLAY
 export const ACTION_unsetDefendLegsPlayer = () => ({type: UNSET_DEFEND_LEGS_PLAYER,})
 
 // enemy player no needs
+
+export const ACTION_getEnemyStateFromWS = (WsEnemyPlayerObject) => {
+    return {
+        type: GET_ENEMY_STATE_FROM_WS,
+        payload: {...WsEnemyPlayerObject}
+    }
+}

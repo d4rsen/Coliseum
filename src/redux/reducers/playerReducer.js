@@ -14,7 +14,6 @@ export const playerReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_PLAYER:
-            console.log(action.payload)
             return action.payload
 
         case UNSET_PLAYER:
@@ -34,7 +33,7 @@ export const playerReducer = (state = initialState, action) => {
             let {battleEnemyPlayer} = action.payload
             let {enemyPlayerDamage} = action.payload
 
-            let dmg3 = player.hp - enemyPlayerDamage / 2
+            let dmg3 = player.hp - enemyPlayerDamage / player.total_stats.def * 0.1
 
             if (battlePlayer.defendHead === true && battleEnemyPlayer.attackHead === true) {
                 dmg3 = player.hp

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const API_URL = 'https://dbforgame.herokuapp.com/api'
+export const API_URL = 'http://dbforgame.herokuapp.com/api'
 
 const $api = axios.create({
     withCredentials: true,
@@ -21,7 +21,7 @@ $api.interceptors.response.use((config) => {
             localStorage.setItem('token', response.data.accessToken)
             return $api.request(originalRequest)
         } catch (e) {
-            console.log('НЕ АВТОРИЗОВАН')
+            alert('НЕ АВТОРИЗОВАН')
         }
     }
     throw error

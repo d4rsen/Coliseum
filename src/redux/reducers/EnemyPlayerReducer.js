@@ -8,7 +8,7 @@ export const enemyPlayerReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_ENEMY_PLAYER:
-            return action.payload
+            return {...action.payload}
 
         case UNSET_ENEMY_PLAYER:
             return null

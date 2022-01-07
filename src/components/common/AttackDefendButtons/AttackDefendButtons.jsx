@@ -54,25 +54,24 @@ const AttackDefendButtons = ({isDisabledAttack, isDisabledDefend, setIsDisabledD
 
     return (
         <div>
-            <div className="d-flex row">
+            <div className="d-row">
                 {attackTexts.map((el) => {
                     return (
-                        <AttackButton
-                            key={el}
+                        <div key={el} className="row"><AttackButton
+
                             value={el}
                             disabled={isDisabledAttack}
                             attackDefendHandler={attackHandler}
-                        />
+                        /></div>
                     )
                 })}
                 {defendTexts.map((el) => {
                     return (
-                        <AttackButton
-                            key={el}
+                        <div key={el} className="row"><AttackButton
                             value={el}
                             disabled={isDisabledDefend}
                             attackDefendHandler={defendHandler}
-                        />
+                        /></div>
                     )
                 })}
             </div>

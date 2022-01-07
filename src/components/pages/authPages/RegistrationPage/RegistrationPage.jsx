@@ -22,7 +22,6 @@ export default function RegistrationPage() {
             // console.log({login, email, password})
             dispatch(setLoader())
             const response = await AuthService.registration({login, email, password})
-            console.log(response)
             dispatch({type: SET_USER, payload: {user: response.data.user}})
             dispatch({type: IS_AUTH})
             dispatch(unSetLoader())

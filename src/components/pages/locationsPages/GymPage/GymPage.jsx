@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
+    ACTION_getEnemyStateFromWS,
     ACTION_unsetAttackBodyPlayer,
     ACTION_unsetAttackHeadPlayer,
     ACTION_unsetAttackLeftHandPlayer,
@@ -12,7 +13,8 @@ import {
     ACTION_unsetDefendLegsPlayer,
     ACTION_unsetDefendRightHandPlayer
 } from '../../../../redux/actions/battleActions'
-import { ACTION_getEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
+import { ACTION_getEnemyPlayer, ACTION_punchFromPlayerToEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
+import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../../redux/actions/playerActions'
 import AttackDefendButtons from '../../../common/AttackDefendButtons/AttackDefendButtons'
 import PlayerProgressBarHpApMp from '../../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp'
 import './button.css'
@@ -23,6 +25,8 @@ const GymPage = () => {
     const dispatch = useDispatch()
     const [isDisabledAttack, setIsDisabledAttack] = useState(false)
     const [isDisabledDefend, setIsDisabledDefend] = useState(false)
+    const [socket, setSocket] = useState(new WebSocket('wss://herokuws.herokuapp.com/'))
+    // const [socket, setSocket] = useState(new WebSocket('ws://localhost:8000/'))
     const player = useSelector((state) => state.player)
     const enemyPlayer = useSelector(state => state.enemyPlayer)
     const battlePlayer = useSelector(state => state.battlePlayer)
@@ -30,28 +34,49 @@ const GymPage = () => {
     const room = useSelector(state => state.room)
 
     // WEBSOCKET
-    const socket = new WebSocket('wss://herokuws.herokuapp.com/')
     useEffect(() => {
         socket.onopen = () => {
+            console.log(enemyPlayer)
             socket.send(JSON.stringify({
                 id: room.id,
-                playerId: player.id,
                 method: 'connection',
-                player: player,
-                battlePlayer: battlePlayer
+                player,
+                battlePlayer,
+                // enemyPlayer,
+                // battleEnemyPlayer
             }))
         }
+    }, [])
+    useEffect(() => {
         socket.onmessage = (e) => {
             const WSenemy = JSON.parse(e.data)
-            if (WSenemy.playerId !== player.id) {
-                dispatch(ACTION_getEnemyPlayer(WSenemy.player))
-            }
             console.log(WSenemy)
+            if (WSenemy.player.nickName !== player.nickName) {
+                dispatch(ACTION_getEnemyPlayer(WSenemy.player))
+                dispatch(ACTION_getEnemyStateFromWS(WSenemy.battlePlayer))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(WSenemy.player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
+                dispatch(ACTION_punchFromPlayerToEnemyPlayer(WSenemy.enemyPlayer.total_stats.dmg, battleEnemyPlayer, battleEnemyPlayer))
+            }
         }
     }, [])
+    useEffect(() => {
+        if (player.hp || enemyPlayer.hp <= 0) {
+        }
+    })
+    // useEffect(() => {
+    //     socket.onclose(() => {
+    //         dispatch({type: UNSET_ENEMY_PLAYER})
+    //     })
+    // }, [])
 
     const battleHandler = (e) => {
         e.preventDefault()
+        socket.send(JSON.stringify({
+            id: room.id,
+            method: 'message',
+            player: player,
+            battlePlayer: battlePlayer
+        }))
 
     }
 

@@ -5,6 +5,8 @@ import { THUNK_ACTION_logout } from '../../../redux/actions/thunk/thunkAuthActio
 
 export default function Navbar() {
     const user = useSelector((state) => state.user)
+    const player = useSelector(state => state.player)
+    const room = useSelector(state => state.room)
     const dispatch = useDispatch()
     const logoutHandler = async (e) => {
         e.preventDefault()
@@ -44,6 +46,10 @@ export default function Navbar() {
                         </li>
                     </>}
                 </ul>
+                <div>
+                    {player && player.nickName}
+                    {room && room.id}
+                </div>
             </div>
         </div>
     </nav>)

@@ -6,15 +6,21 @@ import { SET_USER, UNSET_USER } from '../../types/userTypes'
 import { setLoader, unSetLoader } from '../loaderActions'
 
 export const THUNK_ACTION_logout = () => async (dispatch) => {
-    await AuthService.logout()
-    dispatch({type: UNSET_USER})
-    dispatch({type: IS_NOT_AUTH})
+    try {
+        dispatch(setLoader())
+        await AuthService.logout()
+        dispatch({type: UNSET_USER})
+        dispatch({type: IS_NOT_AUTH})
+    } catch (e) {
+        alert(e.response?.data?.message)
+    } finally {
+        dispatch(unSetLoader())
+    }
 }
 export const THUNK_ACTION_login = (userData) => async (dispatch) => {
     try {
         dispatch(setLoader())
         const response = await AuthService.login(userData)
-        console.log(response.data.user)
         dispatch({type: SET_USER, payload: {user: response.data.user}})
         dispatch({type: IS_AUTH})
         dispatch(unSetLoader())
@@ -26,10 +32,8 @@ export const THUNK_ACTION_login = (userData) => async (dispatch) => {
 }
 export const THUNK_ACTION_register = (userData) => async (dispatch) => {
     try {
-        console.log(userData)
         dispatch(setLoader())
         const response = await AuthService.registration(userData)
-        console.log(response)
         dispatch({type: SET_USER, payload: {user: response.data.user}})
         dispatch({type: IS_AUTH})
         dispatch(unSetLoader())
