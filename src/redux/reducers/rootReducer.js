@@ -3,6 +3,7 @@ import { allRoomsReducer } from './allRoomsReducer'
 import { battleEnemyPlayerReducer } from './battleEnemyPlayerReducer'
 import { battlePlayerReducer } from './battlePlayerReducer'
 import { chatReducer } from './chatReducer'
+import { chooseCharacterReducer } from './chooseCharacterReducer'
 import { enemyPlayerReducer } from './EnemyPlayerReducer'
 import { isAuthReducer } from './isAuthReducer'
 import { loaderReducer } from './loaderReducer'
@@ -22,5 +23,6 @@ export const rootReducer = combineReducers({
     battlePlayer: battlePlayerReducer,
     battleEnemyPlayer: battleEnemyPlayerReducer,
     room: roomReducer,
-    allRooms: allRoomsReducer
+    allRooms: allRoomsReducer,
+    chooseCharacter: chooseCharacterReducer
 })

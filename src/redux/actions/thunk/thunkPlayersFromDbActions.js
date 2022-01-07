@@ -4,10 +4,9 @@ import { setLoader, unSetLoader } from '../loaderActions'
 import { ACTION_getPlayer } from '../playerActions'
 
 export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
-    dispatch(setLoader())
     try {
         const response = await axios.get(
-            `http://dbforgame.herokuapp.com/db/ready-for-fun/2`,
+            `http://dbforgame.herokuapp.com/db/ready-for-fun/${userId}`,
             {
                 withCredentials: true,
             }

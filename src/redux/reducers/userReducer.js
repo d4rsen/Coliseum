@@ -1,10 +1,10 @@
-import {SET_USER, UNSET_USER} from "../types/userTypes"
-import initialState from "../state/initialState"
+import initialState from '../state/initialState'
+import { SET_USER, UNSET_USER } from '../types/userTypes'
 
 export const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER:
-            return {...action.payload}
+            return action.payload
 
         case UNSET_USER:
             return null

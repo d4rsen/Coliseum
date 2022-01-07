@@ -7,6 +7,7 @@ const initialState = () => ({
     enemyPlayer: null,
     room: null,
     allRooms: null,
+    chooseCharacter: null,
     battlePlayer: {
         attackHead: false,
         attackLeftHand: false,

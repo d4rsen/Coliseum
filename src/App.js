@@ -23,10 +23,14 @@ function App() {
     const user = useSelector(state => state.user)
     const isAuth = useSelector(state => state.isAuth)
     const isLoading = useSelector((state) => state.isLoading)
+    const chooseCharacter = useSelector(state => state.chooseCharacter)
 
     useEffect(() => localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth()), [])
-    useEffect(() => user && dispatch(THUNK_ACTION_getPlayerFromDb(user.id)), [user])
+    // useEffect(() => user && dispatch(THUNK_ACTION_getPlayerFromDb(user.id)), [chooseCharacter])
     useEffect(() => dispatch(ACTION_getMobs()), [])
+    useEffect(() => {
+        chooseCharacter && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
+    }, [chooseCharacter])
 
     if (isLoading) {
         return (<>

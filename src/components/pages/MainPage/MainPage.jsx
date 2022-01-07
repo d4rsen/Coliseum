@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ACTION_PlayerRegenerate } from '../../../redux/actions/playerActions'
+import ChooseCharacter from '../ChooseCharacter/ChooseCharacter'
 
 const MainPage = () => {
     const dispatch = useDispatch()
@@ -66,6 +67,7 @@ const MainPage = () => {
             <div onClick={roomsHandler}>
                 <img src="https://www.pngplay.com/wp-content/uploads/7/Castle-PNG-HD-Quality.png" alt="..." height="140"/>
             </div>
+            <ChooseCharacter/>
         </div>
     )
 }

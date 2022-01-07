@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-export const API_URL = 'http://dbforgame.herokuapp.com/api'
+export const API_URL = 'https://dbforgame.herokuapp.com/api'
+export const DB_URL = 'https://dbforgame.herokuapp.com/db'
 
 const $api = axios.create({
     withCredentials: true,
@@ -10,6 +11,7 @@ $api.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`
     return config
 })
+
 $api.interceptors.response.use((config) => {
     return config
 }, async (error) => {
