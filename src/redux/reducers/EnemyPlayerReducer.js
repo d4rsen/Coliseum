@@ -1,4 +1,4 @@
-import initialState from '../state/initialState'
+import initialState from '../init/initialState'
 import { PUNCH_FROM_PLAYER_TO_ENEMY_PLAYER, SET_ENEMY_PLAYER, UNSET_ENEMY_PLAYER } from '../types/enemyPlayerTypes'
 
 export const enemyPlayerReducer = (state = initialState, action) => {
@@ -18,6 +18,7 @@ export const enemyPlayerReducer = (state = initialState, action) => {
             const {battleEnemyPlayer} = action.payload
             const {playerDamage} = action.payload
 
+            // let dmg3 = player.hp - playerDamage / player.total_stats.def * 0.1
             let dmg3 = enemyPlayer.hp - playerDamage / 2
 
             if (battleEnemyPlayer.defendHead === true && battlePlayer.attackHead === true) {
