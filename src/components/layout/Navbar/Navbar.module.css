@@ -1,0 +1,79 @@
+.header {
+  background-color: bisque;
+
+}
+
+.header__logo{
+  padding :5px;
+  
+}
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* margin-right: auto; */
+}
+
+.navigation__list{ 
+  display: flex;
+  list-style: none;
+  color: black;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+  padding: 0;
+  /* margin-right: auto; */
+}
+
+.navigaton__item {
+  padding:5px;
+  
+}
+.navigaton__link{
+  text-decoration: none;
+  color: black;
+
+}
+
+.header__user{
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  /* margin-left: auto; */
+}
+
+.header__room{
+  margin-right: 10px;
+  background-color: rgb(212, 91, 46);
+  padding: 3px 7px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+
+.header__user_class{
+  display:block;
+  border-radius: 50%;
+}
+/* 
+.header-user{
+  display: flex;
+
+} */
+
+/* .progress{
+  margin:auto;
+} */
+.header__progress{
+  width:20%;
+
+  justify-content: center;
+}
+/* .header__progress :nth-child(:all) {
+  border-radius:10%;
+} */
+.header__user_params{
+  display: grid;
+  align-items: center;
+  grid-gap:3px;
+}

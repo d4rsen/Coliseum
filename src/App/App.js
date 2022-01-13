@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import './App.css'
+import'./normalize.css'
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
 import Navbar from '../components/layout/Navbar/Navbar'
