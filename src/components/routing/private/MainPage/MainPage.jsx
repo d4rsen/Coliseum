@@ -67,7 +67,7 @@ const MainPage = () => {
             <div onClick={roomsHandler}>
                 <img src="https://www.pngarts.com/files/5/Colosseum-Rome-PNG-Transparent-Image.png"
                      alt="..." height="160"/>
-                <p>Колизей</p>
+                <p>Колизей </p>
             </div>
         </div>
     )
