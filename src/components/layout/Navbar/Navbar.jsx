@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import style from './Navbar.module.css';
@@ -19,6 +20,7 @@ export default function Navbar() {
     }
   };
   const exp = +player?.exp + 40;
+
 
   return (
     <header className={style.header}>
@@ -60,6 +62,7 @@ export default function Navbar() {
               )}
             </ul>
           </nav>
+
 
           {user && (
             <div className={style.header__progress}>

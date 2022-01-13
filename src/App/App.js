@@ -1,8 +1,10 @@
+
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import'./normalize.css'
+
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
 import Navbar from '../components/layout/Navbar/Navbar'
@@ -18,9 +20,10 @@ import TrainPage from '../components/routing/private/TrainPage/TrainPage'
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
-import { ACTION_getMobs } from '../redux/actions/mobsActions'
-import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
-import { THUNK_ACTION_getPlayerFromDb } from '../redux/actions/thunks/thunkPlayersFromDbActions'
+import {ACTION_getMobs} from '../redux/actions/mobsActions'
+import {THUNK_ACTION_checkAuth} from '../redux/actions/thunks/thunkAuthActions'
+import {THUNK_ACTION_getPlayerFromDb} from '../redux/actions/thunks/thunkPlayersFromDbActions'
+import Auction from "../components/routing/private/Auction/Auction";
 
 function App() {
     const dispatch = useDispatch()
@@ -71,6 +74,7 @@ function App() {
             <Route path="/gym" element={isAuth ? <GymPage/> : <Navigate to="/register"/>}/>
             <Route path="/mannequin" element={isAuth ? <MannequinPage/> : <Navigate to="/register"/>}/>
             <Route path="/inventory" element={isAuth ? <InventoryPage/> : <Navigate to="/register"/>}/>
+            <Route path="/auction" element={isAuth ? <Auction/> : <Navigate to="/register"/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
         <Footer/>
