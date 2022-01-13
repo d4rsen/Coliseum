@@ -41,6 +41,7 @@ export default function Navbar() {
                                 </NavLink>
                             </li>
                         </>)}
+
                         {user && <>
                             <li className="nav-item">
                                 <NavLink onClick={logoutHandler} className="nav-link" to="/logout">

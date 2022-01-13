@@ -4,6 +4,7 @@ const initialState = () => ({
     mobs: [], //TODO mb get from server
     isAuth: false,
     player: null,
+    playerInventory: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,],
     enemyPlayer: null,
     room: null,
     allRooms: null,

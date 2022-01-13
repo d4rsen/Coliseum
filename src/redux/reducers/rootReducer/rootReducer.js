@@ -9,6 +9,7 @@ import { isAuthReducer } from '../isAuthReducer'
 import { loaderReducer } from '../loaderReducer'
 import { mannequinReducer } from '../mannequinReducer'
 import { mobsReducer } from '../mobsReducer'
+import { playerInventoryReducer } from '../playerInventoryReducer'
 import { playerReducer } from '../playerReducer'
 import { roomReducer } from '../roomReducer'
 import { userReducer } from '../userReducer'
@@ -20,6 +21,7 @@ export const rootReducer = combineReducers({
     chat: chatReducer,
     mobs: mobsReducer,
     player: playerReducer,
+    playerInventory: playerInventoryReducer,
     enemyPlayer: enemyPlayerReducer,
     battlePlayer: battlePlayerReducer,
     battleEnemyPlayer: battleEnemyPlayerReducer,
