@@ -1,13 +1,11 @@
-
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import './App.css'
-import'./normalize.css'
 
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
 import Navbar from '../components/layout/Navbar/Navbar'
+import Auction from '../components/routing/private/Auction/Auction'
 import ChooseCharacter from '../components/routing/private/ChooseCharacter/ChooseCharacter'
 import GymPage from '../components/routing/private/GymPage/GymPage'
 import InventoryPage from '../components/routing/private/InventoryPage/InventoryPage'
@@ -20,10 +18,11 @@ import TrainPage from '../components/routing/private/TrainPage/TrainPage'
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
-import {ACTION_getMobs} from '../redux/actions/mobsActions'
-import {THUNK_ACTION_checkAuth} from '../redux/actions/thunks/thunkAuthActions'
-import {THUNK_ACTION_getPlayerFromDb} from '../redux/actions/thunks/thunkPlayersFromDbActions'
-import Auction from "../components/routing/private/Auction/Auction";
+import { ACTION_getMobs } from '../redux/actions/mobsActions'
+import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
+import { THUNK_ACTION_getPlayerFromDb } from '../redux/actions/thunks/thunkPlayersFromDbActions'
+import './App.css'
+import './normalize.css'
 
 function App() {
     const dispatch = useDispatch()
@@ -45,7 +44,7 @@ function App() {
             <BrowserRouter>
                 <Navbar/>
                 <Loader/>
-                <Footer/>
+                {player && <Footer/>}
             </BrowserRouter>
         </>)
     }
@@ -77,7 +76,7 @@ function App() {
             <Route path="/auction" element={isAuth ? <Auction/> : <Navigate to="/register"/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
-        <Footer/>
+        {player && <Footer/>}
     </BrowserRouter>)
 }
 
