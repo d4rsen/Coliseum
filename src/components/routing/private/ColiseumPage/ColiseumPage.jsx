@@ -36,21 +36,10 @@ const ColiseumPage = ({socket}) => {
             const WsEnemyPlayer = players.find(el => el.nickName !== player.nickName)
             dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
             dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-            dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
-            dispatch(ACTION_punchFromPlayerToEnemyPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+            dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
+            dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
         })
     })
-
-    // useEffect(() => {
-    //     socket.onopen = () => {
-    //         socket.send(JSON.stringify({
-    //             id: room.id,
-    //             method: 'connection',
-    //             player,
-    //             battlePlayer,
-    //         }))
-    //     }
-    // })
 
     return (
         <div className="container mt-3 d-flex flex-row">
