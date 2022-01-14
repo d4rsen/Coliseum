@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { ACTION_unsetEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
 import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
 
 const MainPage = () => {
@@ -8,6 +9,9 @@ const MainPage = () => {
     const state = useSelector(state => state)
     const player = useSelector((state) => state.player)
     const navigation = useNavigate()
+    useEffect(() => {
+        dispatch(ACTION_unsetEnemyPlayer())
+    }, [])
 
     const castles = [
         {

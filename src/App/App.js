@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { io } from 'socket.io-client'
 
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
 import Navbar from '../components/layout/Navbar/Navbar'
 import Auction from '../components/routing/private/Auction/Auction'
 import ChooseCharacter from '../components/routing/private/ChooseCharacter/ChooseCharacter'
+import ColiseumPage from '../components/routing/private/ColiseumPage/ColiseumPage'
 import GymPage from '../components/routing/private/GymPage/GymPage'
 import InventoryPage from '../components/routing/private/InventoryPage/InventoryPage'
 import MainPage from '../components/routing/private/MainPage/MainPage'
@@ -23,6 +25,8 @@ import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions
 import { THUNK_ACTION_getPlayerFromDb } from '../redux/actions/thunks/thunkPlayersFromDbActions'
 import './App.css'
 import './normalize.css'
+
+const socket = io.connect('http://localhost:8000')
 
 function App() {
     const dispatch = useDispatch()
@@ -44,7 +48,7 @@ function App() {
             <BrowserRouter>
                 <Navbar/>
                 <Loader/>
-                {player && <Footer/>}
+                {player && <Footer socket={socket}/>}
             </BrowserRouter>
         </>)
     }
@@ -74,9 +78,10 @@ function App() {
             <Route path="/mannequin" element={isAuth ? <MannequinPage/> : <Navigate to="/register"/>}/>
             <Route path="/inventory" element={isAuth ? <InventoryPage/> : <Navigate to="/register"/>}/>
             <Route path="/auction" element={isAuth ? <Auction/> : <Navigate to="/register"/>}/>
+            <Route path="/coliseum" element={isAuth ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
-        {player && <Footer/>}
+        {player && <Footer socket={socket}/>}
     </BrowserRouter>)
 }
 

@@ -41,12 +41,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     }
     const battleHandler = (e) => {
         e.preventDefault()
-        socket.send(JSON.stringify({
-            id: room.id,
-            method: 'message',
-            player: player,
-            battlePlayer: battlePlayer
-        }))
+        socket.emit('punch', room, player, battlePlayer)
     }
     return (
         <div className="container d-flex flex-column justify-content-center align-items-center">

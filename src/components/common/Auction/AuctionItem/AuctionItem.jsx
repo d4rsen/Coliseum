@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
+import AuctionButton from '../AuctionButton/AuctionButton'
 import styles from './AuctionItem.module.css'
-import AuctionButton from "../AuctionButton/AuctionButton";
 
 const AuctionItem = () => {
     const itemImg = 'https://cdn.webshopapp.com/shops/305440/files/345306816/hellscream-foam-two-handed-battle-axe-gore.jpg'
@@ -35,10 +35,10 @@ const AuctionItem = () => {
                         <li><i className="fas fa-hat-wizard"> {itemStats.int}</i></li>
                     </ul>
                 </div>
-                <AuctionButton title={"Buy"}/>
+                <AuctionButton title={'Buy'}/>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default AuctionItem;
+export default AuctionItem

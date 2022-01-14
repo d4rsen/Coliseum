@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { ACTION_unsetEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
 import { ACTION_setRoom } from '../../../../redux/actions/roomActions'
 import { THUNK_ACTION_getAllRoomsFromDb } from '../../../../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
@@ -9,6 +10,9 @@ const RoomsPage = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(THUNK_ACTION_getAllRoomsFromDb())
+    }, [])
+    useEffect(() => {
+        dispatch(ACTION_unsetEnemyPlayer())
     }, [])
 
     const allRooms = useSelector(state => state.allRooms)
@@ -21,7 +25,7 @@ const RoomsPage = () => {
         e.preventDefault()
         const parsedRoom = JSON.parse(e.target.id)
         dispatch(ACTION_setRoom(parsedRoom))
-        navigation('/gym')
+        navigation('/coliseum')
     }
 
     const createRoomHandler = async (e) => {

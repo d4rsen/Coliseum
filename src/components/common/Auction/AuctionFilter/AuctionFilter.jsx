@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
+import AuctionButton from '../AuctionButton/AuctionButton'
 import styles from './AuctionFilter.module.css'
-import AuctionButton from "../AuctionButton/AuctionButton";
 
 const AuctionFilter = () => {
 
@@ -27,7 +27,7 @@ const AuctionFilter = () => {
                 <AuctionButton title={'Place lot'}/>
             </div>
         </>
-    );
-};
+    )
+}
 
-export default AuctionFilter;
+export default AuctionFilter
