@@ -26,7 +26,7 @@ import { THUNK_ACTION_getPlayerFromDb } from '../redux/actions/thunks/thunkPlaye
 import './App.css'
 import './normalize.css'
 
-const socket = io.connect('http://localhost:8000')
+const socket = io.connect('https://global-chat-socket-io.herokuapp.com/')
 
 function App() {
     const dispatch = useDispatch()
@@ -61,7 +61,8 @@ function App() {
                     isAuth && !player ?
                         <Navigate to="/choose-class"/> :
                         <Navigate to="/register"/>}/>
-            <Route path="choose-class"
+
+            <Route path="/choose-class"
                    element={isAuth && !player ?
                        <ChooseCharacter/> :
                        isAuth && player ?
