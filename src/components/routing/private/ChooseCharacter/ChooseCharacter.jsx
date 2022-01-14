@@ -7,13 +7,10 @@ import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChoos
 const ChooseCharacter = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
+    const player = useSelector(state => state.player)
+    const chooseCharacter = useSelector(state => state.chooseCharacter)
     const [chosenClass, setChosenClass] = useState(1)
     const [inputValue, setInputValue] = useState('')
-    const chooseCharacter = useSelector(state => state.chooseCharacter)
-
-    useEffect(() => {
-        chooseCharacter && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-    }, [])
 
     const valueHandler = e => {
         setInputValue(e.target.value)
@@ -32,6 +29,9 @@ const ChooseCharacter = () => {
             nickname: inputValue
         }))
     }
+    useEffect(() => {
+        chooseCharacter && setTimeout(() => dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id)), 200)
+    }, [chooseCharacter])
 
     return (
         <div className="container d-flex">

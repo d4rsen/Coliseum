@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setLoader, unSetLoader } from '../../../../redux/actions/loaderActions'
-import AuthService from '../../../../redux/services/authService'
-import { IS_AUTH } from '../../../../redux/types/authTypes'
-import { SET_USER } from '../../../../redux/types/userTypes'
+import { THUNK_ACTION_register } from '../../../../redux/actions/thunks/thunkAuthActions'
 import Loader from '../../../layout/Loader/Loader'
 
 export default function RegistrationPage() {
@@ -16,17 +13,8 @@ export default function RegistrationPage() {
     const nameHandler = (e) => setLogin(e.target.value)
     const emailHandler = (e) => setEmail(e.target.value)
     const passwordHandler = (e) => setPassword(e.target.value)
-    const submitHandler = async (e) => {
-        try {
-            // dispatch(THUNK_ACTION_register({login, email, password}))
-            dispatch(setLoader())
-            const response = await AuthService.registration({login, email, password})
-            dispatch({type: SET_USER, payload: {user: response.data.user}})
-            dispatch({type: IS_AUTH})
-            dispatch(unSetLoader())
-        } catch (e) {
-            alert(e)
-        }
+    const submitHandler = (e) => {
+        dispatch(THUNK_ACTION_register({login, email, password}))
     }
 
     return (<>

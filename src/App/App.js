@@ -21,6 +21,7 @@ import AuthorizationPage from '../components/routing/public/AuthorizationPage/Au
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
 import { ACTION_getMobs } from '../redux/actions/mobsActions'
+import { ACTION_setPlayerClass } from '../redux/actions/setPlayerClassActions'
 import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
 import { THUNK_ACTION_getPlayerFromDb } from '../redux/actions/thunks/thunkPlayersFromDbActions'
 import './App.css'
@@ -37,18 +38,21 @@ function App() {
     const player = useSelector(state => state.player)
 
     useEffect(() => localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth()), [])
-    // useEffect(() => user && dispatch(THUNK_ACTION_getPlayerFromDb(user.id)), [chooseCharacter])
-    useEffect(() => dispatch(ACTION_getMobs()), [])
+    useEffect(() => {
+        dispatch(ACTION_getMobs())
+    }, [])
     useEffect(() => {
         user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-    }, [chooseCharacter])
+    }, [])
+    useEffect(() => {
+        player && dispatch(ACTION_setPlayerClass(player.playerClass))
+    }, [])
 
     if (isLoading) {
         return (<>
             <BrowserRouter>
                 <Navbar/>
                 <Loader/>
-                {player && <Footer socket={socket}/>}
             </BrowserRouter>
         </>)
     }

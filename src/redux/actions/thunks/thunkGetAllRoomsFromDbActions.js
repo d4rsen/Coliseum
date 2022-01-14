@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { ACTION_getAllRooms } from '../allRoomsActions'
-import { unSetLoader } from '../loaderActions'
+import { setLoader, unSetLoader } from '../loaderActions'
 
 export const THUNK_ACTION_getAllRoomsFromDb = () => async (dispatch) => {
     try {
+        dispatch(setLoader())
         const response = await axios.get(
             `https://dbforgame.herokuapp.com/db/get-all-rooms`,
             {

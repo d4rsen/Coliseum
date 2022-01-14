@@ -7,6 +7,7 @@ import { setLoader, unSetLoader } from '../loaderActions'
 
 export const THUNK_ACTION_logout = () => async (dispatch) => {
     try {
+        dispatch(setLoader())
         await AuthService.logout()
         dispatch({type: UNSET_USER})
         dispatch({type: IS_NOT_AUTH})

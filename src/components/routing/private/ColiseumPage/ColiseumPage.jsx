@@ -25,15 +25,17 @@ const ColiseumPage = ({socket}) => {
     useEffect(() => {
         socket.on('join-room', (players) => {
             const WsEnemyPlayer = players.find(el => el.player.nickName !== player.nickName)
-            if (WsEnemyPlayer.nickName !== player.nickName) {
-                dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-                dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+            if (WsEnemyPlayer) {
+                if (WsEnemyPlayer.nickName !== player.nickName) {
+                    dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+                    dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+                }
             }
         })
         socket.on('punch', (players) => {
             const WsEnemyPlayer = players.find(el => el.nickName !== player.nickName)
-            // dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-            // dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+            dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+            dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
             dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
             dispatch(ACTION_punchFromPlayerToEnemyPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
         })

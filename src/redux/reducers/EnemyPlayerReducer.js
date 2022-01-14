@@ -24,12 +24,6 @@ export const enemyPlayerReducer = (state = initialState, action) => {
             if (battleEnemyPlayer.defendHead === true && battlePlayer.attackHead === true) {
                 dmg3 = enemyPlayer.hp
             }
-            if (battleEnemyPlayer.attackLeftHand === true && battlePlayer.attackLeftHand === true) {
-                dmg3 = enemyPlayer.hp
-            }
-            if (battleEnemyPlayer.attackRightHand === true && battlePlayer.attackRightHand === true) {
-                dmg3 = enemyPlayer.hp
-            }
             if (battleEnemyPlayer.attackBody === true && battlePlayer.attackBody === true) {
                 dmg3 = enemyPlayer.hp
             }
