@@ -1,18 +1,19 @@
-import { combineReducers } from 'redux'
-import { allRoomsReducer } from '../allRoomsReducer'
-import { battleEnemyPlayerReducer } from '../battleEnemyPlayerReducer'
-import { battlePlayerReducer } from '../battlePlayerReducer'
-import { chatReducer } from '../chatReducer'
-import { chooseCharacterReducer } from '../chooseCharacterReducer'
-import { enemyPlayerReducer } from '../EnemyPlayerReducer'
-import { isAuthReducer } from '../isAuthReducer'
-import { loaderReducer } from '../loaderReducer'
-import { mannequinReducer } from '../mannequinReducer'
-import { mobsReducer } from '../mobsReducer'
-import { playerInventoryReducer } from '../playerInventoryReducer'
-import { playerReducer } from '../playerReducer'
-import { roomReducer } from '../roomReducer'
-import { userReducer } from '../userReducer'
+import {combineReducers} from 'redux'
+import {allRoomsReducer} from '../allRoomsReducer'
+import {battleEnemyPlayerReducer} from '../battleEnemyPlayerReducer'
+import {battlePlayerReducer} from '../battlePlayerReducer'
+import {chatReducer} from '../chatReducer'
+import {chooseCharacterReducer} from '../chooseCharacterReducer'
+import {enemyPlayerReducer} from '../EnemyPlayerReducer'
+import {isAuthReducer} from '../isAuthReducer'
+import {loaderReducer} from '../loaderReducer'
+import {mannequinReducer} from '../mannequinReducer'
+import {mobsReducer} from '../mobsReducer'
+import {playerInventoryReducer} from '../playerInventoryReducer'
+import {playerReducer} from '../playerReducer'
+import {roomReducer} from '../roomReducer'
+import {userReducer} from '../userReducer'
+import {auctionReducer} from "../auctionReducer";
 
 export const rootReducer = combineReducers({
     user: userReducer,
@@ -29,4 +30,5 @@ export const rootReducer = combineReducers({
     allRooms: allRoomsReducer,
     chooseCharacter: chooseCharacterReducer,
     mannequin: mannequinReducer,
+    auctionItems: auctionReducer,
 })

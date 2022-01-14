@@ -3,6 +3,7 @@ import AuctionButton from '../AuctionButton/AuctionButton'
 import styles from './AuctionItem.module.css'
 
 const AuctionItem = () => {
+    const itemId = 124
     const itemImg = 'https://cdn.webshopapp.com/shops/305440/files/345306816/hellscream-foam-two-handed-battle-axe-gore.jpg'
     const itemName = 'Great Axe'
     const itemStats = {
@@ -11,6 +12,7 @@ const AuctionItem = () => {
         agl: 5,
         int: 3
     }
+    const itemPrice = 100
     const itemInfo = 'Lorem ipsum dolor sit amet, consectetur ' +
         'adipisicing elit. Explicabo facilis laborum nihil nostrum' +
         ' repudiandae. Aut cumque ex, facilis harum iste, iusto' +
@@ -36,6 +38,11 @@ const AuctionItem = () => {
                     </ul>
                 </div>
                 <AuctionButton title={'Buy'}/>
+                <div className={styles['item-price']}>
+                    <span>Price:</span>
+                    <div>{itemPrice} <i className="fas fa-coins"></i></div>
+                </div>
+                <AuctionButton title={"Buy"} itemId={itemId}/>
             </div>
         </div>
     )

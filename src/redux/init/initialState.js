@@ -29,6 +29,7 @@ const initialState = () => ({
         defendBody: false,
         defendLegs: false,
     },
+    auctionItems: [],
 })
 
 export default initialState

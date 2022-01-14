@@ -1,13 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import AuctionButton from '../AuctionButton/AuctionButton'
 import styles from './AuctionFilter.module.css'
+import AuctionModal from "../Modal/AuctionModal";
 
 const AuctionFilter = () => {
-
-    // function clickHandler(e) {
-    //     e.preventDefault()
-    //     console.log(e.target)
-    // }
+    const [modalActive, setModalActive] = useState(false)
 
     function changeHandler(e) {
         e.preventDefault()
@@ -23,8 +20,14 @@ const AuctionFilter = () => {
                         <option value="accessory">Accessory</option>
                         <option value="armor">Armor</option>
                     </select>
+
                 </div>
+                <div className="GamePage">
+                    <button className="open-btn" onClick={() => setModalActive(true)}>open modal window</button>
+                </div>
+                <AuctionModal active={modalActive} setActive={setModalActive}/>
                 <AuctionButton title={'Place lot'}/>
+
             </div>
         </>
     )

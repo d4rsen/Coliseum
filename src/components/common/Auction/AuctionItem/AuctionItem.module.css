@@ -64,6 +64,16 @@
     min-width: 45%;
 }
 
+.item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-price div {
+    font-weight: bold;
+}
 
 /* BOX EFFECT */
 .item-wrapper {
