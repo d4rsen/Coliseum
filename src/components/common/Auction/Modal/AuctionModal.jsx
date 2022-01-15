@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { THUNK_ACTION_getPLayerInventory } from '../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
 import AuctionButton from '../AuctionButton/AuctionButton'
 import './AuctionModal.css'
 
@@ -9,9 +8,9 @@ function AuctionModal({active, setActive}) {
     const inventory = useSelector(state => state.playerInventory)
     const [chosenItem, setChosenItem] = useState(null)
     const [price, setPrice] = useState('')
-    useEffect(() => {
-        dispatch(THUNK_ACTION_getPLayerInventory())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(THUNK_ACTION_getPLayerInventory())
+    // }, [dispatch])
 
     function inputHandler(e) {
         e.preventDefault()

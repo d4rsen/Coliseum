@@ -1,24 +1,3 @@
-// import React from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { NavLink } from 'react-router-dom'
-// import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions'
-// import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp'
-// import style from './Navbar.module.css'
-//
-// export default function Navbar() {
-//     const user = useSelector((state) => state.user)
-//     const player = useSelector((state) => state.player)
-//     const room = useSelector((state) => state.room)
-//     const dispatch = useDispatch()
-//     const logoutHandler = async (e) => {
-//         e.preventDefault()
-//         try {
-//             dispatch(THUNK_ACTION_logout())
-//         } catch (e) {
-//             console.log(e)
-//         }
-//     }
-//     const exp = +player?.exp + 40
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
@@ -81,15 +60,6 @@ export default function Navbar() {
                                     </li>
                                     <li className={style.navigaton__item}>
                                         <NavLink
-                                            onClick={logoutHandler}
-                                            className={style.navigaton__link}
-                                            to="/logout"
-                                        >
-                                            Выйти
-                                        </NavLink>
-                                    </li>
-                                    <li className={style.navigaton__item}>
-                                        <NavLink
                                             className={style.navigaton__link}
                                             to="/auction"
                                         >
@@ -122,10 +92,10 @@ export default function Navbar() {
                         <div className={style.header__user}>
                             <div className={style.header__user_params}>
                 <span className={style.header__room}>
-                  Your room is {room ? room.id : 'nothing'}
+                   {room ? `Your room is ${room.id}` : 'You are not in room'}
                 </span>
                                 <span className={style.header__level}>
-                  Your level {player ? player.lvl : '---'}
+                   {player && `Your level is ${player.lvl}`}
                 </span>
                             </div>
                             {player && player.playerClass === 'warrior' && (
@@ -176,8 +146,6 @@ export default function Navbar() {
                         height={10}
                         fontSize={8}
                     />
-
-
                 </div>
             )}
         </header>
