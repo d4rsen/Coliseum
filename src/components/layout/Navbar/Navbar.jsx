@@ -75,6 +75,11 @@ export default function Navbar() {
                                             Auction
                                         </NavLink>
                                     </li>
+                                    <li className={style.navigaton__item}>
+                                        <NavLink className={style.navigaton__link} to="/test">
+                                            Тест для Андрея
+                                        </NavLink>
+                                    </li>
                                 </>
                             )}
                         </ul>

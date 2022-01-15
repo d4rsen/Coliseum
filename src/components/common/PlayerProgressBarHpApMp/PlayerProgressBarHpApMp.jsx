@@ -4,20 +4,12 @@ import './PlayerProgressBarHpApMp.module.css'
 const PlayerProgressBarHpApMp = ({bgColor, stat, height, fontSize}) => {
     return (
 
-        <div
-            // className={` ${bgColor}  `}
-            // role="progressbar"
-            style={{
-                width: `${stat}%`, height: `${height}px`,
-                backgroundColor: bgColor
-            }}
-            // aria-valuenow="100"
-            // aria-valuemin="0"
-            // aria-valuemax="100"
-        >
+        <div style={{
+            width: `${stat}%`, height: `${height}px`,
+            backgroundColor: bgColor
+        }}>
             <span style={{fontSize: `${fontSize}px`}}>{stat}</span>
         </div>
-
     )
 }
 

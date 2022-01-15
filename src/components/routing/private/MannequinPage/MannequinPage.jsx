@@ -3,8 +3,6 @@ import AttackButtonMannequinPage from '../../../common/AttackButtonMannequinPage
 import Mannequin from '../../../common/Mannequin/Mannequin'
 import Player from '../../../common/Player/Player'
 
-import '../GymPage/button.css'
-
 const MannequinPage = () => {
     return (
         <div className="container mt-3 d-flex flex-row">

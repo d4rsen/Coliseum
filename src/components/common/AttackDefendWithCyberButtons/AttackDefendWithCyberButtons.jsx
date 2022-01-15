@@ -13,6 +13,7 @@ import {
     ACTION_unsetDefendRightHandPlayer
 } from '../../../redux/actions/battleActions'
 import AttackDefendButtons from '../AttackDefendButtons/AttackDefendButtons'
+import style from './AttackDefendWithCyberButtons.module.css'
 
 const AttackDefendWithCyberButtons = ({socket}) => {
     const dispatch = useDispatch()
@@ -44,7 +45,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
         socket.emit('punch', room, player, battlePlayer)
     }
     return (
-        <div className="container d-flex flex-column justify-content-center align-items-center">
+        <div className={style.buttons__block}>
             <AttackDefendButtons
                 isDisabledAttack={isDisabledAttack}
                 isDisabledDefend={isDisabledDefend}

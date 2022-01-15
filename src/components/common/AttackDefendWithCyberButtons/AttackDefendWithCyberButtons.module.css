@@ -1,0 +1,4 @@
+.buttons__block{
+  display: grid;
+  width: fit-content;
+}

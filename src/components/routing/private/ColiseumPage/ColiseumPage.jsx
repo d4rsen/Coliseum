@@ -4,7 +4,6 @@ import { ACTION_getEnemyStateFromWS } from '../../../../redux/actions/battleActi
 import { ACTION_getEnemyPlayer, ACTION_punchFromPlayerToEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
 import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../../redux/actions/playerActions'
 import AttackDefendWithCyberButtons from '../../../common/AttackDefendWithCyberButtons/AttackDefendWithCyberButtons'
-import EnemyPlayer from '../../../common/EnemyPlayer/EnemyPlayer'
 import Player from '../../../common/Player/Player'
 import './button.css'
 
@@ -42,10 +41,10 @@ const ColiseumPage = ({socket}) => {
     }, [socket]) //TODO mb with no params
 
     return (
-        <div className="container mt-3 d-flex flex-row">
+        <div className={style.mail__gym}>
             <Player/>
-            <AttackDefendWithCyberButtons socket={socket}/>
-            <EnemyPlayer/>
+            <AttackDefendWithCyberButtons/>
+            <Player/>
         </div>
     )
 }
