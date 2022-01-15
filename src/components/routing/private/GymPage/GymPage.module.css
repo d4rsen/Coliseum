@@ -1,0 +1,6 @@
+.mail__gym { 
+  display: flex; 
+/* background-color: cadetblue; */
+justify-content: space-between;
+flex-wrap: wrap;
+}

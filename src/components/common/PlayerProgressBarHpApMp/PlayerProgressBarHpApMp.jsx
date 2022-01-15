@@ -5,12 +5,10 @@ const PlayerProgressBarHpApMp = ({ bgColor, stat, height,fontSize }) => {
     
         <div
           // className={` ${bgColor}  `}
-          // role="progressbar"
+         
           style={{ width: `${stat}%`, height: `${height}px`,
         backgroundColor: bgColor }}
-          // aria-valuenow="100"
-          // aria-valuemin="0"
-          // aria-valuemax="100"
+      
         >
           <span style={{ fontSize:`${fontSize}px`}}>{stat}</span>
         </div>

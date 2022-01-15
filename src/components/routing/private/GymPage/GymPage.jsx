@@ -8,6 +8,7 @@ import EnemyPlayer from '../../../common/EnemyPlayer/EnemyPlayer'
 import Player from '../../../common/Player/Player'
 import './button.css'
 
+import style from './GymPage.module.css'
 const GymPage = () => {
     const dispatch = useDispatch()
     const [socket, setSocket] = useState(new WebSocket('wss://herokuws.herokuapp.com/'))
@@ -43,11 +44,11 @@ const GymPage = () => {
     }, [])
 
     return (
-        <div className="container mt-3 d-flex flex-row">
-            <Player/>
-            <AttackDefendWithCyberButtons socket={socket}/>
-            <EnemyPlayer/>
-        </div>
+      <div className={style.mail__gym}>
+    <Player/> 
+    <AttackDefendWithCyberButtons/>
+      <Player/>     
+      </div>    
     )
 }
 
