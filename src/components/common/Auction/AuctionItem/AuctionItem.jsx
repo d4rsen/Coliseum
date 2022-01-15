@@ -42,7 +42,7 @@ const AuctionItem = () => {
                     <span>Price:</span>
                     <div>{itemPrice} <i className="fas fa-coins"></i></div>
                 </div>
-                <AuctionButton title={"Buy"} itemId={itemId}/>
+                <AuctionButton title={'Buy'} itemId={itemId}/>
             </div>
         </div>
     )

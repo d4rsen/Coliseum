@@ -12,7 +12,6 @@ export const THUNK_ACTION_getRoomFromDb = () => async (dispatch) => {
             }
         )
         dispatch(ACTION_setRoom({...response.data}))
-        dispatch(unSetLoader())
     } catch (e) {
         console.log(e)
     } finally {

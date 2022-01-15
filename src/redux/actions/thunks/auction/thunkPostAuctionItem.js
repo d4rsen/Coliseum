@@ -1,5 +1,5 @@
-import axios from "axios";
-import {postAuctionItem} from "../../auction/postAuctionItem";
+import axios from 'axios'
+import { postAuctionItem } from '../../auction/postAuctionItem'
 
 export const thunkPostAuctionItem = (data) => async (dispatch) => {
     console.log(data)

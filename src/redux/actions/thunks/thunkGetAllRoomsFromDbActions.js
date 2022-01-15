@@ -12,7 +12,6 @@ export const THUNK_ACTION_getAllRoomsFromDb = () => async (dispatch) => {
             }
         )
         dispatch(ACTION_getAllRooms(response.data))
-        dispatch(unSetLoader())
     } catch (e) {
         console.log(e)
     } finally {

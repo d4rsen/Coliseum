@@ -1,5 +1,5 @@
-import axios from "axios";
-import {getAllAuctionItems} from "../../auction/getAllAuctionItems";
+import axios from 'axios'
+import { getAllAuctionItems } from '../../auction/getAllAuctionItems'
 
 export const thunkGetAllAuctionItems = () => async (dispatch) => {
     const response = await axios.get('https://dbforgame.herokuapp.com/auction')

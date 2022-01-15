@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { THUNK_ACTION_getPlayerFromDb } from '../../../../redux/actions/thunks/thunkPlayersFromDbActions'
 import { THUNK_ACTION_setPlayerClass } from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
 import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChooseClassPage/PlayerClassFromPlayerClassPage'
@@ -8,9 +9,18 @@ const ChooseCharacter = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
     const player = useSelector(state => state.player)
+    const navigation = useNavigate()
     const chooseCharacter = useSelector(state => state.chooseCharacter)
     const [chosenClass, setChosenClass] = useState(1)
     const [inputValue, setInputValue] = useState('')
+
+    useEffect(() => {
+        user && dispatch(THUNK_ACTION_getPlayerFromDb(1))
+    }, [dispatch])
+
+    useEffect(() => {
+        player && navigation('/')
+    }, [player])
 
     const valueHandler = e => {
         setInputValue(e.target.value)
@@ -31,7 +41,7 @@ const ChooseCharacter = () => {
     }
     useEffect(() => {
         chooseCharacter && setTimeout(() => dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id)), 200)
-    }, [chooseCharacter])
+    }, [chooseCharacter, dispatch])
 
     return (
         <div className="container d-flex">

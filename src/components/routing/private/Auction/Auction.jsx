@@ -5,7 +5,6 @@ import styles from './Auction.module.css'
 
 const Auction = () => {
 
-
     return (
         <div>
 

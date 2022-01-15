@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { io } from 'socket.io-client'
 
 import Footer from '../components/layout/Footer/Footer'
@@ -23,7 +23,6 @@ import RegistrationPage from '../components/routing/public/RegistrationPage/Regi
 import { ACTION_getMobs } from '../redux/actions/mobsActions'
 import { ACTION_setPlayerClass } from '../redux/actions/setPlayerClassActions'
 import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
-import { THUNK_ACTION_getPlayerFromDb } from '../redux/actions/thunks/thunkPlayersFromDbActions'
 import './App.css'
 import './normalize.css'
 
@@ -37,57 +36,57 @@ function App() {
     const chooseCharacter = useSelector(state => state.chooseCharacter)
     const player = useSelector(state => state.player)
 
-    useEffect(() => localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth()), [])
+    // useEffect(() => {
+    //     user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
+    // }, [dispatch])
+    useEffect(() => localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth()), [dispatch])
     useEffect(() => {
         dispatch(ACTION_getMobs())
-    }, [])
-    useEffect(() => {
-        user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-    }, [])
+    }, [dispatch])
     useEffect(() => {
         player && dispatch(ACTION_setPlayerClass(player.playerClass))
-    }, [])
+    }, [dispatch])
 
     if (isLoading) {
         return (<>
-            <BrowserRouter>
-                <Navbar/>
-                <Loader/>
-            </BrowserRouter>
+            <Loader/>
         </>)
     }
-    return (<BrowserRouter>
-        <Navbar/>
-        <Routes>
-            <Route path="/" element={
-                isAuth && player ?
-                    <MainPage/> :
-                    isAuth && !player ?
-                        <Navigate to="/choose-class"/> :
-                        <Navigate to="/register"/>}/>
-
-            <Route path="/choose-class"
-                   element={isAuth && !player ?
-                       <ChooseCharacter/> :
-                       isAuth && player ?
-                           <Navigate to="/"/> :
-                           !isAuth &&
-                           <Navigate to="/register"/>}/>
-            <Route path="/register" element={isAuth ? <Navigate to="/"/> : <RegistrationPage/>}/>
-            <Route path="/login" element={isAuth ? <Navigate to="/"/> : <AuthorizationPage/>}/>
-            <Route path="/train" element={isAuth ? <TrainPage/> : <Navigate to="/register"/>}/>
-            <Route path="/observer" element={isAuth ? <ObserverPage/> : <Navigate to="/register"/>}/>
-            <Route path="/rooms" element={isAuth ? <RoomsPage/> : <Navigate to="/register"/>}/>
-            {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <Navigate to="/register"/>}/>*/}
-            <Route path="/gym" element={isAuth ? <GymPage/> : <Navigate to="/register"/>}/>
-            <Route path="/mannequin" element={isAuth ? <MannequinPage/> : <Navigate to="/register"/>}/>
-            <Route path="/inventory" element={isAuth ? <InventoryPage/> : <Navigate to="/register"/>}/>
-            <Route path="/auction" element={isAuth ? <Auction/> : <Navigate to="/register"/>}/>
-            <Route path="/coliseum" element={isAuth ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
-            <Route path="*" element={<NotFound/>}/>
-        </Routes>
-        {player && <Footer socket={socket}/>}
-    </BrowserRouter>)
+    return (
+        <>
+            <Navbar/>
+            <Routes>
+                <Route path="/" element={
+                    user && player ?
+                        <MainPage/> :
+                        user && !player ?
+                            <Navigate to="/choose-class"/> :
+                            !user || !player ?
+                                <Navigate to="/register"/> :
+                                <Navigate to="/register"/>}/>
+                <Route path="/choose-class"
+                       element={user && !player ?
+                           <ChooseCharacter/> :
+                           user && player ?
+                               <Navigate to="/"/> :
+                               !user &&
+                               <Navigate to="/register"/>}/>
+                <Route path="/register" element={isAuth ? <Navigate to="/"/> : <RegistrationPage/>}/>
+                <Route path="/login" element={isAuth ? <Navigate to="/"/> : <AuthorizationPage/>}/>
+                <Route path="/train" element={user && player ? <TrainPage/> : <Navigate to="/register"/>}/>
+                <Route path="/observer" element={user && player ? <ObserverPage/> : <Navigate to="/register"/>}/>
+                <Route path="/rooms" element={user && player ? <RoomsPage/> : <Navigate to="/register"/>}/>
+                {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <Navigate to="/register"/>}/>*/}
+                <Route path="/gym" element={user && player ? <GymPage/> : <Navigate to="/register"/>}/>
+                <Route path="/mannequin" element={user && player ? <MannequinPage/> : <Navigate to="/register"/>}/>
+                <Route path="/inventory" element={user && player ? <InventoryPage/> : <Navigate to="/register"/>}/>
+                <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>
+                <Route path="/coliseum" element={user && player ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
+                <Route path="*" element={<NotFound/>}/>
+            </Routes>
+            {player && <Footer socket={socket}/>}
+        </>
+    )
 }
 
 export default App

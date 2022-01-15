@@ -23,7 +23,6 @@ export const THUNK_ACTION_login = (userData) => async (dispatch) => {
         const response = await AuthService.login(userData)
         dispatch({type: SET_USER, payload: {user: response.data.user}})
         dispatch({type: IS_AUTH})
-        dispatch(unSetLoader())
     } catch (e) {
         alert(e.response?.data?.message)
     } finally {
@@ -36,7 +35,6 @@ export const THUNK_ACTION_register = (userData) => async (dispatch) => {
         const response = await AuthService.registration(userData)
         dispatch({type: SET_USER, payload: {user: response.data.user}})
         dispatch({type: IS_AUTH})
-        dispatch(unSetLoader())
     } catch (e) {
         alert(e.response?.data?.message)
     } finally {
@@ -52,7 +50,6 @@ export const THUNK_ACTION_checkAuth = () => async (dispatch) => {
         localStorage.setItem('token', response.data.accessToken)
         dispatch({type: SET_USER, payload: {user: response.data.user}})
         dispatch({type: IS_AUTH})
-        dispatch(unSetLoader())
     } catch (e) {
         console.log(e.response?.message)
     } finally {

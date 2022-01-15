@@ -1,4 +1,3 @@
-
 // import React from 'react'
 // import { useDispatch, useSelector } from 'react-redux'
 // import { NavLink } from 'react-router-dom'
@@ -20,27 +19,27 @@
 //         }
 //     }
 //     const exp = +player?.exp + 40
-import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import style from './Navbar.module.css';
-import {NavLink} from 'react-router-dom';
-import {THUNK_ACTION_logout} from '../../../redux/actions/thunks/thunkAuthActions';
-import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
+import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions'
+import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp'
+import style from './Navbar.module.css'
 
 export default function Navbar() {
-    const user = useSelector((state) => state.user);
-    const player = useSelector((state) => state.player);
-    const room = useSelector((state) => state.room);
-    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user)
+    const player = useSelector((state) => state.player)
+    const room = useSelector((state) => state.room)
+    const dispatch = useDispatch()
     const logoutHandler = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
-            dispatch(THUNK_ACTION_logout());
+            dispatch(THUNK_ACTION_logout())
         } catch (e) {
-            console.log(e);
+            console.log(e)
         }
-    };
-    const exp = +player?.exp + 40;
+    }
+    const exp = +player?.exp + 40
 
     return (
         <header className={style.header}>
@@ -70,16 +69,16 @@ export default function Navbar() {
                                 </>
                             )}
                             {user && (
-                                <li className={style.navigaton__item}>
-                                    <NavLink
-                                        onClick={logoutHandler}
-                                        className={style.navigaton__link}
-                                        to="/logout"
-                                    >
-                                        Выйти
-                                    </NavLink>
-                                </li>
                                 <>
+                                    <li className={style.navigaton__item}>
+                                        <NavLink
+                                            onClick={logoutHandler}
+                                            className={style.navigaton__link}
+                                            to="/logout"
+                                        >
+                                            Выйти
+                                        </NavLink>
+                                    </li>
                                     <li className={style.navigaton__item}>
                                         <NavLink
                                             onClick={logoutHandler}
@@ -182,5 +181,5 @@ export default function Navbar() {
                 </div>
             )}
         </header>
-    );
+    )
 }

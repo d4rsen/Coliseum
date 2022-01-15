@@ -11,8 +11,8 @@ const MainPage = () => {
     const navigation = useNavigate()
     useEffect(() => {
         dispatch(ACTION_unsetEnemyPlayer())
-    }, [])
-    useEffect(() => dispatch(ACTION_unSetRoom()), [])
+    }, [dispatch])
+    useEffect(() => dispatch(ACTION_unSetRoom()), [dispatch])
 
     const castles = [
         {
@@ -51,7 +51,7 @@ const MainPage = () => {
         setTimeout(() => {
             dispatch(ACTION_PlayerRegenerate())
         }, 3000)
-    }, [player])
+    }, [player, dispatch])
     const roomsHandler = (e) => {
         e.preventDefault()
         navigation('/rooms')

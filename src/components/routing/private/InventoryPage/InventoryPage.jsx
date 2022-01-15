@@ -14,7 +14,7 @@ const InventoryPage = () => {
 
     useEffect(() => {
         !playerInventory[0] && dispatch(THUNK_ACTION_getPLayerInventory())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="container d-flex mt-4">

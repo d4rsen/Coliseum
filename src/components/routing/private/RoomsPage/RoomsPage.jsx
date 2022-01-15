@@ -10,10 +10,10 @@ const RoomsPage = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(THUNK_ACTION_getAllRoomsFromDb())
-    }, [])
+    }, [dispatch])
     useEffect(() => {
         dispatch(ACTION_unsetEnemyPlayer())
-    }, [])
+    }, [dispatch])
 
     const allRooms = useSelector(state => state.allRooms)
     const navigation = useNavigate()

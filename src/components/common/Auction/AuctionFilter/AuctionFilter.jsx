@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import AuctionButton from '../AuctionButton/AuctionButton'
+import AuctionModal from '../Modal/AuctionModal'
 import styles from './AuctionFilter.module.css'
-import AuctionModal from "../Modal/AuctionModal";
 
 const AuctionFilter = () => {
     const [modalActive, setModalActive] = useState(false)
