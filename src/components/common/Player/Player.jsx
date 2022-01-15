@@ -18,6 +18,7 @@ const Player = () => {
   const sword =
     'https://freepngimg.com/thumb/sword/31768-7-black-sword-thumb.png';
   const xz = 'https://pic.xenomorph.ru/2019-03/1553747403_necropolis5.jpg';
+  const  test =require('./warrior_man3.jpg')
 
   return (
     <div className={style.player}>
@@ -30,7 +31,7 @@ const Player = () => {
         <EmptyItem height={80} width={100} />
       </div>
 
-      <img className={style.player__pic} src={playerAvatar} ></img>
+      <img className={style.player__pic} src={test} ></img>
 
       <div className={style.player__right}>
         <div className={style.player__stats}>
@@ -40,6 +41,7 @@ const Player = () => {
         <PlayerWeapon className height={100} width={70} />
 
       </div>
+      <PlayerProgressBarHpApMp />
     </div>
   );
 };

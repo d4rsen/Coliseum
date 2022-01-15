@@ -1,5 +1,6 @@
-.mail__gym { 
+.main__gym { 
   display: flex; 
+  margin: 5%;
 /* background-color: cadetblue; */
 justify-content: space-between;
 flex-wrap: wrap;

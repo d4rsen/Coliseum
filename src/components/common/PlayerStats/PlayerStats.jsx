@@ -5,14 +5,19 @@ import styles from './PlayerStats.module.css';
 const PlayerStats = () => {
   const player = useSelector((state) => state.player);
 
-  console.log(player);
+  console.log(player.total_stats);
+  const stats = Object.entries(player.total_stats);
+  console.log(stats);
   return (
     <ul className={styles.player__stats}>
-      <li>str: {player.total_stats.str}</li>
-      <li>agl: {player.total_stats.agl}</li>
+      {stats.map((item, i) => {
+        return (<li>{item[i]}</li>)
+      })}
+
+      {/* <li>agl: {player.total_stats.agl}</li>
       <li>int: {player.total_stats.int}</li>
       <li>def: {player.total_stats.def}</li>
-      <li>evs: {player.total_stats.evs}</li>
+      <li>evs: {player.total_stats.evs}</li> */}
     </ul>
   );
 };
