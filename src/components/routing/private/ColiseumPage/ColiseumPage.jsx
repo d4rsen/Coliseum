@@ -6,6 +6,7 @@ import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../../redux/actions/p
 import AttackDefendWithCyberButtons from '../../../common/AttackDefendWithCyberButtons/AttackDefendWithCyberButtons'
 import Player from '../../../common/Player/Player'
 import './button.css'
+import style from './GymPage.module.css'
 
 const ColiseumPage = ({socket}) => {
     const dispatch = useDispatch()

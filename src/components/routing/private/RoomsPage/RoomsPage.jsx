@@ -10,11 +10,12 @@ const RoomsPage = () => {
     const navigation = useNavigate()
     const player = useSelector(state => state.player)
 
-    const enterRoomHandler = (e) => {
+    const enterRoomHandler = async (e) => {
         e.preventDefault()
-        const parsedRoom = JSON.parse(e.target.id)
-        dispatch(THUNK_ACTION_enterRoom(parsedRoom))
-        navigation('/coliseum')
+        await dispatch(THUNK_ACTION_enterRoom(e.target.id))
+        setTimeout(() => {
+            navigation('/coliseum')
+        }, 200)
     }
 
     const createRoomHandler = async (e) => {
@@ -34,14 +35,11 @@ const RoomsPage = () => {
             </div>
             <div>
                 {allRooms && allRooms.map(room => {
-                    const stringifiedRoom = JSON.stringify(room)
-                    const stringifiedRoomId = JSON.stringify(room.id)
-
                     return (
-                        <div key={stringifiedRoom} className="container d-flex flex-row mt-4">
-                            <img onClick={enterRoomHandler} id={stringifiedRoom}
+                        <div key={room.id} className="container d-flex flex-row mt-4">
+                            <img onClick={enterRoomHandler} id={room.id}
                                  src="https://5mod.ru/uploads/posts/2019-09/1569659198_1569659144.png" alt="..." height="140"/>
-                            <p>{stringifiedRoomId}</p>
+                            <p>{`${room.id}`}</p>
                         </div>
                     )
                 })}
