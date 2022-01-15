@@ -1,6 +1,11 @@
 import axios from 'axios'
+<<<<<<< Updated upstream
 import { setLoader, unSetLoader } from '../loaderActions'
 import { ACTION_getPlayer } from '../playerActions'
+=======
+import {setLoader, unSetLoader} from '../loaderActions'
+import {ACTION_getPlayer} from '../playerActions'
+>>>>>>> Stashed changes
 
 export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
     try {
