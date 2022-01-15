@@ -1,9 +1,10 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions'
+import {useDispatch, useSelector} from 'react-redux'
+import {NavLink} from 'react-router-dom'
+import {THUNK_ACTION_logout} from '../../../redux/actions/thunks/thunkAuthActions'
 import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp'
 import style from './Navbar.module.css'
+
 
 export default function Navbar() {
     const user = useSelector((state) => state.user)
@@ -49,6 +50,15 @@ export default function Navbar() {
                             )}
                             {user && (
                                 <>
+                                    <li className={style.navigaton__item}>
+                                        <NavLink
+                                            onClick={logoutHandler}
+                                            className={style.navigaton__link}
+                                            to="/logout"
+                                        >
+                                            Выйти
+                                        </NavLink>
+                                    </li>
                                     <li className={style.navigaton__item}>
                                         <NavLink
                                             onClick={logoutHandler}
