@@ -56,8 +56,15 @@ export const playerReducer = (state = initialState, action) => {
         case REGENERATE:
             const temp = state.hp + 1
             const temp2 = state.ap + 1
+            const temp3 = state.mp + 1
             if (state.hp < 100) {
-                return {...state, hp: temp, ap: temp2}
+                return {...state, hp: temp}
+            }
+            if (state.ap < 100) {
+                return {...state, ap: temp2}
+            }
+            if (state.mp < 100) {
+                return {...state, mp: temp3}
             }
             return state
 
