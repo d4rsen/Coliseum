@@ -7,7 +7,7 @@ import './button.css'
 
 const AndreyTest = () => {
     return (
-        <div className={style.mail__gym}>
+        <div className={style.main__gym}>
             <Player/>
             <AttackDefendWithCyberButtons/>
             <Player/>
