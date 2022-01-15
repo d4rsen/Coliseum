@@ -6,8 +6,6 @@ import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thu
 
 const RoomsPage = () => {
     const dispatch = useDispatch()
-    const rooms = useSelector(state => state.allRooms)
-
     const allRooms = useSelector(state => state.allRooms)
     const navigation = useNavigate()
 
@@ -21,10 +19,9 @@ const RoomsPage = () => {
     const createRoomHandler = async (e) => {
         e.preventDefault()
         await dispatch(THUNK_ACTION_getRoomFromDb())
-        setTimeout(() => {
-            navigation('/gym')
-        }, 100)
+        navigation('/gym')
     }
+
     return (
         <div className="container mt-5 d-flex flex-column">
             <div>

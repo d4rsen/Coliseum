@@ -11,8 +11,8 @@ const MainPage = () => {
     const navigation = useNavigate()
     useEffect(() => {
         dispatch(ACTION_unsetEnemyPlayer())
+        dispatch(ACTION_unSetRoom())
     }, [dispatch])
-    useEffect(() => dispatch(ACTION_unSetRoom()), [dispatch])
 
     const castles = [
         {

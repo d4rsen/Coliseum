@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import AuctionButton from '../AuctionButton/AuctionButton'
 import './AuctionModal.css'
@@ -28,11 +28,19 @@ function AuctionModal({active, setActive}) {
         setPrice('')
     }
 
+    const setHandler = useCallback(() => {
+        setActive(false)
+    }, [setActive])
+
+    const propagationHandler = useCallback((e) => {
+        e.stopPropagation()
+    }, [])
+
     return (
         <div className={active ? 'modal active' : 'modal'}
-             onClick={() => setActive(false)}>
+             onClick={setHandler}>
             <div className={active ? 'modal__content' : 'modal'}
-                 onClick={e => e.stopPropagation()}>
+                 onClick={propagationHandler}>
                 <div>
                     {inventory &&
                         inventory.map(e => {

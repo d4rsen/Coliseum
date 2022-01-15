@@ -29,6 +29,8 @@ import './normalize.css'
 
 const socket = io.connect('https://global-chat-socket-io.herokuapp.com/')
 
+// const socket = io.connect('http://localhost:8000/')
+
 function App() {
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -40,22 +42,13 @@ function App() {
 
     // useEffect(() => {
     //     user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-    // }, [dispatch])
-    useEffect(() => localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth()), [dispatch])
+    // }, [dispatch, user])
 
     useEffect(() => {
+        localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth())
         dispatch(ACTION_getMobs())
-    }, [dispatch])
-
-    useEffect(() => {
         player && dispatch(ACTION_setPlayerClass(player.playerClass))
-    }, [dispatch])
-
-    useEffect(() => {
         !allRooms && dispatch(THUNK_ACTION_getAllRoomsFromDb())
-    }, [dispatch])
-
-    useEffect(() => {
         dispatch(ACTION_unsetEnemyPlayer())
     }, [dispatch])
 

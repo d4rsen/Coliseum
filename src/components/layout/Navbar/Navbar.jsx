@@ -1,10 +1,9 @@
 import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {NavLink} from 'react-router-dom'
-import {THUNK_ACTION_logout} from '../../../redux/actions/thunks/thunkAuthActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
+import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions'
 import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp'
 import style from './Navbar.module.css'
-
 
 export default function Navbar() {
     const user = useSelector((state) => state.user)
@@ -102,7 +101,7 @@ export default function Navbar() {
                         <div className={style.header__user}>
                             <div className={style.header__user_params}>
                 <span className={style.header__room}>
-                   {room ? `Your room is ${room.id}` : 'You are not in room'}
+                   {room ? `Your room is ${room?.id}` : 'You are not in room'}
                 </span>
                                 <span className={style.header__level}>
                    {player && `Your level is ${player.lvl}`}

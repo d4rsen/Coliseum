@@ -39,7 +39,7 @@ const ColiseumPage = ({socket}) => {
             dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
             dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
         })
-    })
+    }, [socket]) //TODO mb with no params
 
     return (
         <div className="container mt-3 d-flex flex-row">

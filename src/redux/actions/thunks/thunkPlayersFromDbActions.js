@@ -7,16 +7,18 @@ export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
         dispatch(setLoader())
         const response = await axios.get(
             `https://dbforgame.herokuapp.com/db/ready-for-fun/${userId}`,
+
+            // `https://dbforgame.herokuapp.com/db/ready-for-fun/1`,
             {
                 withCredentials: true,
             }
         )
         console.log(response.data)
+
         dispatch(ACTION_getPlayer({...response.data}))
+        dispatch(unSetLoader())
     } catch (e) {
         console.log(e)
-    } finally {
-        dispatch(unSetLoader())
     }
 }
 // export const THUNK_ACTION_getEnemyPlayerFromDb = (WS_enemyPlayer) => async (dispatch) => {

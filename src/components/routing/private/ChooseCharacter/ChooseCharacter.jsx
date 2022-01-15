@@ -14,14 +14,6 @@ const ChooseCharacter = () => {
     const [chosenClass, setChosenClass] = useState(1)
     const [inputValue, setInputValue] = useState('')
 
-    useEffect(() => {
-        user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-    }, [dispatch])
-
-    useEffect(() => {
-        player && navigation('/')
-    }, [player])
-
     const valueHandler = e => {
         setInputValue(e.target.value)
     }
@@ -39,9 +31,14 @@ const ChooseCharacter = () => {
             nickname: inputValue
         }))
     }
+
     useEffect(() => {
-        chooseCharacter && setTimeout(() => dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id)), 200)
-    }, [chooseCharacter, dispatch])
+        (user && chooseCharacter) && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
+    }, [dispatch, chooseCharacter])
+
+    useEffect(() => {
+        player && navigation('/')
+    }, [player])
 
     return (
         <div className="container d-flex">
