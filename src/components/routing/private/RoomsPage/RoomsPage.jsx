@@ -1,25 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { ACTION_unsetEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
 import { ACTION_setRoom } from '../../../../redux/actions/roomActions'
-import { THUNK_ACTION_getAllRoomsFromDb } from '../../../../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
 
 const RoomsPage = () => {
     const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(THUNK_ACTION_getAllRoomsFromDb())
-    }, [dispatch])
-    useEffect(() => {
-        dispatch(ACTION_unsetEnemyPlayer())
-    }, [dispatch])
+    const rooms = useSelector(state => state.allRooms)
 
     const allRooms = useSelector(state => state.allRooms)
     const navigation = useNavigate()
-    // useEffect(() => {
-    //     dispatch(THUNK_ACTION_getAllRoomsFromDb())
-    // }, [])
 
     const enterRoomHandler = (e) => {
         e.preventDefault()

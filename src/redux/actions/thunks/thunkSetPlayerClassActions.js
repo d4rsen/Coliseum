@@ -6,6 +6,7 @@ export const THUNK_ACTION_setPlayerClass = (userData) => async (dispatch) => {
     try {
         dispatch(setLoader())
         const response = await $apiDb.post(`/set-player-class`, {...userData})
+        console.log(response.data)
         dispatch(ACTION_setPlayerClass(response.data))
         dispatch(unSetLoader())
     } catch (e) {

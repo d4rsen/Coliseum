@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import AuctionButton from '../AuctionButton/AuctionButton'
-import AuctionModal from '../Modal/AuctionModal'
 import styles from './AuctionFilter.module.css'
 
 const AuctionFilter = () => {
@@ -22,11 +20,11 @@ const AuctionFilter = () => {
                     </select>
 
                 </div>
-                <div className="GamePage">
-                    <button className="open-btn" onClick={() => setModalActive(true)}>open modal window</button>
-                </div>
-                <AuctionModal active={modalActive} setActive={setModalActive}/>
-                <AuctionButton title={'Place lot'}/>
+                {/*<div className="GamePage">*/}
+                {/*    <button className="open-btn" onClick={() => setModalActive(true)}>open modal window</button>*/}
+                {/*</div>*/}
+                {/*<AuctionModal active={modalActive} setActive={setModalActive}/>*/}
+                {/*<AuctionButton title={'Place lot'}/>*/}
 
             </div>
         </>

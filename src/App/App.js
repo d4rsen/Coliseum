@@ -6,7 +6,6 @@ import { io } from 'socket.io-client'
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
 import Navbar from '../components/layout/Navbar/Navbar'
-import Auction from '../components/routing/private/Auction/Auction'
 import ChooseCharacter from '../components/routing/private/ChooseCharacter/ChooseCharacter'
 import ColiseumPage from '../components/routing/private/ColiseumPage/ColiseumPage'
 import GymPage from '../components/routing/private/GymPage/GymPage'
@@ -20,9 +19,11 @@ import TrainPage from '../components/routing/private/TrainPage/TrainPage'
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
+import { ACTION_unsetEnemyPlayer } from '../redux/actions/enemyPlayerActions'
 import { ACTION_getMobs } from '../redux/actions/mobsActions'
 import { ACTION_setPlayerClass } from '../redux/actions/setPlayerClassActions'
 import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
+import { THUNK_ACTION_getAllRoomsFromDb } from '../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import './App.css'
 import './normalize.css'
 
@@ -34,21 +35,33 @@ function App() {
     const isAuth = useSelector(state => state.isAuth)
     const isLoading = useSelector((state) => state.isLoading)
     const chooseCharacter = useSelector(state => state.chooseCharacter)
+    const allRooms = useSelector(state => state.allRooms)
     const player = useSelector(state => state.player)
 
     // useEffect(() => {
     //     user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
     // }, [dispatch])
     useEffect(() => localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth()), [dispatch])
+
     useEffect(() => {
         dispatch(ACTION_getMobs())
     }, [dispatch])
+
     useEffect(() => {
         player && dispatch(ACTION_setPlayerClass(player.playerClass))
     }, [dispatch])
 
+    useEffect(() => {
+        !allRooms && dispatch(THUNK_ACTION_getAllRoomsFromDb())
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(ACTION_unsetEnemyPlayer())
+    }, [dispatch])
+
     if (isLoading) {
         return (<>
+            <Navbar/>
             <Loader/>
         </>)
     }
@@ -80,7 +93,7 @@ function App() {
                 <Route path="/gym" element={user && player ? <GymPage/> : <Navigate to="/register"/>}/>
                 <Route path="/mannequin" element={user && player ? <MannequinPage/> : <Navigate to="/register"/>}/>
                 <Route path="/inventory" element={user && player ? <InventoryPage/> : <Navigate to="/register"/>}/>
-                <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>
+                {/*<Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>*/}
                 <Route path="/coliseum" element={user && player ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>

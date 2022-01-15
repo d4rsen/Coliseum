@@ -15,7 +15,7 @@ const ChooseCharacter = () => {
     const [inputValue, setInputValue] = useState('')
 
     useEffect(() => {
-        user && dispatch(THUNK_ACTION_getPlayerFromDb(1))
+        user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
     }, [dispatch])
 
     useEffect(() => {
