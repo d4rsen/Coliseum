@@ -19,7 +19,7 @@ const ColiseumPage = ({socket}) => {
     // SOCKET.IO
 
     useEffect(() => {
-        socket.emit('join-room', room.id, player, battlePlayer)
+        socket.emit('join-room', room, player, battlePlayer)
     }, [])
 
     useEffect(() => {

@@ -78,7 +78,7 @@ export default function Navbar() {
                             <i className="fas fa-bell"/>
                             <span className="badge rounded-pill badge-notification bg-danger">
                 {' '}
-                                Your room is {room ? room.id : 'nothing'}
+                                Your room is {room ? room : 'nothing'}
               </span>
                         </a>
 

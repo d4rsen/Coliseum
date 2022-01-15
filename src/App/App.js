@@ -27,7 +27,8 @@ import { THUNK_ACTION_getAllRoomsFromDb } from '../redux/actions/thunks/thunkGet
 import './App.css'
 import './normalize.css'
 
-const socket = io.connect('https://global-chat-socket-io.herokuapp.com/')
+// const socket = io.connect('https://global-chat-socket-io.herokuapp.com/')
+const socket = io.connect('https://dbforgame.herokuapp.com/')
 
 // const socket = io.connect('http://localhost:8000/')
 

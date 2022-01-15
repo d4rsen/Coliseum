@@ -1,25 +1,28 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { ACTION_setRoom } from '../../../../redux/actions/roomActions'
+import { THUNK_ACTION_enterRoom } from '../../../../redux/actions/thunks/thunkEnterRoomActions'
 import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
 
 const RoomsPage = () => {
     const dispatch = useDispatch()
     const allRooms = useSelector(state => state.allRooms)
     const navigation = useNavigate()
+    const player = useSelector(state => state.player)
 
     const enterRoomHandler = (e) => {
         e.preventDefault()
         const parsedRoom = JSON.parse(e.target.id)
-        dispatch(ACTION_setRoom(parsedRoom))
+        dispatch(THUNK_ACTION_enterRoom(parsedRoom))
         navigation('/coliseum')
     }
 
     const createRoomHandler = async (e) => {
         e.preventDefault()
-        await dispatch(THUNK_ACTION_getRoomFromDb())
-        navigation('/gym')
+        await dispatch(THUNK_ACTION_getRoomFromDb(player.id))
+        setTimeout(() => {
+            navigation('/coliseum')
+        }, 200)
     }
 
     return (

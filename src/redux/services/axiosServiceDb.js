@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const DB_URL = 'https://dbforgame.herokuapp.com/db'
-// http://localhost:4000/
+
 const $apiDb = axios.create({
     withCredentials: true,
     baseURL: DB_URL,
