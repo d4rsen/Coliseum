@@ -9,6 +9,7 @@ import {
 import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../../redux/actions/playerActions'
 import { ACTION_unSetRoom } from '../../../../redux/actions/roomActions'
 import AttackDefendWithCyberButtons from '../../../common/AttackDefendWithCyberButtons/AttackDefendWithCyberButtons'
+import EnemyPlayer from '../../../common/EnemyPlayer/EnemyPlayer'
 import Player from '../../../common/Player/Player'
 import './button.css'
 import style from './GymPage.module.css'
@@ -57,7 +58,7 @@ const ColiseumPage = ({socket}) => {
         <div className={style.mail__gym}>
             <Player/>
             <AttackDefendWithCyberButtons/>
-            <Player/>
+            <EnemyPlayer/>x
         </div>
     )
 }
