@@ -155,7 +155,7 @@ export default function Navbar() {
             {player && (
                 <div className={style.header__exp}>
                     <PlayerProgressBarHpApMp
-                        bgColor={'success'}
+                        bgColor={'brown'}
                         stat={exp}
                         height={10}
                         fontSize={8}

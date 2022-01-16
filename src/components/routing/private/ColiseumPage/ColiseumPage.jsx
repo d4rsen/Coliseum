@@ -13,6 +13,7 @@ import AttackDefendWithCyberButtons from '../../../common/AttackDefendWithCyberB
 import EnemyPlayer from '../../../common/EnemyPlayer/EnemyPlayer'
 import Player from '../../../common/Player/Player'
 import './button.css'
+
 import style from './GymPage.module.css'
 
 const ColiseumPage = ({socket}) => {
@@ -56,7 +57,7 @@ const ColiseumPage = ({socket}) => {
     }, [socket])
 
     return (
-        <div className={style.mail__gym}>
+        <div className={style.main__gym}>
             <Player/>
             <AttackDefendWithCyberButtons/>
             <EnemyPlayer/>x

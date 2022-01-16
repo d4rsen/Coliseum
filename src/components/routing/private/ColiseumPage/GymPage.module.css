@@ -1,6 +1,10 @@
-.mail__gym {
+
+.main__gym {
     display: flex;
-    /* background-color: cadetblue; */
+    /* width: 90%;  */
+    /* margin: auto;  */
+
+    /* background-color: rgb(45, 104, 106); */
     justify-content: space-between;
     flex-wrap: wrap;
 }
