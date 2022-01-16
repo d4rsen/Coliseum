@@ -1,4 +1,4 @@
-import { MANNEQUIN_REGENERATE, MANNEQUIN_WAIT_FOR_REGENERATE, PUNCH_FROM_PLAYER_TO_MANNEQUIN } from '../types/playerTypes'
+import {MANNEQUIN_REGENERATE, MANNEQUIN_WAIT_FOR_REGENERATE, PUNCH_FROM_PLAYER_TO_MANNEQUIN} from '../types/playerTypes'
 
 export const ACTION_punchFromPlayerToMannequin = (playerDamage) => {
     return {

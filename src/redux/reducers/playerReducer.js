@@ -1,11 +1,5 @@
 import initialState from '../init/initialState'
-import {
-    PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER,
-    PUNCH_FROM_MOB_TO_PLAYER,
-    REGENERATE,
-    SET_PLAYER,
-    UNSET_PLAYER
-} from '../types/playerTypes'
+import {PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER, PUNCH_FROM_MOB_TO_PLAYER, REGENERATE, SET_PLAYER, UNSET_PLAYER} from '../types/playerTypes'
 
 export const playerReducer = (state = initialState, action) => {
     const player = {...state}

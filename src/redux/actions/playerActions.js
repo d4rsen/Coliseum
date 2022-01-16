@@ -1,4 +1,4 @@
-import { PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER, PUNCH_FROM_MOB_TO_PLAYER, REGENERATE, SET_PLAYER } from '../types/playerTypes'
+import {PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER, PUNCH_FROM_MOB_TO_PLAYER, REGENERATE, SET_PLAYER} from '../types/playerTypes'
 
 export const ACTION_punchFromEnemyPlayerToPlayer = (enemyPlayerDamage, battlePlayer, battleEnemyPlayer) => {
     return {

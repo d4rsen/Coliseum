@@ -1,8 +1,8 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { THUNK_ACTION_enterRoom } from '../../../../redux/actions/thunks/thunkEnterRoomActions'
-import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
+import {useDispatch, useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
+import {THUNK_ACTION_enterRoom} from '../../../../redux/actions/thunks/thunkEnterRoomActions'
+import {THUNK_ACTION_getRoomFromDb} from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
 
 const RoomsPage = () => {
     const dispatch = useDispatch()

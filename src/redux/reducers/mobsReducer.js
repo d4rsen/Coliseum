@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import { PUNCH_FROM_PLAYER_TO_MOB, SET_MOBS, UNSET_MOBS } from '../types/mobsTypes'
+import {PUNCH_FROM_PLAYER_TO_MOB, SET_MOBS, UNSET_MOBS} from '../types/mobsTypes'
 
 export const mobsReducer = (state = initialState, action) => {
     const random = Math.floor(Math.random() * 100)

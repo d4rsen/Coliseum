@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import { SET_PLAYER_INVENTORY } from '../types/playerInventoryTypes'
+import {SET_PLAYER_INVENTORY} from '../types/playerInventoryTypes'
 
 export const playerInventoryReducer = (state = initialState, action) => {
     switch (action.type) {

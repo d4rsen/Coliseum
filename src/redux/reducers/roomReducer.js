@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import { SET_ROOM, UNSET_ROOM } from '../types/roomTypes'
+import {SET_ROOM, UNSET_ROOM} from '../types/roomTypes'
 
 export const roomReducer = (state = initialState, action) => {
     switch (action.type) {

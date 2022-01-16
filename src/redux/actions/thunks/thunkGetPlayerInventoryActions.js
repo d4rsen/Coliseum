@@ -1,6 +1,6 @@
 import $apiDb from '../../services/axiosServiceDb'
-import { setLoader, unSetLoader } from '../loaderActions'
-import { ACTION_setPLayerInventory } from '../playerInventoryActions'
+import {setLoader, unSetLoader} from '../loaderActions'
+import {ACTION_setPLayerInventory} from '../playerInventoryActions'
 
 export const THUNK_ACTION_getPLayerInventory = (playerId) => async (dispatch) => {
     try {

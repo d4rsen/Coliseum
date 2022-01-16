@@ -1,5 +1,5 @@
 import React from 'react'
-import style from  './EmptyItem'
+import style from './EmptyItem'
 
 
 const EmptyItem = ({pic, name, width, height}) => {
@@ -9,7 +9,7 @@ const EmptyItem = ({pic, name, width, height}) => {
         <div className={style.playerItem}>
             <img style={{width: `${width}%`, height: `${height}%`}} src={emptySwordLink}
                  className=""
-                 alt={`Элемент экипировки ${name}`} />
+                 alt={`Элемент экипировки ${name}`}/>
             <p style={{width: '50px'}}>{name}</p>
         </div>
     )

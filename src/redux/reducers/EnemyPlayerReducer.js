@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import { PUNCH_FROM_PLAYER_TO_ENEMY_PLAYER, SET_ENEMY_PLAYER, UNSET_ENEMY_PLAYER } from '../types/enemyPlayerTypes'
+import {PUNCH_FROM_PLAYER_TO_ENEMY_PLAYER, SET_ENEMY_PLAYER, UNSET_ENEMY_PLAYER} from '../types/enemyPlayerTypes'
 
 export const enemyPlayerReducer = (state = initialState, action) => {
     const random = Math.floor(Math.random() * 100)
