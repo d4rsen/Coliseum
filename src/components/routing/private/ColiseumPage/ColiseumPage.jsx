@@ -57,7 +57,7 @@ const ColiseumPage = ({socket}) => {
             console.log(AllPlayers)
             console.log(enemy)
             if (enemy[0]) {
-                if (enemy[0].nickName !== player.nickName) {
+                if (enemy[0].player.id !== player.id) {
                     dispatch(ACTION_getEnemyPlayer(enemy[0].player))
                     dispatch(ACTION_getEnemyStateFromWS(enemy[0].battlePlayer))
                 }
@@ -65,6 +65,7 @@ const ColiseumPage = ({socket}) => {
         })
 
     }, [])
+
     useEffect(() => {
         socket.on('punch', (players) => {
             console.log(players)
