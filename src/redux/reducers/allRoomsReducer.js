@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import {GET_ALL_ROOMS} from '../types/allRoomsTypes'
+import { GET_ALL_ROOMS } from '../types/allRoomsTypes'
 
 export const allRoomsReducer = (state = initialState, action) => {
     switch (action.type) {
