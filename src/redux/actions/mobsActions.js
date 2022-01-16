@@ -1,4 +1,4 @@
-import { PUNCH_FROM_PLAYER_TO_MOB, SET_MOBS } from '../types/mobsTypes'
+import {PUNCH_FROM_PLAYER_TO_MOB, SET_MOBS} from '../types/mobsTypes'
 
 export const ACTION_getMobs = () => {
     return {

@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { THUNK_ACTION_login } from '../../../../redux/actions/thunks/thunkAuthActions'
+import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {THUNK_ACTION_login} from '../../../../redux/actions/thunks/thunkAuthActions'
 import Loader from '../../../layout/Loader/Loader'
 
 export default function AuthorizationPage() {
     const dispatch = useDispatch()
     const loader = useSelector(state => state.isLoading)
+    const user = useSelector(state => state.user)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -14,6 +15,7 @@ export default function AuthorizationPage() {
     const submitHandler = async (e) => {
         try {
             dispatch(THUNK_ACTION_login({email, password}))
+            // здесь идет вход в систему а также заносится в стейт персонаж
         } catch (e) {
             alert(e)
         }

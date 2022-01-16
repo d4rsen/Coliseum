@@ -1,4 +1,4 @@
-import { POST_AUCTION_ITEM } from '../../types/auctionTypes'
+import {POST_AUCTION_ITEM} from '../../types/auctionTypes'
 
 export const postAuctionItem = (data) => {
     return {

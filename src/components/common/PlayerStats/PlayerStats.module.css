@@ -1,9 +1,9 @@
 .player__stats {
-  outline: 2px solid rgb(156, 81, 81);
-/* width: 100px; */
-padding:0;
-
+    outline: 2px solid rgb(156, 81, 81);
+    /* width: 100px; */
+    padding: 0;
 }
+
 /* .player__stats li {
   padding:0;
 } */

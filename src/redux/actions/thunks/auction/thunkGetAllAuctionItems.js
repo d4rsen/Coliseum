@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { getAllAuctionItems } from '../../auction/getAllAuctionItems'
+import {getAllAuctionItems} from '../../auction/getAllAuctionItems'
 
 export const thunkGetAllAuctionItems = () => async (dispatch) => {
-    const response = await axios.get('https://dbforgame.herokuapp.com/auction')
+    console.log('thunkGetAllAuctionItems')
+    const response = await axios.get('http://localhost:4000/auction')
     const allAucItems = response.data.allItems
     console.log(allAucItems)
     dispatch(getAllAuctionItems())

@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, {useCallback, useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import AuctionButton from '../AuctionButton/AuctionButton'
 import './AuctionModal.css'
 

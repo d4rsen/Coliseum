@@ -1,7 +1,7 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions'
+import {useDispatch, useSelector} from 'react-redux'
+import {NavLink} from 'react-router-dom'
+import {THUNK_ACTION_logout} from '../../../redux/actions/thunks/thunkAuthActions'
 import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp'
 import style from './Navbar.module.css'
 

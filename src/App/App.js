@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { io } from 'socket.io-client'
+import {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {Navigate, Route, Routes} from 'react-router-dom'
+import {io} from 'socket.io-client'
 
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
@@ -19,15 +19,15 @@ import AndreyTest from '../components/routing/public/AndreyTest/AndreyTest'
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
-import { ACTION_unsetEnemyPlayer } from '../redux/actions/enemyPlayerActions'
-import { ACTION_getMobs } from '../redux/actions/mobsActions'
-import { ACTION_setPlayerClass } from '../redux/actions/setPlayerClassActions'
-import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
-import { THUNK_ACTION_getAllRoomsFromDb } from '../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
+import {ACTION_getMobs} from '../redux/actions/mobsActions'
+import {THUNK_ACTION_checkAuth} from '../redux/actions/thunks/thunkAuthActions'
+import {THUNK_ACTION_getAllRoomsFromDb} from '../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import './App.css'
 import './normalize.css'
+import Auction from "../components/routing/private/Auction/Auction";
 
 const socket = io.connect('https://dbforgame.herokuapp.com/')
+
 
 function App() {
     const dispatch = useDispatch()
@@ -38,16 +38,10 @@ function App() {
     const allRooms = useSelector(state => state.allRooms)
     const player = useSelector(state => state.player)
 
-    // useEffect(() => {
-    //     user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-    // }, [dispatch, user])
-
     useEffect(() => {
-        localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth())
-        dispatch(ACTION_getMobs())
-        player && dispatch(ACTION_setPlayerClass(player.playerClass))
+        (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
+        dispatch(ACTION_getMobs()) //TODO
         !allRooms && dispatch(THUNK_ACTION_getAllRoomsFromDb())
-        dispatch(ACTION_unsetEnemyPlayer())
     }, [dispatch])
 
     if (isLoading) {
@@ -61,11 +55,11 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={
-                    user && player ?
+                    (user && player) ?
                         <MainPage/> :
-                        user && !player ?
+                        (user && !player) ?
                             <Navigate to="/choose-class"/> :
-                            !user || !player ?
+                            !user ?
                                 <Navigate to="/register"/> :
                                 <Navigate to="/register"/>}/>
                 <Route path="/choose-class"
@@ -83,7 +77,7 @@ function App() {
                 {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <Navigate to="/register"/>}/>*/}
                 <Route path="/mannequin" element={user && player ? <MannequinPage/> : <Navigate to="/register"/>}/>
                 <Route path="/inventory" element={user && player ? <InventoryPage/> : <Navigate to="/register"/>}/>
-                {/*<Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>*/}
+                <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>
                 <Route path="/coliseum" element={user && player ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
 
                 <Route path="/test" element={<AndreyTest/>}/>

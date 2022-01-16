@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import {useDispatch} from 'react-redux'
 import styles from './AuctionButton.module.css'
 
 const AuctionButton = ({title, itemId, price, setPrice}) => {
@@ -15,7 +15,7 @@ const AuctionButton = ({title, itemId, price, setPrice}) => {
             console.log('price: ', price)
 
             // dispatch(thunkPostAuctionItem({character_id: 1, item_id: Number(itemId), price: Number(price)}))
-            setPrice('')
+            // setPrice('')
         } else if (e.target.value === 'Buy') {
             console.log('BUY id:', itemId)
         }

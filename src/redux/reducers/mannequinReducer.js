@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import { MANNEQUIN_REGENERATE, PUNCH_FROM_PLAYER_TO_MANNEQUIN } from '../types/playerTypes'
+import {MANNEQUIN_REGENERATE, PUNCH_FROM_PLAYER_TO_MANNEQUIN} from '../types/playerTypes'
 
 export const mannequinReducer = (state = initialState, action) => {
     const damage = state.hp - action.payload

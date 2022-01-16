@@ -1,5 +1,5 @@
-import initialState from '../init/initialState'
-import { GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM } from '../types/auctionTypes'
+import {GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM} from '../types/auctionTypes'
+import initialState from "../init/initialState";
 
 export const auctionReducer = (state = initialState, action) => {
     switch (action.type) {
