@@ -18,7 +18,7 @@ const Player = () => {
   const sword =
     'https://freepngimg.com/thumb/sword/31768-7-black-sword-thumb.png';
   const xz = 'https://pic.xenomorph.ru/2019-03/1553747403_necropolis5.jpg';
-  const  test =require('./warrior_man3.jpg')
+  const  test ='https://dbforgame.herokuapp.com/static/img/classes/playerClasses/assasin-wonam.jpg'
 
   return (
     <div className={style.player}>

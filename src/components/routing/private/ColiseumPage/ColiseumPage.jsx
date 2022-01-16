@@ -6,8 +6,9 @@ import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../../redux/actions/p
 import AttackDefendWithCyberButtons from '../../../common/AttackDefendWithCyberButtons/AttackDefendWithCyberButtons'
 import Player from '../../../common/Player/Player'
 import './button.css'
-// import style from './ColiseumPage.module.css'
-import styles from './GymPage.module.css'
+
+import style from './GymPage.module.css'
+
 const ColiseumPage = ({socket}) => {
     const dispatch = useDispatch()
     const player = useSelector((state) => state.player)
@@ -42,7 +43,7 @@ const ColiseumPage = ({socket}) => {
     }, [socket]) //TODO mb with no params
 
     return (
-        <div className={styles.main__gym}>
+        <div className={style.main__gym}>
             <Player/>
             <AttackDefendWithCyberButtons/>
             <Player/>
