@@ -37,7 +37,6 @@ const AuctionItem = () => {
                         <li><i className="fas fa-hat-wizard"> {itemStats.int}</i></li>
                     </ul>
                 </div>
-                <AuctionButton title={'Buy'}/>
                 <div className={styles['item-price']}>
                     <span>Price:</span>
                     <div>{itemPrice} <i className="fas fa-coins"></i></div>
