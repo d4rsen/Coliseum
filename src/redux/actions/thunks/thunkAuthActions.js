@@ -28,6 +28,8 @@ export const THUNK_ACTION_login = (userData) => async (dispatch) => {
         dispatch(unSetLoader())
     } catch (e) {
         alert(e.response?.data?.message)
+    } finally {
+        dispatch(unSetLoader())
     }
 }
 export const THUNK_ACTION_register = (userData) => async (dispatch) => {

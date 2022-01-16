@@ -37,8 +37,8 @@ function App() {
     const player = useSelector(state => state.player)
 
     useEffect(() => {
-        localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth())
-        dispatch(ACTION_getMobs())
+        (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
+        dispatch(ACTION_getMobs()) //TODO
         !allRooms && dispatch(THUNK_ACTION_getAllRoomsFromDb())
     }, [dispatch])
 
@@ -57,7 +57,7 @@ function App() {
                         <MainPage/> :
                         (user && !player) ?
                             <Navigate to="/choose-class"/> :
-                            (!user || !player) ?
+                            !user ?
                                 <Navigate to="/register"/> :
                                 <Navigate to="/register"/>}/>
                 <Route path="/choose-class"

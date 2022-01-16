@@ -15,8 +15,9 @@ export default function AuthorizationPage() {
     const submitHandler = async (e) => {
         try {
             dispatch(THUNK_ACTION_login({email, password}))
+            // здесь идет вход в систему а также заносится в стейт персонаж
         } catch (e) {
-            console.log(e)
+            alert(e)
         }
     }
 
