@@ -6,6 +6,7 @@ import Loader from '../../../layout/Loader/Loader'
 export default function AuthorizationPage() {
     const dispatch = useDispatch()
     const loader = useSelector(state => state.isLoading)
+    const user = useSelector(state => state.user)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -15,7 +16,7 @@ export default function AuthorizationPage() {
         try {
             dispatch(THUNK_ACTION_login({email, password}))
         } catch (e) {
-            alert(e)
+            console.log(e)
         }
     }
 

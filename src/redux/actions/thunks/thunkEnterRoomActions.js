@@ -12,4 +12,4 @@ export const THUNK_ACTION_enterRoom = (roomId) => async (dispatch) => {
     } catch (e) {
         console.log(e)
     }
-} 
+}

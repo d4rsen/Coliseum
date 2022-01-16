@@ -19,9 +19,7 @@ import AndreyTest from '../components/routing/public/AndreyTest/AndreyTest'
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
-import { ACTION_unsetEnemyPlayer } from '../redux/actions/enemyPlayerActions'
 import { ACTION_getMobs } from '../redux/actions/mobsActions'
-import { ACTION_setPlayerClass } from '../redux/actions/setPlayerClassActions'
 import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
 import { THUNK_ACTION_getAllRoomsFromDb } from '../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import './App.css'
@@ -38,16 +36,10 @@ function App() {
     const allRooms = useSelector(state => state.allRooms)
     const player = useSelector(state => state.player)
 
-    // useEffect(() => {
-    //     user && dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-    // }, [dispatch, user])
-
     useEffect(() => {
         localStorage.getItem('token') !== false && dispatch(THUNK_ACTION_checkAuth())
         dispatch(ACTION_getMobs())
-        player && dispatch(ACTION_setPlayerClass(player.playerClass))
         !allRooms && dispatch(THUNK_ACTION_getAllRoomsFromDb())
-        dispatch(ACTION_unsetEnemyPlayer())
     }, [dispatch])
 
     if (isLoading) {
@@ -61,11 +53,11 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={
-                    user && player ?
+                    (user && player) ?
                         <MainPage/> :
-                        user && !player ?
+                        (user && !player) ?
                             <Navigate to="/choose-class"/> :
-                            !user || !player ?
+                            (!user || !player) ?
                                 <Navigate to="/register"/> :
                                 <Navigate to="/register"/>}/>
                 <Route path="/choose-class"
