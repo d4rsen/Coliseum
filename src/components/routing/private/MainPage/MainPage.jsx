@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {useNavigate} from 'react-router-dom'
-import {ACTION_PlayerRegenerate} from '../../../../redux/actions/playerActions'
-
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
 
 const MainPage = () => {
     const dispatch = useDispatch()
