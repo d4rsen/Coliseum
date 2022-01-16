@@ -1,9 +1,10 @@
+
 .main__gym {
-  display: flex;
-  /* width: 90%;  */
-  /* margin: auto;  */
-  
-  /* background-color: rgb(45, 104, 106); */
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    /* width: 90%;  */
+    /* margin: auto;  */
+
+    /* background-color: rgb(45, 104, 106); */
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
