@@ -41,26 +41,31 @@ const ColiseumPage = ({socket}) => {
     useEffect(() => {
         socket.on('join-room', (players) => {
             const AllPlayers = players.arr ? players.arr : null
-            const currentRoom2 = players.currentRoom2 ? players.currentRoom2 : null
+            const currentRoom = players.currentRoom2 ? players.currentRoom2 : null
+
             const enemy = AllPlayers ? AllPlayers.filter(el => {
-                if (currentRoom2.initial_character_id !== player.id) {
-                    if (el.player.id === currentRoom2.opponent_id) {
+
+                if (currentRoom.initial_character_id === player.id) {
+                    if (el.player.id === currentRoom.opponent_id) {
+                        console.log('враг инициализатора', el)
                         return el
-                    } else if (currentRoom2.opponent_id !== player.id) {
-                        if (el.player.id === currentRoom2.initial_character_id) {
-                            return el
-                        }
+                    }
+                }
+                if (currentRoom.opponent_id === player.id) {
+                    if (el.player.id === currentRoom.initial_character_id) {
+                        console.log('враг оппонента', el)
+                        return el
                     }
                 }
             }) : null
-            console.log(currentRoom2)
+            console.log(currentRoom)
             console.log(AllPlayers)
             console.log(enemy)
-            if (enemy[0]) {
-                if (enemy[0].player.id !== player.id) {
-                    dispatch(ACTION_getEnemyPlayer(enemy[0].player))
-                    dispatch(ACTION_getEnemyStateFromWS(enemy[0].battlePlayer))
-                }
+            if (enemy) {
+
+                dispatch(ACTION_getEnemyPlayer(enemy[0].player))
+                dispatch(ACTION_getEnemyStateFromWS(enemy[0].battlePlayer))
+
             }
         })
 
