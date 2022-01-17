@@ -1,5 +1,5 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styles from './AuctionButton.module.css'
 
 const AuctionButton = ({title, itemId, price, setPrice}) => {
@@ -8,7 +8,6 @@ const AuctionButton = ({title, itemId, price, setPrice}) => {
 
     function orderHandler(e) {
         e.preventDefault()
-        console.log(e.target.value)
         if (e.target.value === 'Place lot') {
             console.log('LOT PLACER')
             console.log('item id: ', itemId)

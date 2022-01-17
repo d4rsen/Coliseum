@@ -28,6 +28,7 @@ const ColiseumPage = ({socket}) => {
         return () => {
             dispatch(ACTION_unsetEnemyPlayer())
             dispatch(ACTION_unSetRoom())
+            socket.emit('close-private-room', player)
         }
     }, [])
 
@@ -39,28 +40,54 @@ const ColiseumPage = ({socket}) => {
 
     useEffect(() => {
         socket.on('join-room', (players) => {
-            const WsEnemyPlayer = players.find(el => el.player.nickName !== player.nickName)
-            if (WsEnemyPlayer) {
-                if (WsEnemyPlayer.nickName !== player.nickName) {
-                    dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-                    dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+            const AllPlayers = players.arr ? players.arr : null
+            const currentRoom = players.currentRoom2 ? players.currentRoom2 : null
+
+            const enemy = AllPlayers ? AllPlayers.filter(el => {
+
+                if (currentRoom.initial_character_id === player.id) {
+                    if (el.player.id === currentRoom.opponent_id) {
+                        console.log('враг инициализатора', el)
+                        return el
+                    }
                 }
+                if (currentRoom.opponent_id === player.id) {
+                    if (el.player.id === currentRoom.initial_character_id) {
+                        console.log('враг оппонента', el)
+                        return el
+                    }
+                }
+            }) : null
+
+            if (enemy) {
+                dispatch(ACTION_getEnemyPlayer(enemy[0].player))
+                dispatch(ACTION_getEnemyStateFromWS(enemy[0].battlePlayer))
+
             }
         })
+
+    }, [])
+
+    useEffect(() => {
         socket.on('punch', (players) => {
-            const WsEnemyPlayer = players.find(el => el.nickName !== player.nickName)
-            dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-            dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-            dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
-            dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
+            const currBattle = players.currBattle
+            const WsEnemyPlayer = currBattle.find(el => el.player.id !== player.id) || null
+            console.log(WsEnemyPlayer)
+
+            if (WsEnemyPlayer) {
+                dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+                dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+                dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+            }
         })
     }, [socket])
 
     return (
         <div className={style.main__gym}>
             <Player/>
-            <AttackDefendWithCyberButtons/>
-            <EnemyPlayer/>x
+            <AttackDefendWithCyberButtons socket={socket}/>
+            <EnemyPlayer/>
         </div>
     )
 }

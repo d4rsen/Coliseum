@@ -1,11 +1,12 @@
-import {useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {Navigate, Route, Routes} from 'react-router-dom'
-import {io} from 'socket.io-client'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { io } from 'socket.io-client'
 
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
 import Navbar from '../components/layout/Navbar/Navbar'
+import Auction from '../components/routing/private/Auction/Auction'
 import ChooseCharacter from '../components/routing/private/ChooseCharacter/ChooseCharacter'
 import ColiseumPage from '../components/routing/private/ColiseumPage/ColiseumPage'
 import InventoryPage from '../components/routing/private/InventoryPage/InventoryPage'
@@ -19,29 +20,21 @@ import AndreyTest from '../components/routing/public/AndreyTest/AndreyTest'
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
-import {ACTION_getMobs} from '../redux/actions/mobsActions'
-import {THUNK_ACTION_checkAuth} from '../redux/actions/thunks/thunkAuthActions'
-import {THUNK_ACTION_getAllRoomsFromDb} from '../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import './App.css'
 import './normalize.css'
-import Auction from "../components/routing/private/Auction/Auction";
 
 const socket = io.connect('https://dbforgame.herokuapp.com/')
-
 
 function App() {
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
     const isAuth = useSelector(state => state.isAuth)
     const isLoading = useSelector((state) => state.isLoading)
-    const chooseCharacter = useSelector(state => state.chooseCharacter)
-    const allRooms = useSelector(state => state.allRooms)
     const player = useSelector(state => state.player)
 
     useEffect(() => {
-        (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
-        dispatch(ACTION_getMobs()) //TODO
-        !allRooms && dispatch(THUNK_ACTION_getAllRoomsFromDb())
+        // (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
+        // dispatch(ACTION_getMobs()) //TODO
     }, [dispatch])
 
     if (isLoading) {
