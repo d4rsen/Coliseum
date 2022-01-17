@@ -50,6 +50,8 @@
   grid-row-gap:2%;
 }
 
+
+
 .player__pic {
   /* grid-area:player__pic; */
   position: absolute;
@@ -134,4 +136,9 @@ display: block;
 /* right:0; */
 /* outline : 2px solid rgb(64, 224, 32);
 background-color: brown;
+} */
+
+/* .header__exp{
+  height: 50px;
+  w
 } */

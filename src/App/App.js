@@ -73,7 +73,7 @@ function App() {
                 <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>
                 <Route path="/coliseum" element={user && player ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
 
-                <Route path="/test" element={<AndreyTest/>}/>
+                <Route path="/test" element={<AndreyTest socket={socket}/>}/>
 
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
