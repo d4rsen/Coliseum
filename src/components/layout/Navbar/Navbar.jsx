@@ -158,7 +158,8 @@ export default function Navbar() {
           <PlayerProgressBarHpApMp
             bgColor={'brown'}
             stat={exp}
-            height={10}
+            height={6}
+           type={'header'}
             fontSize={8}
           />
         </div>

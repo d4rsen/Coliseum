@@ -23,9 +23,9 @@
   content: '';
   display: block;
 
-  background-image: url('./border/2076543.svg');
+  /* background-image: url('./border/2076543.svg');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   height: 50% ;
   width: 100%;
   
@@ -49,6 +49,8 @@
 
   grid-row-gap:2%;
 }
+
+
 
 .player__pic {
   /* grid-area:player__pic; */
@@ -134,4 +136,9 @@ display: block;
 /* right:0; */
 /* outline : 2px solid rgb(64, 224, 32);
 background-color: brown;
+} */
+
+/* .header__exp{
+  height: 50px;
+  w
 } */
