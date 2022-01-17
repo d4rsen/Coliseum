@@ -4,9 +4,9 @@ import styles from './PlayerStats.module.css'
 
 const PlayerStats = () => {
     const player = useSelector((state) => state.player)
-    console.log(player.total_stats)
+    // console.log(player.total_stats)
     const stats = Object.entries(player.total_stats).slice(6, 10)
-    console.log(stats)
+    // console.log(stats)
     return (
         <ul className={styles.player__stats}>
             {stats.map((item, i) => {
