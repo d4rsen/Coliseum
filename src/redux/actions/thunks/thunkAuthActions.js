@@ -1,17 +1,12 @@
 import axios from 'axios'
 import AuthService from '../../services/authService'
-<<<<<<< Updated upstream
-import { API_URL } from '../../services/axiosServiceApi'
-import { IS_AUTH, IS_NOT_AUTH } from '../../types/authTypes'
-import { SET_USER, UNSET_USER } from '../../types/userTypes'
-import { setLoader, unSetLoader } from '../loaderActions'
-import { THUNK_ACTION_getPlayerFromDb } from './thunkPlayersFromDbActions'
-=======
+
 import {API_URL} from '../../services/axiosServiceApi'
 import {IS_AUTH, IS_NOT_AUTH} from '../../types/authTypes'
 import {SET_USER, UNSET_USER} from '../../types/userTypes'
 import {setLoader, unSetLoader} from '../loaderActions'
->>>>>>> Stashed changes
+import {THUNK_ACTION_getPlayerFromDb} from './thunkPlayersFromDbActions'
+
 
 export const THUNK_ACTION_logout = () => async (dispatch) => {
     try {

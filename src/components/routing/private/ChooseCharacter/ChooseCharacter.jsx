@@ -1,15 +1,8 @@
-<<<<<<< Updated upstream
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { THUNK_ACTION_setPlayerClass } from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
-=======
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
-import {THUNK_ACTION_getPlayerFromDb} from '../../../../redux/actions/thunks/thunkPlayersFromDbActions'
 import {THUNK_ACTION_setPlayerClass} from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
->>>>>>> Stashed changes
+
 import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChooseClassPage/PlayerClassFromPlayerClassPage'
 
 const ChooseCharacter = () => {

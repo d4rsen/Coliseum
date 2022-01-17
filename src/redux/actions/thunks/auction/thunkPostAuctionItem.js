@@ -3,8 +3,8 @@ import {postAuctionItem} from '../../auction/postAuctionItem'
 
 export const thunkPostAuctionItem = (data) => async (dispatch) => {
     console.log(data)
-    const response = await axios.post('http://localhost:4000/auction/place-lot',
-    )
+    const response = await axios.post('https://dbforgame.herokuapp.com/auction/place-lot',
+        {data})
     dispatch(postAuctionItem(response.data))
 }
 
