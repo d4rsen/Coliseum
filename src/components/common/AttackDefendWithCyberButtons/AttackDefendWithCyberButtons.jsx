@@ -1,17 +1,16 @@
-import React, {useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import {
+    ACTION_getEnemyStateFromWS,
     ACTION_unsetAttackBodyPlayer,
     ACTION_unsetAttackHeadPlayer,
-    ACTION_unsetAttackLeftHandPlayer,
     ACTION_unsetAttackLegsPlayer,
-    ACTION_unsetAttackRightHandPlayer,
     ACTION_unsetDefendBodyPlayer,
     ACTION_unsetDefendHeadPlayer,
-    ACTION_unsetDefendLeftHandPlayer,
-    ACTION_unsetDefendLegsPlayer,
-    ACTION_unsetDefendRightHandPlayer
+    ACTION_unsetDefendLegsPlayer
 } from '../../../redux/actions/battleActions'
+import { ACTION_getEnemyPlayer } from '../../../redux/actions/enemyPlayerActions'
+import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../redux/actions/playerActions'
 import AttackDefendButtons from '../AttackDefendButtons/AttackDefendButtons'
 import style from './AttackDefendWithCyberButtons.module.css'
 
@@ -24,13 +23,9 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     const [isDisabledDefend, setIsDisabledDefend] = useState(false)
     const unsetAll = () => {
         dispatch(ACTION_unsetAttackHeadPlayer())
-        dispatch(ACTION_unsetAttackLeftHandPlayer())
-        dispatch(ACTION_unsetAttackRightHandPlayer())
         dispatch(ACTION_unsetAttackBodyPlayer())
         dispatch(ACTION_unsetAttackLegsPlayer())
         dispatch(ACTION_unsetDefendHeadPlayer())
-        dispatch(ACTION_unsetDefendLeftHandPlayer())
-        dispatch(ACTION_unsetDefendRightHandPlayer())
         dispatch(ACTION_unsetDefendBodyPlayer())
         dispatch(ACTION_unsetDefendLegsPlayer())
     }
@@ -43,7 +38,31 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     const battleHandler = (e) => {
         e.preventDefault()
         socket.emit('punch', room, player, battlePlayer)
+        // socket.on('punch', (players) => {
+        //     const WsEnemyPlayer = (players.currBattle.find(el => el.player.nickName !== player.nickName)) || null
+        //     if (WsEnemyPlayer) {
+        //         dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+        //         dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+        //         dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+        //         console.log(battlePlayer)
+        //     }
+        // })
     }
+
+    useEffect(() => {
+        socket.on('punch', (players) => {
+            if ((battlePlayer.attackHead || battlePlayer.attackBody || battlePlayer.attackLegs) && (battlePlayer.defendHead || battlePlayer.defendBody || battlePlayer.defendLegs)) {
+                const WsEnemyPlayer = (players.currBattle.find(el => el.player.nickName !== player.nickName)) || null
+                if (WsEnemyPlayer) {
+                    dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+                    dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+                    dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+                    console.log(battlePlayer)
+                }
+            }
+        })
+    }, [socket, battlePlayer])
+
     return (
         <div className={style.buttons__block}>
             <AttackDefendButtons

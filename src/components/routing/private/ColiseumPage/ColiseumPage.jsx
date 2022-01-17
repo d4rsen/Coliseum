@@ -1,12 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ACTION_getEnemyStateFromWS } from '../../../../redux/actions/battleActions'
-import {
-    ACTION_getEnemyPlayer,
-    ACTION_punchFromPlayerToEnemyPlayer,
-    ACTION_unsetEnemyPlayer
-} from '../../../../redux/actions/enemyPlayerActions'
-import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../../redux/actions/playerActions'
+import { useNavigate } from 'react-router-dom'
+import { ACTION_getEnemyPlayer, ACTION_unsetEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
 import { ACTION_unSetRoom } from '../../../../redux/actions/roomActions'
 
 import AttackDefendWithCyberButtons from '../../../common/AttackDefendWithCyberButtons/AttackDefendWithCyberButtons'
@@ -21,8 +16,8 @@ const ColiseumPage = ({socket}) => {
     const player = useSelector((state) => state.player)
     const enemyPlayer = useSelector(state => state.enemyPlayer)
     const battlePlayer = useSelector(state => state.battlePlayer)
-    const battleEnemyPlayer = useSelector(state => state.battleEnemyPlayer)
     const room = useSelector(state => state.room)
+    const navigation = useNavigate()
 
     useEffect(() => {
         return () => {
@@ -61,33 +56,47 @@ const ColiseumPage = ({socket}) => {
 
             if (enemy) {
                 dispatch(ACTION_getEnemyPlayer(enemy[0].player))
-                dispatch(ACTION_getEnemyStateFromWS(enemy[0].battlePlayer))
-
             }
         })
 
     }, [])
 
-    useEffect(() => {
-        socket.on('punch', (players) => {
-            const currBattle = players.currBattle
-            const WsEnemyPlayer = currBattle.find(el => el.player.id !== player.id) || null
-            console.log(WsEnemyPlayer)
+    // useEffect(() => {
+    //     socket.on('punch', (players) => {
+    //         const WsEnemyPlayer = (players.currBattle.find(el => el.player.nickName !== player.nickName)) || null
+    //         if (WsEnemyPlayer) {
+    //             dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+    //             dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+    //             dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+    //             console.log(battlePlayer)
+    //         }
+    //     })
+    // }, [socket])
 
-            if (WsEnemyPlayer) {
-                dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-                dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-                dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
-                dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
-            }
-        })
-    }, [socket])
+    const quitRoomHandler = e => {
+        navigation('/')
+    }
 
     return (
         <div className={style.main__gym}>
             <Player/>
             <AttackDefendWithCyberButtons socket={socket}/>
             <EnemyPlayer/>
+            <div>
+                {player && player.hp <= 0 && (
+                    <div>
+                        <h3>Вы проиграли</h3>
+                        <button onClick={quitRoomHandler}>Выйти из боя</button>
+                    </div>
+                )}
+                {enemyPlayer && enemyPlayer.hp <= 0 && (
+                    <div>
+                        <h3>Вы победили</h3>
+                        <button onClick={quitRoomHandler}>Выйти из боя</button>
+
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

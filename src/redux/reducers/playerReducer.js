@@ -29,30 +29,27 @@ export const playerReducer = (state = initialState, action) => {
                 return {...state, hp: dmg, ap: staminaLess}
             }
         case PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER:
-            let {battlePlayer} = action.payload
-            let {battleEnemyPlayer} = action.payload
-            let {enemyPlayerDamage} = action.payload
 
-            // let dmg3 = state.hp - enemyPlayerDamage / state.total_stats.def * 0.1
-            let dmg3 = state.hp - (enemyPlayerDamage / (state.total_stats.def * 0.1))
+            // console.log(action.payload.battlePlayer, action.payload.battleEnemyPlayer, action.payload.enemyPlayerDamage)
 
-            if ((battlePlayer.defendHead === true) && (battleEnemyPlayer.attackHead === true)) {
-                dmg3 = state.hp
-            }
-            if ((battlePlayer.defendBody === true) && (battleEnemyPlayer.attackBody === true)) {
-                dmg3 = state.hp
-            }
-            if ((battlePlayer.defendLegs === true) && (battleEnemyPlayer.attackLegs === true)) {
-                dmg3 = state.hp
-            }
-
+            const dmg3 = state.hp - (action.payload.enemyPlayerDamage / (state.total_stats.def * 0.5))
             const staminaLess2 = state.ap - 1
+
+            if (action.payload.battlePlayer.defendHead === true && action.payload.battleEnemyPlayer.attackHead === true) {
+                return {...state, ap: staminaLess2}
+            }
+            if ((action.payload.battlePlayer.defendBody === true) && (action.payload.battleEnemyPlayer.attackBody === true)) {
+                return {...state, ap: staminaLess2}
+            }
+            if ((action.payload.battlePlayer.defendLegs === true) && (action.payload.battleEnemyPlayer.attackLegs === true)) {
+                return {...state, ap: staminaLess2}
+            }
             if (chance(state.total_stats.evs)) {
                 console.log(`${state.nickName} уклонился !`)
                 return {...state, ap: staminaLess2}
             }
             return {...state, hp: dmg3, ap: staminaLess2}
-            
+
         case REGENERATE:
             const temp = state.hp + 1
             const temp2 = state.ap + 1

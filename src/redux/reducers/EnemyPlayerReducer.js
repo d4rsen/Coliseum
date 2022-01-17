@@ -17,26 +17,35 @@ export const enemyPlayerReducer = (state = initialState, action) => {
             const {playerDamage} = action.payload
             const {battlePlayer} = action.payload
             const {battleEnemyPlayer} = action.payload
+            let enemyPlayer = {...state}
+            const staminaLess = enemyPlayer.ap - 1
 
             // let dmg3 = player.hp - playerDamage / player.total_stats.def * 0.1
-            let dmg3 = state.hp - (playerDamage / (state.total_stats.def * 0.1))
+            let dmg3 = enemyPlayer.hp - (playerDamage / (enemyPlayer.total_stats.def * 0.5))
 
-            if ((battleEnemyPlayer.defendHead === true) && (battlePlayer.attackHead === true)) {
-                dmg3 = state.hp
+            if (battleEnemyPlayer.defendHead === true && battlePlayer.attackHead === true) {
+                if (chance(enemyPlayer.total_stats.evs)) {
+                    console.log(`${enemyPlayer.nickName} уклонился !`)
+                    return {...enemyPlayer, ap: staminaLess}
+                } else
+                    return {...enemyPlayer, ap: staminaLess}
             }
             if ((battleEnemyPlayer.defendBody === true) && (battlePlayer.attackBody === true)) {
-                dmg3 = state.hp
+                if (chance(enemyPlayer.total_stats.evs)) {
+                    console.log(`${enemyPlayer.nickName} уклонился !`)
+                    return {...enemyPlayer, ap: staminaLess}
+                } else
+                    return {...enemyPlayer, ap: staminaLess}
             }
             if ((battleEnemyPlayer.defendLegs === true) && (battlePlayer.attackLegs === true)) {
-                dmg3 = state.hp
+                if (chance(enemyPlayer.total_stats.evs)) {
+                    console.log(`${enemyPlayer.nickName} уклонился !`)
+                    return {...enemyPlayer, ap: staminaLess}
+                } else
+                    return {...enemyPlayer, ap: staminaLess}
             }
 
-            const staminaLess = state.ap - 1
-            if (chance(state.total_stats.evs)) {
-                console.log(`${state.nickName} уклонился !`)
-                return {...state, ap: staminaLess}
-            }
-            return {...state, hp: dmg3, ap: staminaLess}
+            return {...enemyPlayer, hp: dmg3, ap: staminaLess}
 
         default:
             return state
