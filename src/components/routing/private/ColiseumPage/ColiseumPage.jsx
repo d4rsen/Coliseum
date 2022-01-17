@@ -71,15 +71,14 @@ const ColiseumPage = ({socket}) => {
     useEffect(() => {
         socket.on('punch', (players) => {
             const currBattle = players.currBattle
-            // console.log(currBattle)
             const WsEnemyPlayer = currBattle.find(el => el.player.id !== player.id) || null
             console.log(WsEnemyPlayer)
 
             if (WsEnemyPlayer) {
                 dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
                 dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-                dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
-                dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+                dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
             }
         })
     }, [socket])
