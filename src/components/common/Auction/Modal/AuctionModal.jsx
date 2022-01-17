@@ -35,6 +35,7 @@ function AuctionModal({active, setActive}) {
     const propagationHandler = useCallback((e) => {
         e.stopPropagation()
     }, [])
+    console.log(inventory)
 
     return (
         <div className={active ? 'modal active' : 'modal'}
@@ -48,7 +49,6 @@ function AuctionModal({active, setActive}) {
                                 return null
                             }
                             return <div onClick={clickHandler}
-                                        key={e.id + 'el'}
                                         id={e.id}>
                                 {e.item_name}
                             </div>

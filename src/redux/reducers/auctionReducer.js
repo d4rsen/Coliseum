@@ -5,7 +5,7 @@ export const auctionReducer = (state = initialState, action) => {
     switch (action.type) {
         case POST_AUCTION_ITEM:
             console.log(action.payload)
-            return [...state, action.payload]
+            return state
 
         case GET_ALL_AUC_ITEMS:
             console.log(action.payload)

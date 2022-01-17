@@ -6,7 +6,7 @@ export const THUNK_ACTION_getPLayerInventory = (playerId) => async (dispatch) =>
     try {
         dispatch(setLoader())
         // const response = await $apiDb.get(`/get-specific-inventory/${playerId}`)
-        const response = await $apiDb.get(`/get-specific-inventory/1`)
+        const response = await $apiDb.get(`/get-specific-inventory/${playerId}`)
         dispatch(ACTION_setPLayerInventory(response.data))
         dispatch(unSetLoader())
     } catch (e) {

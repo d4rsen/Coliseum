@@ -23,9 +23,9 @@
   content: '';
   display: block;
 
-  background-image: url('./border/2076543.svg');
+  /* background-image: url('./border/2076543.svg');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   height: 50% ;
   width: 100%;
   
