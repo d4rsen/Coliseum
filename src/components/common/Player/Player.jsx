@@ -10,7 +10,6 @@ const Player = () => {
     const player = useSelector((state) => state.player);
 
     const playerClass = player.playerClass;
-    console.log(playerClass);
     const link =
         'https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/6b/f3/a6/6bf3a6b2-85de-5e23-cb92-0d739a178c53/source/512x512bb.jpg';
     const playerAvatar =
@@ -55,7 +54,6 @@ const Player = () => {
         <div className={style.player}>
             <ul className={style.player__items}>
                 {armorFull.map((item, i) => {
-                    console.log(item);
                     return (
                         <li>
                             <EmptyItem img={item.img}/>
