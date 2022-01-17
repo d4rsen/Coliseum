@@ -27,7 +27,12 @@ export const playerInventoryReducer = (state = initialState, action) => {
             return [...state, action.payload]
         case DELETE_ITEM_FROM_INVENTORY:
             console.log('DELETE INIT')
-            const checker = state.every(e => Number(e.id) === Number(action.payload))
+            const checker = []
+            state.forEach(e => {
+                if (Number(e.id) === Number(action.payload)) {
+                    checker.push(e)
+                }
+            })
             const newState = [...state]
             if (checker.length > 1) {
                 const index = state.indexOf(checker[0])

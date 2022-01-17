@@ -2,10 +2,10 @@ import React from 'react'
 import AuctionButton from '../AuctionButton/AuctionButton'
 import styles from './AuctionItem.module.css'
 
-const AuctionItem = () => {
+const AuctionItem = ({item}) => {
     const itemId = 124
     const itemImg = 'https://cdn.webshopapp.com/shops/305440/files/345306816/hellscream-foam-two-handed-battle-axe-gore.jpg'
-    const itemName = 'Great Axe'
+    const itemName = 'Great axe' //`${item.item_id}`
     const itemStats = {
         dmg: 19,
         str: 7,

@@ -13,3 +13,8 @@
 
 }
 
+.auction-items {
+    background-color: #454857;
+    max-height: 70vh;
+    overflow-y: auto;
+}
