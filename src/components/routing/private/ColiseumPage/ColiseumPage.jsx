@@ -58,11 +58,8 @@ const ColiseumPage = ({socket}) => {
                     }
                 }
             }) : null
-            console.log(currentRoom)
-            console.log(AllPlayers)
-            console.log(enemy)
-            if (enemy) {
 
+            if (enemy) {
                 dispatch(ACTION_getEnemyPlayer(enemy[0].player))
                 dispatch(ACTION_getEnemyStateFromWS(enemy[0].battlePlayer))
 
@@ -73,15 +70,17 @@ const ColiseumPage = ({socket}) => {
 
     useEffect(() => {
         socket.on('punch', (players) => {
-            console.log(players)
-            const allFightingPlayers = players.arr
             const currBattle = players.currBattle
-            const currentRoom2 = players.currentRoom2
-            const WsEnemyPlayer = currBattle.find(el => el.id !== player.id)
-            dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-            dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-            dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
-            dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
+            // console.log(currBattle)
+            const WsEnemyPlayer = currBattle.find(el => el.player.id !== player.id) || null
+            console.log(WsEnemyPlayer)
+
+            if (WsEnemyPlayer) {
+                dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+                dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
+                dispatch(ACTION_punchFromPlayerToEnemyPlayer(player.total_stats.dmg, battlePlayer, battleEnemyPlayer))
+            }
         })
     }, [socket])
 
