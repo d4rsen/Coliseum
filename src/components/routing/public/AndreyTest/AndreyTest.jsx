@@ -11,7 +11,7 @@ const AndreyTest = ({socket}) => {
         <div className={style.main__gym}>
             <Player/>
             <AttackDefendWithCyberButtons socket={socket}/>
-            <Map/>
+            <Player type={'enemy'}/>
         </div>
     )
 }

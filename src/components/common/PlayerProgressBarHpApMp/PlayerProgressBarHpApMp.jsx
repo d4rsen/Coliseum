@@ -6,10 +6,10 @@ const PlayerProgressBarHpApMp = ({bgColor, stat, height, fontSize, type, rotate}
         <>
             {type ===
                 'header' && (
-                    <div
+                    <div className='header__exp'
                         style={{
                             width: `${stat}%`,
-                            height: `${height}px`,
+                            height: `${10}px`,
                             backgroundColor: bgColor,
                         }}
                     >

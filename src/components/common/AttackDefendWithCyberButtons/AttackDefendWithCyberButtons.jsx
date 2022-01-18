@@ -37,25 +37,11 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     const battleHandler = (e) => {
         e.preventDefault()
         socket.emit('to_instance', {id: room.id, player, battlePlayer})
-        // unsetHandler()
         socket.emit('punch', room, player)
     }
 
     useEffect(() => {
         socket.on('send-message', (data) => {
-            // console.log(data)
-            // if ((battlePlayer.attackHead || battlePlayer.attackBody || battlePlayer.attackLegs) && (battlePlayer.defendHead || battlePlayer.defendBody || battlePlayer.defendLegs)) {
-            //     const WsEnemyPlayer = (players.currBattle.find(el => el.player.id !== player.id)) || null
-            //     if (WsEnemyPlayer) {
-            //         dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-            //         dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-            //         dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
-            //         unsetHandler()
-            //     }
-            // }
-            // console.log(data.player_two.player.id, player.id)
-            // console.log(data.player_one.player.id, player.id)
-
             if (data.player_one.player.id !== player.id) {
                 const enemyPlayerWs = data.player_one
                 const playerWs = data.player_two

@@ -10,7 +10,7 @@ const PlayerStats = () => {
         <ul className={styles.player__stats}>
             {stats.map((item, i) => {
                 return (
-                    <li key={item}>{item[0]},{item[0]},{item[1]}</li>)
+                <li >{item[0]}: {item[1]}</li>)
             })}
 
             {/* <li>agl: {player.total_stats.agl}</li>
