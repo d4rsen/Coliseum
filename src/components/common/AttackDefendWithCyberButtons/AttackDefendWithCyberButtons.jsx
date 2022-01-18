@@ -21,6 +21,8 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     const player = useSelector((state) => state.player)
     const evasion = useSelector(state => state.evasion)
     const battlePlayer = useSelector(state => state.battlePlayer)
+    const phrase = useSelector(state => state.phrase)
+    const [battleLog, setBattleLog] = useState([])
     const [isDisabledAttack, setIsDisabledAttack] = useState(false)
     const [isDisabledDefend, setIsDisabledDefend] = useState(false)
     const unsetAll = () => {
@@ -57,8 +59,8 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                     enemyPlayerWs.battlePlayer,
                     playerWs
                 ))
-                unsetHandler()
                 dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, evasion, db_room))
+                unsetHandler()
             }
 
             if (data.player_two.player.id !== player.id) {
@@ -66,12 +68,21 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                 const playerWs = data.player_one
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
-                dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer))
-                unsetHandler()
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(
+                    enemyPlayerWs.player.total_stats.dmg,
+                    playerWs.battlePlayer,
+                    enemyPlayerWs.battlePlayer,
+                    playerWs
+                ))
                 dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, evasion, db_room))
+                unsetHandler()
             }
         })
     }, [socket])
+
+    useEffect(() => {
+        phrase && setBattleLog([...battleLog, phrase])
+    }, [dispatch, phrase])
 
     return (
         <div className={style.buttons__block}>
@@ -97,6 +108,15 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                       className="cybr-btn__glitch">{isDisabledAttack && isDisabledDefend ? 'Бой_' : 'Сделайте выбор_'}</span>
                 <span aria-hidden className="cybr-btn__tag">theGame</span>
             </button>
+            <div>
+                {battleLog && battleLog.map((phraseFromDb, i) => {
+                    return (
+                        <div key={i}>
+                            <p>{phraseFromDb}</p>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

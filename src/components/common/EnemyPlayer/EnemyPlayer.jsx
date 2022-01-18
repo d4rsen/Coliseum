@@ -58,9 +58,8 @@ const EnemyPlayer = () => {
         <div className={type !== 'enemy' ? style.player : style.player__enemy}>
             <ul className={style.player__items}>
                 {armorFull.map((item, i) => {
-                    console.log(item)
                     return (
-                        <li>
+                        <li key={i}>
                             <EmptyItem img={item.img}/>
                         </li>
                     )
@@ -69,6 +68,7 @@ const EnemyPlayer = () => {
 
             <img
                 className={style.player__pic}
+                alt="player"
                 src={
                     playerClass === 'warrior'
                         ? classWarrior
@@ -78,7 +78,7 @@ const EnemyPlayer = () => {
                                 ? classAssasin
                                 : ''
                 }
-            ></img>
+            />
 
             <div className={style.player__right}>
                 <PlayerWeapon className height={100} width={70}/>

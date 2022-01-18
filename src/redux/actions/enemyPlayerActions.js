@@ -11,10 +11,10 @@ export const ACTION_punchFromPlayerToEnemyPlayer = (playerDamage, battlePlayer, 
     }
 }
 
-export const ACTION_getEnemyPlayer = (enemyPlayerFromDb) => {
+export const ACTION_getEnemyPlayer = (enemyPlayerFromWs) => {
     return {
         type: SET_ENEMY_PLAYER,
-        payload: {...enemyPlayerFromDb},
+        payload: enemyPlayerFromWs,
     }
 }
 

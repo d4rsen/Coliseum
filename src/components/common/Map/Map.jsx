@@ -69,13 +69,14 @@ const Map = ({width, height, type}) => {
     }
     return (
         <div className={type === 'logIn' ? style.map__login : style.map}>
-            <img className={style.map__pic} src={background}></img>
+            <img className={style.map__pic} src={background}/>
 
             {components.map((component, i) => (
                 <div
                     onClick={() => navigation(component.link)}
                     className={component.class}
                     id={i}
+                    key={i}
                 >
                     {component.component}
                 </div>

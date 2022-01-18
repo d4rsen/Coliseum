@@ -81,6 +81,6 @@ export const ACTION_unsetDefendLegsPlayer = () => ({type: UNSET_DEFEND_LEGS_PLAY
 export const ACTION_getEnemyStateFromWS = (WsEnemyPlayerObject) => {
     return {
         type: GET_ENEMY_STATE_FROM_WS,
-        payload: {...WsEnemyPlayerObject}
+        payload: WsEnemyPlayerObject
     }
 }

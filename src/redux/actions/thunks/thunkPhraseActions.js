@@ -13,28 +13,28 @@ export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                     {
                         body_part: 'head',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                 {
                     body_part: 'head',
                     type_of_action: 'hit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -44,28 +44,28 @@ export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                     {
                         body_part: 'body',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                 {
                     body_part: 'body',
                     type_of_action: 'hit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -75,28 +75,28 @@ export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                     {
                         body_part: 'legs',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                 {
                     body_part: 'legs',
                     type_of_action: 'hit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -108,28 +108,28 @@ export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                     {
                         body_part: 'head',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                 {
                     body_part: 'head',
                     type_of_action: 'crit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -139,28 +139,28 @@ export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                     {
                         body_part: 'body',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                 {
                     body_part: 'body',
                     type_of_action: 'crit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -170,28 +170,28 @@ export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                     {
                         body_part: 'legs',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/en',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
                 {
                     body_part: 'legs',
                     type_of_action: 'crit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -207,28 +207,28 @@ export const THUNK_ACTION_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                     {
                         body_part: 'head',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                 {
                     body_part: 'head',
                     type_of_action: 'hit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -238,28 +238,28 @@ export const THUNK_ACTION_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                     {
                         body_part: 'body',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                 {
                     body_part: 'body',
                     type_of_action: 'hit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -269,28 +269,28 @@ export const THUNK_ACTION_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                     {
                         body_part: 'legs',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                 {
                     body_part: 'legs',
                     type_of_action: 'hit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -302,28 +302,28 @@ export const THUNK_ACTION_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                     {
                         body_part: 'head',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                 {
                     body_part: 'head',
                     type_of_action: 'crit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -333,28 +333,28 @@ export const THUNK_ACTION_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                     {
                         body_part: 'body',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                 {
                     body_part: 'body',
                     type_of_action: 'crit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }
@@ -364,28 +364,28 @@ export const THUNK_ACTION_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, eva
 
         if (evasion) {
             try {
-                const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+                const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                     {
                         body_part: 'legs',
                         type_of_action: 'evasion',
                         player_id: enemyPlayerWs.player.id,
                         db_room: db_room
                     })
-                dispatch(ACTION_setPhrase(response.data))
+                dispatch(ACTION_setPhrase(response.data.phrase.description))
             } catch (e) {
                 console.log(e)
             }
         }
 
         try {
-            const response = await axios.post('https://dbforgame.herokuapp.com/battle/log/ru',
+            const response = await axios.post('https://dbforgame.herokuapp.com/battle/ru',
                 {
                     body_part: 'legs',
                     type_of_action: 'crit',
                     player_id: enemyPlayerWs.player.id,
                     db_room: db_room
                 })
-            dispatch(ACTION_setPhrase(response.data))
+            dispatch(ACTION_setPhrase(response.data.phrase.description))
         } catch (e) {
             console.log(e)
         }

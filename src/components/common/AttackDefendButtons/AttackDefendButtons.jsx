@@ -42,24 +42,23 @@ const AttackDefendButtons = ({isDisabledAttack, isDisabledDefend, setIsDisabledD
 
     return (
         <div>
-            <div className="d-row">
+            <div>
                 {attackTexts.map((el) => {
                     return (
-                        <div key={el} className="row"><AttackButton
-
+                        <AttackButton
                             value={el}
                             disabled={isDisabledAttack}
                             attackDefendHandler={attackHandler}
-                        /></div>
+                        />
                     )
                 })}
                 {defendTexts.map((el) => {
                     return (
-                        <div key={el} className="row"><AttackButton
+                        <AttackButton
                             value={el}
                             disabled={isDisabledDefend}
                             attackDefendHandler={defendHandler}
-                        /></div>
+                        />
                     )
                 })}
             </div>
