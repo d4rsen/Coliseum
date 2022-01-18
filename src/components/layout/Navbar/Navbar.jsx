@@ -59,15 +59,6 @@ export default function Navbar() {
                                         </NavLink>
                                     </li>
                                     <li className={style.navigaton__item}>
-                                        <NavLink
-                                            onClick={logoutHandler}
-                                            className={style.navigaton__link}
-                                            to="/logout"
-                                        >
-                                            Выйти
-                                        </NavLink>
-                                    </li>
-                                    <li className={style.navigaton__item}>
                                         <NavLink className={style.navigaton__link} to="/auction">
                                             Auction
                                         </NavLink>
@@ -75,6 +66,11 @@ export default function Navbar() {
                                     <li className={style.navigaton__item}>
                                         <NavLink className={style.navigaton__link} to="/test">
                                             Тест для Андрея
+                                        </NavLink>
+                                    </li>
+                                    <li className={style.navigaton__item}>
+                                        <NavLink className={style.navigaton__link} to="/inventory">
+                                            Инвентарь
                                         </NavLink>
                                     </li>
                                 </>

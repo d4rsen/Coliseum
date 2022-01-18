@@ -1,4 +1,4 @@
-import {GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM} from '../types/auctionTypes'
+import {FILTER_ITEMS, GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM} from '../types/auctionTypes'
 import initialState from "../init/initialState";
 
 export const auctionReducer = (state = initialState, action) => {
@@ -16,7 +16,8 @@ export const auctionReducer = (state = initialState, action) => {
         //         return newState
         //     } else return newState
         // } else return newState.filter(e => Number(e.id) !== Number(action.payload))
-
+        case FILTER_ITEMS:
+            return action.payload
         case GET_ALL_AUC_ITEMS:
             console.log(action.payload)
             return action.payload
