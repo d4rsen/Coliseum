@@ -1,19 +1,28 @@
 .map {
   display: flex;
   position: relative;
-align-items: center;
- max-width: 40%;
+  align-items: center;
+  max-width: 40%;
   /* margin-top:20%; */
   /* height: 0vh; */
 
   object-fit: cover;
 }
 
+.map__login {
+  display: flex;
+  position: relative;
+  align-items: center;
+  max-width: 60%;
+  margin: auto;
+
+}
+
 .map__pic {
   display: block;
   position: relative;
   max-width: 100%;
-  filter: drop-shadow( 0px 0px 20px rgb(103, 98, 98) );
+  filter: drop-shadow(0px 0px 20px rgb(103, 98, 98));
   border-radius: 15px;
   /* transform: scale(1.2) */
   /* max-height: 100%; */
@@ -23,6 +32,7 @@ align-items: center;
   /* top: 50%; */
   /* bottom: 50%; */
 }
+
 /* .map__pic:hover , .map__cazarm :hover{
   transform: scale(1.2);
   transition: 300ms;
@@ -30,6 +40,8 @@ align-items: center;
 
 .map__cazarm {
   /* content: url(./pictures/svgItem.svg); */
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+
   position: absolute;
   z-index: 2;
   width: 20%;
@@ -38,11 +50,12 @@ align-items: center;
   /* stroke: rgb(255, 17, 0); */
   display: block;
   left: 50%;
-  top:35%;
+  top: 5%;
   /* position: 60%; */
-  
+
 }
-.map__cazarm:hover{
+
+.map__cazarm:hover {
   /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
   transition: 300ms;
   color: blueviolet;
@@ -51,18 +64,37 @@ align-items: center;
   /* stroke-width:2px; */
 }
 
+.map__cazarm::after {
+  content: 'Казармы';
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
 .map__observation {
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+
   position: absolute;
   z-index: 2;
-  width: 20%;
+  width: 17%;
   /* height: 0%; */
   transition: 300ms;
   /* stroke: rgb(255, 17, 0); */
   display: block;
   left: 10%;
-  top:10%;
+  top: 10%;
 }
-.map__observation:hover{
+
+.map__observation::after {
+  content: 'Смотровая башня';
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.map__observation:hover {
   /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
   transition: 300ms;
   color: tomato;
@@ -72,6 +104,7 @@ align-items: center;
 }
 
 .map__primaryCastle {
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 
   position: absolute;
   z-index: 2;
@@ -81,16 +114,24 @@ align-items: center;
   /* stroke: rgb(255, 17, 0); */
   display: block;
   left: 70%;
-  top:10%;
+  top: 10%;
 }
 
-.map__primaryCastle:hover{
-   /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
-   transition: 300ms;
-   color: tomato;
-   width: 25%;
-   /* height: 30%; */
-   /* stroke-width:2px; */
+.map__primaryCastle::after {
+  content: 'Главный замок';
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.map__primaryCastle:hover {
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
+  transition: 300ms;
+  color: tomato;
+  width: 25%;
+  /* height: 30%; */
+  /* stroke-width:2px; */
 }
 
 .map__train {
@@ -102,23 +143,36 @@ align-items: center;
   /* stroke: rgb(255, 17, 0); */
   display: block;
   left: 35%;
-  top:20%;
-  filter: drop-shadow( 0px 0px 2px red );
+  top: 20%;
+  filter: drop-shadow(0px 0px 2px red);
 }
 
-.map__train:hover{
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
-    transition: 300ms;
-    color: tomato;
-    width: 25%;
-    
-    /* height: 30%; */
-    /* stroke-width:2px; */
+.map__train::after {
+  content: 'Тренироовочный лагерь ';
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  display: block;
+
+}
+
+.map__train:hover {
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
+  transition: 300ms;
+  color: tomato;
+  width: 25%;
+  left: 30%;
+  top: 5%;
+
+  /* height: 30%; */
+  /* stroke-width:2px; */
 }
 
 
 
-.map__market{
+.map__market {
+
   position: absolute;
   z-index: 2;
   width: 20%;
@@ -127,20 +181,35 @@ align-items: center;
   /* stroke: rgb(255, 17, 0); */
   display: block;
   left: 25%;
-  top:60%;
-  filter: drop-shadow( 0px 0px 10px rgb(245, 243, 243) );
+  top: 60%;
+  filter: drop-shadow(0px 0px 10px rgb(245, 243, 243));
 }
 
-.map__market:hover{
- /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
- transition: 300ms;
- color: tomato;
- width: 25%;
- 
- /* height: 30%; */
- /* stroke-width:2px; */
+.map__market::after {
+  content: 'Разрушенний рынок';
+
+  color: white;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 15px;
 }
-.map__SvgCave{
+
+.map__market:hover {
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
+  transition: 300ms;
+  color: tomato;
+  width: 25%;
+
+  /* height: 30%; */
+  /* stroke-width:2px; */
+}
+
+.map__SvgCave {
   position: absolute;
   z-index: 2;
   width: 20%;
@@ -149,15 +218,61 @@ align-items: center;
   /* stroke: rgb(255, 17, 0); */
   display: block;
   left: 60%;
-  top:66%;
-  filter: drop-shadow( 0px 0px 20px rgb(142, 63, 63) );
+  top: 66%;
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
 
-.map__SvgCave:hover{
+.map__SvgCave::after {
+  content: 'Подземелье ';
+  color: white;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.map__SvgCave:hover {
   transition: 300ms;
   color: tomato;
   width: 25%;
 }
-.map__myCastle {}
 
-.map__coliseum {}
+.map__coliseum {
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+
+  position: absolute;
+  z-index: 2;
+  width: 20%;
+  /* height: 0%; */
+  transition: 300ms;
+  /* stroke: rgb(255, 17, 0); */
+  display: block;
+  left: 60%;
+  top: 45%;
+  /* filter: drop-shadow( 0px 0px 20px rgb(142, 63, 63) ); */
+
+}
+
+.map__coliseum::after {
+  content: 'Колизей ';
+  color: white;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.map__coliseum:hover {
+
+  transition: 300ms;
+  color: tomato;
+  width: 25%;
+}
+
+.map__myCastle {}

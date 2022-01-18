@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions';
 import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp';
+import Bag from './Bag/Bag';
+import HpFrame from './Frames/HpFrame';
 import style from './Navbar.module.css';
 
 export default function Navbar() {
@@ -18,7 +20,7 @@ export default function Navbar() {
       console.log(e);
     }
   };
-  const exp = +player?.exp + 40;
+  const exp = +player?.exp + 50;
 
   return (
     <header className={style.header}>
@@ -86,22 +88,41 @@ export default function Navbar() {
             <div className={style.header__progress}>
               <PlayerProgressBarHpApMp
                 className={style.header__progress_element}
+                height={10}
+                width={10}
                 bgColor={'red'}
                 type={'header'}
                 stat={player?.hp}
               />
               <PlayerProgressBarHpApMp
                 bgColor={'green'}
+                height={10}
                 stat={player?.mp}
                 type={'header'}
               />
               <PlayerProgressBarHpApMp
                 bgColor={'aqua'}
+                height={10}
                 stat={player?.hp}
                 type={'header'}
               />
+              {
+            user && (
+              <div className={style.header__frame}>
+              <HpFrame/>
+              </div>
+            )
+          }
             </div>
+            
           )}
+         
+ {user && (
+<div className={style.bag}>
+   <Bag/>
+   </div>
+
+ )}
 
           {user && (
             <div className={style.header__user}>
@@ -114,7 +135,7 @@ export default function Navbar() {
                 </span>
               </div>
               {player && player.playerClass === 'warrior' && (
-                <img
+                <img className={style.player__pic}
                   src="https://t3.ftcdn.net/jpg/03/08/01/98/360_F_308019832_HE6Ks8TsOR2z3mZ3S8Ba6AI2TI2UvxV3.jpg"
                   className={style.header__user_class}
                   height="50"
@@ -123,7 +144,7 @@ export default function Navbar() {
                 />
               )}
               {player && player.playerClass === 'assassin' && (
-                <img
+                <img 
                   src="https://image.shutterstock.com/image-vector/ninja-mascot-logo-illustration-gaming-260nw-1521286004.jpg"
                   className={style.header__user_class}
                   height="50"
@@ -132,7 +153,7 @@ export default function Navbar() {
                 />
               )}
               {player && player.playerClass === 'monk' && (
-                <img
+                <img 
                   src="https://i.pinimg.com/236x/75/9b/66/759b661c994e45977d4405d3dc6bbdf6.jpg"
                   className={style.header__user_class}
                   height="50"
@@ -141,7 +162,7 @@ export default function Navbar() {
                 />
               )}
               {!user && null && (
-                <img
+                <img 
                   src="https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1608/tuktukdesign160800043/61010830-user-icon-man-profile-businessman-avatar-person-glyph-vector-illustration.jpg?ver=6"
                   className={style.style.header__user_class}
                   height="50"
@@ -158,12 +179,14 @@ export default function Navbar() {
           <PlayerProgressBarHpApMp
             bgColor={'brown'}
             stat={exp}
-            height={6}
+            height={10}
+            // width={55}
            type={'header'}
             fontSize={8}
           />
         </div>
       )}
     </header>
+    
   );
 }
