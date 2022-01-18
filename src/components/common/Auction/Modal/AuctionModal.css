@@ -43,3 +43,46 @@
 
 }
 
+/* BUTTON */
+
+.btn {
+    border-radius: 4px;
+    background-color: silver;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 100%;
+    padding: 1em;
+    width: 90%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: .7em;
+    box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .7);
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    /*position: relative;*/
+    transition: 0.5s;
+}
+
+.btn:after {
+    /*content: '»';*/
+    position: absolute;
+    opacity: 0;
+    top: 1em;
+    right: -1em;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: sienna;
+    padding-right: 1.5em;
+    padding-left: .5em;
+}
+
+.btn:hover:after {
+    opacity: 1;
+    right: .8em;
+}
