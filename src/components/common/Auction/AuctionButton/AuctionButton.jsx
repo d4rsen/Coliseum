@@ -1,7 +1,8 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { thunkPostAuctionItemAction } from '../../../../redux/actions/thunks/auction/thunkPostAuctionItemAction'
+import {useDispatch, useSelector} from 'react-redux'
 import styles from './AuctionButton.module.css'
+import {thunkPostAuctionItemAction} from "../../../../redux/actions/thunks/auction/thunkPostAuctionItemAction";
+import {thunkBuyItemAction} from "../../../../redux/actions/thunks/auction/thunkBuyItemAction";
 
 const AuctionButton = ({title, itemId, price, setPrice}) => {
 
@@ -19,6 +20,11 @@ const AuctionButton = ({title, itemId, price, setPrice}) => {
             setPrice('')
         } else if (e.target.value === 'Buy') {
             console.log('BUY id:', itemId)
+            console.log("player id: ", playerId)
+            dispatch(thunkBuyItemAction({
+                id: Number(itemId),
+                buyer_id: Number(playerId)
+            }))
         }
     }
 

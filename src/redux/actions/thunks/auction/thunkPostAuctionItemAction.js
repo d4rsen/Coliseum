@@ -1,10 +1,11 @@
-import axios from 'axios'
-import { postAuctionItem } from '../../auction/postAuctionItem'
-import { deleteItemFromInventoryAction } from '../../inventory/deleteItemFromInventoryAction'
+import {postAuctionItem} from '../../auction/postAuctionItem'
+import {deleteItemFromInventoryAction} from "../../inventory/deleteItemFromInventoryAction";
+import $apiAuc from "../../../services/axiosServiceAuction";
 
 export const thunkPostAuctionItemAction = (data) => async (dispatch) => {
     console.log('HEREEEEEEEEEEE!', data)
-    const response = await axios.post('https://dbforgame.herokuapp.com/auction/place-lot',
+    const response = await $apiAuc.post('/place-lot',
+        // https://dbforgame.herokuapp.com/auction/place-lot
         {data})
     dispatch(postAuctionItem(response.data))
     dispatch(deleteItemFromInventoryAction(data.item_id))
