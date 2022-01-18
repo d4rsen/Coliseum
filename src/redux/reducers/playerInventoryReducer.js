@@ -1,5 +1,6 @@
 import initialState from '../init/initialState'
 import {ADD_RANDOM_ITEM, DELETE_ITEM_FROM_INVENTORY, SET_PLAYER_INVENTORY} from '../types/playerInventoryTypes'
+import {BUY_ITEM} from "../types/auctionTypes";
 
 export const playerInventoryReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -24,6 +25,8 @@ export const playerInventoryReducer = (state = initialState, action) => {
                 } else return action.payload
             } else return state
         case ADD_RANDOM_ITEM:
+            return [...state, action.payload]
+        case BUY_ITEM:
             return [...state, action.payload]
         case DELETE_ITEM_FROM_INVENTORY:
             console.log('DELETE INIT')

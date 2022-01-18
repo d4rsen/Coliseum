@@ -1,3 +1,5 @@
 export const GET_ALL_AUC_ITEMS = 'GET_ALL_AUC_ITEMS'
 export const POST_AUCTION_ITEM = 'POST_AUCTION_ITEM'
 export const FILTER_ITEMS = 'FILTER_ITEMS'
+export const BUY_ITEM = 'BUY_ITEM'
+export const DELETE_ITEM = 'DELETE_ITEM'

@@ -8,9 +8,10 @@ import {thunkGetAllAuctionItemsAction} from "../../../../redux/actions/thunks/au
 const Auction = () => {
     const dispatch = useDispatch()
     const auctionItems = useSelector(state => state.auctionItems)
+    const playerInventory = useSelector(state => state.playerInventory)
     useEffect(() => {
         dispatch(thunkGetAllAuctionItemsAction())
-    }, [])
+    }, [playerInventory])
 
     return (
         <div>
@@ -22,7 +23,7 @@ const Auction = () => {
 
                 <div className={styles['auction-items']}>
                     {auctionItems && auctionItems.map(e => {
-                        return <AuctionItem/>
+                        return <AuctionItem item={e}/>
                     })}
 
                 </div>
