@@ -15,7 +15,7 @@ const RoomsPage = () => {
     useEffect(() => {
         (!allRooms) && dispatch(THUNK_ACTION_getAllRoomsFromDb())
     }, [dispatch])
-    
+
     useEffect(() => {
         setTimeout(() => {
             dispatch(ACTION_PlayerRegenerate())

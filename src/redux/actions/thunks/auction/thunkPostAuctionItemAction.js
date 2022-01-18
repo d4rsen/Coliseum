@@ -1,6 +1,6 @@
 import axios from 'axios'
-import {postAuctionItem} from '../../auction/postAuctionItem'
-import {deleteItemFromInventoryAction} from "../../inventory/deleteItemFromInventoryAction";
+import { postAuctionItem } from '../../auction/postAuctionItem'
+import { deleteItemFromInventoryAction } from '../../inventory/deleteItemFromInventoryAction'
 
 export const thunkPostAuctionItemAction = (data) => async (dispatch) => {
     console.log('HEREEEEEEEEEEE!', data)

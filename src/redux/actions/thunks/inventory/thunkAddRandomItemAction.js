@@ -1,5 +1,5 @@
-import axios from "axios";
-import {addRandomItemAction} from "../../inventory/addRandomItemAction";
+import axios from 'axios'
+import { addRandomItemAction } from '../../inventory/addRandomItemAction'
 
 export const thunkAddRandomItemAction = (id) => async (dispatch) => {
     console.log('ID FROM THUNK: ', id)

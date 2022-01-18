@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {THUNK_ACTION_register} from '../../../../redux/actions/thunks/thunkAuthActions'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { THUNK_ACTION_register } from '../../../../redux/actions/thunks/thunkAuthActions'
 import Loader from '../../../layout/Loader/Loader'
 
 export default function RegistrationPage() {

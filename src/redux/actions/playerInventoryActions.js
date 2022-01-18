@@ -1,4 +1,4 @@
-import {SET_PLAYER_INVENTORY} from '../types/playerInventoryTypes'
+import { SET_PLAYER_INVENTORY } from '../types/playerInventoryTypes'
 
 export const ACTION_setPLayerInventory = (playerItems) => {
     return {

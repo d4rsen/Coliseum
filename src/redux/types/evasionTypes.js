@@ -1,0 +1,2 @@
+export const SET_EVASION = 'SET_EVASION'
+export const UNSET_EVASION = 'UNSET_EVASION'

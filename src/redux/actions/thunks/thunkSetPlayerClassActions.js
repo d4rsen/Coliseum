@@ -1,6 +1,6 @@
 import $apiDb from '../../services/axiosServiceDb'
-import {setLoader, unSetLoader} from '../loaderActions'
-import {ACTION_getPlayer} from '../playerActions'
+import { setLoader, unSetLoader } from '../loaderActions'
+import { ACTION_getPlayer } from '../playerActions'
 
 export const THUNK_ACTION_setPlayerClass = (userData) => async (dispatch) => {
     try {

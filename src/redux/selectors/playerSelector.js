@@ -1,4 +1,4 @@
-import {createSelector} from 'reselect'
+import { createSelector } from 'reselect'
 
 const selectPlayerTotalStats = (state) => state.player.total_stats
 const selectPlayerArmorSet = (state) => state.player.armor_set

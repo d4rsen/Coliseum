@@ -1,5 +1,5 @@
-import {FILTER_ITEMS, GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM} from '../types/auctionTypes'
-import initialState from "../init/initialState";
+import initialState from '../init/initialState'
+import { FILTER_ITEMS, GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM } from '../types/auctionTypes'
 
 export const auctionReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -21,7 +21,6 @@ export const auctionReducer = (state = initialState, action) => {
         case GET_ALL_AUC_ITEMS:
             console.log(action.payload)
             return action.payload
-
 
         default:
             return state

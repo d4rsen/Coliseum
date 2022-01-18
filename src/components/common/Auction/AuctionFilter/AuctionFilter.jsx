@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { thunkFilterItemsAction } from '../../../../redux/actions/thunks/auction/thunkFilterItemsAction'
+import AuctionModal from '../Modal/AuctionModal'
 import styles from './AuctionFilter.module.css'
-import AuctionModal from "../Modal/AuctionModal";
-import {useDispatch} from "react-redux";
-import {thunkFilterItemsAction} from "../../../../redux/actions/thunks/auction/thunkFilterItemsAction";
 
 const AuctionFilter = () => {
     const [modalActive, setModalActive] = useState(false)

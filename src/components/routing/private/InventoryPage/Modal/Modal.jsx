@@ -1,8 +1,9 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import {
+    thunkDeleteItemFromInventoryAction
+} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
 import './Modal.css'
-import {useDispatch} from "react-redux";
-import {thunkDeleteItemFromInventoryAction} from "../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction";
-
 
 function Modal({active, setActive, chosenItem, player}) {
 

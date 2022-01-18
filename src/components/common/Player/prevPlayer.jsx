@@ -12,9 +12,9 @@ const Player = () => {
         <div className="container">
             <div className="justify-content-center align-items-center">
                 <div className="d-flex flex-row justify-content-center align-items-center">
-                  <EmptyItem pic={link} />
-                  <EmptyItem pic={link}/>
-                  <EmptyItem pic={link}/>
+                    <EmptyItem pic={link}/>
+                    <EmptyItem pic={link}/>
+                    <EmptyItem pic={link}/>
                     {/* <img style={{width: '80px', height: '80px'}} src={link} className="m-1 border border-primary"/>
                     <img style={{width: '80px', height: '80px'}} src={link} className="m-1 border border-primary"/>
                     <img style={{width: '80px', height: '80px'}} src={link} className="m-1 border border-primary"/> */}

@@ -1,4 +1,4 @@
-import {SET_ROOM} from '../types/roomTypes'
+import { SET_ROOM } from '../types/roomTypes'
 
 export const ACTION_setRoom = (room) => {
     return {

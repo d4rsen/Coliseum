@@ -1,7 +1,7 @@
 import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { thunkPostAuctionItemAction } from '../../../../redux/actions/thunks/auction/thunkPostAuctionItemAction'
 import styles from './AuctionButton.module.css'
-import {thunkPostAuctionItemAction} from "../../../../redux/actions/thunks/auction/thunkPostAuctionItemAction";
 
 const AuctionButton = ({title, itemId, price, setPrice}) => {
 

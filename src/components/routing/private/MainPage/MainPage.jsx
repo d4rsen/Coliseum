@@ -54,9 +54,9 @@ const MainPage = () => {
 
     return (
 
-      <div>
-        <Map width={'width'} height={'height'} type={'logIn'}/>
-      </div>
+        <div>
+            <Map width={'width'} height={'height'} type={'logIn'}/>
+        </div>
         // <div className="container row justify-content-center, align-items-center m-auto my-3">
         //     {castles.map((castle) => (
         //         <div

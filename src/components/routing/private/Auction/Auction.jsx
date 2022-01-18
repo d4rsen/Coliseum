@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { thunkGetAllAuctionItemsAction } from '../../../../redux/actions/thunks/auction/thunkGetAllAuctionItemsAction'
+import AuctionFilter from '../../../common/Auction/AuctionFilter/AuctionFilter'
 import AuctionItem from '../../../common/Auction/AuctionItem/AuctionItem'
 import styles from './Auction.module.css'
-import AuctionFilter from "../../../common/Auction/AuctionFilter/AuctionFilter";
-import {useDispatch, useSelector} from "react-redux";
-import {thunkGetAllAuctionItemsAction} from "../../../../redux/actions/thunks/auction/thunkGetAllAuctionItemsAction";
 
 const Auction = () => {
     const dispatch = useDispatch()

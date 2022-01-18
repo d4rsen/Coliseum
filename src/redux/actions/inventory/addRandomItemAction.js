@@ -1,4 +1,4 @@
-import {ADD_RANDOM_ITEM} from "../../types/playerInventoryTypes";
+import { ADD_RANDOM_ITEM } from '../../types/playerInventoryTypes'
 
 export const addRandomItemAction = (item) => {
     return {

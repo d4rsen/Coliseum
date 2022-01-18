@@ -8,7 +8,7 @@ import Player from '../../../common/Player/Player'
 const MannequinPage = () => {
     const dispatch = useDispatch()
     const player = useSelector(state => state.player)
-    
+
     useEffect(() => {
         setTimeout(() => {
             dispatch(ACTION_PlayerRegenerate())

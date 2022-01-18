@@ -6,12 +6,12 @@ const PlayerProgressBarHpApMp = ({bgColor, stat, height, fontSize, type, rotate}
         <>
             {type ===
                 'header' && (
-                    <div className='header__exp'
-                        style={{
-                            width: `${stat}%`,
-                            height: `${10}px`,
-                            backgroundColor: bgColor,
-                        }}
+                    <div className="header__exp"
+                         style={{
+                             width: `${stat}%`,
+                             height: `${10}px`,
+                             backgroundColor: bgColor,
+                         }}
                     >
                         <span style={{fontSize: `${fontSize}px`}}>{stat}</span>
                     </div>

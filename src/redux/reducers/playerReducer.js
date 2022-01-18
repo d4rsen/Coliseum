@@ -1,5 +1,6 @@
 import initialState from '../init/initialState'
 import {
+    PLAYER_DODGED,
     PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER,
     PUNCH_FROM_MOB_TO_PLAYER,
     REGENERATE,
@@ -8,10 +9,6 @@ import {
 } from '../types/playerTypes'
 
 export const playerReducer = (state = initialState, action) => {
-    // const player = {...state}
-    const random = Math.floor(Math.random() * 100)
-    const chance = (characterEvasion) => characterEvasion > random
-
     switch (action.type) {
         case SET_PLAYER:
             return action.payload
@@ -19,19 +16,16 @@ export const playerReducer = (state = initialState, action) => {
         case UNSET_PLAYER:
             return null
 
+        case PLAYER_DODGED :
+            const staminaLess3 = state.ap - 1
+            return {...state, ap: staminaLess3}
+
         case PUNCH_FROM_MOB_TO_PLAYER:
             const dmg = state.hp - action.payload / state.total_stats.def
             const staminaLess = state.ap - 1
-            if (chance(state.evs)) {
-                console.log(`${state.nickName} уклонился !`)
-                return {...state, ap: staminaLess}
-            } else {
-                return {...state, hp: dmg, ap: staminaLess}
-            }
+            return {...state, hp: dmg, ap: staminaLess}
+
         case PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER:
-
-            // console.log(action.payload.battlePlayer, action.payload.battleEnemyPlayer, action.payload.enemyPlayerDamage)
-
             const dmg3 = state.hp - (action.payload.enemyPlayerDamage / (state.total_stats.def * 0.5))
             const staminaLess2 = state.ap - 1
 
@@ -44,10 +38,7 @@ export const playerReducer = (state = initialState, action) => {
             if ((action.payload.battlePlayer.defendLegs === true) && (action.payload.battleEnemyPlayer.attackLegs === true)) {
                 return {...state, ap: staminaLess2}
             }
-            if (chance(state.total_stats.evs)) {
-                console.log(`${state.nickName} уклонился !`)
-                return {...state, ap: staminaLess2}
-            }
+
             return {...state, hp: dmg3, ap: staminaLess2}
 
         case REGENERATE:

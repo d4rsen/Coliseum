@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import {SET_PLAYER_CLASS} from '../types/playerTypes'
+import { SET_PLAYER_CLASS } from '../types/playerTypes'
 
 export const chooseCharacterReducer = (state = initialState, action) => {
     switch (action.type) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {
     ACTION_attackBodyPlayer,
     ACTION_attackHeadPlayer,

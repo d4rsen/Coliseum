@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {getAllAuctionItems} from '../../auction/getAllAuctionItems'
+import { getAllAuctionItems } from '../../auction/getAllAuctionItems'
 
 export const thunkGetAllAuctionItemsAction = () => async (dispatch) => {
     console.log('thunkGetAllAuctionItemsAction')

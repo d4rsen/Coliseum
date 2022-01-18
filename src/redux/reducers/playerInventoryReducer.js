@@ -1,5 +1,5 @@
 import initialState from '../init/initialState'
-import {ADD_RANDOM_ITEM, DELETE_ITEM_FROM_INVENTORY, SET_PLAYER_INVENTORY} from '../types/playerInventoryTypes'
+import { ADD_RANDOM_ITEM, DELETE_ITEM_FROM_INVENTORY, SET_PLAYER_INVENTORY } from '../types/playerInventoryTypes'
 
 export const playerInventoryReducer = (state = initialState, action) => {
     switch (action.type) {

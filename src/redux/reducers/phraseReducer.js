@@ -1,12 +1,12 @@
 import initialState from '../init/initialState'
-import { SET_USER, UNSET_USER } from '../types/userTypes'
+import { SET_PHRASE, UNSET_PHRASE } from '../types/phraseTypes'
 
-export const userReducer = (state = initialState, action) => {
+export const phraseReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_USER:
+        case SET_PHRASE :
             return action.payload
 
-        case UNSET_USER:
+        case UNSET_PHRASE :
             return null
 
         default:

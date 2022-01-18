@@ -1,4 +1,4 @@
-import {GET_ALL_AUC_ITEMS} from '../../types/auctionTypes'
+import { GET_ALL_AUC_ITEMS } from '../../types/auctionTypes'
 
 export const getAllAuctionItems = (items) => {
     return {

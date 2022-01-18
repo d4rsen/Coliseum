@@ -1,12 +1,13 @@
 .playerPoison::after {
 
-  content:'asa';
+    content: 'asa';
 
-height: 15%;
+    height: 15%;
 }
+
 .header__exp {
-filter: drop-shadow(0px 10px 8px rgb(200, 68, 16));
-transition: 300ms;
-/* width: 10% ; */
+    filter: drop-shadow(0px 10px 8px rgb(200, 68, 16));
+    transition: 300ms;
+    /* width: 10% ; */
 
 }

@@ -1,6 +1,6 @@
 import $apiDb from '../../services/axiosServiceDb'
-import {setLoader, unSetLoader} from '../loaderActions'
-import {ACTION_setRoom} from '../roomActions'
+import { setLoader, unSetLoader } from '../loaderActions'
+import { ACTION_setRoom } from '../roomActions'
 
 export const THUNK_ACTION_enterRoom = (roomId) => async (dispatch) => {
     try {
