@@ -35,6 +35,12 @@ function App() {
     useEffect(() => {
         // (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
         // dispatch(ACTION_getMobs()) //TODO
+        player && socket.emit('player-connected', player.nickName)
+        return () => {
+            player && socket.emit('player-disconnected', player.nickName)
+            player && socket.off()
+        }
+
     }, [dispatch])
 
     if (isLoading) {

@@ -29,39 +29,51 @@ const AttackDefendWithCyberButtons = ({socket}) => {
         dispatch(ACTION_unsetDefendBodyPlayer())
         dispatch(ACTION_unsetDefendLegsPlayer())
     }
-    const unsetHandler = (e) => {
-        e.preventDefault()
+    const unsetHandler = () => {
         unsetAll()
         setIsDisabledAttack(false)
         setIsDisabledDefend(false)
     }
     const battleHandler = (e) => {
         e.preventDefault()
-        socket.emit('punch', room, player, battlePlayer)
-        // socket.on('punch', (players) => {
-        //     const WsEnemyPlayer = (players.currBattle.find(el => el.player.nickName !== player.nickName)) || null
-        //     if (WsEnemyPlayer) {
-        //         dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-        //         dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-        //         dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
-        //         console.log(battlePlayer)
-        //     }
-        // })
+        socket.emit('to_instance', {id: room.id, player, battlePlayer})
+        // unsetHandler()
+        socket.emit('punch', room, player)
     }
 
     useEffect(() => {
-        socket.on('punch', (players) => {
-            if ((battlePlayer.attackHead || battlePlayer.attackBody || battlePlayer.attackLegs) && (battlePlayer.defendHead || battlePlayer.defendBody || battlePlayer.defendLegs)) {
-                const WsEnemyPlayer = (players.currBattle.find(el => el.player.nickName !== player.nickName)) || null
-                if (WsEnemyPlayer) {
-                    dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
-                    dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
-                    dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
-                    console.log(battlePlayer)
-                }
+        socket.on('send-message', (data) => {
+            // console.log(data)
+            // if ((battlePlayer.attackHead || battlePlayer.attackBody || battlePlayer.attackLegs) && (battlePlayer.defendHead || battlePlayer.defendBody || battlePlayer.defendLegs)) {
+            //     const WsEnemyPlayer = (players.currBattle.find(el => el.player.id !== player.id)) || null
+            //     if (WsEnemyPlayer) {
+            //         dispatch(ACTION_getEnemyPlayer(WsEnemyPlayer.player))
+            //         dispatch(ACTION_getEnemyStateFromWS(WsEnemyPlayer.battlePlayer))
+            //         dispatch(ACTION_punchFromEnemyPlayerToPlayer(WsEnemyPlayer.player.total_stats.dmg, battlePlayer, WsEnemyPlayer.battlePlayer))
+            //         unsetHandler()
+            //     }
+            // }
+            // console.log(data.player_two.player.id, player.id)
+            // console.log(data.player_one.player.id, player.id)
+
+            if (data.player_one.player.id !== player.id) {
+                const enemyPlayerWs = data.player_one
+                const playerWs = data.player_two
+                dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
+                dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer))
+                unsetHandler()
+            }
+            if (data.player_two.player.id !== player.id) {
+                const enemyPlayerWs = data.player_two
+                const playerWs = data.player_one
+                dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
+                dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer))
+                unsetHandler()
             }
         })
-    }, [socket, battlePlayer])
+    }, [socket])
 
     return (
         <div className={style.buttons__block}>

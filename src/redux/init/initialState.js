@@ -1,7 +1,7 @@
 const initialState = () => ({
     user: null,
     isLoading: false,
-    mobs: [], //TODO mb get from server
+    mobs: null,
     isAuth: false,
     player: null,
     playerInventory: [],

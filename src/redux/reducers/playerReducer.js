@@ -54,6 +54,18 @@ export const playerReducer = (state = initialState, action) => {
             const temp = state.hp + 1
             const temp2 = state.ap + 1
             const temp3 = state.mp + 1
+            if (state.hp < 100 && state.ap < 100 && state.mp < 100) {
+                return {...state, hp: temp, ap: temp2, mp: temp3}
+            }
+            if (state.hp < 100 && state.ap < 100) {
+                return {...state, hp: temp, ap: temp2}
+            }
+            if (state.hp < 100 && state.mp < 100) {
+                return {...state, hp: temp, mp: temp3}
+            }
+            if (state.ap < 100 && state.mp < 100) {
+                return {...state, ap: temp2, mp: temp3}
+            }
             if (state.hp < 100) {
                 return {...state, hp: temp}
             }
@@ -63,6 +75,7 @@ export const playerReducer = (state = initialState, action) => {
             if (state.mp < 100) {
                 return {...state, mp: temp3}
             }
+
             return state
 
         default:

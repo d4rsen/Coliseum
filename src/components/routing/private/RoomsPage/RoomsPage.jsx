@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
 import { THUNK_ACTION_enterRoom } from '../../../../redux/actions/thunks/thunkEnterRoomActions'
 import { THUNK_ACTION_getAllRoomsFromDb } from '../../../../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
@@ -14,6 +15,12 @@ const RoomsPage = () => {
     useEffect(() => {
         (!allRooms) && dispatch(THUNK_ACTION_getAllRoomsFromDb())
     }, [dispatch])
+    
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(ACTION_PlayerRegenerate())
+        }, 3000)
+    }, [player, dispatch])
 
     const enterRoomHandler = async (e) => {
         e.preventDefault()

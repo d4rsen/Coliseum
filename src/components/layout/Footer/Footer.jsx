@@ -9,13 +9,6 @@ const Footer = ({socket}) => {
     const [allChatPlayers, setAllChatPlayers] = useState([])
 
     useEffect(() => {
-        socket.emit('player-connected', player.nickName)
-        // return () => {
-        //     socket.emit('player-disconnected', player.nickName)
-        // }
-    }, [])
-
-    useEffect(() => {
         socket.on('message', ({name, message}) => {
             setChat([...chat, {name, message}])
         })
