@@ -31,7 +31,7 @@ const DivTwo = () => {
             renderLayer={percentage => (
                 <div
                     style={{
-                        position: 'relative',
+                        position: 'static',
                         background: `rgba(255, 125, 0, ${percentage * 1})`,
                         // left: '90%',
                         // top: '50%',
@@ -41,8 +41,8 @@ const DivTwo = () => {
                 />
             )}
         >
-            <p>... Content</p>
             <div className="Parallax__content">{renderContent()}</div>
+            {/*<p>... Content</p>*/}
         </Parallax>
     )
 }
