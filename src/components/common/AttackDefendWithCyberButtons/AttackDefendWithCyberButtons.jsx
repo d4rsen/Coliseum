@@ -158,10 +158,10 @@ const AttackDefendWithCyberButtons = ({socket}) => {
         </div>
         <div>
             {player && player.hp <= 0 && (
-                <ExitRoomModal text={`Вас победил ${enemyPlayer && enemyPlayer.nickName}`}/>
+                <ExitRoomModal text={`Вас победил игрок: ${enemyPlayer && enemyPlayer.nickName}`}/>
             )}
             {enemyPlayer && enemyPlayer.hp <= 0 && (
-                <ExitRoomModal text={`Вы победили ${enemyPlayer && enemyPlayer.nickName}`}/>
+                <ExitRoomModal text={`Вы победили игрока: ${enemyPlayer && enemyPlayer.nickName}`}/>
             )}
         </div>
     </div>)
