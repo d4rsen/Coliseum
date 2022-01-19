@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { GET_REWARD_FOR_BATTLE } from '../../types/playerTypes'
 import { setLoader, unSetLoader } from '../loaderActions'
 import { ACTION_getPlayer } from '../playerActions'
 
@@ -17,6 +18,15 @@ export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
 
         dispatch(ACTION_getPlayer({...response.data}))
         dispatch(unSetLoader())
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const THUNK_ACTION_getPlayerExpAndGoldForBattle = (playerId, WinOrLoss) => async (dispatch) => {
+    try {
+        const response = await axios.post('https://dbforgame.herokuapp.com/battle/get-reward', {playerId, WinOrLoss})
+        dispatch({type: GET_REWARD_FOR_BATTLE, payload: response.data})
     } catch (e) {
         console.log(e)
     }

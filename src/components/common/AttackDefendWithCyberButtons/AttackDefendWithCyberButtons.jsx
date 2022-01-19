@@ -13,6 +13,7 @@ import {
 import { ACTION_getEnemyPlayer } from '../../../redux/actions/enemyPlayerActions'
 import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../redux/actions/playerActions'
 import { THUNK_ACTION_getPhraseFromDbEnglish } from '../../../redux/actions/thunks/thunkPhraseActions'
+import { THUNK_ACTION_getPlayerExpAndGoldForBattle } from '../../../redux/actions/thunks/thunkPlayersFromDbActions'
 import AttackDefendButtons from '../AttackDefendButtons/AttackDefendButtons'
 import ExitRoomModal from '../ExitRoomModal/ExitRoomModal'
 
@@ -68,19 +69,25 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     const getTimeSeconds = (time) => (minuteSeconds - time) | 0
 
     useEffect(() => {
-        socket.on('send-message', (data) => {
+        socket.on('send-message', async (data) => {
             const db_room = data.db_room
 
-            if ((data.player_one.player.hp >= 0) || (data.player_two.player >= 0)) {
+            if ((data.player_one.player.hp >= 0) || (data.player_two.player.hp >= 0)) {
                 setRestartTimer(prevKey => prevKey + 15)
             }
-            if ((data.player_one.player.hp <= 0) || (data.player_two.player <= 0)) {
+            if ((data.player_one.player.hp <= 0) || (data.player_two.player.hp <= 0)) {
                 setIsPlaying(false)
             }
 
             if (data.player_one.player.id !== player.id) {
                 const enemyPlayerWs = data.player_one
                 const playerWs = data.player_two
+                if (playerWs.player.hp <= 0) {
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false))
+                }
+                if (enemyPlayerWs.player.hp <= 0) {
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true))
+                }
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
                 dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))
@@ -91,6 +98,12 @@ const AttackDefendWithCyberButtons = ({socket}) => {
             if (data.player_two.player.id !== player.id) {
                 const enemyPlayerWs = data.player_two
                 const playerWs = data.player_one
+                if (playerWs.player.hp <= 0) {
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false))
+                }
+                if (enemyPlayerWs.player.hp <= 0) {
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true))
+                }
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
                 dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))

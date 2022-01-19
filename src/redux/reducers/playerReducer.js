@@ -1,5 +1,6 @@
 import initialState from '../init/initialState'
 import {
+    GET_REWARD_FOR_BATTLE,
     PLAYER_DODGED,
     PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER,
     PUNCH_FROM_MOB_TO_PLAYER,
@@ -15,6 +16,9 @@ export const playerReducer = (state = initialState, action) => {
 
         case UNSET_PLAYER:
             return null
+
+        case GET_REWARD_FOR_BATTLE :
+            return {...state, exp: action.payload.exp, balance: action.payload.balance}
 
         case PLAYER_DODGED :
             const staminaLess3 = state.ap - 1

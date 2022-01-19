@@ -32,7 +32,6 @@ import {
 export const ACTION_punchFromEnemyPlayerToPlayer = (enemyPlayerDamage, battlePlayer, battleEnemyPlayer, playerWs) => {
     const random = Math.floor(Math.random() * 100)
     const chance = (characterEvasion) => characterEvasion > random
-    console.log(chance(playerWs.player.total_stats.evs))
     // if (chance(playerWs.player.total_stats.evs)) {
     //     console.log(chance(playerWs.player.total_stats.evs))
     //     return {type: PLAYER_DODGED}
