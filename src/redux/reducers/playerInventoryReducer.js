@@ -6,24 +6,24 @@ export const playerInventoryReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_PLAYER_INVENTORY:
             console.log('ACTION PAYLOAD', action.payload)
-            if (action.payload.length) {
-                const temp = state.slice()
-                let flag = true
-                for (let i = 0; i < action.payload.length; i += 1) {
-                    if (temp[i]?.item_name !== action.payload[i]?.item_name) {
-                        console.log(flag)
-                        flag = false
-                    }
-                }
-                if (flag) {
-                    const playerItems = action.payload
-                    playerItems.forEach(e => {
-                        temp.unshift(e)
-                        temp.pop()
-                    })
-                    return state
-                } else return action.payload
-            } else return state
+            // if (action.payload.length) {
+            //     const temp = state.slice()
+            //     let flag = true
+            //     for (let i = 0; i < action.payload.length; i += 1) {
+            //         if (temp[i]?.item_name !== action.payload[i]?.item_name) {
+            //             console.log(flag)
+            //             flag = false
+            //         }
+            //     }
+            //     if (flag) {
+            //         const playerItems = action.payload
+            //         playerItems.forEach(e => {
+            //             temp.unshift(e)
+            //             temp.pop()
+            //         })
+            return action.payload
+        // } else return action.payload
+        // } else return state
         case ADD_RANDOM_ITEM:
             return [...state, action.payload]
         case BUY_ITEM:

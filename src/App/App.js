@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { io } from 'socket.io-client'
+import {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {Navigate, Route, Routes} from 'react-router-dom'
+import {io} from 'socket.io-client'
+
 
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
@@ -22,6 +23,7 @@ import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
 import './App.css'
 import './normalize.css'
+import Home from "../components/routing/private/Home/Home";
 
 const socket = io.connect('https://dbforgame.herokuapp.com/')
 
@@ -68,6 +70,7 @@ function App() {
                                <Navigate to="/"/> :
                                !user &&
                                <Navigate to="/register"/>}/>
+                <Route path="/home" element={isAuth ? <Navigate to="/"/> : <Home/>}/>
                 <Route path="/register" element={isAuth ? <Navigate to="/"/> : <RegistrationPage/>}/>
                 <Route path="/login" element={isAuth ? <Navigate to="/"/> : <AuthorizationPage/>}/>
                 <Route path="/train" element={user && player ? <TrainPage/> : <Navigate to="/register"/>}/>

@@ -72,7 +72,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     useEffect(() => {
         socket.on('close-private-room', () => {
             dispatch(ACTION_unsetEnemyPlayer())
-            socket.emit('close-private-room', room, player)
+            // socket.emit('close-private-room', room, player)
         })
         socket.on('send-message', async (data) => {
             const db_room = data.db_room

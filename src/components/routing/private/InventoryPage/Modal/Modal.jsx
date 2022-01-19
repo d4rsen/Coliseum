@@ -1,8 +1,6 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import {
-    thunkDeleteItemFromInventoryAction
-} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
+import {useDispatch} from 'react-redux'
+import {thunkDeleteItemFromInventoryAction} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
 import './Modal.css'
 
 function Modal({active, setActive, chosenItem, player}) {
@@ -17,6 +15,12 @@ function Modal({active, setActive, chosenItem, player}) {
         setActive(false)
     }
 
+    function handleWear(e) {
+        e.preventDefault()
+        console.log(chosenItem)
+        console.log(player)
+    }
+
     function handleUndo(e) {
         e.preventDefault()
     }
@@ -28,7 +32,7 @@ function Modal({active, setActive, chosenItem, player}) {
                     <label htmlFor="chosenItem" className="form-label">{chosenItem.item_name}</label>
                     <p>Are you sure about that?</p>
                     <button onClick={handleDelete}>Yes</button>
-                    <button>Set item</button>
+                    <button onClick={handleWear}>Set item</button>
                     <button onClick={handleUndo}>No</button>
                 </div>
             </div>

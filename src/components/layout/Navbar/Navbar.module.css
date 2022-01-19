@@ -1,6 +1,6 @@
 .header {
-    background-color: bisque;
-    margin-bottom: 8%;
+    background: rgb(226, 110, 18);
+    background: linear-gradient(185deg, rgba(226, 110, 18, 1) 0%, rgba(181, 71, 22, 1) 12%, rgba(99, 83, 46, 0) 98%);
     position: relative;
     /* display: flex;
     justify-content: center; */
