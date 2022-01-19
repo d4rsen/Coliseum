@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { useDispatch, useSelector } from 'react-redux'
 import {
     ACTION_getEnemyStateFromWS,
@@ -13,18 +14,25 @@ import { ACTION_getEnemyPlayer } from '../../../redux/actions/enemyPlayerActions
 import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../redux/actions/playerActions'
 import { THUNK_ACTION_getPhraseFromDbEnglish } from '../../../redux/actions/thunks/thunkPhraseActions'
 import AttackDefendButtons from '../AttackDefendButtons/AttackDefendButtons'
+import ExitRoomModal from '../ExitRoomModal/ExitRoomModal'
+
 import style from './AttackDefendWithCyberButtons.module.css'
 
 const AttackDefendWithCyberButtons = ({socket}) => {
     const dispatch = useDispatch()
+
+    const [restartTimer, setRestartTimer] = useState(15)
     const room = useSelector(state => state.room)
     const player = useSelector((state) => state.player)
     const evasion = useSelector(state => state.evasion)
+    const enemyPlayer = useSelector(state => state.enemyPlayer)
     const battlePlayer = useSelector(state => state.battlePlayer)
     const phrase = useSelector(state => state.phrase)
     const [battleLog, setBattleLog] = useState([])
     const [isDisabledAttack, setIsDisabledAttack] = useState(false)
     const [isDisabledDefend, setIsDisabledDefend] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(true)
+
     const unsetAll = () => {
         dispatch(ACTION_unsetAttackHeadPlayer())
         dispatch(ACTION_unsetAttackBodyPlayer())
@@ -40,25 +48,42 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     }
     const battleHandler = (e) => {
         e.preventDefault()
-        socket.emit('to_instance', {id: room.id, player, battlePlayer})
-        socket.emit('punch', room, player)
+        enemyPlayer && socket.emit('to_instance', {id: room.id, player, battlePlayer})
+        enemyPlayer && socket.emit('punch', room, player)
     }
+
+    const timerHandler = () => {
+        enemyPlayer && socket.emit('to_instance', {id: room.id, player, battlePlayer})
+        enemyPlayer && socket.emit('punch', room, player)
+        return {shouldRepeat: true}
+    }
+
+    const renderTime = (dimension, time) => {
+        return (<div className="time-wrapper">
+            <div className={style.time}>{time}</div>
+            <div>{dimension}</div>
+        </div>)
+    }
+    const minuteSeconds = 15
+    const getTimeSeconds = (time) => (minuteSeconds - time) | 0
 
     useEffect(() => {
         socket.on('send-message', (data) => {
             const db_room = data.db_room
+
+            if ((data.player_one.player.hp >= 0) || (data.player_two.player >= 0)) {
+                setRestartTimer(prevKey => prevKey + 15)
+            }
+            if ((data.player_one.player.hp <= 0) || (data.player_two.player <= 0)) {
+                setIsPlaying(false)
+            }
 
             if (data.player_one.player.id !== player.id) {
                 const enemyPlayerWs = data.player_one
                 const playerWs = data.player_two
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
-                dispatch(ACTION_punchFromEnemyPlayerToPlayer(
-                    enemyPlayerWs.player.total_stats.dmg,
-                    playerWs.battlePlayer,
-                    enemyPlayerWs.battlePlayer,
-                    playerWs
-                ))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))
                 dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, evasion, db_room))
                 unsetHandler()
             }
@@ -68,12 +93,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                 const playerWs = data.player_one
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
-                dispatch(ACTION_punchFromEnemyPlayerToPlayer(
-                    enemyPlayerWs.player.total_stats.dmg,
-                    playerWs.battlePlayer,
-                    enemyPlayerWs.battlePlayer,
-                    playerWs
-                ))
+                dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))
                 dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, evasion, db_room))
                 unsetHandler()
             }
@@ -84,41 +104,69 @@ const AttackDefendWithCyberButtons = ({socket}) => {
         phrase && setBattleLog([...battleLog, phrase])
     }, [dispatch, phrase])
 
-    return (
-        <div className={style.buttons__block}>
-            <AttackDefendButtons
-                isDisabledAttack={isDisabledAttack}
-                isDisabledDefend={isDisabledDefend}
-                setIsDisabledAttack={setIsDisabledAttack}
-                setIsDisabledDefend={setIsDisabledDefend}/>
+    return (<div className={style.buttons__block}>
+        {enemyPlayer && <>
 
-            <button className="cybr-btn" onClick={unsetHandler}>
-                Отмена
-                <span aria-hidden>_</span>
-                <span aria-hidden className="cybr-btn__glitch">Отмена_</span>
-                <span aria-hidden className="cybr-btn__tag">R25</span>
-            </button>
-            <button
-                onClick={battleHandler}
-                className="cybr-btn m-2"
-                disabled={!(isDisabledAttack && isDisabledDefend)}>
-                {isDisabledAttack && isDisabledDefend ? 'Бой' : 'Сделайте выбор'}
-                <span aria-hidden>_</span>
-                <span aria-hidden
-                      className="cybr-btn__glitch">{isDisabledAttack && isDisabledDefend ? 'Бой_' : 'Сделайте выбор_'}</span>
-                <span aria-hidden className="cybr-btn__tag">theGame</span>
-            </button>
-            <div>
-                {battleLog && battleLog.map((phraseFromDb, i) => {
-                    return (
-                        <div key={i}>
-                            <p>{phraseFromDb}</p>
-                        </div>
+            {/*COUNTER*/}
+            <CountdownCircleTimer
+                key={restartTimer}
+                isPlaying={isPlaying}
+                initialRemainingTime={15}
+                duration={15}
+                colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+                onComplete={timerHandler}
+                colorsTime={[10, 6, 3, 0]}
+            >
+                {
+                    ({elapsedTime, color}) => (
+                        <span style={{color}}>
+                        {renderTime('seconds', getTimeSeconds(elapsedTime))}
+                        </span>
                     )
-                })}
-            </div>
+                }
+            </CountdownCircleTimer>
+        </>}
+        {/*COUNTER*/}
+        <AttackDefendButtons
+            isDisabledAttack={isDisabledAttack}
+            isDisabledDefend={isDisabledDefend}
+            setIsDisabledAttack={setIsDisabledAttack}
+            setIsDisabledDefend={setIsDisabledDefend}/>
+
+        <button className="cybr-btn" onClick={unsetHandler}>
+            Отмена
+            <span aria-hidden>_</span>
+            <span aria-hidden className="cybr-btn__glitch">Отмена_</span>
+            <span aria-hidden className="cybr-btn__tag">R25</span>
+        </button>
+        <button
+            onClick={battleHandler}
+            className="cybr-btn m-2"
+            disabled={!(isDisabledAttack && isDisabledDefend)}>
+            {isDisabledAttack && isDisabledDefend ? 'Бой' : 'Сделайте выбор'}
+            <span aria-hidden>_</span>
+            <span aria-hidden
+                  className="cybr-btn__glitch">{isDisabledAttack && isDisabledDefend ? 'Бой_' : 'Сделайте выбор_'}</span>
+            <span aria-hidden className="cybr-btn__tag">theGame</span>
+        </button>
+        <div>
+            {battleLog && battleLog.map((phraseFromDb, i) => {
+                return (<div key={i}>
+                    <p>{phraseFromDb}</p>
+                </div>)
+            })}
         </div>
-    )
+        <div>
+            {player && player.hp <= 0 && (
+                <ExitRoomModal text={`Вас победил ${enemyPlayer && enemyPlayer.nickName}`}/>
+            )}
+            {enemyPlayer && enemyPlayer.hp <= 0 && (
+                <ExitRoomModal text={`Вы победили ${enemyPlayer && enemyPlayer.nickName}`}/>
+            )}
+        </div>
+    </div>)
 }
 
 export default AttackDefendWithCyberButtons
+
+

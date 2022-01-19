@@ -10,6 +10,7 @@ import {
 } from '../../../redux/actions/battleActions'
 
 import AttackButton from '../AttackButton/AttackButton'
+import style from './AttackDefendButtons.module.css'
 
 const AttackDefendButtons = ({isDisabledAttack, isDisabledDefend, setIsDisabledDefend, setIsDisabledAttack}) => {
     const dispatch = useDispatch()
@@ -42,7 +43,7 @@ const AttackDefendButtons = ({isDisabledAttack, isDisabledDefend, setIsDisabledD
 
     return (
         <div>
-            <div>
+            <div className={style.allButtons}>
                 {attackTexts.map((el) => {
                     return (
                         <AttackButton

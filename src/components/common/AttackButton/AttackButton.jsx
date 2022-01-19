@@ -3,12 +3,12 @@ import styles from './AttackButton.module.css'
 
 const AttackButton = ({disabled, attackDefendHandler, value}) => {
     return (
-        <button className={styles['custom-btn btn-12"']}
+        <button className={styles['btn-12']}
                 onClick={attackDefendHandler}
                 value={value}
                 disabled={disabled}>
             <span>Are you sure ?</span>
-            <span>{disabled ? value : 'Wait for an enemy'}</span>
+            <span>{disabled ? 'Wait enemy' : value}</span>
         </button>
     )
 }
