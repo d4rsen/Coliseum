@@ -21,7 +21,7 @@ const ColiseumPage = ({socket}) => {
         return () => {
             dispatch(ACTION_unsetEnemyPlayer())
             dispatch(ACTION_unSetRoom())
-            socket.emit('close-private-room', player)
+            socket.emit('close-private-room', room, player)
         }
     }, [])
 

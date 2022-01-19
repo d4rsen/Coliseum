@@ -10,7 +10,7 @@ import {
     ACTION_unsetDefendHeadPlayer,
     ACTION_unsetDefendLegsPlayer
 } from '../../../redux/actions/battleActions'
-import { ACTION_getEnemyPlayer } from '../../../redux/actions/enemyPlayerActions'
+import { ACTION_getEnemyPlayer, ACTION_unsetEnemyPlayer } from '../../../redux/actions/enemyPlayerActions'
 import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../redux/actions/playerActions'
 import { THUNK_ACTION_getPhraseFromDbEnglish } from '../../../redux/actions/thunks/thunkPhraseActions'
 import { THUNK_ACTION_getPlayerExpAndGoldForBattle } from '../../../redux/actions/thunks/thunkPlayersFromDbActions'
@@ -33,6 +33,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     const [isDisabledAttack, setIsDisabledAttack] = useState(false)
     const [isDisabledDefend, setIsDisabledDefend] = useState(false)
     const [isPlaying, setIsPlaying] = useState(true)
+    const [enemyLeaved, setEnemyLeaved] = useState(false)
 
     const unsetAll = () => {
         dispatch(ACTION_unsetAttackHeadPlayer())
@@ -69,6 +70,10 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     const getTimeSeconds = (time) => (minuteSeconds - time) | 0
 
     useEffect(() => {
+        socket.on('close-private-room', () => {
+            dispatch(ACTION_unsetEnemyPlayer())
+            socket.emit('close-private-room', room, player)
+        })
         socket.on('send-message', async (data) => {
             const db_room = data.db_room
 
@@ -176,6 +181,9 @@ const AttackDefendWithCyberButtons = ({socket}) => {
             {enemyPlayer && enemyPlayer.hp <= 0 && (
                 <ExitRoomModal text={`Вы победили игрока: ${enemyPlayer && enemyPlayer.nickName}`}/>
             )}
+            {/*{enemyLeaved && (*/}
+            {/*    <ExitRoomModal text={`Ваш соперник вышел из боя`}/>*/}
+            {/*)}*/}
         </div>
     </div>)
 }

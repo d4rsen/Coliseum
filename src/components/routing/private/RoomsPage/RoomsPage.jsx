@@ -31,7 +31,7 @@ const RoomsPage = () => {
         await dispatch(THUNK_ACTION_enterRoom(e.target.id))
         setTimeout(() => {
             navigation('/coliseum')
-        }, 300)
+        }, 200)
     }
 
     const createRoomHandler = async (e) => {
@@ -39,7 +39,7 @@ const RoomsPage = () => {
         await dispatch(THUNK_ACTION_getRoomFromDb(player.id))
         setTimeout(() => {
             navigation('/coliseum')
-        }, 300)
+        }, 200)
     }
 
     return (
