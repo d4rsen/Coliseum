@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions'
 import PlayerProgressBarHpApMp from '../../common/PlayerProgressBarHpApMp/PlayerProgressBarHpApMp'
+import Bag from './Bag/Bag'
 import style from './Navbar.module.css'
 
 export default function Navbar() {
@@ -68,9 +69,9 @@ export default function Navbar() {
                                             Тест для Андрея
                                         </NavLink>
                                     </li>
-                                    <li className={style.navigaton__item}>
+                                    <li className={style.navigaton__item ,style.bag} >
                                         <NavLink className={style.navigaton__link} to="/inventory">
-                                            Инвентарь
+                                            <Bag/>
                                         </NavLink>
                                     </li>
                                 </>
@@ -85,17 +86,21 @@ export default function Navbar() {
                                 bgColor={'red'}
                                 type={'header'}
                                 stat={player?.hp}
+                                // height={5}
                             />
                             <PlayerProgressBarHpApMp
+                             className={style.header__progress_element}
                                 bgColor={'green'}
                                 stat={player?.mp}
                                 type={'header'}
                             />
                             <PlayerProgressBarHpApMp
+                             className={style.header__progress_element}
                                 bgColor={'aqua'}
                                 stat={player?.ap}
                                 type={'header'}
                             />
+                            
                         </div>
                     )}
 
@@ -154,8 +159,8 @@ export default function Navbar() {
                     <PlayerProgressBarHpApMp
                         bgColor={'brown'}
                         stat={exp}
-                        height={6}
-                        type={'header'}
+                        height={10}
+                        type={'exp'}
                         fontSize={8}
                     />
                 </div>
