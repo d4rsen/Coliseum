@@ -13,7 +13,11 @@ const RoomsPage = () => {
     const player = useSelector(state => state.player)
 
     useEffect(() => {
-        (!allRooms) && dispatch(THUNK_ACTION_getAllRoomsFromDb())
+        // (!allRooms) && dispatch(THUNK_ACTION_getAllRoomsFromDb())
+        dispatch(THUNK_ACTION_getAllRoomsFromDb())
+        return () => {
+            dispatch(THUNK_ACTION_getAllRoomsFromDb())
+        }
     }, [dispatch])
 
     useEffect(() => {
@@ -27,7 +31,7 @@ const RoomsPage = () => {
         await dispatch(THUNK_ACTION_enterRoom(e.target.id))
         setTimeout(() => {
             navigation('/coliseum')
-        }, 200)
+        }, 300)
     }
 
     const createRoomHandler = async (e) => {
@@ -35,7 +39,7 @@ const RoomsPage = () => {
         await dispatch(THUNK_ACTION_getRoomFromDb(player.id))
         setTimeout(() => {
             navigation('/coliseum')
-        }, 200)
+        }, 300)
     }
 
     return (

@@ -102,9 +102,9 @@ export default function Navbar() {
                     {user && (
                         <div className={style.header__user}>
                             <div className={style.header__user_params}>
-                <span className={style.header__room}>
-                  {room ? `Your room is ${room?.id}` : 'You are not in room'}
-                </span>
+                                <span className={style.header__room}>
+                                  {room ? `Your room is ${room.id}` : 'You are not in room'}
+                                </span>
                                 <span className={style.header__level}>
                   {player && `Your level is ${player.lvl}`}
                 </span>

@@ -1,4 +1,4 @@
-import { SET_ROOM } from '../types/roomTypes'
+import { SET_ROOM, UNSET_ROOM } from '../types/roomTypes'
 
 export const ACTION_setRoom = (room) => {
     return {
@@ -8,6 +8,6 @@ export const ACTION_setRoom = (room) => {
 }
 export const ACTION_unSetRoom = () => {
     return {
-        type: SET_ROOM,
+        type: UNSET_ROOM,
     }
 }
