@@ -88,10 +88,10 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                 const enemyPlayerWs = data.player_one
                 const playerWs = data.player_two
                 if (playerWs.player.hp <= 0) {
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false))
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false, room))
                 }
                 if (enemyPlayerWs.player.hp <= 0) {
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true))
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true, room))
                 }
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
@@ -104,10 +104,10 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                 const enemyPlayerWs = data.player_two
                 const playerWs = data.player_one
                 if (playerWs.player.hp <= 0) {
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false))
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false, room))
                 }
                 if (enemyPlayerWs.player.hp <= 0) {
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true))
+                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true, room))
                 }
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))

@@ -23,9 +23,9 @@ export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
     }
 }
 
-export const THUNK_ACTION_getPlayerExpAndGoldForBattle = (playerId, WinOrLoss) => async (dispatch) => {
+export const THUNK_ACTION_getPlayerExpAndGoldForBattle = (playerId, WinOrLoss, room) => async (dispatch) => {
     try {
-        const response = await axios.post('https://dbforgame.herokuapp.com/battle/get-reward', {playerId, WinOrLoss})
+        const response = await axios.post('https://dbforgame.herokuapp.com/battle/get-reward', {playerId, WinOrLoss, room})
         dispatch({type: GET_REWARD_FOR_BATTLE, payload: response.data})
     } catch (e) {
         console.log(e)

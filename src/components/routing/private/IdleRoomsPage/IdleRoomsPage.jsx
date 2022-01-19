@@ -3,20 +3,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
 import { THUNK_ACTION_enterRoom } from '../../../../redux/actions/thunks/thunkEnterRoomActions'
-import { THUNK_ACTION_getAllRoomsFromDb } from '../../../../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
+import { THUNK_ACTION_getIdleRoomsFromDb } from '../../../../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
 import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
 
-const RoomsPage = () => {
+const IdleRoomsPage = () => {
     const dispatch = useDispatch()
-    const allRooms = useSelector(state => state.allRooms)
+    const idleRooms = useSelector(state => state.idleRooms)
     const navigation = useNavigate()
     const player = useSelector(state => state.player)
 
     useEffect(() => {
-        // (!allRooms) && dispatch(THUNK_ACTION_getAllRoomsFromDb())
-        dispatch(THUNK_ACTION_getAllRoomsFromDb())
+        // (!idleRooms) && dispatch(THUNK_ACTION_getIdleRoomsFromDb())
+        dispatch(THUNK_ACTION_getIdleRoomsFromDb())
         return () => {
-            dispatch(THUNK_ACTION_getAllRoomsFromDb())
+            dispatch(THUNK_ACTION_getIdleRoomsFromDb())
         }
     }, [dispatch])
 
@@ -50,7 +50,7 @@ const RoomsPage = () => {
                 </button>
             </div>
             <div>
-                {allRooms && allRooms.map(room => {
+                {idleRooms && idleRooms.map(room => {
                     return (
                         <div key={room.id} className="container d-flex flex-row mt-4">
                             <img onClick={enterRoomHandler} id={room.id}
@@ -64,4 +64,4 @@ const RoomsPage = () => {
     )
 }
 
-export default RoomsPage
+export default IdleRoomsPage

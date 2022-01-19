@@ -1,1 +1,2 @@
-export const GET_ALL_ROOMS = 'GET_ALL_ROOMS'
+export const GET_IDLE_ROOMS = 'GET_IDLE_ROOMS'
+export const GET_ACTIVE_ROOMS = 'GET_ACTIVE_ROOMS'
