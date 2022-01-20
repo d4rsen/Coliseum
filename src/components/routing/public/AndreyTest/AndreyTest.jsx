@@ -8,7 +8,7 @@ import './button.css'
 const AndreyTest = ({socket}) => {
     return (
         <div className={style.main__gym}>
-            <Player/>
+            <Player type={'player'}/>
             <AttackDefendWithCyberButtons socket={socket}/>
             <Player type={'enemy'}/>
         </div>
