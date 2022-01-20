@@ -1,26 +1,10 @@
 import initialState from '../init/initialState'
-import {ADD_RANDOM_ITEM, DELETE_ITEM_FROM_INVENTORY, SET_PLAYER_INVENTORY} from '../types/playerInventoryTypes'
-import {BUY_ITEM} from "../types/auctionTypes";
+import { BUY_ITEM } from '../types/auctionTypes'
+import { ADD_RANDOM_ITEM, DELETE_ITEM_FROM_INVENTORY, SET_PLAYER_INVENTORY } from '../types/playerInventoryTypes'
 
 export const playerInventoryReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_PLAYER_INVENTORY:
-            console.log('ACTION PAYLOAD', action.payload)
-            // if (action.payload.length) {
-            //     const temp = state.slice()
-            //     let flag = true
-            //     for (let i = 0; i < action.payload.length; i += 1) {
-            //         if (temp[i]?.item_name !== action.payload[i]?.item_name) {
-            //             console.log(flag)
-            //             flag = false
-            //         }
-            //     }
-            //     if (flag) {
-            //         const playerItems = action.payload
-            //         playerItems.forEach(e => {
-            //             temp.unshift(e)
-            //             temp.pop()
-            //         })
             return action.payload
         // } else return action.payload
         // } else return state

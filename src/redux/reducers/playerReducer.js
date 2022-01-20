@@ -23,7 +23,6 @@ export const playerReducer = (state = initialState, action) => {
 
         case GET_REWARD_FOR_MOB_BATTLE:
             return {...state, exp: action.payload.exp, balance: action.payload.balance}
-        // return {...action.payload}
 
         case PLAYER_DODGED :
             const staminaLess3 = state.ap - 1
