@@ -16,6 +16,7 @@ import { phraseReducer } from '../phraseReducer'
 import { playerInventoryReducer } from '../playerInventoryReducer'
 import { playerReducer } from '../playerReducer'
 import { roomReducer } from '../roomReducer'
+import { traderItemsReducer } from '../traderItemsReducer'
 import { userReducer } from '../userReducer'
 import { watchBattleReducer } from '../watchBattleReducer'
 
@@ -32,6 +33,7 @@ export const rootReducer = combineReducers({
     idleRooms: idleRoomsReducer,
     mannequin: mannequinReducer,
     auctionItems: auctionReducer,
+    traderItems: traderItemsReducer,
     enemyPlayer: enemyPlayerReducer,
     activeRooms: activeRoomsReducer,
     watchBattle: watchBattleReducer,

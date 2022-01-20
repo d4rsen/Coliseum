@@ -11,11 +11,11 @@
     line-height: 42px;
     -webkit-perspective: 230px;
     perspective: 230px;
-    
+
 }
 
 .btn-12 span {
- 
+
     background: rgb(219, 230, 181);
     /* background: linear-gradient(0deg, rgb(162, 160, 93) 0%, rgb(155, 145, 67) 100%); */
     border-radius: 5px;
@@ -49,7 +49,7 @@
     -webkit-transform-origin: 50% 50% -20px;
     -moz-transform-origin: 50% 50% -20px;
     transform-origin: 50% 50% -20px;
-    
+
 }
 
 .btn-12 span:nth-child(2) {
@@ -59,7 +59,7 @@
     -webkit-transform-origin: 50% 50% -20px;
     -moz-transform-origin: 50% 50% -20px;
     transform-origin: 50% 50% -20px;
-    font-family: 'Grek'; 
+    font-family: 'Grek';
 }
 
 .btn-12:hover span:nth-child(1) {
@@ -69,7 +69,7 @@
     -webkit-transform: rotateX(0deg);
     -moz-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    font-family: 'Grek'; 
+    font-family: 'Grek';
 }
 
 .btn-12:hover span:nth-child(2) {
@@ -80,5 +80,5 @@
     -webkit-transform: rotateX(-90deg);
     -moz-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
-    
+
 }

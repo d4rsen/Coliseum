@@ -62,7 +62,7 @@ export default function AuthorizationPage() {
                                             <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                 <button onClick={submitHandler} type="button"
                                                         className="btn btn-outline-success btn-lg">
-                                                    Action
+                                                    Sign in
                                                 </button>
                                             </div>
                                         </form>

@@ -11,7 +11,7 @@ const PlayerProgressBarHpApMp = ({bgColor, stat, height, fontSize, type, rotate}
                              width: `${stat}%`,
                              height: `${20}px`,
                              backgroundColor: bgColor,
-                             borderRadius:'5px' ,
+                             borderRadius: '5px',
                          }}
                     >
                         <span style={{fontSize: `${fontSize}px`}}>{stat}</span>
@@ -29,19 +29,19 @@ const PlayerProgressBarHpApMp = ({bgColor, stat, height, fontSize, type, rotate}
                         <p style={{fontSize: `${fontSize}px`, transform: `rotateX(${rotate}deg)`}}>{stat}</p>
                     </div>
                 )}
-                 {type ===
+            {type ===
                 'exp' && (
                     <div
-                    
+
                         style={{
                             width: `${stat}%`,
                             // height: `${stat}%`,
                             backgroundColor: bgColor,
-                            borderRadius:'5px' ,
+                            borderRadius: '5px',
 
-                        }} 
+                        }}
 
-                     
+
                     >
                         <p style={{fontSize: `${fontSize}px`, transform: `rotateX(${rotate}deg)`}}>{stat}</p>
                     </div>

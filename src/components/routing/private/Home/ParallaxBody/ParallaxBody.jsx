@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
+import { ParallaxBanner } from 'react-scroll-parallax'
 import './ParallaxBody.scss'
-import {ParallaxBanner} from "react-scroll-parallax";
 
 const ParallaxBody = (props) => {
     return (
@@ -19,9 +19,9 @@ const ParallaxBody = (props) => {
                 height: props.height,
             }}
         >
-            <h1 className='header_title'>{props.content}</h1>
+            <h1 className="header_title">{props.content}</h1>
         </ParallaxBanner>
-    );
-};
+    )
+}
 
-export default ParallaxBody;
+export default ParallaxBody

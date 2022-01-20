@@ -1,7 +1,7 @@
-import axios from "axios";
-import {buyItemAction} from "../../auction/buyItemAction";
-import {deleteItemAction} from "../../auction/deleteItemAction";
-import {thunkGetAllAuctionItemsAction} from "./thunkGetAllAuctionItemsAction";
+import axios from 'axios'
+import { buyItemAction } from '../../auction/buyItemAction'
+import { deleteItemAction } from '../../auction/deleteItemAction'
+import { thunkGetAllAuctionItemsAction } from './thunkGetAllAuctionItemsAction'
 
 export const thunkBuyItemAction = ({id, buyer_id}) => async (dispatch) => {
     const response = await axios.post('https://dbforgame.herokuapp.com/auction/buy-item',

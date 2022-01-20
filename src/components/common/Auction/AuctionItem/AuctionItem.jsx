@@ -3,10 +3,9 @@ import AuctionButton from '../AuctionButton/AuctionButton'
 import styles from './AuctionItem.module.css'
 
 const AuctionItem = ({item}) => {
-    // console.log(item)
     const itemId = 124
     const itemImg = 'https://cdn.webshopapp.com/shops/305440/files/345306816/hellscream-foam-two-handed-battle-axe-gore.jpg'
-    const itemName = 'Great axe' //`${item.item_id}`
+    const itemName = ''
     const itemStats = {
         dmg: 19,
         str: 7,
@@ -14,11 +13,7 @@ const AuctionItem = ({item}) => {
         int: 3
     }
     const itemPrice = 999999
-    const itemInfo = 'Lorem ipsum dolor sit amet, consectetur ' +
-        'adipisicing elit. Explicabo facilis laborum nihil nostrum' +
-        ' repudiandae. Aut cumque ex, facilis harum iste, iusto' +
-        ' minus mollitia nihil pariatur placeat, recusandae rerum' +
-        ' vero voluptatibus?'
+    const itemInfo = 'no description'
 
     return (
         <div className={styles['item-wrapper']}>

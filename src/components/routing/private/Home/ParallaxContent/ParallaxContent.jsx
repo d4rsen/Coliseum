@@ -1,5 +1,5 @@
-import React from 'react';
-import {ParallaxBanner} from "react-scroll-parallax";
+import React from 'react'
+import { ParallaxBanner } from 'react-scroll-parallax'
 
 const ParallaxContent = (props) => {
     return (
@@ -12,7 +12,7 @@ const ParallaxContent = (props) => {
                         }}>
 
         </ParallaxBanner>
-    );
-};
+    )
+}
 
-export default ParallaxContent;
+export default ParallaxContent

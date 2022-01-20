@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { SET_TRADER_ITEMS } from '../../../types/auctionTypes'
 import { getAllAuctionItems } from '../../auction/getAllAuctionItems'
 
 export const thunkGetAllAuctionItemsAction = () => async (dispatch) => {
@@ -9,4 +10,9 @@ export const thunkGetAllAuctionItemsAction = () => async (dispatch) => {
     dispatch(getAllAuctionItems(allAucItems))
 }
 
-//    'https://dbforgame.herokuapp.com/auction'    'http://localhost:4000/auction'
+export const THUNK_ACTION_getTraderItems = () => async (dispatch) => {
+    console.log('thunkGetAllAuctionItemsAction')
+    const response = await axios.post('https://dbforgame.herokuapp.com/auction/merchant-for-sale')
+    console.log(response.data)
+    dispatch({type: SET_TRADER_ITEMS, payload: response.data})
+}

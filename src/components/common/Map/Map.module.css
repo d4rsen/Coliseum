@@ -7,17 +7,18 @@
   font-weight: normal; 
   }  */
 
-  @font-face {
-    font-family: 'Grek'; 
+@font-face {
+    font-family: 'Grek';
     src: local('Cleo'),
-      url('../../../App/DS_Greece.ttf') format("truetype"); 
-  }
+    url('../../../App/DS_Greece.ttf') format("truetype");
+}
+
 .map {
     display: flex;
     position: relative;
     align-items: center;
     max-width: 40%;
-    
+
     /* margin-top:20%; */
     /* height: 0vh; */
 
@@ -135,13 +136,13 @@
 }
 
 .map__primaryCastle::after {
-  content: 'Главный замок';
-  font-family: 'Grek';
+    content: 'Главный замок';
+    font-family: 'Grek';
     color: white;
     display: flex;
     text-align: center;
     justify-content: center;
-    
+
 }
 
 .map__primaryCastle:hover {
@@ -170,7 +171,7 @@
     content: 'Тренироовочный лагерь ';
     color: white;
     display: flex;
-   
+
     text-align: center;
     justify-content: center;
     display: block;
@@ -191,7 +192,7 @@
 
 
 .map__market {
-  font-family: 'Grek';
+    font-family: 'Grek';
     position: absolute;
     z-index: 2;
     width: 14%;
@@ -206,7 +207,7 @@
 
 .map__market::after {
     content: 'Разрушенний рынок';
-font-family: 'Grek';
+    font-family: 'Grek';
     color: white;
     position: absolute;
     display: flex;

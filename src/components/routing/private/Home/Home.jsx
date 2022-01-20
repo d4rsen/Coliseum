@@ -67,26 +67,26 @@
 //
 // export default Home;
 
-import React from "react";
-import {ParallaxProvider} from "react-scroll-parallax";
-import ParallaxHeader from "./ParallaxImg/ParallaxHeader";
+import * as PropTypes from 'prop-types'
+import React from 'react'
+import { ParallaxProvider } from 'react-scroll-parallax'
+import bodyImg from './battle.jpeg'
+import footerImg from './fly.jpeg'
 
 import headerImg from './landscape.jpg'
-import bodyImg from './battle.jpeg'
-import footerImg from "./fly.jpeg";
-import ParallaxContent from "./ParallaxContent/ParallaxContent";
-import * as PropTypes from "prop-types";
-import ParallaxBody from "./ParallaxBody/ParallaxBody";
+import ParallaxBody from './ParallaxBody/ParallaxBody'
+import ParallaxContent from './ParallaxContent/ParallaxContent'
+import ParallaxHeader from './ParallaxImg/ParallaxHeader'
 
 function ParallaxFooter(props) {
-    return null;
+    return null
 }
 
 ParallaxFooter.propTypes = {
     opacity: PropTypes.string,
     height: PropTypes.string,
     imgsrc: PropTypes.any
-};
+}
 
 function Home() {
 

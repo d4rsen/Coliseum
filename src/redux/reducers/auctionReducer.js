@@ -1,5 +1,5 @@
-import {DELETE_ITEM, FILTER_ITEMS, GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM} from '../types/auctionTypes'
-import initialState from "../init/initialState";
+import initialState from '../init/initialState'
+import { DELETE_ITEM, FILTER_ITEMS, GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM } from '../types/auctionTypes'
 
 export const auctionReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -15,12 +15,10 @@ export const auctionReducer = (state = initialState, action) => {
             console.log(action.payload)
             return action.payload
 
-
         default:
             return state
     }
 }
-
 
 // console.log('POST INIT')
 // const checker = state.every(e => Number(e.id) === Number(action.payload))

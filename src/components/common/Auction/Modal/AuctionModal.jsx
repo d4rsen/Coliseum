@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import React, { useCallback, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import AuctionButton from '../AuctionButton/AuctionButton'
 import './AuctionModal.scss'
 
@@ -8,6 +8,7 @@ function AuctionModal({active, setActive}) {
     const inventory = useSelector(state => state.playerInventory)
     const [chosenItem, setChosenItem] = useState(null)
     const [price, setPrice] = useState('')
+    const [curr, setCurr] = useState('')
     // useEffect(() => {
     //     dispatch(THUNK_ACTION_getPLayerInventory())
     // }, [dispatch])
@@ -23,6 +24,8 @@ function AuctionModal({active, setActive}) {
         console.log(e.target.id)
         setChosenItem(e.target.id)
     }
+
+    const someHandler = e => setCurr(e.target.id)
 
     function priceHandler(e) {
         setPrice('')
@@ -42,15 +45,17 @@ function AuctionModal({active, setActive}) {
              onClick={setHandler}>
             <div className={active ? 'modal__content1' : 'modal1'}
                  onClick={propagationHandler}>
-                <div>
+                <div style={{overflow: 'scroll', display: 'flex', flexWrap: 'wrap',}}>
                     {inventory &&
                         inventory.map(e => {
                             if (!e) {
                                 return null
                             }
-                            return <div onClick={clickHandler}
+                            return <div style={{marginBottom: '2%', marginRight: '2%',}}
+                                        onClick={clickHandler}
                                         id={e.id}>
-                                {e.item_name}
+                                <img src={e.img} onClick={someHandler} id={e.item_name}/>
+                                <p>{e.price} ₲</p>
                             </div>
                         })
                     }
@@ -58,7 +63,7 @@ function AuctionModal({active, setActive}) {
                 <div id="lalala" className="mb-3">
                     <label htmlFor="question"
                            className="form-label">
-                        Choose price:
+                        {`Choose price ₲ for : ${curr}`}
                     </label>
                     <input type="text"
                            onChange={inputHandler}

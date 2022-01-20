@@ -1,4 +1,4 @@
-import {BUY_ITEM} from "../../types/auctionTypes";
+import { BUY_ITEM } from '../../types/auctionTypes'
 
 export const buyItemAction = (item) => {
     return {

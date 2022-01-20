@@ -1,4 +1,4 @@
-import {DELETE_ITEM} from "../../types/auctionTypes";
+import { DELETE_ITEM } from '../../types/auctionTypes'
 
 export const deleteItemAction = (auction_id) => {
     return {

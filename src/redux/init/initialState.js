@@ -7,6 +7,8 @@ const initialState = () => ({
     isAuth: false,
     evasion: false,
     idleRooms: null,
+    auctionItems: [],
+    traderItems: null,
     isLoading: false,
     activeRooms: null,
     enemyPlayer: null,
@@ -33,7 +35,6 @@ const initialState = () => ({
         defendBody: false,
         defendLegs: false,
     },
-    auctionItems: [],
 })
 
 export default initialState

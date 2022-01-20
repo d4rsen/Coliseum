@@ -1,7 +1,7 @@
 
 .main__gym {
     display: flex;
-    margin: 5% 1% 0 10% ;
+    margin: 5% 1% 0 10%;
     /* background-color: cadetblue; */
     justify-content: space-around;
     /* flex-wrap: wrap; */
@@ -14,8 +14,8 @@ width: 30%;
 margin: 0;
 } */
 
-.main__map{
-width: 100%;
-display: flex;
+.main__map {
+    width: 100%;
+    display: flex;
 
 }

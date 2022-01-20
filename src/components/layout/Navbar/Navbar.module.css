@@ -1,6 +1,6 @@
 .header {
-  background: rgb(227,203,131);
-background: linear-gradient(180deg, rgba(227,203,131,1) 0%, rgba(223,217,179,1) 68%, rgba(251,251,251,1) 100%);
+    background: rgb(227, 203, 131);
+    background: linear-gradient(180deg, rgba(227, 203, 131, 1) 0%, rgba(223, 217, 179, 1) 68%, rgba(251, 251, 251, 1) 100%);
     margin-bottom: 2%;
     /* position: relative; */
     /* display: flex;
@@ -27,7 +27,7 @@ width: 20px; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-padding-right: 50px;
+    padding-right: 50px;
 
     /* margin-right: auto; */
 }
@@ -39,8 +39,7 @@ padding-right: 50px;
     margin-bottom: 0;
     flex-wrap: wrap;
     padding: 0;
-    position: relative
-    ;
+    position: relative;
     /* margin-right: auto; */
 }
 
@@ -99,12 +98,12 @@ padding-right: 50px;
     /* position: relative; */
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap:5px;
+    grid-gap: 5px;
     padding: 2%;
 }
 
 .header__progress_element {
-  margin-bottom: 10%;
+    margin-bottom: 10%;
 
 }
 
@@ -133,7 +132,7 @@ padding-right: 50px;
     transition: 200ms;
     position: absolute;
     right: -20%;
-    top:-54%;
+    top: -54%;
 }
 
 .bag:hover {
@@ -141,7 +140,7 @@ padding-right: 50px;
     transition: 200ms;
     width: 24%;
     right: -20%;
-    top:-64%;
+    top: -64%;
     /* wi */
 }
 

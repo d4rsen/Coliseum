@@ -44,31 +44,31 @@ const AttackDefendButtons = ({isDisabledAttack, isDisabledDefend, setIsDisabledD
     return (
         <div>
             <div className={style.allButtons}>
-              <div className={style.def}>
-                {attackTexts.map((el) => {
-                    return (
-                        <AttackButton
-                            value={el}
-                            disabled={isDisabledAttack}
-                            attackDefendHandler={attackHandler}
-                        />
-                    )
-                })}
+                <div className={style.def}>
+                    {attackTexts.map((el) => {
+                        return (
+                            <AttackButton
+                                value={el}
+                                disabled={isDisabledAttack}
+                                attackDefendHandler={attackHandler}
+                            />
+                        )
+                    })}
                 </div>
-              
-                <div className={style.atac}>
-                {defendTexts.map((el) => {
-                    return (
-                        <AttackButton
-                            value={el}
-                            disabled={isDisabledDefend}
-                            attackDefendHandler={defendHandler}
-                        />
-                    )
 
-                })}
+                <div className={style.atac}>
+                    {defendTexts.map((el) => {
+                        return (
+                            <AttackButton
+                                value={el}
+                                disabled={isDisabledDefend}
+                                attackDefendHandler={defendHandler}
+                            />
+                        )
+
+                    })}
                 </div>
-                  
+
             </div>
         </div>
     )

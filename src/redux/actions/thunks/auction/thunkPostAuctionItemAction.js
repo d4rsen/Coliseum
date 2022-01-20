@@ -1,6 +1,6 @@
-import {postAuctionItem} from '../../auction/postAuctionItem'
-import {deleteItemFromInventoryAction} from "../../inventory/deleteItemFromInventoryAction";
-import $apiAuc from "../../../services/axiosServiceAuction";
+import $apiAuc from '../../../services/axiosServiceAuction'
+import { postAuctionItem } from '../../auction/postAuctionItem'
+import { deleteItemFromInventoryAction } from '../../inventory/deleteItemFromInventoryAction'
 
 export const thunkPostAuctionItemAction = (data) => async (dispatch) => {
     console.log('HEREEEEEEEEEEE!', data)
