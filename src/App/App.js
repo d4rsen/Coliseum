@@ -17,6 +17,7 @@ import InventoryPage from '../components/routing/private/InventoryPage/Inventory
 import MainPage from '../components/routing/private/MainPage/MainPage'
 import MannequinPage from '../components/routing/private/MannequinPage/MannequinPage'
 import TrainPage from '../components/routing/private/TrainPage/TrainPage'
+import WatchBattlePage from '../components/routing/private/WatchBattlePage/WatchBattlePage'
 import AndreyTest from '../components/routing/public/AndreyTest/AndreyTest'
 
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
@@ -86,7 +87,10 @@ function App() {
                     <Route path="/dungeon" element={user && player ? <DungeonPage/> : <Navigate to="/register"/>}/>
                     <Route path="/coliseum"
                            element={user && player ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
-
+                    <Route path="/watch-battle"
+                           element={user && player ? <WatchBattlePage socket={socket}/> : <Navigate to="/register"/>}/>
+                    <Route path="/active-rooms"
+                           element={user && player ? <ActiveRoomsPage socket={socket}/> : <Navigate to="/register"/>}/>
                     <Route path="/test" element={<AndreyTest socket={socket}/>}/>
 
                     <Route path="*" element={<NotFound/>}/>

@@ -4,7 +4,7 @@ import {ParallaxBanner} from "react-scroll-parallax";
 const ParallaxImg = (props) => {
     return (
         <ParallaxBanner
-            className="your-class"
+            className="header_parallax"
             layers={[
                 {
                     image: props.imgsrc, amount: .3
@@ -18,7 +18,7 @@ const ParallaxImg = (props) => {
                 height: props.height,
             }}
         >
-            <h1>Banner Children</h1>
+            <h1 className='header_title'>{props.content}</h1>
         </ParallaxBanner>
         // <ParallaxBanner
         //     layers={[{image: props.imgsrc, amount: .3}]}
