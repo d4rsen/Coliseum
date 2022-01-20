@@ -11,10 +11,12 @@ const initialState = () => ({
     activeRooms: null,
     enemyPlayer: null,
     playerInventory: [],
-    watchBattle: {
-        player1: null,
-        player2: null
-    },
+    watchBattle: null,
+    // watchBattle: {
+    //     room: null,
+    //     player1: null,
+    //     player2: null
+    // },
     chooseCharacter: null,
     mannequin: {
         hp: 10000,

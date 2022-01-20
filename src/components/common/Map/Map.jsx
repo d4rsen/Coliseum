@@ -31,7 +31,7 @@ const Map = ({width, height, type}) => {
         {
             component: <SvgObservation/>,
             class: style.map__observation,
-            link: '/observer',
+            link: '/active-rooms',
         },
         {
             component: <SvgPrimaryCastle/>,

@@ -12,3 +12,12 @@ export const THUNK_ACTION_getRoomFromDb = (id) => async (dispatch) => {
         console.log(e)
     }
 }
+
+export const THUNK_ACTION_closeRoom = (id) => async (dispatch) => {
+    try {
+        await $apiDb.post('/close-battle-room', {id})
+        dispatch(unSetLoader())
+    } catch (e) {
+        console.log(e)
+    }
+}

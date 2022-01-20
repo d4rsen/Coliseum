@@ -1,66 +1,54 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ACTION_getEnemyPlayer, ACTION_unsetEnemyPlayer } from '../../../../redux/actions/enemyPlayerActions'
-import { ACTION_unSetRoom } from '../../../../redux/actions/roomActions'
-
-import AttackDefendWithCyberButtons from '../../../common/AttackDefendWithCyberButtons/AttackDefendWithCyberButtons'
-import EnemyPlayer from '../../../common/EnemyPlayer/EnemyPlayer'
-import Player from '../../../common/Player/Player'
-import './button.css'
+import { ACTION_setWatchBattlePlayers } from '../../../../redux/actions/watchBattleActions'
+import WatchBattleEnemyPlayer from '../../../common/WatchBattleEnemyPlayer/WatchBattleEnemyPlayer'
+import WatchBattleLog from '../../../common/WatchBattleLog/WatchBattleLog'
+import WatchBattlePlayer from '../../../common/WatchBattlePlayer/WatchBattlePlayer'
 
 import style from './GymPage.module.css'
 
-const WatchBattlePage
-    = ({socket}) => {
+const WatchBattlePage = ({socket}) => {
     const dispatch = useDispatch()
-    const player = useSelector((state) => state.player)
-    const enemyPlayer = useSelector(state => state.enemyPlayer)
-    const battlePlayer = useSelector(state => state.battlePlayer)
     const room = useSelector(state => state.room)
+    const player = useSelector(state => state.player)
+    const player1 = useSelector((state) => state.watchBattle?.player1)
+    const player2 = useSelector(state => state.watchBattle?.player2)
 
     useEffect(() => {
-        return () => {
-            dispatch(ACTION_unsetEnemyPlayer())
-            dispatch(ACTION_unSetRoom())
-            socket.emit('close-private-room', room, player)
-        }
+        socket.emit('join-room-watcher', Number(room), player)
+        // return () => {
+        //     dispatch({type: UNSET_WATCH_BATTLE_PLAYERS})
+        //     socket.emit('close-private-room-for-watcher', room, player)
+        //     dispatch({type:UNSET_ROOM})
+        // }
     }, [])
 
     // SOCKET.IO
 
     useEffect(() => {
-        socket.emit('join-room', room, player, battlePlayer)
-    }, [])
+        socket.on('join-room-watcher', (players) => {
+            console.log(players)
+            const currentRoomId = players ? players.current_room : null
+            const firstPlayer = players ? players.initial_character : null
+            const secondPlayer = players ? players.opponent : null
+            console.log(currentRoomId, firstPlayer, secondPlayer)
 
-    useEffect(() => {
-        socket.on('join-room', (players) => {
-            const AllPlayers = players.arr ? players.arr : null
-            const currentRoom = players.currentRoom2 ? players.currentRoom2 : null
-
-            const enemy = AllPlayers ? AllPlayers.filter(el => {
-                if (currentRoom.initial_character_id === player.id) {
-                    if (el.player.id === currentRoom.opponent_id) {
-                        return el
-                    }
-                }
-                if (currentRoom.opponent_id === player.id) {
-                    if (el.player.id === currentRoom.initial_character_id) {
-                        return el
-                    }
-                }
-            }) : null
-            if (enemy) {
-                dispatch(ACTION_getEnemyPlayer(enemy[0].player))
+            if (firstPlayer && secondPlayer) {
+                dispatch(ACTION_setWatchBattlePlayers({
+                    room: currentRoomId,
+                    player1: firstPlayer.player,
+                    player2: secondPlayer.player
+                }))
             }
         })
 
-    }, [])
+    }, [socket])
 
     return (
         <div className={style.main__gym}>
-            <Player/>
-            <AttackDefendWithCyberButtons socket={socket}/>
-            <EnemyPlayer/>
+            <WatchBattlePlayer/>
+            <WatchBattleLog socket={socket}/>
+            <WatchBattleEnemyPlayer/>
         </div>
     )
 }

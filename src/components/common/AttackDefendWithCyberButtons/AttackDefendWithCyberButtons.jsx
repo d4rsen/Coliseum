@@ -12,6 +12,7 @@ import {
 } from '../../../redux/actions/battleActions'
 import { ACTION_getEnemyPlayer, ACTION_unsetEnemyPlayer } from '../../../redux/actions/enemyPlayerActions'
 import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../redux/actions/playerActions'
+import { THUNK_ACTION_closeRoom } from '../../../redux/actions/thunks/thunkGetRoomFromDbActions'
 import { THUNK_ACTION_getPhraseFromDbEnglish } from '../../../redux/actions/thunks/thunkPhraseActions'
 import { THUNK_ACTION_getPlayerExpAndGoldForBattle } from '../../../redux/actions/thunks/thunkPlayersFromDbActions'
 import AttackDefendButtons from '../AttackDefendButtons/AttackDefendButtons'
@@ -72,7 +73,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     useEffect(() => {
         socket.on('close-private-room', () => {
             dispatch(ACTION_unsetEnemyPlayer())
-            // socket.emit('close-private-room', room, player)
+            socket.emit('close-private-room', room, player) // TODO
         })
         socket.on('send-message', async (data) => {
             const db_room = data.db_room
@@ -82,6 +83,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
             }
             if ((data.player_one.player.hp <= 0) || (data.player_two.player.hp <= 0)) {
                 setIsPlaying(false)
+                dispatch(THUNK_ACTION_closeRoom(room.id)) //TODO CLOSE ROOM
             }
 
             if (data.player_one.player.id !== player.id) {
