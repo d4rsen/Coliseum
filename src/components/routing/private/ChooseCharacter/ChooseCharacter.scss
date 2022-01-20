@@ -1,0 +1,19 @@
+
+.chosen:hover {
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.chosen:active {
+  border: 5px solid red;
+}
+
+.active-card {
+  border: 5px solid red;
+}
+
+.background {
+  background-image: url("./back.jpg");
+  height: 100vh;
+}
