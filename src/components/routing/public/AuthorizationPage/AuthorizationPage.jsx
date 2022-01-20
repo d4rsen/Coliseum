@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {THUNK_ACTION_login} from '../../../../redux/actions/thunks/thunkAuthActions'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { THUNK_ACTION_login } from '../../../../redux/actions/thunks/thunkAuthActions'
 import Loader from '../../../layout/Loader/Loader'
 import '../../private/ChooseCharacter/ChooseCharacter.scss'
 
@@ -70,7 +70,7 @@ export default function AuthorizationPage() {
                                     <div
                                         className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center justify-content-center order-1 order-lg-2">
                                         <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/2048px-Video-Game-Controller-Icon-IDV-green.svg.png"
+                                            src="https://dbforgame.herokuapp.com/static/img/logo.png"
                                             className="img-fluid"
                                             alt="Sample"
                                             width="350"
