@@ -45,7 +45,7 @@ const InventoryPage = () => {
 // DO NOT DELETE
     return (
         <div className="container d-flex mt-4">
-            <Player/>
+            <Player type={'player'}/>
             <div>
                 <div onClick={handleClick}>Add Item</div>
                 <div className="container d-flex flex-wrap m-0 p-0">

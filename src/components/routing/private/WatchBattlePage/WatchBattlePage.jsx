@@ -50,7 +50,7 @@ const WatchBattlePage = ({socket}) => {
         <div className={style.main__gym}>
             <WatchBattlePlayer/>
             <WatchBattleLog socket={socket}/>
-            <WatchBattleEnemyPlayer/>
+            <WatchBattleEnemyPlayer type={'enemy'}/>
         </div>
     )
 }

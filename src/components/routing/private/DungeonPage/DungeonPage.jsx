@@ -30,7 +30,7 @@ const DungeonPage = () => {
 
     return (
         <div className={style.main__gym}>
-            <Player/>
+            <Player type={'player'}/>
             <MobButtons/>
             <Mob/>
         </div>

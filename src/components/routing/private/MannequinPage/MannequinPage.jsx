@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
 import AttackButtonMannequinPage from '../../../common/AttackButtonMannequinPage/AttackButtonMannequinPage'
-import Mannequin from '../../../common/Mannequin/Mannequin'
+import Mannequin2 from '../../../common/Mannequin/Mannequin2'
 import Player from '../../../common/Player/Player'
+import style from './GymPage.module.css'
 
 const MannequinPage = () => {
     const dispatch = useDispatch()
@@ -15,10 +16,10 @@ const MannequinPage = () => {
         }, 3000)
     }, [player, dispatch])
     return (
-        <div className="container mt-3 d-flex flex-row">
+        <div className={style.main__gym}>
             <Player/>
             <AttackButtonMannequinPage/>
-            <Mannequin/>
+            <Mannequin2/>
         </div>)
 }
 

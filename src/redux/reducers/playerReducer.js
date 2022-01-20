@@ -23,7 +23,6 @@ export const playerReducer = (state = initialState, action) => {
 
         case GET_REWARD_FOR_MOB_BATTLE:
             return {...state, exp: action.payload.exp, balance: action.payload.balance}
-        // return {...action.payload}
 
         case PLAYER_DODGED :
             const staminaLess3 = state.ap - 1
@@ -35,7 +34,7 @@ export const playerReducer = (state = initialState, action) => {
             return {...state, hp: dmg, ap: staminaLess}
 
         case PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER:
-            const dmg3 = state.hp - (action.payload.enemyPlayerDamage - (state.total_stats.def)) //TODO
+            const dmg3 = Math.floor(state.hp - (action.payload.enemyPlayerDamage - (state.total_stats.def * 0.1)))
             const staminaLess2 = state.ap - 1
 
             if (action.payload.battlePlayer.defendHead === true && action.payload.battleEnemyPlayer.attackHead === true) {

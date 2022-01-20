@@ -1,11 +1,17 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
-import {thunkDeleteItemFromInventoryAction} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
+import { useDispatch, useSelector } from 'react-redux'
+import { THUNK_ACTION_wearItemAction } from '../../../../../redux/actions/thunks/inventory/thinkWearItemAction'
+import {
+    thunkDeleteItemFromInventoryAction
+} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
+import { THUNK_ACTION_getPLayerInventory } from '../../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
+import { THUNK_ACTION_getPlayerFromDb } from '../../../../../redux/actions/thunks/thunkPlayersFromDbActions'
 import './ModalInventory.scss'
 
 function Modal({active, setActive, chosenItem, player}) {
 
     const dispatch = useDispatch()
+    const user = useSelector(state => state.user)
 
     function handleDelete(e) {
         e.preventDefault()
@@ -15,10 +21,12 @@ function Modal({active, setActive, chosenItem, player}) {
         setActive(false)
     }
 
-    function handleWear(e) {
+    async function handleWear(e) {
         e.preventDefault()
         console.log(chosenItem)
-        console.log(player)
+        await dispatch(THUNK_ACTION_wearItemAction(player, chosenItem))
+        await dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
+        await dispatch(THUNK_ACTION_getPLayerInventory(player.id))
     }
 
     function handleUndo(e) {
@@ -33,7 +41,7 @@ function Modal({active, setActive, chosenItem, player}) {
                         <label htmlFor="chosenItem" className="form-label">{chosenItem.item_name}</label>
                         <p>Are you sure about that?</p>
                     </div>
-                    <div className='buttons'>
+                    <div className="buttons">
                         <button className="button" onClick={handleDelete}>Yes</button>
                         <button className="button set" onClick={handleWear}>Set item</button>
                         <button className="button" onClick={handleUndo}>No</button>
