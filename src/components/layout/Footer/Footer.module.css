@@ -1,14 +1,20 @@
 .footer__chat{
-  display: flex;
+  display: grid;
   justify-content: center;
-  margin-bottom: 3%;
-  max-height: 70%;
-  overflow-y: scroll;
+  /* margain-bottom: 3%; */
+  /* max-height: 20%; */
+  /* z-index: ; */
+  overflow-anchor: scroll;
   /* overflow-y: scroll; */
   /* display: ; */
-  align-items: flex-start;
+  /* align-items: flex-start; */
   transition: 300ms;
   background-color: rgba(181, 191, 219, 0.527);
+  /* position: fixed; */
+  position: fixed;
+    bottom: 0;
+    width: 100%;
+  /* position: ; */
 }
 
 .button__close button{

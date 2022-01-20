@@ -11,7 +11,7 @@ const Footer = ({ socket }) => {
   // chat.reverse()
   useEffect(() => {
     socket.on('message', ({ name, message }) => {
-      setChat([{ name, message },...chat ]);
+      setChat([  ...chat,{ name, message } ]);
     });
     socket.on('player-connected', (WsChat) => {
       setAllChatPlayers(WsChat);
@@ -55,6 +55,13 @@ const Footer = ({ socket }) => {
           </div>
          
 
+         
+          <div className={style.some__player__name}>
+            {allChatPlayers &&
+              allChatPlayers.map((somePlayer) => {
+                return somePlayer.name + ' ';
+              })}
+          </div>
           <form onSubmit={onMessageSubmit}>
             <input
               name={'message'}
@@ -64,12 +71,6 @@ const Footer = ({ socket }) => {
             />
             <button type={'submit'}>Отправить смс</button>
           </form>
-          <div className={style.some__player__name}>
-            {allChatPlayers &&
-              allChatPlayers.map((somePlayer) => {
-                return somePlayer.name + ' ';
-              })}
-          </div>
         </div>
       ) : (
         <div className={style.button__open}>
