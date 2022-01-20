@@ -56,7 +56,7 @@ function App() {
         <div className='navBar'>
             <Navbar/>
             </div>
-            <div className='main'>
+            <div className='main wrapper'>
             <Routes>
                 <Route path="/" element={
                     (user && player) ?

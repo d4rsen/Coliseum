@@ -10,7 +10,7 @@
   @font-face {
     font-family: 'Grek'; 
     src: local('Cleo'),
-      url('./DS_Greece.ttf') format("truetype"); 
+      url('../../../App/DS_Greece.ttf') format("truetype"); 
   }
 .map {
     display: flex;

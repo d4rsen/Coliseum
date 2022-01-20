@@ -59,7 +59,7 @@
     -webkit-transform-origin: 50% 50% -20px;
     -moz-transform-origin: 50% 50% -20px;
     transform-origin: 50% 50% -20px;
-    
+    font-family: 'Grek'; 
 }
 
 .btn-12:hover span:nth-child(1) {
@@ -69,7 +69,7 @@
     -webkit-transform: rotateX(0deg);
     -moz-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    
+    font-family: 'Grek'; 
 }
 
 .btn-12:hover span:nth-child(2) {

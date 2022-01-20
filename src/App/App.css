@@ -8,6 +8,11 @@ body {
     padding: 2% 10%;
     height: 10%;
 }
+@font-face {
+  font-family: 'Grek'; 
+  src: local('Cleo'),
+    url('./DS_Greece.ttf') format("truetype"); 
+}
 
 ul {
     list-style: none;
@@ -16,6 +21,7 @@ ul {
 .body {
   /* font-family: var(--common-Gilroy); */
   /* font-weight: 300; */
+  font-family: 'Grek'; 
   display: grid;
   min-height: 100vh;
   grid-template-areas: 'navBar' 'main' 'footer';
@@ -25,6 +31,7 @@ ul {
   grid-area:navBar;
 }
 .main{
+  
   grid-area:main;
 }
 
