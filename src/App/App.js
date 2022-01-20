@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { io } from 'socket.io-client'
+import {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {Navigate, Route, Routes} from 'react-router-dom'
+import {io} from 'socket.io-client'
 
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
@@ -53,7 +53,7 @@ function App() {
     }
     return (
         <>
-            <Navbar/>
+            {user && player && <Navbar/>}
             <Routes>
                 <Route path="/" element={
                     (user && player) ?

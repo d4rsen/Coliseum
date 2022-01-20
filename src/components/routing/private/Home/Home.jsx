@@ -74,24 +74,30 @@ import ParallaxImg from "./ParallaxImg/ParallaxImg";
 import headerImg from './landscape.jpg'
 import bodyImg from './battle.jpeg'
 import footerImg from "./fly.jpeg";
+import ParallaxBody from "./ParallaxBody/ParallaxBody";
 
 function Home() {
+
+    const content = 'Coliseum'
+
     return (
-        <ParallaxProvider>
+        <div>
+            <ParallaxProvider>
 
-            <ParallaxImg imgsrc={headerImg} height="100vh" opacity=".5">
-
-            </ParallaxImg>
-            <h1>header</h1>
-            <ParallaxImg imgsrc={bodyImg} height="40vh" opacity=".5">
-
-            </ParallaxImg>
-            <h1>body</h1>
-            <ParallaxImg imgsrc={footerImg} height="40vh" opacity=".5">
-
-            </ParallaxImg>
-            <h1>footer</h1>
-        </ParallaxProvider>
+                <ParallaxImg imgsrc={headerImg} height="100vh" opacity=".5" content={content}>
+                </ParallaxImg>
+                <h1>header</h1>
+                <ParallaxImg imgsrc={bodyImg} height="40vh" opacity=".5">
+                </ParallaxImg>
+                <h1>body</h1>
+                <ParallaxImg imgsrc={footerImg} height="40vh" opacity=".5">
+                </ParallaxImg>
+                <h1>footer</h1>
+                <ParallaxBody>
+                    
+                </ParallaxBody>
+            </ParallaxProvider>
+        </div>
     )
 }
 
