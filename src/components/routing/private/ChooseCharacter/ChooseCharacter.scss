@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+.main_div {
+  display: flex;
+  background-image: url("../../../../__temp/back.jpg");
+  height: 100vh;
+}
+
 .chosen:hover {
   transform: scale(1.2);
   transform-origin: center;
@@ -19,6 +25,7 @@
 }
 
 .background {
-  background-image: url("./back.jpg");
+  background-image: url("../../../../__temp/back.jpg");
   height: 100vh;
 }
+

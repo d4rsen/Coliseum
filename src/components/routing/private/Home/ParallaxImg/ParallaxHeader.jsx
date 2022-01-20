@@ -1,7 +1,13 @@
-import React from 'react'
-import { ParallaxBanner } from 'react-scroll-parallax'
+import React from 'react';
+import {ParallaxBanner} from "react-scroll-parallax";
+import './ParalaxHeader.scss'
+import {useNavigate} from "react-router-dom";
 
 const ParallaxHeader = (props) => {
+
+    const navigate = useNavigate()
+
+
     return (
         <ParallaxBanner
             className="header_parallax"
@@ -23,7 +29,7 @@ const ParallaxHeader = (props) => {
                 {
                     boxShadow: '0 0px 100px -0px black',
                     background: 'rgba(2,6,20,0.35)',
-                    position: 'relative',
+                    position: "relative",
                     alignContent: 'center'
                 }
             }>
@@ -32,13 +38,16 @@ const ParallaxHeader = (props) => {
                         fontFamily: 'Grek',
                         color: 'rgba(250,250,250,0.8)',
                         filter: 'drop-shadow(0px 5px 5px rgb(255, 255, 255))',
-                        fontSize: '15em',
-                        marginTop: '20%'
+                        fontSize: "15em",
+                        marginTop: "20%"
                     }
                 }>{props.content}</h1>
             </div>
+            <div className='header_anchor'>
+                <h1>⥥</h1>
+            </div>
         </ParallaxBanner>
-    )
-}
+    );
+};
 
-export default ParallaxHeader
+export default ParallaxHeader;

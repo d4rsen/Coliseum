@@ -1,4 +1,4 @@
-.wrap-parallax-header {
+.parallax-header {
   height: 100%;
   display: flex;
   align-items: center;
@@ -28,4 +28,31 @@
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
+}
+
+.header_anchor {
+  //display: flex;
+  //justify-content: center;
+  //margin: auto;
+  width: 5em;
+}
+
+.header_anchor h1 {
+  opacity: .5;
+  color: #454857;
+  font-size: 5em;
+  position: absolute;
+  bottom: -1.1em;
+  left: 50%;
+  padding-bottom: .3em;
+  border-radius: 60%;
+  transition: 200ms;
+}
+
+.header_anchor h1:hover {
+  cursor: none;
+  opacity: .9;
+  bottom: -1em;
+  transition: 200ms;
+  color: #FFFFdd;
 }

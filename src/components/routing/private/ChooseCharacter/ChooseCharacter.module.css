@@ -41,12 +41,31 @@ height: 50vh;
   margin-top: auto;
   grid-area: buttons__block;
 } */
+.main_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../../../../__temp/back.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.header_for_choose {
+    margin: auto;
+    font-family: 'Grek', serif;
+    font-size: 5em;
+}
+
+.choose__character {
+    width: 70%;
+    margin: auto;
+}
 
 .choose__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .choose__list li div img {

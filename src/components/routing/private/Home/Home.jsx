@@ -67,51 +67,64 @@
 //
 // export default Home;
 
-import * as PropTypes from 'prop-types'
-import React from 'react'
-import { ParallaxProvider } from 'react-scroll-parallax'
-import bodyImg from './battle.jpeg'
-import footerImg from './fly.jpeg'
+import React from "react";
+import {ParallaxProvider} from "react-scroll-parallax";
+import ParallaxHeader from "./ParallaxImg/ParallaxHeader";
 
 import headerImg from './landscape.jpg'
-import ParallaxBody from './ParallaxBody/ParallaxBody'
-import ParallaxContent from './ParallaxContent/ParallaxContent'
-import ParallaxHeader from './ParallaxImg/ParallaxHeader'
+import bodyImg from './battle.jpeg'
+import footerImg from "./fly.jpeg";
+import ParallaxContent from "./ParallaxContent/ParallaxContent";
+import * as PropTypes from "prop-types";
+import ParallaxFooter from "./ParallaxFooter/ParallaxFooter";
+import './Home.scss'
 
-function ParallaxFooter(props) {
-    return null
-}
 
 ParallaxFooter.propTypes = {
     opacity: PropTypes.string,
     height: PropTypes.string,
     imgsrc: PropTypes.any
-}
+};
 
 function Home() {
 
     const content = 'Coliseum'
 
     return (
-        <div>
+        <div className='flexy_parallax'>
             <ParallaxProvider>
 
                 <ParallaxHeader imgsrc={headerImg} height="100vh" opacity=".5" content={content}>
                 </ParallaxHeader>
-                <h1>The world of Grimgold is full of mysteries and challenges.
+                <h1 className='content_parallax'>The world of Grimgold is full of mysteries and challenges.
                     You will fight the fears of this world and will have to
                     face yours. The fate of not only the great capital,
                     but the entire game world depends on each and every action
                     you choose!</h1>
-                <ParallaxContent imgsrc={bodyImg} height="60vh" opacity=".5">
-                </ParallaxContent>
-                <h1>body</h1>
-                <ParallaxFooter imgsrc={footerImg} height="40vh" opacity=".5">
-                </ParallaxFooter>
-                <h1>footer</h1>
-                <ParallaxBody imgsrc={footerImg} height="40vh" opacity=".5">
 
-                </ParallaxBody>
+                <ParallaxContent imgsrc={footerImg} height="60vh" opacity=".5">
+
+                </ParallaxContent>
+
+                <h1 className='content_parallax'>Each player will be able to choose a character according
+                    to their preferences. The game will literally complement
+                    your skills: the warrior is more suitable for the brave
+                    gamers running headlong into the crowd of enemies.
+                    Assassin will appeal to those players whose spirit is full
+                    of cunning and a thirst for getting more from life than is
+                    destined for them. The class of monks will fascinate with
+                    its empowering calmness and unusual insights into the
+                    familiar things.</h1>
+                <ParallaxFooter imgsrc={bodyImg} height="60vh" opacity=".5">
+                </ParallaxFooter>
+                <h1 style={{
+                    fontSize: 'smaller'
+                }}
+                >
+                    foxestail~ group © 2022</h1>
+                {/*<ParallaxBody imgsrc={footerImg} height="40vh" opacity=".5">*/}
+
+                {/*</ParallaxBody>*/}
             </ParallaxProvider>
         </div>
     )

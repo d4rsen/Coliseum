@@ -78,7 +78,7 @@ export default function RegistrationPage() {
                                             <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                 <button onClick={submitHandler} type="button"
                                                         className="btn btn-outline-success btn-lg">
-                                                    Sign up
+                                                    Register
                                                 </button>
                                             </div>
                                         </form>
