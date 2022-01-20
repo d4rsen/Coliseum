@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { THUNK_ACTION_login } from '../../../../redux/actions/thunks/thunkAuthActions'
+import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {THUNK_ACTION_login} from '../../../../redux/actions/thunks/thunkAuthActions'
 import Loader from '../../../layout/Loader/Loader'
+import '../../private/ChooseCharacter/ChooseCharacter.scss'
 
 export default function AuthorizationPage() {
     const dispatch = useDispatch()
@@ -23,14 +24,14 @@ export default function AuthorizationPage() {
 
     return (<>
         {loader ? <Loader/> : <section className="vh-100" style={{backgroundColor: '#eee'}}>
-            <div className="container h-100">
+            <div className="background">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-lg-12 col-xl-11">
                         <div className="card text-black" style={{borderRadius: '25px'}}>
                             <div className="card-body p-md-5">
                                 <div className="row justify-content-center">
                                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                                        <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Вход</p>
+                                        <p className="text-center" style={{fontFamily: 'Acme'}}>Sign in</p>
                                         <form className="mx-1 mx-md-4">
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <i className="fas fa-envelope fa-lg me-3 fa-fw"/>
@@ -41,7 +42,7 @@ export default function AuthorizationPage() {
                                                            className="form-control"/>
                                                     <label className="form-label"
                                                            htmlFor="form3Example3c">
-                                                        Ваш email
+                                                        Email
                                                     </label>
                                                 </div>
                                             </div>
@@ -54,14 +55,14 @@ export default function AuthorizationPage() {
                                                            className="form-control"/>
                                                     <label className="form-label"
                                                            htmlFor="form3Example4c">
-                                                        Пароль
+                                                        Password
                                                     </label>
                                                 </div>
                                             </div>
                                             <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                 <button onClick={submitHandler} type="button"
                                                         className="btn btn-outline-success btn-lg">
-                                                    Войти
+                                                    Action
                                                 </button>
                                             </div>
                                         </form>

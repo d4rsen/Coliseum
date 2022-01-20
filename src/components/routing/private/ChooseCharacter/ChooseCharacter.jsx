@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { THUNK_ACTION_setPlayerClass } from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
-
+import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
+import {THUNK_ACTION_setPlayerClass} from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
+import './ChooseCharacter.scss'
 import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChooseClassPage/PlayerClassFromPlayerClassPage'
 
 const ChooseCharacter = () => {
@@ -11,7 +11,7 @@ const ChooseCharacter = () => {
     const player = useSelector(state => state.player)
     const navigation = useNavigate()
     const chooseCharacter = useSelector(state => state.chooseCharacter)
-    const [chosenClass, setChosenClass] = useState(1)
+    const [chosenClass, setChosenClass] = useState()
     const [inputValue, setInputValue] = useState('')
 
     const valueHandler = e => {
@@ -21,6 +21,11 @@ const ChooseCharacter = () => {
     const chooseClassHandler = e => {
         e.preventDefault()
         setChosenClass(e.target.id)
+        console.log(chosenClass)
+        // if (e.target.id === Number(1)) {
+        //
+        // }
+
     }
 
     const buttonHandler = e => {
@@ -34,15 +39,18 @@ const ChooseCharacter = () => {
     }
 
     return (
-        <div className="container d-flex">
+        <div className="background">
             <div className="d-flex">
-                <PlayerClassFromPlayerClassPage chooseClassHandler={chooseClassHandler}
+                <PlayerClassFromPlayerClassPage chosenClass={chosenClass}
+                                                chooseClassHandler={chooseClassHandler}
                                                 id={1}
                                                 src={'https://www.pngall.com/wp-content/uploads/4/Japanese-Samurai-Warrior-PNG-Image.png'}/>
-                <PlayerClassFromPlayerClassPage chooseClassHandler={chooseClassHandler}
+                <PlayerClassFromPlayerClassPage chosenClass={chosenClass}
+                                                chooseClassHandler={chooseClassHandler}
                                                 id={2}
                                                 src={'https://pngimg.com/uploads/assassins_creed/assassins_creed_PNG62.png'}/>
-                <PlayerClassFromPlayerClassPage chooseClassHandler={chooseClassHandler}
+                <PlayerClassFromPlayerClassPage chosenClass={chosenClass}
+                                                chooseClassHandler={chooseClassHandler}
                                                 id={3}
                                                 src={'https://www.nicepng.com/png/detail/380-3806743_bleed-area-may-not-be-visible-anime-demon.png'}/>
                 <div>

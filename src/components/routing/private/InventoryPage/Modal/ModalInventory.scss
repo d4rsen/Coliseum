@@ -1,0 +1,101 @@
+@import "src/App/variables";
+
+//.button {
+//  margin: .3em;
+//  padding: .3em;
+//  font-size: 5em;
+//  border-radius: 3px;
+//  border: 1px solid #e1e4e8;
+//}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+
+.modal.active {
+  opacity: 1;
+  /* transform: scale(1); */
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.7)
+}
+
+.modal__content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 30%;
+  max-height: 800px;
+  width: 50%;
+  max-width: 800px;
+  transform: scale(1);
+  transition: 0.4s all;
+}
+
+.meta_info_modal {
+  background: antiquewhite;
+  width: 50%;
+  padding: 3%;
+  border-radius: 20%;
+}
+
+.main_modal {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.main_modal .buttons {
+  margin: .5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+// button
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.set:hover {
+  background-color: #e52e2e;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}

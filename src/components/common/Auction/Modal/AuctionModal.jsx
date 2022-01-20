@@ -1,6 +1,7 @@
-import React, { useCallback, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, {useCallback, useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import AuctionButton from '../AuctionButton/AuctionButton'
+import './AuctionModal.scss'
 
 function AuctionModal({active, setActive}) {
     const dispatch = useDispatch()
@@ -37,9 +38,9 @@ function AuctionModal({active, setActive}) {
     console.log(inventory)
 
     return (
-        <div className={active ? 'modal active' : 'modal'}
+        <div className={active ? 'modal1 active1' : 'modal1'}
              onClick={setHandler}>
-            <div className={active ? 'modal__content' : 'modal'}
+            <div className={active ? 'modal__content1' : 'modal1'}
                  onClick={propagationHandler}>
                 <div>
                     {inventory &&
