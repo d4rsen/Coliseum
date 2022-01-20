@@ -78,7 +78,7 @@
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    box-shadow: 0 10px 45px 5px black;
+    box-shadow: 0 10px 45px  black;
     font-size: 24px;
     /* border:10px solid black; */
     /* padding: 2rem 1rem; */
@@ -123,14 +123,24 @@ display: block;
     grid-area: player__progress;
     display: flex;
     position: absolute;
-    height: 85%;
+    height: 30vh;
     width: 160%;
     right: -11;
+    top:38%;
+    /* transform: rotateY(50%); */
     transform: rotateX(180deg);
     transition: 100ms;
     /* bottom:; */
 }
 
+.player__stats li {
+  display: block;
+  /* background-color: blanchedalmond; */
+  filter: drop-shadow(0px 0px 2px rgb(248, 246, 246));
+  background-color: rgba(248, 246, 246, 0.2);
+  border-radius: 10px;
+  padding: 5px;
+}
 
 /* .player__equipment{
   height: 100%;

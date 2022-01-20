@@ -1,0 +1,40 @@
+.footer__chat{
+  display: grid;
+  justify-content: center;
+  /* margain-bottom: 3%; */
+  /* max-height: 20%; */
+  /* z-index: ; */
+  overflow-anchor: scroll;
+  /* overflow-y: scroll; */
+  /* display: ; */
+  /* align-items: flex-start; */
+  transition: 300ms;
+  background-color: rgba(181, 191, 219, 0.527);
+  /* position: fixed; */
+  position: fixed;
+    bottom: 0;
+    width: 100%;
+  /* position: ; */
+}
+
+.button__close button{
+  border: none;
+  background-color: royalblue;
+  transition: 300ms;
+}
+
+.button__open{
+  transition: 300ms;
+}
+
+.footer__list{
+  display: block;
+  height: 30%;
+
+}
+
+.some__player__name{
+  display: block;
+  width: 40%;
+  background-color: saddlebrown;
+}

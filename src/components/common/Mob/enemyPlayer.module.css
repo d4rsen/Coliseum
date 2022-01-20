@@ -129,6 +129,15 @@ display: block;
     transition: 100ms;
     /* bottom:; */
 }
+.player__stats li {
+  display: block;
+  /* background-color: blanchedalmond; */
+  filter: drop-shadow(0px 0px 2px rgb(248, 246, 246));
+  background-color: rgba(248, 246, 246, 0.2);
+  border-radius: 10px;
+  /* padding: 5px; */
+  text-align: center;
+}
 
 
 /* .player__equipment{
