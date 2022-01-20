@@ -65,8 +65,8 @@ function App() {
                             (user && !player) ?
                                 <Navigate to="/choose-class"/> :
                                 !user ?
-                                    <Navigate to="/register"/> :
-                                    <Navigate to="/register"/>}/>
+                                    <Navigate to="/home"/> :
+                                    <Navigate to="/home"/>}/>
                     <Route path="/choose-class"
                            element={user && !player ?
                                <ChooseCharacter/> :
