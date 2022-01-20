@@ -13,7 +13,7 @@ const PlayerWeapon = ({url, width, height}) => {
         <div>
             <img width={`${width}%`} height={`${height}px`}
                  className={styles.player__weapon}
-                 src={sword && sword[0] ? sword : emptyItemImg} alt="some weapon"/>
+                 src={sword && sword[0] ? sword : emptyItemImg}/>
         </div>
     )
 }

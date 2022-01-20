@@ -58,7 +58,6 @@ const EnemyPlayer = () => {
 
             <img
                 className={style.player__pic}
-                alt="player"
                 src={
                     playerClass === 'warrior'
                         ? classWarrior

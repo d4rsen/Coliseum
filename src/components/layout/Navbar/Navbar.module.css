@@ -1,7 +1,8 @@
 .header {
-    background: rgb(226, 110, 18);
-    background: linear-gradient(185deg, rgba(226, 110, 18, 1) 0%, rgba(181, 71, 22, 1) 12%, rgba(99, 83, 46, 0) 98%);
-    position: relative;
+  background: rgb(227,203,131);
+background: linear-gradient(180deg, rgba(227,203,131,1) 0%, rgba(223,217,179,1) 68%, rgba(251,251,251,1) 100%);
+    margin-bottom: 2%;
+    /* position: relative; */
     /* display: flex;
     justify-content: center; */
     /* height: 20%; */
@@ -26,7 +27,7 @@ width: 20px; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
+padding-right: 50px;
 
     /* margin-right: auto; */
 }
@@ -38,6 +39,8 @@ width: 20px; */
     margin-bottom: 0;
     flex-wrap: wrap;
     padding: 0;
+    position: relative
+    ;
     /* margin-right: auto; */
 }
 
@@ -93,9 +96,16 @@ width: 20px; */
     width: 13%;
     height: 10%;
     justify-content: center;
-    position: relative;
-    display: block;
+    /* position: relative; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:5px;
     padding: 2%;
+}
+
+.header__progress_element {
+  margin-bottom: 10%;
+
 }
 
 .header__frame {
@@ -116,19 +126,22 @@ width: 20px; */
 }
 
 .bag {
-    width: 4%;
+    width: 20%;
     /* height: 10%; */
     display: block;
     filter: drop-shadow(0px 0px 15px rgb(20, 20, 20));
     transition: 200ms;
     position: absolute;
-    left: 35%;
+    right: -20%;
+    top:-54%;
 }
 
 .bag:hover {
     filter: drop-shadow(0px 0px 15px rgb(200, 68, 16));
     transition: 200ms;
-    width: 6%;
+    width: 24%;
+    right: -20%;
+    top:-64%;
     /* wi */
 }
 

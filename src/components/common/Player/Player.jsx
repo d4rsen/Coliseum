@@ -94,7 +94,7 @@ const Player = ({type}) => {
                 />
                 <PlayerProgressBarHpApMp
                     bgColor={'aqua'}
-                    stat={player?.hp}
+                    stat={player?.ap}
                     // height={100}
                     rotate={180}
                     type={'player'}

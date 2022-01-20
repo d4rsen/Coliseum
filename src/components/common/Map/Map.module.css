@@ -1,8 +1,23 @@
+/* @font-face {
+
+  font-family: "Regular"; 
+
+  src: src("./cleopatra-regular-108583.ttf") format("truetype") ; 
+  font-style: normal; 
+  font-weight: normal; 
+  }  */
+
+  @font-face {
+    font-family: 'Grek'; 
+    src: local('Cleo'),
+      url('../../../App/DS_Greece.ttf') format("truetype"); 
+  }
 .map {
     display: flex;
     position: relative;
     align-items: center;
     max-width: 40%;
+    
     /* margin-top:20%; */
     /* height: 0vh; */
 
@@ -70,6 +85,7 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    font-family: 'Grek';
 }
 
 .map__observation {
@@ -92,6 +108,7 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    font-family: 'Grek';
 }
 
 .map__observation:hover {
@@ -118,11 +135,13 @@
 }
 
 .map__primaryCastle::after {
-    content: 'Главный замок';
+  content: 'Главный замок';
+  font-family: 'Grek';
     color: white;
     display: flex;
     text-align: center;
     justify-content: center;
+    
 }
 
 .map__primaryCastle:hover {
@@ -137,13 +156,13 @@
 .map__train {
     position: absolute;
     z-index: 2;
-    width: 15%;
+    width: 10%;
     /* height: 0%; */
     transition: 300ms;
     /* stroke: rgb(255, 17, 0); */
     display: block;
-    left: 35%;
-    top: 20%;
+    left: 52%;
+    top: 10%;
     filter: drop-shadow(0px 0px 2px red);
 }
 
@@ -151,19 +170,20 @@
     content: 'Тренироовочный лагерь ';
     color: white;
     display: flex;
+   
     text-align: center;
     justify-content: center;
     display: block;
-
+    font-family: 'Grek';
 }
 
 .map__train:hover {
     /* box-shadow: 0 0 10px rgba(0,0,0,0.5);; */
     transition: 300ms;
     color: tomato;
-    width: 25%;
-    left: 30%;
-    top: 5%;
+    width: 12%;
+    left: 51%;
+    top: 10%;
 
     /* height: 30%; */
     /* stroke-width:2px; */
@@ -171,7 +191,7 @@
 
 
 .map__market {
-
+  font-family: 'Grek';
     position: absolute;
     z-index: 2;
     width: 14%;
@@ -186,7 +206,7 @@
 
 .map__market::after {
     content: 'Разрушенний рынок';
-
+font-family: 'Grek';
     color: white;
     position: absolute;
     display: flex;
@@ -216,7 +236,7 @@
     transition: 300ms;
     /* stroke: rgb(255, 17, 0); */
     display: block;
-    left: 60%;
+    left: 65%;
     top: 14%;
     filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
@@ -231,12 +251,15 @@
     bottom: -50%;
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'Grek';
 }
 
 .map__SvgCave:hover {
     transition: 300ms;
     color: tomato;
-    width: 22%;
+    width: 20%;
+    left: 65%;
+    top: 14%;
 }
 
 .map__coliseum {
@@ -265,6 +288,7 @@
     bottom: -30%;
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'Grek';
 }
 
 .map__coliseum:hover {

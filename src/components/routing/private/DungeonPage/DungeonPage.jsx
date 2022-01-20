@@ -5,6 +5,7 @@ import { THUNK_ACTION_getPlayerExpAndGoldForMobBattle } from '../../../../redux/
 import Mob from '../../../common/Mob/Mob'
 import MobButtons from '../../../common/Mob/MobButtons/MobButtons'
 import Player from '../../../common/Player/Player'
+import style from './GymPage.module.css'
 
 const DungeonPage = () => {
     const dispatch = useDispatch()
@@ -28,7 +29,7 @@ const DungeonPage = () => {
     }, [playerHp])
 
     return (
-        <div>
+        <div className={style.main__gym}>
             <Player/>
             <MobButtons/>
             <Mob/>

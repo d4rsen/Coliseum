@@ -5,7 +5,7 @@ const PlayerClassFromPlayerClassPage = ({id, chooseClassHandler, src, chosenClas
     return (
         <div className={`chosen ${chosenClass == id && 'active-card'}`}>
             <img
-                onClick={chooseClassHandler} id={id} height="140"
+                onClick={chooseClassHandler} id={id} 
                 src={src}
                 alt="..."/>
         </div>

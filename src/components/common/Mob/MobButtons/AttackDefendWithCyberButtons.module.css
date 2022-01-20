@@ -1,6 +1,7 @@
 .buttons__block {
     display: grid;
     width: fit-content;
+    margin-top: auto;
 }
 
 .time {

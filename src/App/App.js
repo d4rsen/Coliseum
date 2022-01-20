@@ -17,7 +17,6 @@ import InventoryPage from '../components/routing/private/InventoryPage/Inventory
 import MainPage from '../components/routing/private/MainPage/MainPage'
 import MannequinPage from '../components/routing/private/MannequinPage/MannequinPage'
 import TrainPage from '../components/routing/private/TrainPage/TrainPage'
-import WatchBattlePage from '../components/routing/private/WatchBattlePage/WatchBattlePage'
 import AndreyTest from '../components/routing/public/AndreyTest/AndreyTest'
 
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
@@ -53,47 +52,53 @@ function App() {
         </>)
     }
     return (
-        <>
-            {user && player && <Navbar/>}
-            <Routes>
-                <Route path="/" element={
-                    (user && player) ?
-                        <MainPage/> :
-                        (user && !player) ?
-                            <Navigate to="/choose-class"/> :
-                            !user ?
-                                <Navigate to="/register"/> :
-                                <Navigate to="/register"/>}/>
-                <Route path="/choose-class"
-                       element={user && !player ?
-                           <ChooseCharacter/> :
-                           user && player ?
-                               <Navigate to="/"/> :
-                               !user &&
-                               <Navigate to="/register"/>}/>
-                <Route path="/home" element={isAuth ? <Navigate to="/"/> : <Home/>}/>
-                <Route path="/login" element={isAuth ? <Navigate to="/"/> : <AuthorizationPage/>}/>
-                <Route path="/register" element={isAuth ? <Navigate to="/"/> : <RegistrationPage/>}/>
-                <Route path="/train" element={user && player ? <TrainPage/> : <Navigate to="/register"/>}/>
-                <Route path="/observer" element={user && player ? <ActiveRoomsPage/> : <Navigate to="/register"/>}/>
-                <Route path="/rooms" element={user && player ? <IdleRoomsPage/> : <Navigate to="/register"/>}/>
-                {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <Navigate to="/register"/>}/>*/}
-                <Route path="/dungeon" element={user && player ? <DungeonPage/> : <Navigate to="/register"/>}/>
-                <Route path="/mannequin" element={user && player ? <MannequinPage/> : <Navigate to="/register"/>}/>
-                <Route path="/inventory" element={user && player ? <InventoryPage/> : <Navigate to="/register"/>}/>
-                <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>
-                <Route path="/active-rooms"
-                       element={user && player ? <ActiveRoomsPage socket={socket}/> : <Navigate to="/register"/>}/>
-                <Route path="/coliseum" element={user && player ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
-                <Route path="/watch-battle"
-                       element={user && player ? <WatchBattlePage socket={socket}/> : <Navigate to="/register"/>}/>
+        <div className="body">
+            <div className="navBar">
+                {user && player && <Navbar/>}
+            </div>
+            <div className="main wrapper">
+                <Routes>
+                    <Route path="/" element={
+                        (user && player) ?
+                            <MainPage/> :
+                            (user && !player) ?
+                                <Navigate to="/choose-class"/> :
+                                !user ?
+                                    <Navigate to="/register"/> :
+                                    <Navigate to="/register"/>}/>
+                    <Route path="/choose-class"
+                           element={user && !player ?
+                               <ChooseCharacter/> :
+                               user && player ?
+                                   <Navigate to="/"/> :
+                                   !user &&
+                                   <Navigate to="/register"/>}/>
+                    <Route path="/home" element={isAuth ? <Navigate to="/"/> : <Home/>}/>
+                    <Route path="/register" element={isAuth ? <Navigate to="/"/> : <RegistrationPage/>}/>
+                    <Route path="/login" element={isAuth ? <Navigate to="/"/> : <AuthorizationPage/>}/>
+                    <Route path="/train" element={user && player ? <TrainPage/> : <Navigate to="/register"/>}/>
+                    <Route path="/observer" element={user && player ? <ActiveRoomsPage/> : <Navigate to="/register"/>}/>
+                    <Route path="/rooms" element={user && player ? <IdleRoomsPage/> : <Navigate to="/register"/>}/>
+                    {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <Navigate to="/register"/>}/>*/}
+                    <Route path="/mannequin" element={user && player ? <MannequinPage/> : <Navigate to="/register"/>}/>
+                    <Route path="/inventory" element={user && player ? <InventoryPage/> : <Navigate to="/register"/>}/>
+                    <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>
+                    <Route path="/dungeon" element={user && player ? <DungeonPage/> : <Navigate to="/register"/>}/>
+                    <Route path="/coliseum"
+                           element={user && player ? <ColiseumPage socket={socket}/> : <Navigate to="/register"/>}/>
 
-                <Route path="/test" element={<AndreyTest socket={socket}/>}/>
+                    <Route path="/test" element={<AndreyTest socket={socket}/>}/>
 
-                <Route path="*" element={<NotFound/>}/>
-            </Routes>
-            {player && <Footer socket={socket}/>}
-        </>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
+            </div>
+            <div className="footer">
+                {player && <Footer socket={socket}/>}
+            </div>
+            {/* {
+              user && <div className='footer'>jhijh</div>
+            } */}
+        </div>
     )
 }
 

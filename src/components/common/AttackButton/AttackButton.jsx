@@ -7,6 +7,7 @@ const AttackButton = ({disabled, attackDefendHandler, value}) => {
                 onClick={attackDefendHandler}
                 value={value}
                 disabled={disabled}>
+                  
             <span>Are you sure ?</span>
             <span>{disabled ? 'Wait enemy' : value}</span>
         </button>
