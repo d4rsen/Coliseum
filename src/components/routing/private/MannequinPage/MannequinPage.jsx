@@ -17,7 +17,7 @@ const MannequinPage = () => {
     }, [player, dispatch])
     return (
         <div className={style.main__gym}>
-            <Player/>
+            <Player type={'player'}/>
             <AttackButtonMannequinPage/>
             <Mannequin2/>
         </div>)

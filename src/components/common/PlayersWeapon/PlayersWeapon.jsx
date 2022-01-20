@@ -5,7 +5,7 @@ import styles from './PlayersWeapon.module.css'
 const PlayerWeapon = ({url, width, height}) => {
     const player = useSelector((state) => state.player)
 
-    const sword = player.weapon
+    const sword = player?.weapon
     const emptyItemImg =
         'https://dbforgame.herokuapp.com/static/img/items/empty_cell.png'
 
@@ -13,7 +13,7 @@ const PlayerWeapon = ({url, width, height}) => {
         <div>
             <img width={`${width}%`} height={`${height}px`}
                  className={styles.player__weapon}
-                 src={sword && sword[0] ? sword : emptyItemImg}/>
+                 src={sword[0] ? sword[0].img : emptyItemImg}/>
         </div>
     )
 }

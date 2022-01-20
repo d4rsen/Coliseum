@@ -44,7 +44,7 @@ function Modal({active, setActive, chosenItem, player}) {
                     <div className="buttons">
                         <button className="button" onClick={handleDelete}>Yes</button>
                         <button className="button set" onClick={handleWear}>Set item</button>
-                        <button className="button" onClick={handleUndo}>No</button>
+                        {/*<button className="button" onClick={handleUndo}>No</button>*/}
                     </div>
                 </div>
             </div>
