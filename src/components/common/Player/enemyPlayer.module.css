@@ -38,7 +38,7 @@
   width: 34%;
   height: 60vh;
   grid-template-areas:
-    "player__progress player__right player__pic   player__items";
+    "player__progress  player__items player__pic  player__right  ";
   position: relative;
   /* display: flex; */
 }

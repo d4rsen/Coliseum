@@ -12,7 +12,7 @@ const AttackButtonMannequinPage = () => {
         dispatch(SAGA_ACTION_mannequinRegenerate())
     }
     return (
-        <div className="container d-flex flex-column justify-content-center align-items-center">
+        <div className=" d-flex flex-column justify-content-center align-items-center">
             <button
                 onClick={battleHandler}
                 className="cybr-btn m-2">
