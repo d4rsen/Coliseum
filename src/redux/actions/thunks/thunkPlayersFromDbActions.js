@@ -8,8 +8,6 @@ export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
         dispatch(setLoader())
         const response = await axios.get(
             `https://dbforgame.herokuapp.com/db/ready-for-fun/${userId}`,
-
-            // `https://dbforgame.herokuapp.com/db/ready-for-fun/1`,
             {
                 withCredentials: true,
             }
@@ -45,3 +43,6 @@ export const THUNK_ACTION_getPlayerExpAndGoldForMobBattle = (playerId, WinOrLoss
         console.log(e)
     }
 }
+
+
+
