@@ -69,12 +69,24 @@
 
 import React from "react";
 import {ParallaxProvider} from "react-scroll-parallax";
-import ParallaxImg from "./ParallaxImg/ParallaxImg";
+import ParallaxHeader from "./ParallaxImg/ParallaxHeader";
 
 import headerImg from './landscape.jpg'
 import bodyImg from './battle.jpeg'
 import footerImg from "./fly.jpeg";
+import ParallaxContent from "./ParallaxContent/ParallaxContent";
+import * as PropTypes from "prop-types";
 import ParallaxBody from "./ParallaxBody/ParallaxBody";
+
+function ParallaxFooter(props) {
+    return null;
+}
+
+ParallaxFooter.propTypes = {
+    opacity: PropTypes.string,
+    height: PropTypes.string,
+    imgsrc: PropTypes.any
+};
 
 function Home() {
 
@@ -84,17 +96,21 @@ function Home() {
         <div>
             <ParallaxProvider>
 
-                <ParallaxImg imgsrc={headerImg} height="100vh" opacity=".5" content={content}>
-                </ParallaxImg>
-                <h1>header</h1>
-                <ParallaxImg imgsrc={bodyImg} height="40vh" opacity=".5">
-                </ParallaxImg>
+                <ParallaxHeader imgsrc={headerImg} height="100vh" opacity=".5" content={content}>
+                </ParallaxHeader>
+                <h1>The world of Grimgold is full of mysteries and challenges.
+                    You will fight the fears of this world and will have to
+                    face yours. The fate of not only the great capital,
+                    but the entire game world depends on each and every action
+                    you choose!</h1>
+                <ParallaxContent imgsrc={bodyImg} height="60vh" opacity=".5">
+                </ParallaxContent>
                 <h1>body</h1>
-                <ParallaxImg imgsrc={footerImg} height="40vh" opacity=".5">
-                </ParallaxImg>
+                <ParallaxFooter imgsrc={footerImg} height="40vh" opacity=".5">
+                </ParallaxFooter>
                 <h1>footer</h1>
-                <ParallaxBody>
-                    
+                <ParallaxBody imgsrc={footerImg} height="40vh" opacity=".5">
+
                 </ParallaxBody>
             </ParallaxProvider>
         </div>

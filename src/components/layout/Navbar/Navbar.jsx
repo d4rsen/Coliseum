@@ -28,7 +28,7 @@ export default function Navbar() {
                     <nav className={style.navigation}>
                         <NavLink className={style.header__logo} to="/">
                             <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/2048px-Video-Game-Controller-Icon-IDV-green.svg.png"
+                                src="https://dbforgame.herokuapp.com/static/img/logo.png"
                                 alt="Логотип"
                                 height="50"
                             />
