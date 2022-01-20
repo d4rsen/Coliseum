@@ -44,7 +44,15 @@ const Player = ({type}) => {
     }())
 
     return (
-        <div className={type !== 'enemy' ? style.player : style.player__enemy}>
+        // <div className={type !== 'enemy' ? style.player : style.player__enemy }>
+        <div 
+        className={
+          type === 'enemy'?
+          style.player__enemy:
+           type==='player'?
+           style.player:
+           type==='home'?style.home__player:''}>
+          
             <ul className={style.player__items}>
                 {armorFull.map((item, i) => {
                     return (
@@ -74,7 +82,7 @@ const Player = ({type}) => {
                     <PlayerStats/>
                 </div>
             </div>
-            <div className={style.player__progress}>
+            <div className={type!=='home'?style.player__progress:style.hidden__progress}>
                 <PlayerProgressBarHpApMp
                     className={style.header__progress_element}
                     bgColor={'red'}

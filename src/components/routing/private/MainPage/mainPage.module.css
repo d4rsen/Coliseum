@@ -1,0 +1,21 @@
+
+.main__gym {
+    display: flex;
+    margin: 5% 1% 0 10% ;
+    /* background-color: cadetblue; */
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    align-items: center;
+
+}
+
+/* .main__player {
+width: 30%;
+margin: 0;
+} */
+
+.main__map{
+width: 100%;
+display: flex;
+
+}

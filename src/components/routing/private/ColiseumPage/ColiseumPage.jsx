@@ -57,7 +57,7 @@ const ColiseumPage = ({socket}) => {
 
     return (
         <div className={style.main__gym}>
-            <Player/>
+            <Player type={'player'}/>
             <AttackDefendWithCyberButtons socket={socket}/>
             <EnemyPlayer/>
         </div>
