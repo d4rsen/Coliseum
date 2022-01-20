@@ -1,6 +1,6 @@
 const initialState = () => ({
     user: null,
-    mobs: null,
+    mob: null,
     room: null,
     phrase: '',
     player: null,

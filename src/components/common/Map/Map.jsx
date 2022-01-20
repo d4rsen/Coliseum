@@ -51,6 +51,7 @@ const Map = ({width, height, type}) => {
         {
             component: <SvgCave/>,
             class: style.map__SvgCave,
+            link: '/dungeon'
         },
         // {
         //   component: <SvgColiseum />,

@@ -10,6 +10,7 @@ import ActiveRoomsPage from '../components/routing/private/ActiveRoomsPage/Activ
 import Auction from '../components/routing/private/Auction/Auction'
 import ChooseCharacter from '../components/routing/private/ChooseCharacter/ChooseCharacter'
 import ColiseumPage from '../components/routing/private/ColiseumPage/ColiseumPage'
+import DungeonPage from '../components/routing/private/DungeonPage/DungeonPage'
 import Home from '../components/routing/private/Home/Home'
 import IdleRoomsPage from '../components/routing/private/IdleRoomsPage/IdleRoomsPage'
 import InventoryPage from '../components/routing/private/InventoryPage/InventoryPage'
@@ -53,7 +54,7 @@ function App() {
     }
     return (
         <>
-            <Navbar/>
+            {user && player && <Navbar/>}
             <Routes>
                 <Route path="/" element={
                     (user && player) ?
@@ -71,12 +72,13 @@ function App() {
                                !user &&
                                <Navigate to="/register"/>}/>
                 <Route path="/home" element={isAuth ? <Navigate to="/"/> : <Home/>}/>
-                <Route path="/register" element={isAuth ? <Navigate to="/"/> : <RegistrationPage/>}/>
                 <Route path="/login" element={isAuth ? <Navigate to="/"/> : <AuthorizationPage/>}/>
+                <Route path="/register" element={isAuth ? <Navigate to="/"/> : <RegistrationPage/>}/>
                 <Route path="/train" element={user && player ? <TrainPage/> : <Navigate to="/register"/>}/>
                 <Route path="/observer" element={user && player ? <ActiveRoomsPage/> : <Navigate to="/register"/>}/>
                 <Route path="/rooms" element={user && player ? <IdleRoomsPage/> : <Navigate to="/register"/>}/>
                 {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <Navigate to="/register"/>}/>*/}
+                <Route path="/dungeon" element={user && player ? <DungeonPage/> : <Navigate to="/register"/>}/>
                 <Route path="/mannequin" element={user && player ? <MannequinPage/> : <Navigate to="/register"/>}/>
                 <Route path="/inventory" element={user && player ? <InventoryPage/> : <Navigate to="/register"/>}/>
                 <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>

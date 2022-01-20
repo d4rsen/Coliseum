@@ -11,7 +11,7 @@ import { idleRoomsReducer } from '../idleRoomsReducer'
 import { isAuthReducer } from '../isAuthReducer'
 import { loaderReducer } from '../loaderReducer'
 import { mannequinReducer } from '../mannequinReducer'
-import { mobsReducer } from '../mobsReducer'
+import { mobReducer } from '../mobReducer'
 import { phraseReducer } from '../phraseReducer'
 import { playerInventoryReducer } from '../playerInventoryReducer'
 import { playerReducer } from '../playerReducer'
@@ -22,7 +22,7 @@ import { watchBattleReducer } from '../watchBattleReducer'
 export const rootReducer = combineReducers({
     user: userReducer,
     chat: chatReducer,
-    mobs: mobsReducer,
+    mob: mobReducer,
     room: roomReducer,
     player: playerReducer,
     phrase: phraseReducer,

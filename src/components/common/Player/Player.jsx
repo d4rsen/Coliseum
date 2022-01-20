@@ -32,7 +32,7 @@ const Player = ({type}) => {
     const itemsFill = (function () {
         const armorSetEmpty = new Array(6).fill(emptyItemImg)
 
-        player.armor_set.slice(0, 3).forEach((item) => armorFull.push(item))
+        player?.armor_set?.slice(0, 3).forEach((item) => armorFull.push(item))
         //  const accessoriesSet = armorFull.push(player.accessories_set);
         //  console.log('-------->',accessoriesSet)
         const armorEmptyPush = 6 - armorFull.length

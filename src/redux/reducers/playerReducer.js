@@ -1,6 +1,7 @@
 import initialState from '../init/initialState'
 import {
     GET_REWARD_FOR_BATTLE,
+    GET_REWARD_FOR_MOB_BATTLE,
     PLAYER_DODGED,
     PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER,
     PUNCH_FROM_MOB_TO_PLAYER,
@@ -20,17 +21,21 @@ export const playerReducer = (state = initialState, action) => {
         case GET_REWARD_FOR_BATTLE :
             return {...state, exp: action.payload.exp, balance: action.payload.balance}
 
+        case GET_REWARD_FOR_MOB_BATTLE:
+            return {...state, exp: action.payload.exp, balance: action.payload.balance}
+        // return {...action.payload}
+
         case PLAYER_DODGED :
             const staminaLess3 = state.ap - 1
             return {...state, ap: staminaLess3}
 
         case PUNCH_FROM_MOB_TO_PLAYER:
-            const dmg = state.hp - action.payload / state.total_stats.def
+            const dmg = state.hp - (action.payload / (state.total_stats.def))
             const staminaLess = state.ap - 1
             return {...state, hp: dmg, ap: staminaLess}
 
         case PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER:
-            const dmg3 = state.hp - (action.payload.enemyPlayerDamage / (state.total_stats.def * 0.5))
+            const dmg3 = state.hp - (action.payload.enemyPlayerDamage - (state.total_stats.def)) //TODO
             const staminaLess2 = state.ap - 1
 
             if (action.payload.battlePlayer.defendHead === true && action.payload.battleEnemyPlayer.attackHead === true) {

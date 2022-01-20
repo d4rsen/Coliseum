@@ -2,10 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styles from './PlayersWeapon.module.css'
 
-const PlayerWeapon = ({url, width, height}) => {
-    const player = useSelector((state) => state.player)
+const MobLoot = ({url, width, height}) => {
+    const mob = useSelector((state) => state.mob)
 
-    const sword = player.weapon
+    const loot = mob && mob.loot
     const emptyItemImg =
         'https://dbforgame.herokuapp.com/static/img/items/empty_cell.png'
 
@@ -13,9 +13,9 @@ const PlayerWeapon = ({url, width, height}) => {
         <div>
             <img width={`${width}%`} height={`${height}px`}
                  className={styles.player__weapon}
-                 src={sword && sword[0] ? sword : emptyItemImg} alt="some weapon"/>
+                 src={loot ? loot.img : emptyItemImg}/>
         </div>
     )
 }
 
-export default PlayerWeapon
+export default MobLoot

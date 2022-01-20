@@ -20,10 +20,14 @@ const InventoryPage = () => {
     // DO NOT DELETE
 
     useEffect(() => {
-        return () => {
-            !playerInventory[0] && dispatch(THUNK_ACTION_getPLayerInventory(player.id))
-        }
-    }, [dispatch])
+        dispatch(THUNK_ACTION_getPLayerInventory(player.id))
+    }, [])
+
+    // useEffect(() => {
+    //     return () => {
+    //         !playerInventory[0] && dispatch(THUNK_ACTION_getPLayerInventory(player.id))
+    //     }
+    // }, [dispatch])
 
     useEffect(() => {
         setTimeout(() => {
