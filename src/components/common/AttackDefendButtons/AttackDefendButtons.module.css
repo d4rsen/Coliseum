@@ -1,8 +1,22 @@
 .allButtons {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: space-between;
+     
 }
 
+.def{
+  display: grid;
+}
+.def button{
+  background-color: inherit;
+}
+.atac {
+  display: grid;
+}
+.atac button{
+background-color: inherit;
+}
 h1 {
     position: relative;
     text-align: center;

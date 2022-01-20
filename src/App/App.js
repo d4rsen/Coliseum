@@ -52,8 +52,11 @@ function App() {
         </>)
     }
     return (
-        <>
+        <div className='body'>
+        <div className='navBar'>
             <Navbar/>
+            </div>
+            <div className='main'>
             <Routes>
                 <Route path="/" element={
                     (user && player) ?
@@ -86,8 +89,14 @@ function App() {
 
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
+            </div>
+            <div className='footer'>
             {player && <Footer socket={socket}/>}
-        </>
+            </div>
+            {/* {
+              user && <div className='footer'>jhijh</div>
+            } */}
+        </div>
     )
 }
 

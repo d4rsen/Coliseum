@@ -40,7 +40,7 @@ const Map = ({width, height, type}) => {
         },
         {
             component: <SvgTrain/>,
-            class: <SvgTrain/>,
+            class: style.map__train,
             link: '/mannequin',
         },
         {
@@ -83,9 +83,7 @@ const Map = ({width, height, type}) => {
             ))}
 
             <div onClick={roomsHandler} className={style.map__coliseum}>
-
                 <SvgColiseum/>
-
             </div>
         </div>
     )

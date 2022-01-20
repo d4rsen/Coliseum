@@ -69,17 +69,19 @@ export default function Navbar() {
                                             Тест для Андрея
                                         </NavLink>
                                     </li>
+                                    {user && player && (
                                     <li className={style.navigaton__item ,style.bag} >
                                         <NavLink className={style.navigaton__link} to="/inventory">
                                             <Bag/>
                                         </NavLink>
                                     </li>
+                                    )}
                                 </>
                             )}
                         </ul>
                     </nav>
 
-                    {user && (
+                    {user && player && (
                         <div className={style.header__progress}>
                             <PlayerProgressBarHpApMp
                                 className={style.header__progress_element}

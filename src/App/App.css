@@ -12,3 +12,22 @@ body {
 ul {
     list-style: none;
 }
+
+.body {
+  /* font-family: var(--common-Gilroy); */
+  /* font-weight: 300; */
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas: 'navBar' 'main' 'footer';
+  grid-template-rows: auto 1fr auto;
+}
+.navBar{
+  grid-area:navBar;
+}
+.main{
+  grid-area:main;
+}
+
+.footer{
+  grid-area:footer;
+}

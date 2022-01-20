@@ -34,7 +34,7 @@ const Footer = ({socket}) => {
         <>
             {open === true ? (
                     <div
-                        className="d-flex flex-row justify-content-between align-items-between text-center p-0 footer-light bg-light fixed-bottom">
+                        className="footer">
                         <div>
                             <button onClick={() => setOpen(false)}>close chat</button>
                             {chat && chat.map(({name, message}, index) => {
@@ -64,7 +64,7 @@ const Footer = ({socket}) => {
                 )
                 : (
                     <div
-                        className="d-flex flex-row justify-content-between align-items-between text-center p-0 footer-light bg-light fixed-bottom">
+                        className="footer">
                         <button onClick={() => setOpen(true)}>open chat</button>
                     </div>
                 )

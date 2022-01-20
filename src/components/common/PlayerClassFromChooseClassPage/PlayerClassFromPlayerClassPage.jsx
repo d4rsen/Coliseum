@@ -4,7 +4,7 @@ const PlayerClassFromPlayerClassPage = ({id, chooseClassHandler, src}) => {
     return (
         <div>
             <img
-                onClick={chooseClassHandler} id={id} height="140"
+                onClick={chooseClassHandler} id={id} 
                 src={src}
                 alt="..."/>
         </div>

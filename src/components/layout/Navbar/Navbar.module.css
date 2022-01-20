@@ -27,7 +27,7 @@ width: 20px; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
+padding-right: 50px;
 
     /* margin-right: auto; */
 }
