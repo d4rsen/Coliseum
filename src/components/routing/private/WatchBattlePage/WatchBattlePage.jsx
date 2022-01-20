@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ACTION_setWatchBattlePlayers } from '../../../../redux/actions/watchBattleActions'
+import { UNSET_ROOM } from '../../../../redux/types/roomTypes'
+import { UNSET_WATCH_BATTLE_PLAYERS } from '../../../../redux/types/watchBattleTypes'
 import WatchBattleEnemyPlayer from '../../../common/WatchBattleEnemyPlayer/WatchBattleEnemyPlayer'
 import WatchBattleLog from '../../../common/WatchBattleLog/WatchBattleLog'
 import WatchBattlePlayer from '../../../common/WatchBattlePlayer/WatchBattlePlayer'
@@ -16,12 +18,12 @@ const WatchBattlePage = ({socket}) => {
 
     useEffect(() => {
         socket.emit('join-room-watcher', Number(room), player)
-        // return () => {
-        //     dispatch({type: UNSET_WATCH_BATTLE_PLAYERS})
-        //     socket.emit('close-private-room-for-watcher', room, player)
-        //     dispatch({type:UNSET_ROOM})
-        // }
-    }, [])
+        return () => {
+            dispatch({type: UNSET_WATCH_BATTLE_PLAYERS})
+            socket.emit('close-private-room-for-watcher', room, player)
+            dispatch({type: UNSET_ROOM})
+        }
+    }, [dispatch])
 
     // SOCKET.IO
 

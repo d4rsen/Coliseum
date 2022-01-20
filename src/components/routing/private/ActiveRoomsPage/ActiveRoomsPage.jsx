@@ -28,31 +28,11 @@ const ActiveRoomsPage = ({socket}) => {
 
     const enterRoomHandler = async (e) => {
         e.preventDefault()
-        console.log('enter room')
         dispatch({type: SET_ROOM, payload: Number(e.target.id)})
         setTimeout(() => {
             navigation('/watch-battle')
         }, 200)
     }
-    // useEffect(() => {
-    //     socket.on('join-room-watcher', (players) => {
-    //         console.log(players)
-    //         const currentRoomId = players.current_room ? players.current_room : null
-    //         const firstPlayer = players.initial_character ? players.initial_character : null
-    //         const secondPlayer = players.opponent ? players.opponent : null
-    //         console.log(currentRoomId, firstPlayer, secondPlayer, 'lol')
-    //
-    //         if (firstPlayer && secondPlayer) {
-    //             console.log('HERE IS JOIN_ROOM')
-    //             dispatch(ACTION_setWatchBattlePlayers({
-    //                 room: currentRoomId,
-    //                 player1: firstPlayer.player,
-    //                 player2: secondPlayer.player
-    //             }))
-    //         }
-    //     })
-    //
-    // }, [socket])
 
     return (
         <div className="container mt-5 d-flex flex-column">
