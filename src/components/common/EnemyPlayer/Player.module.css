@@ -78,12 +78,13 @@
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-
+    box-shadow: 0 10px 45px 5px black;
     font-size: 24px;
     /* border:10px solid black; */
-    padding: 2rem 1rem;
+    /* padding: 2rem 1rem; */
     min-height: 3em;
     resize: both;
+    transition: 200ms;
     /* background: #ffd73e33; */
 
 }

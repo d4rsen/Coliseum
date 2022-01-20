@@ -67,14 +67,14 @@ const WatchBattleEnemyPlayer = ({type}) => {
                 />
                 <PlayerProgressBarHpApMp
                     bgColor={'green'}
-                    stat={watchBattle && watchBattle.player2?.mp}
+                    stat={watchBattle && watchBattle.player2?.ap}
                     type={'player'}
                     rotate={180}
                     fontSize={15}
                 />
                 <PlayerProgressBarHpApMp
                     bgColor={'aqua'}
-                    stat={watchBattle && watchBattle.player2?.hp}
+                    stat={watchBattle && watchBattle.player2?.mp}
                     rotate={180}
                     type={'player'}
                     fontSize={10}

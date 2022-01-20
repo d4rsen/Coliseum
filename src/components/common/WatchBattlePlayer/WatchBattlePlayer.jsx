@@ -67,14 +67,14 @@ const WatchBattlePlayer = ({type}) => {
                 />
                 <PlayerProgressBarHpApMp
                     bgColor={'green'}
-                    stat={watchBattle && watchBattle.player1?.mp}
+                    stat={watchBattle && watchBattle.player1?.ap}
                     type={'player'}
                     rotate={180}
                     fontSize={15}
                 />
                 <PlayerProgressBarHpApMp
                     bgColor={'aqua'}
-                    stat={watchBattle && watchBattle.player1?.hp}
+                    stat={watchBattle && watchBattle.player1?.mp}
                     rotate={180}
                     type={'player'}
                     fontSize={10}

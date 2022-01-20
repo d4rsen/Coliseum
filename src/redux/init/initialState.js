@@ -10,13 +10,8 @@ const initialState = () => ({
     isLoading: false,
     activeRooms: null,
     enemyPlayer: null,
-    playerInventory: [],
     watchBattle: null,
-    // watchBattle: {
-    //     room: null,
-    //     player1: null,
-    //     player2: null
-    // },
+    playerInventory: [],
     chooseCharacter: null,
     mannequin: {
         hp: 10000,
