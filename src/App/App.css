@@ -5,13 +5,14 @@
 }
 
 .wrapper {
-    padding: 2% 10%;
+    /*padding: 2% 10%;*/
     height: 10%;
 }
+
 @font-face {
-  font-family: 'Grek'; 
-  src: local('Cleo'),
-    url('./DS_Greece.ttf') format("truetype"); 
+    font-family: 'Grek';
+    src: local('Cleo'),
+    url('./DS_Greece.ttf') format("truetype");
 }
 
 ul {
@@ -19,22 +20,24 @@ ul {
 }
 
 .body {
-  /* font-family: var(--common-Gilroy); */
-  /* font-weight: 300; */
-  font-family: 'Grek'; 
-  display: grid;
-  min-height: 100vh;
-  grid-template-areas: 'navBar' 'main' 'footer';
-  grid-template-rows: auto 1fr auto;
-}
-.navBar{
-  grid-area:navBar;
-}
-.main{
-  
-  grid-area:main;
+    /* font-family: var(--common-Gilroy); */
+    /* font-weight: 300; */
+    font-family: 'Grek';
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: 'navBar' 'main' 'footer';
+    grid-template-rows: auto 1fr auto;
 }
 
-.footer{
-  grid-area:footer;
+.navBar {
+    grid-area: navBar;
+}
+
+.main {
+
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
 }
