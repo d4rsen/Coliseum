@@ -37,11 +37,13 @@ const Footer = ({socket}) => {
                             onChange={(e) => inputChangeHandler(e)}
                             type="text"
                         />
-                        <button type={'submit'}>Send message</button>
-                        <button onClick={() => setOpen(false)}>close chat</button>
+                        <div className={style.footer__buttons}>
+                        <button className={style.footer__button_send} type={'submit'}>Send message</button>
+                        <button className={style.footer__button_close} onClick={() => setOpen(false)}>close chat</button>
+                        </div>
                     </form>
                     <div className={style.footer__message}>
-                        <p>Сообщения</p>
+                        <p>Сообщения:</p>
                         <ul className={style.footer__list}>
                             {chat &&
                                 chat.map((el, i) => {
