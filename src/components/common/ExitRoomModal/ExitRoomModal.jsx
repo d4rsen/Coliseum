@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React, {useCallback, useState} from 'react'
+import {useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import './ExitRoomModal.css'
 
 function ExitRoomModal({text}) {
@@ -19,9 +19,25 @@ function ExitRoomModal({text}) {
     return (
         <div className={active ? 'modal active' : 'modal'}>
             <div className={active ? 'modal__content' : 'modal'}
+                 style={{
+                     background: "wheat",
+                     display: 'flex',
+                     flexDirection: "column",
+                     justifyContent: 'center',
+                     alignItems: 'center'
+                 }}
                  onClick={propagationHandler}>
-                <h2>{text}</h2>
-                <button onClick={quitRoomHandler}>Выйти из боя</button>
+                <h2
+                    style={{}}
+                >{text}</h2>
+                <button
+                    className='button'
+                    onClick={quitRoomHandler}
+                    style={{
+                        height: '20%',
+                        padding: '1em',
+                    }}>Exit battle
+                </button>
             </div>
         </div>
 

@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { ACTION_punchFromPlayerToMob } from '../../../../redux/actions/mobsActions'
-import { ACTION_punchFromMobToPlayer } from '../../../../redux/actions/playerActions'
+import {useDispatch, useSelector} from 'react-redux'
+import {ACTION_punchFromPlayerToMob} from '../../../../redux/actions/mobsActions'
+import {ACTION_punchFromMobToPlayer} from '../../../../redux/actions/playerActions'
 import ExitRoomModal from '../../ExitRoomModal/ExitRoomModal'
 import style from './AttackDefendWithCyberButtons.module.css'
 
@@ -28,10 +28,10 @@ const MobButtons = () => {
         </button>
         <div>
             {player && player.hp <= 0 && (
-                <ExitRoomModal text={`Вас победил моб`}/>
+                <ExitRoomModal text={`DEFEAT`}/>
             )}
             {mob && mob.creepStats.hp <= 0 && (
-                <ExitRoomModal text={`Вы победили моба`}/>
+                <ExitRoomModal text={`WIN`}/>
             )}
         </div>
     </div>)
