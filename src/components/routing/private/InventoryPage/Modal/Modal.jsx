@@ -1,11 +1,9 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { THUNK_ACTION_wearItemAction } from '../../../../../redux/actions/thunks/inventory/thinkWearItemAction'
-import {
-    thunkDeleteItemFromInventoryAction
-} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
-import { THUNK_ACTION_getPLayerInventory } from '../../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
-import { THUNK_ACTION_getPlayerFromDb } from '../../../../../redux/actions/thunks/thunkPlayersFromDbActions'
+import {useDispatch, useSelector} from 'react-redux'
+import {THUNK_ACTION_wearItemAction} from '../../../../../redux/actions/thunks/inventory/thinkWearItemAction'
+import {thunkDeleteItemFromInventoryAction} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
+import {THUNK_ACTION_getPLayerInventory} from '../../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
+import {THUNK_ACTION_getPlayerFromDb} from '../../../../../redux/actions/thunks/thunkPlayersFromDbActions'
 import './ModalInventory.scss'
 
 function Modal({active, setActive, chosenItem, player}) {
@@ -38,8 +36,10 @@ function Modal({active, setActive, chosenItem, player}) {
             <div className={active ? 'modal__content' : 'modal'} onClick={e => e.stopPropagation()}>
                 <div className="main_modal">
                     <div className="meta_info_modal">
-                        <label htmlFor="chosenItem" className="form-label">{chosenItem.item_name}</label>
-                        <p>Are you sure about that?</p>
+                        <label htmlFor="chosenItem" className="form-label">
+                            {/*{chosenItem.item_name}*/}
+                        </label>
+                        <p>What would you like to do with {chosenItem.item_name}</p>
                     </div>
                     <div className="buttons">
                         <button className="button" onClick={handleDelete}>Yes</button>

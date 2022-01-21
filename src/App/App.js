@@ -25,6 +25,7 @@ import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
 import './App.css'
 import './normalize.css'
+import Capitol from "../components/routing/private/Capitol/Capitol";
 
 const socket = io.connect('https://dbforgame.herokuapp.com/')
 
@@ -81,7 +82,7 @@ function App() {
                         <Route path="/train" element={user && player ? <TrainPage/> : <Navigate to="/register"/>}/>
                         <Route path="/observer" element={user && player ? <ActiveRoomsPage/> : <Navigate to="/register"/>}/>
                         <Route path="/rooms" element={user && player ? <IdleRoomsPage/> : <Navigate to="/register"/>}/>
-                        {/*<Route path="/main-tower" element={isAuth ? <MainTowerPage/> : <Navigate to="/register"/>}/>*/}
+                        <Route path="/main-tower" element={isAuth ? <Capitol/> : <Navigate to="/register"/>}/>
                         <Route path="/mannequin" element={user && player ? <MannequinPage/> : <Navigate to="/register"/>}/>
                         <Route path="/inventory" element={user && player ? <InventoryPage/> : <Navigate to="/register"/>}/>
                         <Route path="/auction" element={user && player ? <Auction/> : <Navigate to="/register"/>}/>
