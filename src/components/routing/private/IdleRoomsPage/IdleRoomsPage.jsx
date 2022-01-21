@@ -44,18 +44,20 @@ const IdleRoomsPage = () => {
 
     return (
         <div className="container mt-5 d-flex flex-column">
+            <h1>PAYERS ARE WAITING FOR THE OPPONENT </h1>
             <div>
                 <button onClick={createRoomHandler} className="btn btn-primary">
-                    Создать комнату
+                    Create room
                 </button>
             </div>
-            <div>
+            <div className="container d-flex flex-row mt-4">
                 {idleRooms && idleRooms.map(room => {
                     return (
-                        <div key={room.id} className="container d-flex flex-row mt-4">
+                        <div className="mx-3" key={room.id}>
                             <img onClick={enterRoomHandler} id={room.id}
-                                 src="https://5mod.ru/uploads/posts/2019-09/1569659198_1569659144.png" alt="..." height="140"/>
-                            <p>{`${room.id}`}</p>
+                                 src="https://cdn0.iconfinder.com/data/icons/miltary-service/50/13-512.png" alt="..."
+                                 height="140"/>
+                            <p>{`Join room №${room.id}`}</p>
                         </div>
                     )
                 })}

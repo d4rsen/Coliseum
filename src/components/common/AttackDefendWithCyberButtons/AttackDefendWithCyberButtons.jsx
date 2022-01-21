@@ -163,11 +163,11 @@ const AttackDefendWithCyberButtons = ({socket}) => {
             onClick={battleHandler}
             className="cybr-btn m-2"
             disabled={!(isDisabledAttack && isDisabledDefend)}>
-            {isDisabledAttack && isDisabledDefend ? 'Бой' : 'Сделайте выбор'}
+            {isDisabledAttack && isDisabledDefend ? 'Punch' : 'Сделайте выбор'}
             <span aria-hidden>_</span>
             <span aria-hidden
-                  className="cybr-btn__glitch">{isDisabledAttack && isDisabledDefend ? 'Бой_' : 'Сделайте выбор_'}</span>
-            <span aria-hidden className="cybr-btn__tag">theGame</span>
+                  className="cybr-btn__glitch">{isDisabledAttack && isDisabledDefend ? 'Punch_' : 'Сделайте выбор_'}</span>
+            <span aria-hidden className="cybr-btn__tag">Coliseum</span>
         </button>
         <div>
             {battleLog && battleLog.map((phraseFromDb, i) => {

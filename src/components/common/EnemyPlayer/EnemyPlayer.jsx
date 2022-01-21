@@ -7,13 +7,13 @@ import PlayerWeapon from '../PlayersWeapon/PlayersWeapon'
 import style from './Player.module.css'
 
 const classAssasin =
-    'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/assasin_woman.jpg'
+    'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/assassin_woman_cc.png'
 
 const classWarrior =
-    'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/warrior_man.jpg'
+    'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/warrior_man_cc.png'
 
 const classMonk =
-    'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/monk_woman.jpg'
+    'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/mong_woman_cc.png'
 
 const emptySwordLink =
     'https://dbforgame.herokuapp.com/static/img/items/empty_cell.png'

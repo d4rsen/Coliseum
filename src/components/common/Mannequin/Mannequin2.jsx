@@ -28,7 +28,6 @@ const Mannequin2 = () => {
                     >
                         <p style={{fontSize: `${10}px`, transform: `rotateX(${180}deg)`}}>{mannequin.hp}</p>
                     </div>
-
                 </>
             </div>
         </div>

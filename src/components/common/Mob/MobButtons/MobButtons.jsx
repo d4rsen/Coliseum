@@ -20,10 +20,10 @@ const MobButtons = () => {
         <button
             onClick={battleHandler}
             className="cybr-btn m-2">
-            {'Бой'}
+            {'Punch'}
             <span aria-hidden>_</span>
             <span aria-hidden
-                  className="cybr-btn__glitch">{'Бой_'}</span>
+                  className="cybr-btn__glitch">{'Punch'}</span>
             <span aria-hidden className="cybr-btn__tag">Coliseum</span>
         </button>
         <div>

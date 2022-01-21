@@ -35,17 +35,21 @@ const ActiveRoomsPage = ({socket}) => {
     }
 
     return (
-        <div className="container mt-5 d-flex flex-column">
+        <div>
+            <h1>ONLINE BATTLES</h1>
             <div>
-                {activeRooms && activeRooms.map(room => {
-                    return (
-                        <div key={room.id} className="container d-flex flex-row mt-4">
-                            <img onClick={enterRoomHandler} id={room.id}
-                                 src="https://5mod.ru/uploads/posts/2019-09/1569659198_1569659144.png" alt="..." height="140"/>
-                            <p>{`${room.id}`}</p>
-                        </div>
-                    )
-                })}
+                <div className="container d-flex flex-row">
+                    {activeRooms && activeRooms.map(room => {
+                        return (
+                            <div key={room.id} className="mx-3">
+                                <img onClick={enterRoomHandler} id={room.id}
+                                     src="https://t3.ftcdn.net/jpg/02/61/04/02/360_F_261040216_dI5MBh32t9TXeLN1l3mSmNCwILuNcUi5.jpg"
+                                     alt="..." height="140"/>
+                                <p>{`Watch room №${room.id}`}</p>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
