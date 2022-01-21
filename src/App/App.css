@@ -59,7 +59,6 @@ ul {
     /* overflow-y: scroll; */
     max-height: 20vh;
     display: flex;
-    background-color: rgba(204, 198, 111, 0.527);
     overflow: hidden;
 
     /* align-items: flex-end; */
