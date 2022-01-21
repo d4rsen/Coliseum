@@ -1,39 +1,39 @@
-import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
-import {THUNK_ACTION_setPlayerClass} from '../../../../redux/actions/thunks/thunkSetPlayerClassActions';
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { THUNK_ACTION_setPlayerClass } from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
+import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChooseClassPage/PlayerClassFromPlayerClassPage'
 import style from './ChooseCharacter.module.css'
-import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChooseClassPage/PlayerClassFromPlayerClassPage';
 
 const ChooseCharacter = () => {
-    const dispatch = useDispatch();
-    const user = useSelector((state) => state.user);
-    const player = useSelector((state) => state.player);
-    const navigation = useNavigate();
-    const chooseCharacter = useSelector((state) => state.chooseCharacter);
-    const [chosenClass, setChosenClass] = useState(1);
-    const [inputValue, setInputValue] = useState('');
+    const dispatch = useDispatch()
+    const user = useSelector((state) => state.user)
+    const player = useSelector((state) => state.player)
+    const navigation = useNavigate()
+    const chooseCharacter = useSelector((state) => state.chooseCharacter)
+    const [chosenClass, setChosenClass] = useState(1)
+    const [inputValue, setInputValue] = useState('')
 
     const valueHandler = (e) => {
-        setInputValue(e.target.value);
-    };
+        setInputValue(e.target.value)
+    }
 
     const chooseClassHandler = (e) => {
-        e.preventDefault();
-        setChosenClass(e.target.id);
-    };
+        e.preventDefault()
+        setChosenClass(e.target.id)
+    }
 
     const buttonHandler = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         dispatch(
             THUNK_ACTION_setPlayerClass({
                 user_id: user.user.id,
                 class_id: Number(chosenClass),
                 nickname: inputValue,
             })
-        );
-        navigation('/');
-    };
+        )
+        navigation('/')
+    }
 
     return (
         <div className={style.main_div}>
@@ -68,13 +68,13 @@ const ChooseCharacter = () => {
                 <div className={style.buttons__block}>
                     <input type="text" onChange={valueHandler} value={inputValue}/>
                     <div onClick={buttonHandler} className="">
-                        submit
+                        Choose your nick name
                     </div>
                 </div>
 
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default ChooseCharacter;
+export default ChooseCharacter

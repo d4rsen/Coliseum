@@ -1,5 +1,18 @@
 import initialState from '../init/initialState'
+import { SET_CHAT, UNSET_CHAT } from '../types/enemyPlayerTypes'
 
 export const chatReducer = (state = initialState, action) => {
-    return null
+    switch (action.type) {
+        case SET_CHAT :
+            return [...state, action.payload]
+
+        case UNSET_CHAT:
+            return []
+
+        default:
+            return state
+    }
 }
+
+
+

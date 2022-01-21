@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 
 import style from './Map.module.css'
 import SvgCave from './SvgCave/SvgCave'
-import SvgPic from './SvgCazarm/SvgCazarm'
 import SvgColiseum from './SvgColiseum/SvgColiseum'
 import SvgMarket from './SvgMarket/SvgMarket'
 import SvgObservation from './SvgObservation/SvgObservation'
@@ -23,11 +22,6 @@ const Map = ({width, height, type}) => {
     console.log(type)
 
     const components = [
-        {
-            component: <SvgPic/>,
-            class: style.map__cazarm,
-            link: '/mannequin',
-        },
         {
             component: <SvgObservation/>,
             class: style.map__observation,

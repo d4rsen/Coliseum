@@ -1,6 +1,7 @@
 const initialState = () => ({
-    user: null,
     mob: null,
+    user: null,
+    chat: [],
     room: null,
     phrase: '',
     player: null,
@@ -8,8 +9,8 @@ const initialState = () => ({
     evasion: false,
     idleRooms: null,
     auctionItems: [],
-    traderItems: null,
     isLoading: false,
+    traderItems: null,
     activeRooms: null,
     enemyPlayer: null,
     watchBattle: null,
