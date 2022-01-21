@@ -1,40 +1,60 @@
 .footer__chat{
-  display: grid;
-  justify-content: center;
-  /* margain-bottom: 3%; */
-  /* max-height: 20%; */
-  /* z-index: ; */
-  overflow-anchor: scroll;
-  /* overflow-y: scroll; */
-  /* display: ; */
-  /* align-items: flex-start; */
+  display: flex;
+  /* justify-content: center; */
+  padding: 2%;
+  z-index:3 ;
+ height: 30vh;
+
   transition: 300ms;
-  background-color: rgba(181, 191, 219, 0.527);
-  /* position: fixed; */
-  position: fixed;
+
     bottom: 0;
     width: 100%;
-  /* position: ; */
+  flex-direction: column;
+  transition: 300ms;
+}
+.footer__chat input {
+  border:none;
+  width: 20%;
+
+  height: 3vh;
+  background-color: rgb(238, 234, 182);
+  box-shadow:0 0 5px  rgb(56, 52, 52);
 }
 
-.button__close button{
+.footer__chat input::placeholder {
+  paddig:3px;
+}
+
+.button__close {
+  
   border: none;
   background-color: royalblue;
   transition: 300ms;
+
 }
 
 .button__open{
   transition: 300ms;
+  /* overflow-y: scroll; */
+  
 }
 
 .footer__list{
   display: block;
-  height: 30%;
-
+  overflow-y: scroll;
+  /* max-height: 20%; */
+  /* overflow: hidden; */
+  /* overflow-y: scroll; */
+  transition: 300ms;
 }
 
 .some__player__name{
   display: block;
   width: 40%;
-  background-color: saddlebrown;
+  /* overflow-y: scroll; */
+  /* background-color: saddlebrown; */
+}
+
+.footer__message{
+  overflow-y: scroll;
 }

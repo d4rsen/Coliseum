@@ -23,8 +23,20 @@ export default function Navbar() {
 
     return (
         <header className={style.header}>
+            {player && (
+                <div className={style.header__exp}>
+                    <PlayerProgressBarHpApMp
+                        bgColor={'brown'}
+                        stat={exp}
+                        height={10}
+                        type={'exp'}
+                        fontSize={8}
+                    />
+                </div>
+            )}
             <div className={style.wrapper}>
                 <div className={style.header__user}>
+                  
                     <nav className={style.navigation}>
                         <NavLink className={style.header__logo} to="/">
                             <img
@@ -156,17 +168,7 @@ export default function Navbar() {
                     )}
                 </div>
             </div>
-            {player && (
-                <div className={style.header__exp}>
-                    <PlayerProgressBarHpApMp
-                        bgColor={'brown'}
-                        stat={exp}
-                        height={10}
-                        type={'exp'}
-                        fontSize={8}
-                    />
-                </div>
-            )}
+          
         </header>
     )
 }
