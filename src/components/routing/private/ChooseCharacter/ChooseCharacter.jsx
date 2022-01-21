@@ -68,7 +68,7 @@ const ChooseCharacter = () => {
                 <div className={style.buttons__block}>
                     <input type="text" onChange={valueHandler} value={inputValue}/>
                     <div onClick={buttonHandler} className="">
-                        Choose your nick name
+                        Choose your nickname
                     </div>
                 </div>
 

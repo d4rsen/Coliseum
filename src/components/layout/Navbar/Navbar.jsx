@@ -38,12 +38,12 @@ export default function Navbar() {
                                 <>
                                     <li className={style.navigaton__item}>
                                         <NavLink className={style.navigaton__link} to="/register">
-                                            Зарегистрироваться
+                                            Sign up
                                         </NavLink>
                                     </li>
                                     <li className={style.navigaton__item}>
                                         <NavLink className={style.navigaton__link} to="/login">
-                                            Войти
+                                            Sign in
                                         </NavLink>
                                     </li>
                                 </>
@@ -56,26 +56,10 @@ export default function Navbar() {
                                             className={style.navigaton__link}
                                             to="/logout"
                                         >
-                                            Выйти
+                                            Log out
                                         </NavLink>
                                     </li>
-                                    <li className={style.navigaton__item}>
-                                        <NavLink className={style.navigaton__link} to="/auction">
-                                            Auction
-                                        </NavLink>
-                                    </li>
-                                    <li className={style.navigaton__item}>
-                                        <NavLink className={style.navigaton__link} to="/test">
-                                            Тест для Андрея
-                                        </NavLink>
-                                    </li>
-                                    {user && player && (
-                                        <li className={style.navigaton__item, style.bag}>
-                                            <NavLink className={style.navigaton__link} to="/inventory">
-                                                <Bag/>
-                                            </NavLink>
-                                        </li>
-                                    )}
+
                                 </>
                             )}
                         </ul>
@@ -105,16 +89,26 @@ export default function Navbar() {
 
                         </div>
                     )}
-
-                    {user && (
+                    {user && player && (
+                        <li className={style.navigaton__item, style.bag}>
+                            <NavLink className={style.navigaton__link} to="/inventory">
+                                <Bag/>
+                            </NavLink>
+                        </li>
+                    )}
+                    {user && player && (
                         <div className={style.header__user}>
                             <div className={style.header__user_params}>
                                 <span className={style.header__room}>
                                   {room ? `Your room is ${room.id}` : 'You are not in room'}
                                 </span>
                                 <span className={style.header__level}>
-                  {player && `Your level is ${player.lvl}`}
+                                    {player && `Your level is ${player.lvl}`}
+                         </span>
+                                <span className={style.header__level}>
+                  {player && `${player.nickName}`}
                 </span>
+
                             </div>
                             {player && player.playerClass === 'warrior' && (
                                 <img
