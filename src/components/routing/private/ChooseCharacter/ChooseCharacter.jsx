@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { THUNK_ACTION_setPlayerClass } from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
+import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
+import {THUNK_ACTION_setPlayerClass} from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
 import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChooseClassPage/PlayerClassFromPlayerClassPage'
 import style from './ChooseCharacter.module.css'
 
@@ -44,7 +44,7 @@ const ChooseCharacter = () => {
                         chooseClassHandler={chooseClassHandler}
                         id={1}
                         src={
-                            'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/warrior_man.jpg'
+                            'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/warrior_man_cc.png'
                         }
                     />
                     </li>
@@ -52,7 +52,7 @@ const ChooseCharacter = () => {
                         chooseClassHandler={chooseClassHandler}
                         id={2}
                         src={
-                            'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/assasin_woman.jpg'
+                            'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/assassin_woman_cc.png'
                         }
                     />
                     </li>
@@ -60,7 +60,7 @@ const ChooseCharacter = () => {
                         chooseClassHandler={chooseClassHandler}
                         id={3}
                         src={
-                            'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/monk_woman.jpg'
+                            'https://dbforgame.herokuapp.com/static/img/classes/playerClasses/mong_woman_cc.png'
                         }
                     />
                     </li>

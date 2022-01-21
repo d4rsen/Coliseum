@@ -19,6 +19,14 @@ ul {
     list-style: none;
 }
 
+.backback {
+    background: url("../__temp/back.jpg");
+    background-size: cover;
+    position: absolute;
+    z-index: -1000;
+    width: 100vw;
+}
+
 .body {
     /* font-weight: 300; */
     font-family: 'Grek';
