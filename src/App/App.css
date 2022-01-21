@@ -6,7 +6,7 @@
 
 .wrapper {
     /*padding: 2% 10%;*/
-    height: 10%;
+    /* height: 10%; */
 }
 
 @font-face {
@@ -20,28 +20,50 @@ ul {
 }
 
 .body {
-    /* font-family: var(--common-Gilroy); */
     /* font-weight: 300; */
     font-family: 'Grek';
-    display: grid;
-    max-height: 100vh;
+    /* display: grid;
+    min-height: 100vh;
     grid-template-areas: 'navBar' 'main' 'footer';
-    grid-template-rows: auto 1fr auto;
-}
+    grid-template-rows: auto 1fr 20vh;
+    */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+  /* overflow: hidden; */
+  }
+    
 
 .navBar {
-    grid-area: navBar;
+    /* grid-area: navBar; */
+    flex: 0 0 auto;
 }
 
 .main {
 
-    grid-area: main;
+  flex: 1 0 auto;
+    /* grid-area: main; */
 }
 
 .footer {
-    grid-area: footer;
+  
+  flex: 0 0 auto;
+  /* overflow-y: scroll; */
+  max-height: 20vh;
+  display: flex;
+  background-color: rgba(204, 198, 111, 0.527);
+overflow: hidden;
+
+  /* align-items: flex-end; */
+    /* grid-area: footer; */
+    /* background-color: saddlebrown; */
     /* position: sticky; */
-    /* grid-row-end: ; */
-    /* max-height: 30vh; */
-    
+    /* display: flex; */
+   /* align-items: flex-end;  */
+    /* height: 0vh; */
+    /* max-height: 10%; */
+    /* overflow-y: hidden; */
+   /* height: ; */
+   /* align-items: flex-end; */
+   /* height:300px; */
 }
