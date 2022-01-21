@@ -19,7 +19,16 @@ ul {
     list-style: none;
 }
 
+.backback {
+    background: url("../__temp/back.jpg");
+    background-size: cover;
+    /*position: absolute;*/
+    z-index: -1000;
+}
+
 .body {
+
+    /*background: url("../__temp/back.jpg");*/
     /* font-family: var(--common-Gilroy); */
     /* font-weight: 300; */
     font-family: 'Grek';
@@ -43,5 +52,5 @@ ul {
     /* position: sticky; */
     /* grid-row-end: ; */
     /* max-height: 30vh; */
-    
+
 }
