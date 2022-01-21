@@ -104,10 +104,13 @@ export default function Navbar() {
                                 </span>
                                 <span className={style.header__level}>
                                     {player && `Your level is ${player.lvl}`}
-                         </span>
+                                </span>
                                 <span className={style.header__level}>
-                  {player && `${player.nickName}`}
-                </span>
+                                {player && `${player.nickName}`}
+                                </span>
+                                <span className={style.header__level}>
+                                    {player && `You have ${player.balance} ₲`}
+                                 </span>
 
                             </div>
                             {player && player.playerClass === 'warrior' && (

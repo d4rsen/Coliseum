@@ -1,8 +1,12 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { THUNK_ACTION_buyTraderItem } from '../../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
 import styles from './AuctionItem.module.css'
 
 const TraderItem = ({item}) => {
     const itemId = 124
+    const player = useSelector(state => state.player)
+    const dispatch = useDispatch()
     const itemImg = 'https://cdn.webshopapp.com/shops/305440/files/345306816/hellscream-foam-two-handed-battle-axe-gore.jpg'
     const itemName = '' //`${item.item_id}`
     const itemStats = {
@@ -14,8 +18,9 @@ const TraderItem = ({item}) => {
     const itemPrice = 999999
     const itemInfo = 'no description'
 
-    const buyItemHandler = e => {
-        
+    const buyItemHandler = (e) => {
+        e.preventDefault()
+        dispatch(THUNK_ACTION_buyTraderItem(player, item)) //TODO CHECK THUNK
     }
 
     return (

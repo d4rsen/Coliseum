@@ -98,7 +98,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
                 dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))
-                dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, evasion, db_room))
+                dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, db_room))
                 unsetHandler()
             }
 
@@ -114,7 +114,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
                 dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))
-                dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, evasion, db_room))
+                dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, db_room))
                 unsetHandler()
             }
         })
