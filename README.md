@@ -54,7 +54,7 @@ The video sequence ends here and three heroes to choose from appear before our e
 
 * choose the class of your character and give him a name * after we get to the first location.
 
-#### Collaborators:
+#### Creators:
 
 ##### https://github.com/d4rsen
 
