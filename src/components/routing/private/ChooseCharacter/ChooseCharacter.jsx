@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {useNavigate} from 'react-router-dom'
-import {THUNK_ACTION_setPlayerClass} from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { THUNK_ACTION_setPlayerClass } from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
 import PlayerClassFromPlayerClassPage from '../../../common/PlayerClassFromChooseClassPage/PlayerClassFromPlayerClassPage'
 import style from './ChooseCharacter.module.css'
 

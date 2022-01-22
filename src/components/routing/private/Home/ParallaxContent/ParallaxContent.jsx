@@ -32,11 +32,11 @@ const ParallaxContent = (props) => {
                         marginTop: '2em',
                         height: '70%',
                         width: '90%',
-                    }} src='https://www.youtube.com/embed/TzhKPqOt2aE'
-                            frameBorder='0'
-                            allow='autoplay; encrypted-media'
+                    }} src="https://www.youtube.com/embed/TzhKPqOt2aE"
+                            frameBorder="0"
+                            allow="autoplay; encrypted-media"
                             allowFullScreen
-                            title='video'
+                            title="video"
                     />
                 </h1>
             </div>

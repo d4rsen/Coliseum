@@ -6,7 +6,7 @@
     height: 30vh;
 
     transition: 300ms;
-position: relative;
+    position: relative;
     bottom: 0;
     width: 100%;
     flex-direction: column;
@@ -27,12 +27,12 @@ position: relative;
 
 .footer__chat input::placeholder {
     padding: 3px;
-    
+
     /* margin-right: 10vw; */
 }
 
 .button__close {
-display: block;
+    display: block;
     border: none;
     /* height: ; */
     padding: 10px;
@@ -40,14 +40,15 @@ display: block;
     transition: 300ms;
     margin: 10px;
     box-shadow: 0 0 10px rgb(143, 131, 112);
-background-color: indianred;
-border-radius: 10px;
+    background-color: indianred;
+    border-radius: 10px;
 
 }
-.footer__buttons{
-  display: flex;
-  justify-content: space-around;
-  width: 20%;
+
+.footer__buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
 
 }
 
@@ -56,29 +57,33 @@ border-radius: 10px;
     /* overflow-y: scroll; */
 
 }
-.footer__buttons button{
-border:none;
-padding: 5px;;
-}
-.footer__button_send{
-  background-color: rgb(212, 231, 192);
-border-radius: 10px;
-transition: 200ms;
+
+.footer__buttons button {
+    border: none;
+    padding: 5px;;
 }
 
-.footer__button_close{
-  background-color: rgb(224, 138, 174);
-  border-radius: 10px;
-  
+.footer__button_send {
+    background-color: rgb(212, 231, 192);
+    border-radius: 10px;
+    transition: 200ms;
 }
-.footer__button_send:hover{
-  box-shadow: 0 0 5px 5px rgb(212, 231, 192);
-  transition: 200ms;
+
+.footer__button_close {
+    background-color: rgb(224, 138, 174);
+    border-radius: 10px;
+
 }
+
+.footer__button_send:hover {
+    box-shadow: 0 0 5px 5px rgb(212, 231, 192);
+    transition: 200ms;
+}
+
 .footer__button_close:hover {
-  transition: 200ms;
-  box-shadow: 0 0 5px 5px  rgb(224, 138, 174);
-  
+    transition: 200ms;
+    box-shadow: 0 0 5px 5px rgb(224, 138, 174);
+
 }
 
 .footer__list {
@@ -100,8 +105,8 @@ transition: 200ms;
 .footer__message {
     overflow-y: scroll;
     position: absolute;
-    top:5;
-    left:35%;
+    top: 5;
+    left: 35%;
     box-shadow: 0 0 10px rgb(76, 88, 56);
     background-color: rgb(238, 234, 182);
     min-width: 50vw;

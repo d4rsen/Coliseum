@@ -12,14 +12,11 @@ import SvgPrimaryCastle from './SvgPrimaryCastle/SvgPrimaryCastle'
 import SvgTrain from './SvgTrain/SvgTrain'
 
 const background = require('./pictures/map.png')
-// const svg = require('./pictures/home.svg')
-console.log(background)
 
 const Map = ({width, height, type}) => {
     const dispatch = useDispatch()
     const player = useSelector((state) => state.player)
     const navigation = useNavigate()
-    console.log(type)
 
     const components = [
         {
@@ -47,17 +44,8 @@ const Map = ({width, height, type}) => {
             class: style.map__SvgCave,
             link: '/dungeon'
         },
-        // {
-        //   component: <SvgColiseum />,
-        //   class: style.map__coliseum,
-        // },
     ]
 
-    // useEffect(() => {
-    //   setTimeout(() => {
-    //     dispatch(ACTION_PlayerRegenerate());
-    //   }, 3000);
-    // }, [player, dispatch]);
     const roomsHandler = (e) => {
         e.preventDefault()
         navigation('/rooms')

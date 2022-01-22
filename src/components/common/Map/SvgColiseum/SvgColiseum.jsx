@@ -1,5 +1,3 @@
-// import style from './SvgCazarm.module.css'
-// className={style.map__coliseum
 const SvgColiseum = ({fill, stroke, color}) => {
     return (
 

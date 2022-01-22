@@ -29,11 +29,9 @@ const WatchBattlePage = ({socket}) => {
 
     useEffect(() => {
         socket.on('join-room-watcher', (players) => {
-            console.log(players)
             const currentRoomId = players ? players.current_room : null
             const firstPlayer = players ? players.initial_character : null
             const secondPlayer = players ? players.opponent : null
-            console.log(currentRoomId, firstPlayer, secondPlayer)
 
             if (firstPlayer && secondPlayer) {
                 dispatch(ACTION_setWatchBattlePlayers({

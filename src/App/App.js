@@ -1,13 +1,14 @@
-import {useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {Navigate, Route, Routes} from 'react-router-dom'
-import {io} from 'socket.io-client'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { io } from 'socket.io-client'
 
 import Footer from '../components/layout/Footer/Footer'
 import Loader from '../components/layout/Loader/Loader'
 import Navbar from '../components/layout/Navbar/Navbar'
 import ActiveRoomsPage from '../components/routing/private/ActiveRoomsPage/ActiveRoomsPage'
 import Auction from '../components/routing/private/Auction/Auction'
+import Capitol from '../components/routing/private/Capitol/Capitol'
 import ChooseCharacter from '../components/routing/private/ChooseCharacter/ChooseCharacter'
 import ColiseumPage from '../components/routing/private/ColiseumPage/ColiseumPage'
 import DungeonPage from '../components/routing/private/DungeonPage/DungeonPage'
@@ -23,9 +24,9 @@ import AndreyTest from '../components/routing/public/AndreyTest/AndreyTest'
 import AuthorizationPage from '../components/routing/public/AuthorizationPage/AuthorizationPage'
 import NotFound from '../components/routing/public/NotFound/NotFound'
 import RegistrationPage from '../components/routing/public/RegistrationPage/RegistrationPage'
+import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
 import './App.css'
 import './normalize.css'
-import Capitol from "../components/routing/private/Capitol/Capitol";
 
 const socket = io.connect('https://dbforgame.herokuapp.com/')
 
@@ -37,8 +38,7 @@ function App() {
     const player = useSelector(state => state.player)
 
     useEffect(() => {
-        // (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
-        // dispatch(ACTION_getMobs()) //TODO
+        (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
         player && socket.emit('player-connected', player.nickName)
         return () => {
             player && socket.emit('player-disconnected', player.nickName)
@@ -101,9 +101,6 @@ function App() {
                 <div className="footer">
                     {player && <Footer socket={socket}/>}
                 </div>
-                {/* {
-              user && <div className='footer'>jhijh</div>
-            } */}
             </div>
         </div>
     )

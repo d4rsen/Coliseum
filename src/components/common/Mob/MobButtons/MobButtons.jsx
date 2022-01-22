@@ -1,6 +1,6 @@
-import {useDispatch, useSelector} from 'react-redux'
-import {ACTION_punchFromPlayerToMob} from '../../../../redux/actions/mobsActions'
-import {ACTION_punchFromMobToPlayer} from '../../../../redux/actions/playerActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { ACTION_punchFromPlayerToMob } from '../../../../redux/actions/mobsActions'
+import { ACTION_punchFromMobToPlayer } from '../../../../redux/actions/playerActions'
 import ExitRoomModal from '../../ExitRoomModal/ExitRoomModal'
 import style from './AttackDefendWithCyberButtons.module.css'
 

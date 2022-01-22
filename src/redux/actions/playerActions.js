@@ -6,36 +6,9 @@ import {
     SET_PLAYER
 } from '../types/playerTypes'
 
-// санка только чтобы был диспатч
-
-// export const ACTION_punchFromEnemyPlayerToPlayer = (enemyPlayerDamage, battlePlayer, battleEnemyPlayer, playerWs) => async (dispatch) => {
-//     const random = Math.floor(Math.random() * 100)
-//     const chance = (characterEvasion) => characterEvasion > random
-//
-//     // if (chance(playerWs.player.total_stats.evs)) {
-//     //     dispatch(ACTION_setEvasion())
-//     //     dispatch(ACTION_playerDodged())
-//     // }
-//     //
-//     // dispatch(ACTION_unSetEvasion())
-//
-//     return {
-//         type: PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER,
-//         payload: {
-//             enemyPlayerDamage,
-//             battlePlayer,
-//             battleEnemyPlayer
-//         }
-//     }
-// }
-
 export const ACTION_punchFromEnemyPlayerToPlayer = (enemyPlayerDamage, battlePlayer, battleEnemyPlayer, playerWs) => {
     const random = Math.floor(Math.random() * 100)
     const chance = (characterEvasion) => characterEvasion > random
-    // if (chance(playerWs.player.total_stats.evs)) {
-    //     console.log(chance(playerWs.player.total_stats.evs))
-    //     return {type: PLAYER_DODGED}
-    // }
 
     return {
         type: PUNCH_FROM_ENEMY_PLAYER_TO_PLAYER,

@@ -20,7 +20,6 @@ const Auction = () => {
     }, [playerInventory])
     useEffect(() => {
         dispatch(THUNK_ACTION_getTraderItems())
-        console.log(traderItems)
     }, [])
 
     const traderHandler = e => setChange(false)

@@ -13,14 +13,12 @@ import SvgPrimaryCastle from './SvgPrimaryCastle/SvgPrimaryCastle'
 import SvgTrain from './SvgTrain/SvgTrain'
 
 const background = require('./pictures/map.png')
-// const svg = require('./pictures/home.svg')
-console.log(background)
 
 const Map = ({width, height, type}) => {
     const dispatch = useDispatch()
     const player = useSelector((state) => state.player)
     const navigation = useNavigate()
-    console.log(type)
+
     return (
         <div className={type === 'logIn' ? style.map__login : style.map}>
             <img className={style.map__pic} src={background}></img>

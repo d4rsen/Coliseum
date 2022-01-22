@@ -32,9 +32,6 @@ import {
     UNSET_DEFEND_RIGHT_HAND_PLAYER,
 } from '../types/battleTypes'
 
-//SET
-
-//player
 export const ACTION_attackHeadPlayer = () => ({type: ATTACK_HEAD_PLAYER})
 export const ACTION_attackLeftHandPlayer = () => ({type: ATTACK_LEFT_HAND_PLAYER})
 export const ACTION_attackRightHandPlayer = () => ({type: ATTACK_RIGHT_HAND_PLAYER,})
@@ -46,8 +43,6 @@ export const ACTION_defendLeftHandPlayer = () => ({type: DEFEND_LEFT_HAND_PLAYER
 export const ACTION_defendRightHandPlayer = () => ({type: DEFEND_RIGHT_HAND_PLAYER,})
 export const ACTION_defendBodyPlayer = () => ({type: DEFEND_BODY_PLAYER})
 export const ACTION_defendLegsPlayer = () => ({type: DEFEND_LEGS_PLAYER})
-
-//enemy player
 
 export const ACTION_attackHeadEnemyPlayer = () => ({type: ATTACK_HEAD_ENEMY_PLAYER})
 export const ACTION_attackLeftHandEnemyPlayer = () => ({type: ATTACK_LEFT_HAND_ENEMY_PLAYER})
@@ -61,9 +56,6 @@ export const ACTION_defendRightHandEnemyPlayer = () => ({type: DEFEND_RIGHT_HAND
 export const ACTION_defendBodyEnemyPlayer = () => ({type: DEFEND_BODY_ENEMY_PLAYER})
 export const ACTION_defendLegsEnemyPlayer = () => ({type: DEFEND_LEGS_ENEMY_PLAYER})
 
-//UNSET
-
-//player
 export const ACTION_unsetAttackHeadPlayer = () => ({type: UNSET_ATTACK_HEAD_PLAYER,})
 export const ACTION_unsetAttackLeftHandPlayer = () => ({type: UNSET_ATTACK_LEFT_HAND_PLAYER,})
 export const ACTION_unsetAttackRightHandPlayer = () => ({type: UNSET_ATTACK_RIGHT_HAND_PLAYER,})
@@ -75,8 +67,6 @@ export const ACTION_unsetDefendLeftHandPlayer = () => ({type: UNSET_DEFEND_LEFT_
 export const ACTION_unsetDefendRightHandPlayer = () => ({type: UNSET_DEFEND_RIGHT_HAND_PLAYER,})
 export const ACTION_unsetDefendBodyPlayer = () => ({type: UNSET_DEFEND_BODY_PLAYER,})
 export const ACTION_unsetDefendLegsPlayer = () => ({type: UNSET_DEFEND_LEGS_PLAYER,})
-
-// enemy player no needs
 
 export const ACTION_getEnemyStateFromWS = (WsEnemyPlayerObject) => {
     return {

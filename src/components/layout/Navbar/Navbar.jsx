@@ -36,7 +36,7 @@ export default function Navbar() {
             )}
             <div className={style.wrapper}>
                 <div className={style.header__user}>
-                  
+
                     <nav className={style.navigation}>
                         <NavLink className={style.header__logo} to="/">
                             <img
@@ -165,7 +165,7 @@ export default function Navbar() {
                     )}
                 </div>
             </div>
-          
+
         </header>
     )
 }

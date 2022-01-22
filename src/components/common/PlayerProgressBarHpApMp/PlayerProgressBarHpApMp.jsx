@@ -35,7 +35,6 @@ const PlayerProgressBarHpApMp = ({bgColor, stat, height, fontSize, type, rotate}
 
                         style={{
                             width: `${stat}%`,
-                            // height: `${stat}%`,
                             backgroundColor: bgColor,
                             borderRadius: '5px',
 

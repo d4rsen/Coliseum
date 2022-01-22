@@ -1,5 +1,3 @@
-// import style from './SvgPic.module.css'
-
 const SvgTrain = ({fill, stroke, color}) => {
     return (
 

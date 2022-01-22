@@ -19,8 +19,6 @@ const AuctionButton = ({title, itemId, price, setPrice}) => {
             }))
             setPrice('')
         } else if (e.target.value === 'Buy') {
-            console.log('BUY id:', itemId)
-            console.log('player id: ', playerId)
             dispatch(thunkBuyItemAction({
                 id: Number(itemId),
                 buyer_id: Number(playerId)

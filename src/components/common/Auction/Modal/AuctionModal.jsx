@@ -9,19 +9,14 @@ function AuctionModal({active, setActive}) {
     const [chosenItem, setChosenItem] = useState(null)
     const [price, setPrice] = useState('')
     const [curr, setCurr] = useState('')
-    // useEffect(() => {
-    //     dispatch(THUNK_ACTION_getPLayerInventory())
-    // }, [dispatch])
 
     function inputHandler(e) {
         e.preventDefault()
         setPrice(e.target.value)
-        console.log(price)
     }
 
     function clickHandler(e) {
         e.preventDefault()
-        console.log(e.target.id)
         setChosenItem(e.target.id)
     }
 
@@ -38,7 +33,6 @@ function AuctionModal({active, setActive}) {
     const propagationHandler = useCallback((e) => {
         e.stopPropagation()
     }, [])
-    console.log(inventory)
 
     return (
         <div className={active ? 'modal1 active1' : 'modal1'}

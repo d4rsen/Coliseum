@@ -1,9 +1,11 @@
 import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {THUNK_ACTION_wearItemAction} from '../../../../../redux/actions/thunks/inventory/thinkWearItemAction'
-import {thunkDeleteItemFromInventoryAction} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
-import {THUNK_ACTION_getPLayerInventory} from '../../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
-import {THUNK_ACTION_getPlayerFromDb} from '../../../../../redux/actions/thunks/thunkPlayersFromDbActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { THUNK_ACTION_wearItemAction } from '../../../../../redux/actions/thunks/inventory/thinkWearItemAction'
+import {
+    thunkDeleteItemFromInventoryAction
+} from '../../../../../redux/actions/thunks/inventory/thunkDeleteItemFromInventoryAction'
+import { THUNK_ACTION_getPLayerInventory } from '../../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
+import { THUNK_ACTION_getPlayerFromDb } from '../../../../../redux/actions/thunks/thunkPlayersFromDbActions'
 import './ModalInventory.scss'
 
 function Modal({active, setActive, chosenItem, player}) {
@@ -13,15 +15,12 @@ function Modal({active, setActive, chosenItem, player}) {
 
     function handleDelete(e) {
         e.preventDefault()
-        console.log(chosenItem.id)
-        console.log(player.id)
         dispatch(thunkDeleteItemFromInventoryAction(chosenItem.id, player.id))
         setActive(false)
     }
 
     async function handleWear(e) {
         e.preventDefault()
-        console.log(chosenItem)
         await dispatch(THUNK_ACTION_wearItemAction(player, chosenItem))
         await dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
         await dispatch(THUNK_ACTION_getPLayerInventory(player.id))

@@ -1,7 +1,7 @@
-import React from 'react';
-import {ParallaxBanner} from "react-scroll-parallax";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { ParallaxBanner } from 'react-scroll-parallax'
 import './ParallaxFooter.scss'
-import {useNavigate} from "react-router-dom";
 
 const ParallaxFooter = (props) => {
 
@@ -28,13 +28,13 @@ const ParallaxFooter = (props) => {
                 height: props.height,
             }}
         >
-            <h1 className='h1_footer'>
-                <div onClick={handleLogin} className='action_button_to_register'>
+            <h1 className="h1_footer">
+                <div onClick={handleLogin} className="action_button_to_register">
                 <span>
                     Log in
                 </span>
                 </div>
-                <div onClick={handleRegister} className='action_button_to_register'>
+                <div onClick={handleRegister} className="action_button_to_register">
                 <span>
                     Register
                 </span>
@@ -43,7 +43,7 @@ const ParallaxFooter = (props) => {
             </h1>
 
         </ParallaxBanner>
-    );
-};
+    )
+}
 
-export default ParallaxFooter;
+export default ParallaxFooter

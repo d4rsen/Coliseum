@@ -32,15 +32,7 @@ const WatchBattleLog = ({socket}) => {
     const getTimeSeconds = (time) => (minuteSeconds - time) | 0
 
     useEffect(() => {
-        // CLOSE
-
-        // socket.on('close-private-room-for-watcher', () => {
-        //     // dispatch({type: UNSET_WATCH_BATTLE_PLAYERS})
-        // })
-
-        //GET_PLAYERS
         socket.on('send-message-to-watcher', async (data) => {
-            console.log(data)
             dispatch(ACTION_setWatchBattlePlayers({
                 room: data.db_room,
                 player1: data.player_one.player,

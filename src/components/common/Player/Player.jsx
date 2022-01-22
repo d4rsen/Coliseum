@@ -22,7 +22,6 @@ const emptyItemImg =
     'https://dbforgame.herokuapp.com/static/img/items/empty_cell.png'
 
 const Player = ({type}) => {
-    // console.log(type)
     const player = useSelector((state) => state.player)
 
     const playerClass = player.playerClass
@@ -33,9 +32,7 @@ const Player = ({type}) => {
         const armorSetEmpty = new Array(6).fill(emptyItemImg)
 
         player?.armor_set?.slice(0, 3).forEach((item) => armorFull.push(item))
-        // const accessoriesSet = armorFull.push(player.accessories_set)
         player.accessories_set.forEach(item => armorFull.push(item))
-        //  console.log('-------->',accessoriesSet)
         const armorEmptyPush = 6 - armorFull.length
 
         armorSetEmpty
@@ -45,7 +42,6 @@ const Player = ({type}) => {
     }())
 
     return (
-        // <div className={type !== 'enemy' ? style.player : style.player__enemy }>
         <div
             className={
                 type === 'enemy' ?
@@ -87,7 +83,6 @@ const Player = ({type}) => {
                 <PlayerProgressBarHpApMp
                     className={style.header__progress_element}
                     bgColor={'red'}
-                    // height={100}
                     stat={player?.hp}
                     type={'player'}
                     rotate={180}
@@ -96,7 +91,6 @@ const Player = ({type}) => {
                 <PlayerProgressBarHpApMp
                     bgColor={'green'}
                     stat={player?.mp}
-                    // height={100}
                     type={'player'}
                     rotate={180}
                     fontSize={15}
@@ -104,7 +98,6 @@ const Player = ({type}) => {
                 <PlayerProgressBarHpApMp
                     bgColor={'aqua'}
                     stat={player?.ap}
-                    // height={100}
                     rotate={180}
                     type={'player'}
                     fontSize={10}

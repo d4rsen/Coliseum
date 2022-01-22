@@ -1,5 +1,3 @@
-// import style from './SvgMarket.module.css'
-
 const SvgCave = ({fill, stroke, color}) => {
     return (
 

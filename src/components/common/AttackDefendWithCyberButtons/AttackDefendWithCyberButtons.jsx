@@ -73,7 +73,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
     useEffect(() => {
         socket.on('close-private-room', () => {
             dispatch(ACTION_unsetEnemyPlayer())
-            socket.emit('close-private-room', room, player) // TODO
+            socket.emit('close-private-room', room, player)
         })
         socket.on('send-message', async (data) => {
             const db_room = data.db_room
@@ -83,7 +83,7 @@ const AttackDefendWithCyberButtons = ({socket}) => {
             }
             if ((data.player_one.player.hp <= 0) || (data.player_two.player.hp <= 0)) {
                 setIsPlaying(false)
-                dispatch(THUNK_ACTION_closeRoom(room.id)) //TODO CLOSE ROOM
+                dispatch(THUNK_ACTION_closeRoom(room.id))
             }
 
             if (data.player_one.player.id !== player.id) {

@@ -1,5 +1,3 @@
-// import style from './SvgPic.module.css'
-
 const SvgPrimaryCastle = ({fill, stroke, color}) => {
     return (
 

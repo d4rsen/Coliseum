@@ -12,8 +12,6 @@ export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
                 withCredentials: true,
             }
         )
-        console.log(response.data)
-
         dispatch(ACTION_getPlayer({...response.data}))
         dispatch(unSetLoader())
     } catch (e) {

@@ -6,14 +6,11 @@ export const playerInventoryReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_PLAYER_INVENTORY:
             return action.payload
-        // } else return action.payload
-        // } else return state
         case ADD_RANDOM_ITEM:
             return [...state, action.payload]
         case BUY_ITEM:
             return [...state, action.payload]
         case DELETE_ITEM_FROM_INVENTORY:
-            console.log('DELETE INIT')
             const checker = []
             state.forEach(e => {
                 if (Number(e.id) === Number(action.payload)) {

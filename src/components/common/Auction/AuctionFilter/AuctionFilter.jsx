@@ -10,7 +10,6 @@ const AuctionFilter = () => {
 
     function changeHandler(e) {
         e.preventDefault()
-        console.log(e.target.value)
         dispatch(thunkFilterItemsAction(e.target.value))
     }
 

@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {ACTION_PlayerRegenerate} from '../../../../redux/actions/playerActions'
-import {thunkAddRandomItemAction} from '../../../../redux/actions/thunks/inventory/thunkAddRandomItemAction'
-import {THUNK_ACTION_getPLayerInventory} from '../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
+import { thunkAddRandomItemAction } from '../../../../redux/actions/thunks/inventory/thunkAddRandomItemAction'
+import { THUNK_ACTION_getPLayerInventory } from '../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
 import EmptyItem from '../../../common/EmptyItem/EmptyItem'
 import Item from '../../../common/Item/Item'
 import Player from '../../../common/Player/Player'
@@ -37,8 +37,6 @@ const InventoryPage = () => {
 
 // DO NOT DELETE
     function handleClick(e) {
-        console.log('E TARGET', e.target)
-        console.log('ID ===>', player.total_stats.id)
         dispatch(thunkAddRandomItemAction(player.total_stats.id))
     }
 
@@ -46,7 +44,7 @@ const InventoryPage = () => {
     return (
         <div className="container d-flex mt-4">
             <Player type={'player'}/>
-            <div className='d-flex '>
+            <div className="d-flex ">
                 <div onClick={handleClick}>Add Item</div>
                 <div className="container d-flex flex-wrap m-0 p-0 mw-50 mh-50">
                     {playerInventory && playerInventory.map((item, index) =>

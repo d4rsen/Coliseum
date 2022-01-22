@@ -14,7 +14,6 @@ const ActiveRoomsPage = ({socket}) => {
 
     useEffect(() => {
         dispatch(THUNK_ACTION_getActiveRoomsFromDb())
-        console.log(activeRooms)
         return () => {
             dispatch(THUNK_ACTION_getActiveRoomsFromDb())
         }

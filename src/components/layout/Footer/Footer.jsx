@@ -38,8 +38,8 @@ const Footer = ({socket}) => {
                             type="text"
                         />
                         <div className={style.footer__buttons}>
-                        <button className={style.footer__button_send} type={'submit'}>Send message</button>
-                        <button className={style.footer__button_close} onClick={() => setOpen(false)}>close chat</button>
+                            <button className={style.footer__button_send} type={'submit'}>Send message</button>
+                            <button className={style.footer__button_close} onClick={() => setOpen(false)}>close chat</button>
                         </div>
                     </form>
                     <div className={style.footer__message}>

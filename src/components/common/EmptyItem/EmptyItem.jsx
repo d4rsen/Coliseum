@@ -2,8 +2,6 @@ import React from 'react'
 import style from './EmptyItem.module.css'
 
 const EmptyItem = ({img, name, width, height}) => {
-    // const emptySwordLink = 'https://dbforgame.herokuapp.com/static/img/items/empty_cell.png'
-// img=''
     return (
         (<div className={style.playerItem}>
 

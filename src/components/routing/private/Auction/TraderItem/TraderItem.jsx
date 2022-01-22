@@ -20,7 +20,7 @@ const TraderItem = ({item}) => {
 
     const buyItemHandler = (e) => {
         e.preventDefault()
-        dispatch(THUNK_ACTION_buyTraderItem(player, item)) //TODO CHECK THUNK
+        dispatch(THUNK_ACTION_buyTraderItem(player, item))
     }
 
     return (

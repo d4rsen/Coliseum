@@ -67,36 +67,35 @@
 //
 // export default Home;
 
-import React from "react";
-import {ParallaxProvider} from "react-scroll-parallax";
-import ParallaxHeader from "./ParallaxImg/ParallaxHeader";
-
-import headerImg from './landscape.jpg'
+import * as PropTypes from 'prop-types'
+import React from 'react'
+import { ParallaxProvider } from 'react-scroll-parallax'
 import bodyImg from './battle.jpeg'
-import footerImg from "./fly.jpeg";
-import ParallaxContent from "./ParallaxContent/ParallaxContent";
-import * as PropTypes from "prop-types";
-import ParallaxFooter from "./ParallaxFooter/ParallaxFooter";
+import footerImg from './fly.jpeg'
 import './Home.scss'
 
+import headerImg from './landscape.jpg'
+import ParallaxContent from './ParallaxContent/ParallaxContent'
+import ParallaxFooter from './ParallaxFooter/ParallaxFooter'
+import ParallaxHeader from './ParallaxImg/ParallaxHeader'
 
 ParallaxFooter.propTypes = {
     opacity: PropTypes.string,
     height: PropTypes.string,
     imgsrc: PropTypes.any
-};
+}
 
 function Home() {
 
     const content = 'Coliseum'
 
     return (
-        <div className='flexy_parallax'>
+        <div className="flexy_parallax">
             <ParallaxProvider>
 
                 <ParallaxHeader imgsrc={headerImg} height="100vh" opacity=".5" content={content}>
                 </ParallaxHeader>
-                <h1 className='content_parallax'>The world of Grimgold is full of mysteries and challenges.
+                <h1 className="content_parallax">The world of Grimgold is full of mysteries and challenges.
                     You will fight the fears of this world and will have to
                     face yours. The fate of not only the great capital,
                     but the entire game world depends on each and every action
@@ -106,7 +105,7 @@ function Home() {
 
                 </ParallaxContent>
 
-                <h1 className='content_parallax'>Each player will be able to choose a character according
+                <h1 className="content_parallax">Each player will be able to choose a character according
                     to their preferences. The game will literally complement
                     your skills: the warrior is more suitable for the brave
                     gamers running headlong into the crowd of enemies.

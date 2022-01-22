@@ -38,8 +38,6 @@ export const battleEnemyPlayerReducer = (state = initialState, action) => {
         case DEFEND_LEGS_ENEMY_PLAYER:
             return {...state, defendLegs: true}
 
-        //UNSET
-
         case UNSET_ATTACK_HEAD_ENEMY_PLAYER:
             return {...state, attackHead: false}
 
