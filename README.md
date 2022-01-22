@@ -5,15 +5,12 @@ The browser MMORPG game to fight against monsters and another players, watch bat
 for wins, built with React, Redux, Socket-io, JWT, Node.js, Express, Postgres, JavaScript, and CSS. Project
 has backend, which is in another repository and also deployed with actual Game Build on '/'
 
-## Project Screen Shot(s)
+## Project Screen Shots
 
-[ ![](../Снимок экрана 2022-01-22 в 21.56.24.png) ]
-
-[ ![](../Снимок экрана 2022-01-22 в 21.59.13.png) ]
-
-[ ![](../Снимок экрана 2022-01-22 в 22.00.49.png) ]
-
-[ ![](../Снимок экрана 2022-01-22 в 22.02.16.png) ]
+![plot](./images/1.png)
+![plot](./images/2.png)
+![plot](./images/3.png)
+![plot](./images/4.png)
 
 ## Installation and Setup Instructions
 
@@ -49,6 +46,8 @@ The video sequence ends here and three heroes to choose from appear before our e
 
 #### Collaborators:
 
-https://github.com/d4rsen
-https://github.com/compampa
-https://github.com/CainStr
+##### @d4rsen
+
+##### @compampa
+
+##### @CainStr
