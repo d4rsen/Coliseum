@@ -1,9 +1,12 @@
 ## COLISEUM
 
-https://dbforgame.herokuapp.com/
-The browser MMORPG game to fight against monsters and another players, watch battles, take gold, exp and items
-for wins, built with React, Redux, Socket-io, JWT, Node.js, Express, Postgres, JavaScript, and CSS. Project
-has backend, which is in another repository and also deployed with actual Game Build on '/'
+#### https://dbforgame.herokuapp.com/
+
+#### The browser MMORPG game to fight against monsters and another players, watch battles, take gold, exp and items for wins.
+
+#### Built with React, Redux, Socket-io, JWT, Node.js, Express, Postgres, JavaScript, and CSS.
+
+#### Project has backend, which is in another repository and also deployed with actual Game Build on '/'
 
 ## Project Screen Shots
 
@@ -46,8 +49,8 @@ The video sequence ends here and three heroes to choose from appear before our e
 
 #### Collaborators:
 
-##### @d4rsen
+##### https://github.com/d4rsen
 
-##### @compampa
+##### https://github.com/compampa
 
-##### @CainStr
+##### https://github.com/CainStr
