@@ -1,84 +1,54 @@
-# Getting Started with Create React App
+## COLISEUM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://dbforgame.herokuapp.com/
+The browser MMORPG game to fight against monsters and another players, watch battles, take gold, exp and items
+for wins, built with React, Redux, Socket-io, JWT, Node.js, Express, Postgres, JavaScript, and CSS. Project
+has backend, which is in another repository and also deployed with actual Game Build on '/'
 
-## Available Scripts
+## Project Screen Shot(s)
 
-In the project directory, you can run:
+[ ![](../Снимок экрана 2022-01-22 в 21.56.24.png) ]
 
-### `npm start`
+[ ![](../Снимок экрана 2022-01-22 в 21.59.13.png) ]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[ ![](../Снимок экрана 2022-01-22 в 22.00.49.png) ]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[ ![](../Снимок экрана 2022-01-22 в 22.02.16.png) ]
 
-### `npm test`
+## Installation and Setup Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
-information.
+#### Example:
 
-### `npm run build`
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Installation:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more
-information.
+To Start Server:
 
-### `npm run eject`
+`npm start`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To Visit App:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This
-command will remove the single build dependency from your project.
+`localhost:3000/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint,
-etc) right into your project so you have full control over them. All of the commands except `eject` will still
-work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Game story
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and
-you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if
-you couldn't customize it when you are ready for it.
+The liberation of Grim gold
 
-## Learn More
+Introduction:
+Welcome to Grimgold! Everything you need to know, you will understand intuitively, because the magical world
+whose call you hear is extremely similar to ours. One of the allied countries of the Grand Alliance was hit
+from outside. The ruler of the skeleton state, with the help of his henchmen, captured the castle, and with it
+the entire capital of the human continent. The locals fled the city in horror, but a considerable part of the
+townspeople collected the amount with which they turned to the guild of mercenaries. Justice must prevail!
+The video sequence ends here and three heroes to choose from appear before our eyes.
 
-You can learn more in
-the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* choose the class of your character and give him a name * after we get to the first location.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Collaborators:
 
-### Code Splitting
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved
-here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/d4rsen
+https://github.com/compampa
+https://github.com/CainStr
