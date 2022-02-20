@@ -1,58 +1,72 @@
 {
-  "name": "the-game-beta",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.24.0",
-    "react": "^17.0.2",
-    "react-countdown-circle-timer": "^3.0.6",
-    "react-dom": "^17.0.2",
-    "react-lite-youtube-embed": "^2.1.3",
-    "react-parallax": "^3.3.0",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.1",
-    "react-router-hash-link": "^2.4.3",
-    "react-scripts": "5.0.0",
-    "react-scroll-parallax": "^2.4.3",
-    "react-youtube": "^7.14.0",
-    "redux": "^4.1.2",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-saga": "^1.1.3",
-    "redux-thunk": "^2.4.1",
-    "reselect": "^4.1.5",
-    "sass": "^1.49.0",
-    "socket.io-client": "^4.4.1",
-    "style-it": "^2.1.4",
-    "web-vitals": "^2.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "CI=false && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "coliseum",
+    "version": "0.1.0",
+    "description": "Browser MMORPG",
+    "author": "Darsen ungarlinov <darsenungarlinov00@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/d4rsen/Coliseum"
+    },
+    "keywords": [
+        "react",
+        "javascript",
+        "sass",
+        "mmorpg",
+        "fullstack",
+        "node",
+        "fighting"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "react-responsive-select": "^7.0.4"
-  }
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.16.1",
+        "@testing-library/react": "^12.1.2",
+        "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.24.0",
+        "node-sass": "^7.0.1",
+        "react": "^17.0.2",
+        "react-countdown-circle-timer": "^3.0.6",
+        "react-dom": "^17.0.2",
+        "react-lite-youtube-embed": "^2.1.3",
+        "react-parallax": "^3.3.0",
+        "react-redux": "^7.2.6",
+        "react-router-dom": "^6.2.1",
+        "react-router-hash-link": "^2.4.3",
+        "react-scripts": "5.0.0",
+        "react-scroll-parallax": "^2.4.3",
+        "react-youtube": "^7.14.0",
+        "redux": "^4.1.2",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-saga": "^1.1.3",
+        "redux-thunk": "^2.4.1",
+        "reselect": "^4.1.5",
+        "sass": "^1.49.0",
+        "socket.io-client": "^4.4.1",
+        "style-it": "^2.1.4",
+        "web-vitals": "^2.1.2"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "CI=false && react-scripts build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "react-responsive-select": "^7.0.4"
+    }
 }

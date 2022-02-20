@@ -1,0 +1,45 @@
+._container {
+  max-width: 1000px;
+  width: 1000px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainCastlePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+.mainCastlePage__rules {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  border: 5px solid black;
+  border-radius: 4px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+.mainCastlePage__title {
+  font-size: 32px;
+  color: red;
+}
+.mainCastlePage__text {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=MainCastlePage.css.map */

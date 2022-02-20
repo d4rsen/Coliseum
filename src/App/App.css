@@ -1,76 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Acme');
-
-* {
-    font-family: 'Acme', serif;
+._container {
+    max-width: 1000px;
+    width: 1000px;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
-    /*padding: 2% 10%;*/
-    /* height: 10%; */
-}
-
-@font-face {
-    font-family: 'Grek';
-    src: local('Cleo'),
-    url('./DS_Greece.ttf') format("truetype");
-}
-
-ul {
-    list-style: none;
-}
-
-.backback {
-    background: url("../__temp/back.jpg");
-    background-size: cover;
-    position: absolute;
-    z-index: -1000;
-    width: 100vw;
-}
-
-.body {
-    /* font-weight: 300; */
-    font-family: 'Grek';
-    /* display: grid;
-    min-height: 100vh;
-    grid-template-areas: 'navBar' 'main' 'footer';
-    grid-template-rows: auto 1fr 20vh;
-    */
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    /* overflow: hidden; */
-}
-
-
-.navBar {
-    /* grid-area: navBar; */
-    flex: 0 0 auto;
-}
-
-.main {
-
-    flex: 1 0 auto;
-    /* grid-area: main; */
-}
-
-.footer {
-
-    flex: 0 0 auto;
-    /* overflow-y: scroll; */
-    max-height: 20vh;
-    display: flex;
+    min-height: 100%;
     overflow: hidden;
-
-    /* align-items: flex-end; */
-    /* grid-area: footer; */
-    /* background-color: saddlebrown; */
-    /* position: sticky; */
-    /* display: flex; */
-    /* align-items: flex-end;  */
-    /* height: 0vh; */
-    /* max-height: 10%; */
-    /* overflow-y: hidden; */
-    /* height: ; */
-    /* align-items: flex-end; */
-    /* height:300px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+/*# sourceMappingURL=App.css.map */

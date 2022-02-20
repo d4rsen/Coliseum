@@ -1,0 +1,24 @@
+.coliseumPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  gap: 150px;
+}
+.coliseumPage__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coliseumPage__mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coliseumPage__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=ColiseumPage.css.map */

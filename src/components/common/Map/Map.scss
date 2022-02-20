@@ -1,0 +1,192 @@
+@import "../../../App/App";
+
+
+.map {
+    display: flex;
+    position: relative;
+    align-items: center;
+    object-fit: cover;
+
+    &__img {
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    &__observation {
+        filter: drop-shadow(0px 0px 10px rgba(0, 255, 0, 0.66));
+        position: absolute;
+        z-index: 2;
+        width: 7%;
+        transition: $--transition;
+        display: block;
+        left: 68%;
+        top: 35%;
+    }
+
+    &__observation::after {
+        content: 'Observation Tower';
+        color: white;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-family: 'Grek', serif;
+    }
+
+    &__observation:hover {
+        z-index: 100;
+        transition: $--transition;
+        color: rgba(0, 255, 0, 0.66);
+        transform: scale(1.2);
+    }
+
+    &__primaryCastle {
+        filter: drop-shadow(0px 0px 10px aqua);
+        position: absolute;
+        z-index: 2;
+        width: 11%;
+        transition: $--transition;
+        display: block;
+        left: 37%;
+        top: 22%;
+    }
+
+    &__primaryCastle::after {
+        content: 'main castle';
+        font-family: 'Grek', serif;
+        color: white;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    &__primaryCastle:hover {
+        z-index: 100;
+        transition: $--transition;
+        color: aqua;
+        transform: scale(1.2);
+    }
+
+    &__train {
+        position: absolute;
+        z-index: 2;
+        width: 10%;
+        transition: $--transition;
+        display: block;
+        left: 34%;
+        top: 61%;
+        filter: drop-shadow(0px 0px 10px red);
+    }
+
+    &__train::after {
+        content: 'Training camp';
+        color: white;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-family: 'Grek', serif;
+    }
+
+    &__train:hover {
+        z-index: 100;
+        transition: $--transition;
+        color: red;
+        transform: scale(1.2);
+    }
+
+
+    &__market {
+        font-family: 'Grek', serif;
+        position: absolute;
+        z-index: 2;
+        width: 14%;
+        transition: $--transition;
+        display: block;
+        left: 63%;
+        top: 64%;
+        filter: drop-shadow(0px 0px 10px gold);
+    }
+
+    &__market::after {
+        content: 'ruined market';
+        font-family: 'Grek', serif;
+        color: white;
+        position: absolute;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        bottom: -40%;
+        left: 50%;
+        transform: translateX(-50%);
+        line-height: 15px;
+    }
+
+    &__market:hover {
+        z-index: 100;
+        transition: $--transition;
+        color: gold;
+        transform: scale(1.2);
+    }
+
+    &__SvgCave {
+        position: absolute;
+        z-index: 2;
+        width: 16%;
+        transition: $--transition;
+        display: block;
+        left: 58%;
+        top: 14%;
+        filter: drop-shadow(0px 0px 10px rgb(141, 0, 255));
+    }
+
+    &__SvgCave::after {
+        content: 'Dungeon';
+        color: white;
+        position: absolute;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        bottom: -50%;
+        left: 51%;
+        transform: translateX(-50%);
+        font-family: 'Grek', serif;
+    }
+
+    &__SvgCave:hover {
+        z-index: 100;
+        transition: $--transition;
+        color: rgb(141, 0, 255);
+        transform: scale(1.2);
+    }
+
+    &__coliseum {
+        filter: drop-shadow(0px 0px 10px rgb(255, 255, 0));
+        position: absolute;
+        z-index: 2;
+        width: 17%;
+        transition: $--transition;
+        display: block;
+        left: 46%;
+        top: 50%;
+    }
+
+    &__coliseum::after {
+        content: 'Coliseum ';
+        color: white;
+        position: absolute;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        bottom: -30%;
+        left: 46%;
+        transform: translateX(-50%);
+        font-family: 'Grek', serif;
+    }
+
+    &__coliseum:hover {
+        z-index: 100;
+        transition: $--transition;
+        color: rgb(255, 255, 0);
+        transform: scale(1.2);
+    }
+}
+

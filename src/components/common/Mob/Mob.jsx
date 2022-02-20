@@ -1,32 +1,36 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import style from './enemyPlayer.module.css'
-import MobAp from './MobAp/MobAp'
-import MobHp from './MobHp/MobHp'
-import MobLoot from './MobLoot/MobLoot'
-import MobMp from './MobMp/MobMp'
-import MobStats from './MobStats/MobStats'
+import MobStats from '../MobStats/MobStats'
+import './Mob.scss'
 
 const Mob = () => {
-    const mob = useSelector((state) => state.mob)
-
+    const mob = useSelector(state => state.mob)
     return (
-        <div className={style.player__enemy}>
-            <img
-                className={style.player__pic}
-                src={mob && mob.creepClass.img}
-            />
-
-            <div className={style.player__right}>
-                <MobLoot className height={100} width={70}/>
-                <div className={style.player__stats}>
-                    <MobStats/>
+        <div className="mob">
+            <MobStats/>
+            <div className="mob__hp-mp-ap">
+                <div className="mob__progressbar">
+                    <div style={{height: mob ? mob.creepStats.mp * 3 : 0}} className="mob__mp">
+                        {mob && mob.creepStats.mp}
+                    </div>
+                </div>
+                <div className="mob__progressbar">
+                    <div style={{height: mob ? mob.creepStats.ap * 3 : 0}} className="mob__ap">
+                        {mob && mob.creepStats.ap}
+                    </div>
+                </div>
+                <div className="mob__progressbar">
+                    <div style={{height: mob ? mob.creepStats.hp * 3 : 0}} className="mob__hp">
+                        {mob && mob.creepStats.hp}
+                    </div>
                 </div>
             </div>
-            <div className={style.player__progress}>
-                <MobHp className={style.header__progress_element}/>
-                <MobAp className={style.header__progress_element}/>
-                <MobMp className={style.header__progress_element}/>
+            <div className="mob__card">
+                <img
+                    src={mob ? mob.creepClass.img : '/assets/mannequin/mannequin.png'}
+                    alt="card"
+                    className="mob__img"
+                />
             </div>
         </div>
     )

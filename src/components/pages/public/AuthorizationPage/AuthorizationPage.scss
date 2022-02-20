@@ -1,0 +1,86 @@
+@import "../../../../App/App";
+
+.authorizationPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 2px solid black;
+        border-radius: 4px;
+        padding: 30px;
+        gap: 20px;
+        backdrop-filter: blur(10px);
+    }
+
+    &__name {
+        border: 2px solid black;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        padding: 5px;
+        background-color: transparent;
+        color: white;
+        transition: $--transition;
+
+        &:hover {
+            transform: scale(1.030);
+            transition: $--transition;
+
+        }
+    }
+
+    &__email {
+        border: 2px solid black;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        padding: 5px;
+        background-color: transparent;
+        color: white;
+        transition: $--transition;
+
+        &:hover {
+            transform: scale(1.030);
+            transition: $--transition;
+
+        }
+    }
+
+    &__password {
+        border: 2px solid black;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        padding: 5px;
+        background-color: transparent;
+        color: white;
+        transition: $--transition;
+
+        &:hover {
+            transform: scale(1.030);
+            transition: $--transition;
+
+        }
+    }
+
+    &__button {
+        border: 2px solid black;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        padding: 5px;
+        background-color: transparent;
+        color: white;
+        transition: $--transition;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.030);
+            transition: $--transition;
+
+        }
+    }
+}

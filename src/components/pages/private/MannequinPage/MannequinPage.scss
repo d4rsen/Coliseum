@@ -1,0 +1,25 @@
+.mannequinPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    gap: 150px;
+
+    &__left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

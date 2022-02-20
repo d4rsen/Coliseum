@@ -1,0 +1,156 @@
+._container {
+  max-width: 1000px;
+  width: 1000px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mob__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: 10px;
+}
+.mob__item-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mob__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #393d4e;
+  border: 2px solid black;
+  border-radius: 4px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+.mob__item:hover {
+  transform: scale(1.1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.mob__item--loot {
+  border: 2px solid yellow;
+}
+.mob__item-img {
+  width: 100%;
+  height: 100%;
+}
+.mob__card {
+  width: 200px;
+  height: 350px;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.mob__card:hover {
+  transform: scale(1.01);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.mob__img {
+  width: 100%;
+  height: 100%;
+}
+.mob__stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mob__stats-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mob__stat {
+  margin-top: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+.mob__stat:hover {
+  transform: scale(1.2);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.mob__stat-img {
+  width: 23px;
+  height: 23px;
+}
+.mob__hp-mp-ap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin: 0 10px;
+}
+.mob__progressbar {
+  width: 12px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.mob__hp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7px;
+  color: yellow;
+  background-color: red;
+  width: 8px;
+  border-radius: 2px;
+}
+.mob__ap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7px;
+  color: yellow;
+  background-color: green;
+  width: 8px;
+  border-radius: 2px;
+}
+.mob__mp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7px;
+  color: yellow;
+  background-color: blue;
+  width: 8px;
+  border-radius: 2px;
+}
+
+/*# sourceMappingURL=Mob.css.map */

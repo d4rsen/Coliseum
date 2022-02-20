@@ -1,0 +1,201 @@
+@import "../../../App/App";
+
+.header {
+    display: flex;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    padding: 0 100px;
+    width: 100vw;
+    min-width: 100vw;
+    height: 100px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    filter: none !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+    border-bottom: 1px solid black;
+
+    &__logo {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        cursor: pointer;
+        transition: $--transition;
+
+
+        &:hover {
+            transform: scale(1.1);
+            transition: $--transition;
+        }
+    }
+
+    &__logout {
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color: transparent;
+        transition: $--transition;
+        cursor: pointer;
+
+        &:hover {
+            background-color: red;
+            color: white;
+            transition: $--transition;
+            transform: scale(1.05);
+
+        }
+    }
+
+    &__left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    &__hp-mp-ap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 10px;
+    }
+
+    &__progressbar {
+        width: 304px;
+        height: 12px;
+        border: 2px solid black;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    &__hp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 9px;
+        background-color: red;
+        color: yellow;
+        height: 8px;
+        border-radius: 2px;
+        transition: $--transition;
+    }
+
+    &__ap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 9px;
+        background-color: green;
+        color: yellow;
+        height: 8px;
+        border-radius: 2px;
+        transition: $--transition;
+
+    }
+
+    &__mp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 9px;
+        background-color: blue;
+        color: yellow;
+        height: 8px;
+        border-radius: 2px;
+        transition: $--transition;
+
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 15px;
+        gap: 5px;
+    }
+
+    &__nickname {
+        padding: 3px;
+        width: 100%;
+        border: 2px solid black;
+        border-radius: $--border-radius;
+        background-color: #dc5151;
+        color: white;
+    }
+
+    &__lvl {
+        padding: 3px;
+        width: 100%;
+        border: 2px solid black;
+        border-radius: $--border-radius;
+        background-color: purple;
+        color: white;
+        text-align: center;
+
+    }
+
+    &__room {
+        padding: 3px;
+        width: 100%;
+        border: 2px solid black;
+        border-radius: $--border-radius;
+        background-color: #0ab9b9;
+        text-align: center;
+        color: white;
+    }
+
+    &__gold {
+        padding: 3px;
+        width: 100%;
+        border: 2px solid black;
+        border-radius: $--border-radius;
+        background-color: gold;
+        color: white;
+        text-align: center;
+
+    }
+
+    &__bag {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.82);
+        transition: $--transition;
+
+        &:hover {
+            color: black;
+            transition: $--transition;
+            transform: rotate(7deg) scale(1.1);
+        }
+    }
+}

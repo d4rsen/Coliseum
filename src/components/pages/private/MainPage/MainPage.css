@@ -1,0 +1,21 @@
+.mainPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 200px;
+  gap: 50px;
+}
+.mainPage__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+.mainPage__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+/*# sourceMappingURL=MainPage.css.map */

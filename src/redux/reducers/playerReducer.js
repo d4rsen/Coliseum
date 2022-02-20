@@ -29,7 +29,7 @@ export const playerReducer = (state = initialState, action) => {
             return {...state, ap: staminaLess3}
 
         case PUNCH_FROM_MOB_TO_PLAYER:
-            const dmg = state.hp - (action.payload / (state.total_stats.def))
+            const dmg = Math.floor(state.hp - (action.payload / (state.total_stats.def)))
             const staminaLess = state.ap - 1
             return {...state, hp: dmg, ap: staminaLess}
 

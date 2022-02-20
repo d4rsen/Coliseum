@@ -1,0 +1,30 @@
+@import "../../../../App/App";
+
+.mainCastlePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+
+    &__rules {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px;
+        border: 5px solid black;
+        border-radius: $--border-radius;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+    }
+
+    &__title {
+        font-size: $--fz-heading;
+        color: red;
+    }
+
+    &__text {
+        font-size: $--fz-xl;
+    }
+}

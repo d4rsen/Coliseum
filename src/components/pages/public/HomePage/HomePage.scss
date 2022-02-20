@@ -1,0 +1,66 @@
+@import '../../../../App/App';
+
+.homePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 180px;
+    padding: 10px;
+    gap: 50px;
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 200px;
+        color: white;
+        width: 100vw;
+        box-shadow: rgba(0, 0, 0, 0.71) 0 0 100px 0;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__registration {
+        border: 2px solid white;
+        cursor: pointer;
+        font-size: 25px;
+        backdrop-filter: blur(10px);
+        padding: 10px;
+        background-color: transparent;
+        border-radius: 4px;
+        color: white;
+        transition: $--transition;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: $--transition;
+
+        }
+
+    }
+
+    &__authorization {
+        border: 2px solid white;
+        cursor: pointer;
+        font-size: 25px;
+        backdrop-filter: blur(10px);
+        padding: 10px;
+        background-color: transparent;
+        border-radius: 4px;
+        color: white;
+        transition: $--transition;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: $--transition;
+
+        }
+
+    }
+}

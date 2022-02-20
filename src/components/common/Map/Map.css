@@ -1,0 +1,188 @@
+._container {
+  max-width: 1000px;
+  width: 1000px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.map {
+  display: flex;
+  position: relative;
+  align-items: center;
+  object-fit: cover;
+}
+.map__img {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.map__observation {
+  filter: drop-shadow(0px 0px 10px rgba(0, 255, 0, 0.66));
+  position: absolute;
+  z-index: 2;
+  width: 7%;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: block;
+  left: 68%;
+  top: 35%;
+}
+.map__observation::after {
+  content: "Observation Tower";
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: "Grek", serif;
+}
+.map__observation:hover {
+  z-index: 100;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: rgba(0, 255, 0, 0.66);
+  transform: scale(1.2);
+}
+.map__primaryCastle {
+  filter: drop-shadow(0px 0px 10px aqua);
+  position: absolute;
+  z-index: 2;
+  width: 11%;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: block;
+  left: 37%;
+  top: 22%;
+}
+.map__primaryCastle::after {
+  content: "main castle";
+  font-family: "Grek", serif;
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.map__primaryCastle:hover {
+  z-index: 100;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: aqua;
+  transform: scale(1.2);
+}
+.map__train {
+  position: absolute;
+  z-index: 2;
+  width: 10%;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: block;
+  left: 34%;
+  top: 61%;
+  filter: drop-shadow(0px 0px 10px red);
+}
+.map__train::after {
+  content: "Training camp";
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: "Grek", serif;
+}
+.map__train:hover {
+  z-index: 100;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: red;
+  transform: scale(1.2);
+}
+.map__market {
+  font-family: "Grek", serif;
+  position: absolute;
+  z-index: 2;
+  width: 14%;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: block;
+  left: 63%;
+  top: 64%;
+  filter: drop-shadow(0px 0px 10px gold);
+}
+.map__market::after {
+  content: "ruined market";
+  font-family: "Grek", serif;
+  color: white;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  bottom: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 15px;
+}
+.map__market:hover {
+  z-index: 100;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: gold;
+  transform: scale(1.2);
+}
+.map__SvgCave {
+  position: absolute;
+  z-index: 2;
+  width: 16%;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: block;
+  left: 58%;
+  top: 14%;
+  filter: drop-shadow(0px 0px 10px #8d00ff);
+}
+.map__SvgCave::after {
+  content: "Dungeon";
+  color: white;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  bottom: -50%;
+  left: 51%;
+  transform: translateX(-50%);
+  font-family: "Grek", serif;
+}
+.map__SvgCave:hover {
+  z-index: 100;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: #8d00ff;
+  transform: scale(1.2);
+}
+.map__coliseum {
+  filter: drop-shadow(0px 0px 10px yellow);
+  position: absolute;
+  z-index: 2;
+  width: 17%;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: block;
+  left: 46%;
+  top: 50%;
+}
+.map__coliseum::after {
+  content: "Coliseum ";
+  color: white;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  bottom: -30%;
+  left: 46%;
+  transform: translateX(-50%);
+  font-family: "Grek", serif;
+}
+.map__coliseum:hover {
+  z-index: 100;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: yellow;
+  transform: scale(1.2);
+}
+
+/*# sourceMappingURL=Map.css.map */

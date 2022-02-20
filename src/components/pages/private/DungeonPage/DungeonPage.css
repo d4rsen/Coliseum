@@ -1,0 +1,57 @@
+._container {
+  max-width: 1000px;
+  width: 1000px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dungeonPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 200px;
+  gap: 150px;
+}
+.dungeonPage__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dungeonPage__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dungeonPage__mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dungeonPage__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: blue;
+  color: white;
+  padding: 5px 20px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.dungeonPage__button:hover {
+  transform: scale(1.03);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/*# sourceMappingURL=DungeonPage.css.map */

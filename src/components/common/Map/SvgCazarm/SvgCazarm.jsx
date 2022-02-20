@@ -1,5 +1,3 @@
-import style from './SvgCazarm.module.css'
-
 const SvgPic = ({fill, stroke, color}) => {
     return (
         <svg className={style.map__cazarm} version="1.0" xmlns="http://www.w3.org/2000/svg"

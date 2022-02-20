@@ -1,0 +1,44 @@
+@import "../../../../App/App";
+
+.dungeonPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 200px;
+    gap: 150px;
+
+    &__left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        background-color: blue;
+        color: white;
+        padding: 5px 20px;
+        transition: $--transition;
+
+        &:hover {
+            transform: scale(1.030);
+            transition: $--transition;
+        }
+    }
+}

@@ -1,0 +1,91 @@
+._container {
+  max-width: 1000px;
+  width: 1000px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.registrationPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200px;
+}
+.registrationPage__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 30px;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+}
+.registrationPage__name {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: transparent;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.registrationPage__name:hover {
+  transform: scale(1.03);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.registrationPage__email {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: transparent;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.registrationPage__email:hover {
+  transform: scale(1.03);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.registrationPage__password {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: white;
+  padding: 5px;
+  background-color: transparent;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.registrationPage__password:hover {
+  transform: scale(1.03);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.registrationPage__button {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.registrationPage__button:hover {
+  transform: scale(1.03);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/*# sourceMappingURL=RegistrationPage.css.map */
