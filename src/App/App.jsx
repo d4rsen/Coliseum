@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { io } from 'socket.io-client'
 import Footer from '../components/UI/Footer/Footer'
@@ -7,6 +7,9 @@ import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions
 import Router from '../router/Router'
 import './App.scss'
 
+// const socket = io.connect('https://dbforgame.herokuapp.com/', {
+//     withCredentials: true
+// })
 const socket = io.connect('https://dbforgame.herokuapp.com/')
 
 function App() {
@@ -25,6 +28,8 @@ function App() {
         }
 
     }, [dispatch])
+
+    const [active, setActive] = useState(true)
 
     return (
         <div className="wrapper">

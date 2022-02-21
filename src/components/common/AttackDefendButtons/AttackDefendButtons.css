@@ -1,0 +1,76 @@
+._container {
+  max-width: 1000px;
+  width: 1000px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.attackDefendButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.attackDefendButtons__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.attackDefendButtons__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.attackDefendButtons__attack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: rgba(215, 1, 1, 0.8);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
+.attackDefendButtons__attack:hover {
+  transform: scale(1.05);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.attackDefendButtons__defend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 211, 0.7);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
+.attackDefendButtons__defend:hover {
+  transform: scale(1.05);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/*# sourceMappingURL=AttackDefendButtons.css.map */

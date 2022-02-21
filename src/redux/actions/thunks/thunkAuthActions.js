@@ -14,7 +14,8 @@ export const THUNK_ACTION_logout = () => async (dispatch) => {
         dispatch({type: IS_NOT_AUTH})
         dispatch(unSetLoader())
     } catch (e) {
-        alert(e.response?.data?.message)
+        // alert(e.response?.data?.message)
+        console.log(e)
     } finally {
         dispatch(unSetLoader())
     }
@@ -28,7 +29,8 @@ export const THUNK_ACTION_login = (userData) => async (dispatch) => {
         dispatch(THUNK_ACTION_getPlayerFromDb(response.data.user.id))
         dispatch(unSetLoader())
     } catch (e) {
-        alert(e.response?.data?.message)
+        // alert(e.response?.data?.message)
+        console.log(e)
     } finally {
         dispatch(unSetLoader())
     }
@@ -41,7 +43,8 @@ export const THUNK_ACTION_register = (userData) => async (dispatch) => {
         dispatch({type: IS_AUTH})
         dispatch(unSetLoader())
     } catch (e) {
-        alert(e.response?.data?.message)
+        // alert(e.response?.data?.message)
+        console.log(e)
     } finally {
         dispatch(unSetLoader())
     }
@@ -57,7 +60,8 @@ export const THUNK_ACTION_checkAuth = () => async (dispatch) => {
         dispatch({type: IS_AUTH})
         dispatch(unSetLoader())
     } catch (e) {
-        console.log(e.response?.message)
+        // console.log(e.response?.message)
+        console.log(e)
     } finally {
         dispatch(unSetLoader())
     }

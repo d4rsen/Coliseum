@@ -4,6 +4,8 @@ import { ACTION_getEnemyPlayer, ACTION_unsetEnemyPlayer } from '../../../../redu
 import { ACTION_unSetRoom } from '../../../../redux/actions/roomActions'
 import BackGround from '../../../common/BackGround/BackGround'
 import Character from '../../../common/Character/Character'
+import ColiseumButtons from '../../../common/ColiseumButtons/ColiseumButtons'
+import EmptyEnemy from '../../../common/EmptyEnemy/EmptyEnemy'
 import EnemyPlayer from '../../../common/EnemyPlayer/EnemyPlayer'
 import './ColiseumPage.scss'
 
@@ -56,10 +58,10 @@ const ColiseumPage = ({socket}) => {
                 <Character/>
             </div>
             <div className="coliseumPage__mid">
-                
+                <ColiseumButtons socket={socket}/>
             </div>
             <div className="coliseumPage__right">
-                {enemyPlayer && <EnemyPlayer/>}
+                {enemyPlayer ? <EnemyPlayer/> : <EmptyEnemy/>}
             </div>
         </div>
     )

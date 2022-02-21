@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { ACTION_punchFromPlayerToMob } from '../../../../redux/actions/mobsActions'
 import { ACTION_punchFromMobToPlayer } from '../../../../redux/actions/playerActions'
 import { THUNK_ACTION_getMobFromDb } from '../../../../redux/actions/thunks/thunkGetMobFromDbActions'
@@ -7,14 +8,18 @@ import { THUNK_ACTION_getPlayerExpAndGoldForMobBattle } from '../../../../redux/
 import BackGround from '../../../common/BackGround/BackGround'
 import Character from '../../../common/Character/Character'
 import Mob from '../../../common/Mob/Mob'
+import Modal from '../../../common/Modal/Modal'
 import './DungeonPage.scss'
 
 const DungeonPage = () => {
     const dispatch = useDispatch()
+    const [active, setActive] = useState(false)
+    const [battleResult, setBattleResult] = useState('')
     const mob = useSelector(state => state.mob)
     const player = useSelector(state => state.player)
     const playerHp = useSelector(state => state.player.total_stats.hp)
     const mobHp = useSelector(state => state.mob?.creepStats.hp)
+    const navigate = useNavigate()
 
     useEffect(async () => {
         await dispatch(THUNK_ACTION_getMobFromDb(Number(player.id)))
@@ -26,11 +31,15 @@ const DungeonPage = () => {
 
     useEffect(() => {
         if (playerHp <= 0) {
+            setBattleResult('loss')
+            setActive(true)
             dispatch(THUNK_ACTION_getPlayerExpAndGoldForMobBattle(
                 player.id, false, Number(mob.loot.id))
             )
         }
         if (mobHp <= 0) {
+            setBattleResult('win')
+            setActive(true)
             dispatch(THUNK_ACTION_getPlayerExpAndGoldForMobBattle(
                 player.id, true, Number(mob.loot.id))
             )
@@ -43,10 +52,22 @@ const DungeonPage = () => {
         dispatch(ACTION_punchFromMobToPlayer(mob.creepStats.dmg))
     }
 
+    const quitHandler = () => navigate('/')
+
     return (
         <div className="dungeonPage">
             <BackGround/>
-
+            <Modal active={active}>
+                <div className="dungeonPage__modal">
+                    <div className="dungeonPage__battleResult">
+                        {battleResult === 'win' && 'GREAT BATTLE ! YOU WIN'}
+                        {battleResult === 'loss' && 'GREAT BATTLE ! BUT THIS TIME YOU LOSS'}
+                    </div>
+                    <button onClick={quitHandler} className="dungeonPage__quit">
+                        Quit battle
+                    </button>
+                </div>
+            </Modal>
             <div className="dungeonPage__left">
                 <Character/>
             </div>

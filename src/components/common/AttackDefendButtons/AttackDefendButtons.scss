@@ -1,0 +1,65 @@
+@import "../../../App/App";
+
+.attackDefendButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &__left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__attack {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color: rgba(215, 1, 1, 0.8);
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+        transition: $--transition;
+        width: 100%;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: $--transition;
+        }
+
+    }
+
+    &__defend {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 211, 0.7);
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+        transition: $--transition;
+        width: 100%;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: $--transition;
+        }
+    }
+}

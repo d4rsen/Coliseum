@@ -43,7 +43,6 @@ const EnemyPlayerStats = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 

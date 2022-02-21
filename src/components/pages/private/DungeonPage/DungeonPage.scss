@@ -7,6 +7,35 @@
     margin-top: 200px;
     gap: 150px;
 
+    &__modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        font-size: 30px;
+    }
+
+    &__quit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 20px;
+        background-color: lightgreen;
+        backdrop-filter: blur(10px);
+        border: 2px solid black;
+        cursor: pointer;
+        border-radius: $--border-radius;
+        transition: $--transition;
+        font-size: 20px;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: $--transition;
+        }
+    }
+
     &__left {
         display: flex;
         justify-content: center;
