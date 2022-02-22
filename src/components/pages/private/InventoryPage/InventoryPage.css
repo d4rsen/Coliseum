@@ -45,12 +45,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding-left: 5px;
 }
 .inventoryPage__right {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 10px;
 }
 .inventoryPage__inventory {
   display: flex;
