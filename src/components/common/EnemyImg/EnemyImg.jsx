@@ -6,6 +6,9 @@ const EnemyImg = () => {
     const enemyPlayer = useSelector(state => state.enemyPlayer)
     return (
         <div className="character__card">
+            <div className="character__nickName character__nickName--enemy">
+                {enemyPlayer && enemyPlayer.nickName}
+            </div>
             <img
                 src={
                     enemyPlayer.playerClass === 'warrior'

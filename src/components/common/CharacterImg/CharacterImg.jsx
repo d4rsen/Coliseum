@@ -6,6 +6,9 @@ const CharacterImg = () => {
     const player = useSelector(state => state.player)
     return (
         <div className="character__card">
+            <div className="character__nickName">
+                {player && player.nickName}
+            </div>
             <img
                 src={
                     player.playerClass === 'warrior'
