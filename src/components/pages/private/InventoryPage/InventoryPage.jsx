@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
 import { THUNK_ACTION_wearItemAction } from '../../../../redux/actions/thunks/inventory/thinkWearItemAction'
 import { thunkAddRandomItemAction } from '../../../../redux/actions/thunks/inventory/thunkAddRandomItemAction'
 import { THUNK_ACTION_getPLayerInventory } from '../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
@@ -17,6 +18,12 @@ const InventoryPage = () => {
     useEffect(() => {
         dispatch(THUNK_ACTION_getPLayerInventory(player.id))
     }, [])
+
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(ACTION_PlayerRegenerate())
+        }, 3000)
+    }, [player, dispatch])
 
     const cheat = () => dispatch(thunkAddRandomItemAction(player.total_stats.id))
 

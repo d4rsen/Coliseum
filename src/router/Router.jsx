@@ -9,6 +9,7 @@ import InventoryPage from '../components/pages/private/InventoryPage/InventoryPa
 import MainCastlePage from '../components/pages/private/MainCastlePage/MainCastlePage'
 import MainPage from '../components/pages/private/MainPage/MainPage'
 import MannequinPage from '../components/pages/private/MannequinPage/MannequinPage'
+import MarketPage from '../components/pages/private/MarketPage/MarketPage'
 import AuthorizationPage from '../components/pages/public/AuthorizationPage/AuthorizationPage'
 import HomePage from '../components/pages/public/HomePage/HomePage'
 import RegistrationPage from '../components/pages/public/RegistrationPage/RegistrationPage'
@@ -44,6 +45,7 @@ const Router = ({socket}) => {
             <Route path="/mannequin" element={player ? <MannequinPage/> : <Navigate to="/"/>}/>
             <Route path="/rooms" element={player ? <IdleRoomsPage/> : <Navigate to="/"/>}/>
             <Route path="/coliseum" element={player ? <ColiseumPage socket={socket}/> : <Navigate to="/"/>}/>
+            <Route path="/auction" element={player ? <MarketPage/> : <Navigate to="/"/>}/>
         </Routes>
     )
 }

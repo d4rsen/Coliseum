@@ -1,0 +1,99 @@
+@import "../../../../App/App";
+
+.marketPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+
+    &__items-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 80vw;
+        height: 60vh;
+        overflow: auto;
+        backdrop-filter: blur(10px);
+
+        scrollbar-gutter: stable;
+        padding: 10px;
+        margin-right: 10px;
+        border: 3px solid rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 7px rgba(255, 255, 0, 0.41);
+            border: 2px solid rgba(255, 255, 0, 0.45);
+            border-radius: 4px;
+        }
+    }
+
+    &__item {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 20px;
+        text-align: center;
+        border: 3px solid rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        background-color: transparent;
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        color: #0a192f;
+        gap: 5px;
+    }
+
+    &__stat {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 5px;
+
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: $--transition;
+        }
+    }
+
+    &__description {
+        width: 500px;
+    }
+
+    &__button {
+        border: 3px solid rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        background-color: lightgreen;
+        transition: $--transition;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.030);
+            transition: $--transition;
+        }
+    }
+}

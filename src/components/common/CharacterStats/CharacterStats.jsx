@@ -8,6 +8,8 @@ const CharacterStats = () => {
     const agility = player.total_stats.agl
     const intellect = player.total_stats.int
     const defence = player.total_stats.def
+    const damage = player.total_stats.dmg
+
     return (
         <div className="character__stats">
             <div className="character__item">
@@ -40,6 +42,10 @@ const CharacterStats = () => {
                 <div className="character__stat">
                     <img src="assets/stats/def.png" alt="" className="character__stat-img"/>
                     <div>{defence}</div>
+                </div>
+                <div className="character__stat">
+                    <img src="assets/stats/dmg.png" alt="" className="character__stat-img"/>
+                    <div>{damage}</div>
                 </div>
             </div>
         </div>

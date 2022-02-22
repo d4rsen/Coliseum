@@ -16,9 +16,11 @@
 
 ![plot](./images/3.png)
 
-![plot](./images/4.png)
+![plot](./images/6.png)
 
 ![plot](./images/5.png)
+
+![plot](./images/4.png)
 
 ## Installation and Setup Instructions
 

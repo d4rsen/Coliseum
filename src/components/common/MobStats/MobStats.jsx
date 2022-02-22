@@ -7,6 +7,7 @@ const MobStats = () => {
     const agility = mob?.creepStats.agl
     const intellect = mob?.creepStats.int
     const defence = mob?.creepStats.def
+    const damage = mob?.creepStats.dmg
     const loot = mob?.loot
     return (
         <div className="mob__stats">
@@ -40,6 +41,10 @@ const MobStats = () => {
                 <div className="mob__stat">
                     <img src="assets/stats/def.png" alt="" className="mob__stat-img"/>
                     <div>{defence ? defence : 0}</div>
+                </div>
+                <div className="mob__stat">
+                    <img src="assets/stats/dmg.png" alt="" className="mob__stat-img"/>
+                    <div>{damage ? damage : 0}</div>
                 </div>
             </div>
         </div>

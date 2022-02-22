@@ -27,6 +27,10 @@ const MannequinStats = () => {
                     <img src="assets/stats/def.png" alt="" className="mob__stat-img"/>
                     <div>{0}</div>
                 </div>
+                <div className="mob__stat">
+                    <img src="assets/stats/dmg.png" alt="" className="mob__stat-img"/>
+                    <div>{0}</div>
+                </div>
             </div>
         </div>
     )
