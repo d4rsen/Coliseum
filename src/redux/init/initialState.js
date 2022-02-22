@@ -18,7 +18,7 @@ const initialState = () => ({
     chooseCharacter: null,
     mannequin: {
         hp: 10000,
-        nickName: 'Манекен'
+        nickName: 'Mannequin'
     },
     battlePlayer: {
         attackHead: false,

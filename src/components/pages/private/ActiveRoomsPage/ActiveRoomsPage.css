@@ -1,0 +1,113 @@
+._container {
+  max-width: 1000px;
+  width: 1000px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.activeRoomsPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 150px;
+  flex-direction: column;
+  gap: 50px;
+  padding: 10px;
+}
+.activeRoomsPage__title {
+  font-size: 30px;
+  border: 2px solid black;
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  color: white;
+}
+.activeRoomsPage__button {
+  border: 2px solid black;
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  padding: 5px 30px;
+  background-color: goldenrod;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.activeRoomsPage__button:hover {
+  transform: scale(1.1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.activeRoomsPage__button-join {
+  border: 2px solid black;
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  padding: 5px;
+  background-color: rebeccapurple;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.activeRoomsPage__button-join:hover {
+  transform: scale(1.1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.activeRoomsPage__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.activeRoomsPage__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.activeRoomsPage__rooms {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 10px;
+}
+.activeRoomsPage__rooms::-webkit-scrollbar {
+  width: 7px;
+}
+.activeRoomsPage__rooms::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.activeRoomsPage__rooms::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 7px rgba(255, 255, 0, 0.41);
+  border: 2px solid rgba(255, 255, 0, 0.45);
+  border-radius: 4px;
+}
+.activeRoomsPage__room {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.activeRoomsPage__room-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+}
+
+/*# sourceMappingURL=ActiveRoomsPage.css.map */

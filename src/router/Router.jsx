@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import ActiveRoomsPage from '../components/pages/private/ActiveRoomsPage/ActiveRoomsPage'
 import ChooseClassPage from '../components/pages/private/ChooseClassPage/ChooseClassPage'
 import ColiseumPage from '../components/pages/private/ColiseumPage/ColiseumPage'
 import DungeonPage from '../components/pages/private/DungeonPage/DungeonPage'
@@ -10,6 +11,7 @@ import MainCastlePage from '../components/pages/private/MainCastlePage/MainCastl
 import MainPage from '../components/pages/private/MainPage/MainPage'
 import MannequinPage from '../components/pages/private/MannequinPage/MannequinPage'
 import MarketPage from '../components/pages/private/MarketPage/MarketPage'
+import WatchBattlePage from '../components/pages/private/WatchBattlePage/WatchBattlePage'
 import AuthorizationPage from '../components/pages/public/AuthorizationPage/AuthorizationPage'
 import HomePage from '../components/pages/public/HomePage/HomePage'
 import RegistrationPage from '../components/pages/public/RegistrationPage/RegistrationPage'
@@ -46,6 +48,8 @@ const Router = ({socket}) => {
             <Route path="/rooms" element={player ? <IdleRoomsPage/> : <Navigate to="/"/>}/>
             <Route path="/coliseum" element={player ? <ColiseumPage socket={socket}/> : <Navigate to="/"/>}/>
             <Route path="/auction" element={player ? <MarketPage/> : <Navigate to="/"/>}/>
+            <Route path="/active-rooms" element={player ? <ActiveRoomsPage/> : <Navigate to="/"/>}/>
+            <Route path="/watch-battle" element={player ? <WatchBattlePage socket={socket}/> : <Navigate to="/"/>}/>
         </Routes>
     )
 }
