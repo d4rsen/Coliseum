@@ -52,7 +52,7 @@ the entire capital of the human continent. The locals fled the city in horror, b
 townspeople collected the amount with which they turned to the guild of mercenaries. Justice must prevail!
 The video sequence ends here and three heroes to choose from appear before our eyes.
 
-* choose the class of your character and give him a name * after we get to the first location.
+choose the class of your character and give him a name * after we get to the first location.
 
 #### Creators:
 
