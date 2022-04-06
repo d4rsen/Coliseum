@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { SET_TRADER_ITEMS } from '../../../types/auctionTypes'
-import { getAllAuctionItems } from '../../auction/getAllAuctionItems'
+import { SET_TRADER_ITEMS } from '../../types/auctionTypes'
+import { getAllAuctionItemsAction } from '../getAllAuctionItemsAction'
 
 export const thunkGetAllAuctionItemsAction = () => async (dispatch) => {
     const response = await axios.get('https://dbforgame.herokuapp.com/auction')
     const allAucItems = response.data.allItems
-    dispatch(getAllAuctionItems(allAucItems))
+    dispatch(getAllAuctionItemsAction(allAucItems))
 }
 
 export const THUNK_ACTION_getTraderItems = () => async (dispatch) => {

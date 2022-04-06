@@ -3,12 +3,12 @@ import './BackGround.scss'
 
 const BackGround = ({type}) => {
     let src = type === 'home'
-        ? '/assets/background/landscape.png'
+        ? '/assets/background/landscape.jpg'
         : type === 'auth'
-            ? '/assets/background/battle.png'
+            ? '/assets/background/battle.jpg'
             : type === 'choose-class'
-                ? '/assets/background/fly.png'
-                : '/assets/background/background.png'
+                ? '/assets/background/fly.jpg'
+                : '/assets/background/dungeon.jpg'
 
     return (
         <img

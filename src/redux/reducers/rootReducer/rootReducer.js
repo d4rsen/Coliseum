@@ -21,9 +21,9 @@ import { userReducer } from '../userReducer'
 import { watchBattleReducer } from '../watchBattleReducer'
 
 export const rootReducer = combineReducers({
-    user: userReducer,
-    chat: chatReducer,
     mob: mobReducer,
+    chat: chatReducer,
+    user: userReducer,
     room: roomReducer,
     player: playerReducer,
     phrase: phraseReducer,

@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { unSetLoader } from '../../loaderActions'
-import { THUNK_ACTION_getPLayerInventory } from '../thunkGetPlayerInventoryActions'
+import { unSetLoader } from '../loaderActions'
+import { THUNK_ACTION_getPLayerInventory } from './thunkGetPlayerInventoryActions'
 
 export const THUNK_ACTION_wearItemAction = (player, item) => async (dispatch) => {
     try {

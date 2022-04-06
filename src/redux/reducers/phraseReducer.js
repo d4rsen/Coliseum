@@ -5,10 +5,8 @@ export const phraseReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_PHRASE :
             return action.payload
-
         case UNSET_PHRASE :
             return null
-
         default:
             return state
     }
