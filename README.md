@@ -1,12 +1,12 @@
 ## COLISEUM
 
-#### https://coliseum-game.vercel.app/
+#### https://coliseum-game.vercel.app
 
 #### The browser MMORPG game to fight against monsters and another players, watch battles, take gold, exp and items for wins.
 
 #### Built with React, Redux, Socket-io, JWT, Node.js, Express, Postgres, JavaScript, and CSS.
 
-#### Project has backend, which is in another repository and also deployed with actual Game Build on '/'
+#### Project has backend, which is in another repository and also deployed 
 
 ## Project Screen Shots
 
