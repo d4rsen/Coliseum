@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { buyItemAction } from '../../auction/buyItemAction'
-import { deleteItemAction } from '../../auction/deleteItemAction'
+import { buyItemAction } from '../buyItemAction'
+import { deleteItemAction } from '../deleteItemAction'
 import { thunkGetAllAuctionItemsAction } from './thunkGetAllAuctionItemsAction'
 
 export const thunkBuyItemAction = ({id, buyer_id}) => async (dispatch) => {

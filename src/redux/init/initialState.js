@@ -1,9 +1,9 @@
 const initialState = () => ({
+    chat: [],
     mob: null,
     user: null,
-    chat: [],
-    room: null,
     phrase: '',
+    room: null,
     player: null,
     isAuth: false,
     evasion: false,

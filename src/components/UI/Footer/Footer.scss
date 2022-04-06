@@ -13,7 +13,7 @@
     width: 100vw;
     height: 7vh;
     padding: 0 100px;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     transition: $--transition;
 }
 
@@ -30,7 +30,7 @@
     width: 100vw;
     height: 35vh;
     padding: 0 150px;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     transition: $--transition;
 
     &__left {
@@ -122,7 +122,7 @@
         align-items: center;
         padding: 5px;
         background-color: transparent;
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: 4px;
         color: yellow;
         transition: $--transition;
@@ -144,7 +144,7 @@
         justify-content: center;
         align-items: center;
         background-color: green;
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: 4px;
         color: white;
         transition: $--transition;
@@ -168,7 +168,7 @@
         justify-content: center;
         align-items: center;
         background-color: red;
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: 4px;
         color: white;
         transition: $--transition;
@@ -190,7 +190,7 @@
         justify-content: center;
         align-items: center;
         background-color: gold;
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: 4px;
         color: white;
         transition: $--transition;

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
     THUNK_ACTION_getTraderItems,
     thunkGetAllAuctionItemsAction
-} from '../../../../redux/actions/thunks/auction/thunkGetAllAuctionItemsAction'
+} from '../../../../redux/actions/thunks/thunkGetAllAuctionItemsAction'
 import BackGround from '../../../common/BackGround/BackGround'
 import MarketItem from '../../../common/MarketItem/MarketItem'
 import './MarketPage.scss'

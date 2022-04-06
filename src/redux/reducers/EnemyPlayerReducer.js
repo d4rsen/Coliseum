@@ -8,19 +8,15 @@ export const enemyPlayerReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_ENEMY_PLAYER:
             return action.payload
-
         case UNSET_ENEMY_PLAYER:
             return null
-
         case PUNCH_FROM_PLAYER_TO_ENEMY_PLAYER:
             const {playerDamage} = action.payload
             const {battlePlayer} = action.payload
             const {battleEnemyPlayer} = action.payload
             let enemyPlayer = {...state}
             const staminaLess = enemyPlayer.ap - 1
-
             let dmg3 = enemyPlayer.hp - (playerDamage / (enemyPlayer.total_stats.def * 0.5))
-
             if (battleEnemyPlayer.defendHead === true && battlePlayer.attackHead === true) {
                 if (chance(enemyPlayer.total_stats.evs)) {
                     return {...enemyPlayer, ap: staminaLess}
@@ -39,7 +35,6 @@ export const enemyPlayerReducer = (state = initialState, action) => {
                 } else
                     return {...enemyPlayer, ap: staminaLess}
             }
-
             return {...enemyPlayer, hp: dmg3, ap: staminaLess}
 
         default:

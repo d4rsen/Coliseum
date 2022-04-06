@@ -9,7 +9,6 @@ const Header = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const player = useSelector((state) => state.player)
-    const user = useSelector((state) => state.user)
     const room = useSelector((state) => state.room)
 
     const logoHandler = () => navigate('/')

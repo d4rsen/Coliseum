@@ -7,15 +7,12 @@ export const mobReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_MOB:
             return action.payload
-
         case UNSET_MOB:
             return null
-
         case PUNCH_FROM_PLAYER_TO_MOB:
             const dmg = state.creepStats.hp - action.payload
             const staminaLess = state.creepStats.ap - 1
             return {...state, creepStats: {...state.creepStats, hp: dmg, ap: staminaLess}}
-
         default:
             return state
     }

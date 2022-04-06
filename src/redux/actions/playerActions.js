@@ -20,20 +20,15 @@ export const ACTION_punchFromEnemyPlayerToPlayer = (enemyPlayerDamage, battlePla
     }
 }
 
-export const ACTION_punchFromMobToPlayer = (mobDamage) => {
-    return {
-        type: PUNCH_FROM_MOB_TO_PLAYER,
-        payload: mobDamage
-    }
-}
+export const ACTION_punchFromMobToPlayer = (mobDamage) => ({
+    type: PUNCH_FROM_MOB_TO_PLAYER,
+    payload: mobDamage
+})
 
-export const ACTION_getPlayer = (playerFromDb) => {
-    return {
-        type: SET_PLAYER,
-        payload: {...playerFromDb},
-    }
-}
+export const ACTION_getPlayer = (playerFromDb) => ({
+    type: SET_PLAYER,
+    payload: {...playerFromDb},
+})
 
 export const ACTION_playerDodged = () => ({type: PLAYER_DODGED})
-
 export const ACTION_PlayerRegenerate = () => ({type: REGENERATE})
