@@ -46,7 +46,7 @@ const ColiseumPage = ({socket}) => {
                 }
             }) : null
             if (enemy) {
-                dispatch(ACTION_getEnemyPlayer(enemy[0].player))
+                dispatch(ACTION_getEnemyPlayer(enemy[0]?.player))
             }
         })
     }, [])

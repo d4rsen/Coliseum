@@ -50,8 +50,9 @@ const AttackDefendButtons = (
     return (
         <div className="attackDefendButtons">
             <div className="attackDefendButtons__left">
-                {attackTexts && attackTexts.map(el => (
+                {attackTexts && attackTexts.map((el, i) => (
                     <button
+                        key={i}
                         className="attackDefendButtons__attack"
                         onClick={attackHandler}
                         value={el}
@@ -62,8 +63,9 @@ const AttackDefendButtons = (
                 ))}
             </div>
             <div className="attackDefendButtons__right">
-                {defendTexts && defendTexts.map(el => (
+                {defendTexts && defendTexts.map((el, i) => (
                     <button
+                        key={i}
                         className="attackDefendButtons__defend"
                         onClick={defendHandler}
                         value={el}

@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { SET_USER, UNSET_USER } from '../types/userTypes'
 
 export const userReducer = (state = initialState, action) => {

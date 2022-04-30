@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import {
     ATTACK_BODY_PLAYER,
     ATTACK_HEAD_PLAYER,

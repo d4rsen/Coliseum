@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { SET_WATCH_BATTLE_PLAYERS, UNSET_WATCH_BATTLE_PLAYERS } from '../types/watchBattleTypes'
 
 export const watchBattleReducer = (state = initialState, action) => {

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
-import { THUNK_ACTION_getActiveRoomsFromDb } from '../../../../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
+import { THUNK_getActiveRoomsFromDb } from '../../../../redux/thunks/thunkGetAllRoomsFromDbActions'
 import { SET_ROOM } from '../../../../redux/types/roomTypes'
 import BackGround from '../../../common/BackGround/BackGround'
 import './ActiveRoomsPage.scss'
@@ -16,9 +16,9 @@ const ActiveRoomsPage = () => {
     const watchBattle = useSelector(state => state.watchBattle)
 
     useEffect(() => {
-        dispatch(THUNK_ACTION_getActiveRoomsFromDb())
+        dispatch(THUNK_getActiveRoomsFromDb())
         return () => {
-            dispatch(THUNK_ACTION_getActiveRoomsFromDb())
+            dispatch(THUNK_getActiveRoomsFromDb())
         }
     }, [dispatch])
 

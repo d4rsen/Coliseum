@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { BUY_ITEM } from '../types/auctionTypes'
 import { ADD_RANDOM_ITEM, DELETE_ITEM_FROM_INVENTORY, SET_PLAYER_INVENTORY } from '../types/playerInventoryTypes'
 

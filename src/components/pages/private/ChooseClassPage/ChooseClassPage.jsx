@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { THUNK_ACTION_setPlayerClass } from '../../../../redux/actions/thunks/thunkSetPlayerClassActions'
-import { assassinLink, mageLink, warriorLink } from '../../../../utils/variables'
+import { THUNK_setPlayerClass } from '../../../../redux/thunks/thunkSetPlayerClassActions'
+import { assassinLink, mageLink, warriorLink } from '../../../../utils/constants'
 import BackGround from '../../../common/BackGround/BackGround'
 import './ChooseClassPage.scss'
 
@@ -18,7 +18,7 @@ const ChooseClassPage = () => {
 
     const buttonHandler = (e) => {
         e.preventDefault()
-        dispatch(THUNK_ACTION_setPlayerClass({
+        dispatch(THUNK_setPlayerClass({
             user_id: user.user.id,
             class_id: chosenClass ? chosenClass : 1,
             nickname: inputValue,

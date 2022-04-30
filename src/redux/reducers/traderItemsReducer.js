@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { SET_TRADER_ITEMS, UNSET_TRADER_ITEMS } from '../types/auctionTypes'
 
 export const traderItemsReducer = (state = initialState, action) => {

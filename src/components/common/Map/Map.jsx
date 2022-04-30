@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { components } from '../../../utils/variables'
+import { components } from '../../../utils/constants'
 import './Map.scss'
 
 const Map = () => {

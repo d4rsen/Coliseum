@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { THUNK_ACTION_logout } from '../../../redux/actions/thunks/thunkAuthActions'
+import { THUNK_logout } from '../../../redux/thunks/thunkAuthActions'
 import Bag from '../../common/Bag/Bag'
 import './Header.scss'
 
@@ -12,7 +12,7 @@ const Header = () => {
     const room = useSelector((state) => state.room)
 
     const logoHandler = () => navigate('/')
-    const logoutHandler = () => dispatch(THUNK_ACTION_logout())
+    const logoutHandler = () => dispatch(THUNK_logout())
     const bagHandler = () => navigate('/inventory')
 
     return (

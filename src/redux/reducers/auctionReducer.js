@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { DELETE_ITEM, FILTER_ITEMS, GET_ALL_AUC_ITEMS, POST_AUCTION_ITEM } from '../types/auctionTypes'
 
 export const auctionReducer = (state = initialState, action) => {

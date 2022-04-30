@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { GET_IDLE_ROOMS } from '../types/allRoomsTypes'
 
 export const idleRoomsReducer = (state = initialState, action) => {

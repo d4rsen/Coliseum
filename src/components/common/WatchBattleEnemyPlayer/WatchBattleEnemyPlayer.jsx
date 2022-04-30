@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { assassinLink, mageLink, warriorLink } from '../../../utils/variables'
+import { assassinLink, mageLink, warriorLink } from '../../../utils/constants'
 import CharacterStats from '../CharacterStats/CharacterStats'
 import WatchBattlePlayerItems from '../WatchBattlePlayer/WatchBattlePlayerItems'
 

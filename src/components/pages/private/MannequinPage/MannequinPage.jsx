@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ACTION_punchFromPlayerToMannequin, SAGA_ACTION_mannequinRegenerate } from '../../../../redux/actions/mannequinActions'
+import { ACTION_punchFromPlayerToMannequin, SAGA_mannequinRegenerate } from '../../../../redux/actions/mannequinActions'
 import BackGround from '../../../common/BackGround/BackGround'
 import Character from '../../../common/Character/Character'
 import Mannequin from '../../../common/Mannequin/Mainnequin'
@@ -13,7 +13,7 @@ const MannequinPage = () => {
     const battleHandler = (e) => {
         e.preventDefault()
         dispatch(ACTION_punchFromPlayerToMannequin(player.total_stats.dmg))
-        dispatch(SAGA_ACTION_mannequinRegenerate())
+        dispatch(SAGA_mannequinRegenerate())
     }
 
     return (

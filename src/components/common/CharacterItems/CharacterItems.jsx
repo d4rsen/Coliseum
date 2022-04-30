@@ -10,6 +10,7 @@ const CharacterItems = () => {
     const necklace = player.accessories_set[0]
     const sphere = player.accessories_set[1]
     const ring = player.accessories_set[2]
+
     return (
         <div className="character__items">
             <div className="character__item">

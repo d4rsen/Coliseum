@@ -1,5 +1,5 @@
-import initialState from '../init/initialState'
-import { IS_AUTH, IS_NOT_AUTH } from '../types/authTypes'
+import initialState from '../init/initial.state'
+import { IS_AUTH, IS_NOT_AUTH } from '../types/userTypes'
 
 export const isAuthReducer = (state = initialState, action) => {
     switch (action.type) {

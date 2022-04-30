@@ -5,8 +5,8 @@ import './HomePage.scss'
 
 const HomePage = () => {
     const navigate = useNavigate()
-    const registrationHandler = e => navigate('/registration')
-    const authorizationHandler = e => navigate('/authorization')
+    const registrationHandler = () => navigate('/registration')
+    const authorizationHandler = () => navigate('/authorization')
 
     return (
         <div className="homePage">

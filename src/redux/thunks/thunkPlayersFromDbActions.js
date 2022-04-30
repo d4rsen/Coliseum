@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { GET_REWARD_FOR_BATTLE, GET_REWARD_FOR_MOB_BATTLE } from '../../types/playerTypes'
-import { setLoader, unSetLoader } from '../loaderActions'
-import { ACTION_getPlayer } from '../playerActions'
+import { ACTION_setLoader, ACTION_unSetLoader } from '../actions/loaderActions'
+import { ACTION_getPlayer } from '../actions/playerActions'
+import { GET_REWARD_FOR_BATTLE, GET_REWARD_FOR_MOB_BATTLE } from '../types/playerTypes'
 
-export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
+export const THUNK_getPlayerFromDb = (userId) => async (dispatch) => {
     try {
-        dispatch(setLoader())
+        dispatch(ACTION_setLoader())
         const response = await axios.get(
             `https://dbforgame.herokuapp.com/db/ready-for-fun/${userId}`,
             {
@@ -13,22 +13,26 @@ export const THUNK_ACTION_getPlayerFromDb = (userId) => async (dispatch) => {
             }
         )
         dispatch(ACTION_getPlayer({...response.data}))
-        dispatch(unSetLoader())
+        dispatch(ACTION_unSetLoader())
     } catch (e) {
         console.log(e)
     }
 }
 
-export const THUNK_ACTION_getPlayerExpAndGoldForBattle = (playerId, WinOrLoss, room) => async (dispatch) => {
+export const THUNK_getPlayerExpAndGoldForBattle = (playerId, WinOrLoss, room) => async (dispatch) => {
     try {
-        const response = await axios.post('https://dbforgame.herokuapp.com/battle/get-reward', {playerId, WinOrLoss, room})
+        const response = await axios.post('https://dbforgame.herokuapp.com/battle/get-reward', {
+            playerId,
+            WinOrLoss,
+            room
+        })
         dispatch({type: GET_REWARD_FOR_BATTLE, payload: response.data})
     } catch (e) {
         console.log(e)
     }
 }
 
-export const THUNK_ACTION_getPlayerExpAndGoldForMobBattle = (playerId, WinOrLoss, itemId) => async (dispatch) => {
+export const THUNK_getPlayerExpAndGoldForMobBattle = (playerId, WinOrLoss, itemId) => async (dispatch) => {
     try {
         const response = await axios.post('https://dbforgame.herokuapp.com/battle/get-mob-reward', {
             playerId,

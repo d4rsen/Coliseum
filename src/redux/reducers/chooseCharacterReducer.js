@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { SET_PLAYER_CLASS } from '../types/playerTypes'
 
 export const chooseCharacterReducer = (state = initialState, action) => {

@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { SET_EVASION, UNSET_EVASION } from '../types/evasionTypes'
 
 export const evasionReducer = (state = initialState, action) => {

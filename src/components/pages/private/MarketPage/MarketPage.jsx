@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-    THUNK_ACTION_getTraderItems,
-    thunkGetAllAuctionItemsAction
-} from '../../../../redux/actions/thunks/thunkGetAllAuctionItemsAction'
+import { THUNK_getAllAuctionItems, THUNK_getTraderItems } from '../../../../redux/thunks/thunkGetAllAuctionItemsAction'
 import BackGround from '../../../common/BackGround/BackGround'
 import MarketItem from '../../../common/MarketItem/MarketItem'
 import './MarketPage.scss'
@@ -17,10 +14,10 @@ const MarketPage = () => {
     const traderItems = useSelector(state => state.traderItems)
 
     useEffect(() => {
-        dispatch(thunkGetAllAuctionItemsAction())
+        dispatch(THUNK_getAllAuctionItems())
     }, [playerInventory])
     useEffect(() => {
-        dispatch(THUNK_ACTION_getTraderItems())
+        dispatch(THUNK_getTraderItems())
     }, [])
 
     return (
@@ -29,33 +26,33 @@ const MarketPage = () => {
             <div className="marketPage__items-wrapper">
                 <div className="marketPage__items">
                     {traderItems && traderItems.assassin.assassin_common.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
                     {traderItems && traderItems.assassin.assassin_uncommon.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
                     {traderItems && traderItems.monk.monk_rare.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
 
                     {traderItems && traderItems.monk.monk_common.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
                     {traderItems && traderItems.monk.monk_uncommon.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
                     {traderItems && traderItems.monk.monk_rare.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
 
                     {traderItems && traderItems.warrior.warrior_common.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
                     {traderItems && traderItems.warrior.warrior_uncommon.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
                     {traderItems && traderItems.warrior.warrior_rare.map(item =>
-                        <MarketItem item={item}/>
+                        <MarketItem key={item.id} item={item}/>
                     )}
                 </div>
             </div>

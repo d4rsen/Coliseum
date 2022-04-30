@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { io } from 'socket.io-client'
 import Footer from '../components/UI/Footer/Footer'
 import Header from '../components/UI/Header/Header'
-import { THUNK_ACTION_checkAuth } from '../redux/actions/thunks/thunkAuthActions'
+import { THUNK_checkAuth } from '../redux/thunks/thunkAuthActions'
 import Router from '../router/Router'
 import './App.scss'
 
@@ -14,7 +14,7 @@ function App() {
     const player = useSelector(state => state.player)
 
     useEffect(() => {
-        (localStorage.getItem('token') !== false) && dispatch(THUNK_ACTION_checkAuth())
+        (localStorage.getItem('token') !== false) && dispatch(THUNK_checkAuth())
         player && socket.emit('player-connected', player.nickName)
         return () => {
             player && socket.emit('player-disconnected', player.nickName)

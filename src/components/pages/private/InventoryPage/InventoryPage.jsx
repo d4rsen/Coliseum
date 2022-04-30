@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
-import { thunkAddRandomItemAction } from '../../../../redux/actions/thunks/thunkAddRandomItemAction'
-import { THUNK_ACTION_getPLayerInventory } from '../../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
-import { THUNK_ACTION_getPlayerFromDb } from '../../../../redux/actions/thunks/thunkPlayersFromDbActions'
-import { THUNK_ACTION_wearItemAction } from '../../../../redux/actions/thunks/thunkWearItemAction'
+import { THUNK_addRandomItem } from '../../../../redux/thunks/thunkAddRandomItemActions'
+import { THUNK_getPLayerInventory } from '../../../../redux/thunks/thunkGetPlayerInventoryActions'
+import { THUNK_getPlayerFromDb } from '../../../../redux/thunks/thunkPlayersFromDbActions'
+import { THUNK_wearItemAction } from '../../../../redux/thunks/thunkWearItemAction'
 import BackGround from '../../../common/BackGround/BackGround'
 import Character from '../../../common/Character/Character'
 import './InventoryPage.scss'
@@ -16,7 +16,7 @@ const InventoryPage = () => {
     const user = useSelector(state => state.user)
 
     useEffect(() => {
-        dispatch(THUNK_ACTION_getPLayerInventory(player.id))
+        dispatch(THUNK_getPLayerInventory(player.id))
     }, [])
 
     useEffect(() => {
@@ -25,12 +25,12 @@ const InventoryPage = () => {
         }, 3000)
     }, [player, dispatch])
 
-    const cheat = () => dispatch(thunkAddRandomItemAction(player.total_stats.id))
+    const cheat = () => dispatch(THUNK_addRandomItem(player.total_stats.id))
 
     const wearItem = async (item) => {
-        await dispatch(THUNK_ACTION_wearItemAction(player, item))
-        await dispatch(THUNK_ACTION_getPlayerFromDb(user.user.id))
-        await dispatch(THUNK_ACTION_getPLayerInventory(player.id))
+        await dispatch(THUNK_wearItemAction(player, item))
+        await dispatch(THUNK_getPlayerFromDb(user.user.id))
+        await dispatch(THUNK_getPLayerInventory(player.id))
     }
 
     return (
@@ -52,7 +52,7 @@ const InventoryPage = () => {
                         <button onClick={cheat} className="inventoryPage__button">cheat</button>
                     </div>
                     {playerInventory && playerInventory.map(item =>
-                        <div className="character__item-wrapper">
+                        <div key={item.id} className="character__item-wrapper">
                             <div className="character__item">
                                 <img
                                     src={item.img}

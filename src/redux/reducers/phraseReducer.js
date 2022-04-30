@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { SET_PHRASE, UNSET_PHRASE } from '../types/phraseTypes'
 
 export const phraseReducer = (state = initialState, action) => {

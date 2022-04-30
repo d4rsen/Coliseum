@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { THUNK_ACTION_register } from '../../../../redux/actions/thunks/thunkAuthActions'
+import { THUNK_register } from '../../../../redux/thunks/thunkAuthActions'
 import BackGround from '../../../common/BackGround/BackGround'
 import './RegistrationPage.scss'
 
@@ -17,7 +17,7 @@ const RegistrationPage = () => {
     const passwordHandler = (e) => setPassword(e.target.value)
     const submitHandler = async (e) => {
         e.preventDefault()
-        await dispatch(THUNK_ACTION_register({login, email, password}))
+        await dispatch(THUNK_register({login, email, password}))
         navigate('/choose-class')
     }
 

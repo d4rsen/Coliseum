@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { MANNEQUIN_REGENERATE, PUNCH_FROM_PLAYER_TO_MANNEQUIN } from '../types/playerTypes'
 
 export const mannequinReducer = (state = initialState, action) => {

@@ -1,16 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { THUNK_ACTION_buyTraderItem } from '../../../redux/actions/thunks/thunkGetPlayerInventoryActions'
+import { THUNK_buyTraderItem } from '../../../redux/thunks/thunkGetPlayerInventoryActions'
 
 const MarketItem = ({item}) => {
     const dispatch = useDispatch()
     const player = useSelector(state => state.player)
     const buyItemHandler = (e) => {
         e.preventDefault()
-        dispatch(THUNK_ACTION_buyTraderItem(player, item))
+        dispatch(THUNK_buyTraderItem(player, item))
     }
-
-    // price info str agl int def evs dmg grade item_name
 
     return (
         <div className="marketPage__item">

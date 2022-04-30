@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { PUNCH_FROM_PLAYER_TO_MOB, SET_MOB, UNSET_MOB } from '../types/mobsTypes'
 
 export const mobReducer = (state = initialState, action) => {

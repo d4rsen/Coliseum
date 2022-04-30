@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ACTION_PlayerRegenerate } from '../../../../redux/actions/playerActions'
-import { THUNK_ACTION_enterRoom } from '../../../../redux/actions/thunks/thunkEnterRoomActions'
-import { THUNK_ACTION_getIdleRoomsFromDb } from '../../../../redux/actions/thunks/thunkGetAllRoomsFromDbActions'
-import { THUNK_ACTION_getRoomFromDb } from '../../../../redux/actions/thunks/thunkGetRoomFromDbActions'
+import { THUNK_enterRoom } from '../../../../redux/thunks/thunkEnterRoomActions'
+import { THUNK_getIdleRoomsFromDb } from '../../../../redux/thunks/thunkGetAllRoomsFromDbActions'
+import { THUNK_getRoomFromDb } from '../../../../redux/thunks/thunkGetRoomFromDbActions'
 import BackGround from '../../../common/BackGround/BackGround'
 import './IdleRoomsPage.scss'
 
@@ -15,9 +15,9 @@ const IdleRoomsPage = () => {
     const idleRooms = useSelector(state => state.idleRooms)
 
     useEffect(() => {
-        dispatch(THUNK_ACTION_getIdleRoomsFromDb())
+        dispatch(THUNK_getIdleRoomsFromDb())
         return () => {
-            dispatch(THUNK_ACTION_getIdleRoomsFromDb())
+            dispatch(THUNK_getIdleRoomsFromDb())
         }
     }, [dispatch])
 
@@ -28,7 +28,7 @@ const IdleRoomsPage = () => {
     }, [player, dispatch])
 
     const enterRoomHandler = async (roomId) => {
-        await dispatch(THUNK_ACTION_enterRoom(roomId))
+        await dispatch(THUNK_enterRoom(roomId))
         setTimeout(() => {
             navigation('/coliseum')
         }, 200)
@@ -36,7 +36,7 @@ const IdleRoomsPage = () => {
 
     const createRoomHandler = async (e) => {
         e.preventDefault()
-        await dispatch(THUNK_ACTION_getRoomFromDb(player.id))
+        await dispatch(THUNK_getRoomFromDb(player.id))
         setTimeout(() => {
             navigation('/coliseum')
         }, 200)

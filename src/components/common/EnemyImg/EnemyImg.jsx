@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { assassinLink, mageLink, warriorLink } from '../../../utils/variables'
+import { assassinLink, mageLink, warriorLink } from '../../../utils/constants'
 
 const EnemyImg = () => {
     const enemyPlayer = useSelector(state => state.enemyPlayer)

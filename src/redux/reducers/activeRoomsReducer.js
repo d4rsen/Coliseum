@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { GET_ACTIVE_ROOMS } from '../types/allRoomsTypes'
 
 export const activeRoomsReducer = (state = initialState, action) => {
@@ -7,6 +7,5 @@ export const activeRoomsReducer = (state = initialState, action) => {
             return [...action.payload]
         default:
             return state
-
     }
 }

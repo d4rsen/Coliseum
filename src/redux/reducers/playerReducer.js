@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import {
     GET_REWARD_FOR_BATTLE,
     GET_REWARD_FOR_MOB_BATTLE,

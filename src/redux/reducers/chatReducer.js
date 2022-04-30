@@ -1,4 +1,4 @@
-import initialState from '../init/initialState'
+import initialState from '../init/initial.state'
 import { SET_CHAT, UNSET_CHAT } from '../types/enemyPlayerTypes'
 
 export const chatReducer = (state = initialState, action) => {

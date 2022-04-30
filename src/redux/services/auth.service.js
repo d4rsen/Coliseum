@@ -1,4 +1,4 @@
-import $api from './axiosServiceApi'
+import $api from './axios.api.service'
 
 export default class AuthService {
 

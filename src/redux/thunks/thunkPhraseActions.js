@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { ACTION_setPhrase } from '../phraseActions'
+import { ACTION_setPhrase } from '../actions/phraseActions'
 
-export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, db_room) => async (dispatch) => {
+export const THUNK_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, db_room) => async (dispatch) => {
     if (playerWs.battlePlayer.defendHead === true && enemyPlayerWs.battlePlayer.attackHead === true) {
         try {
             const response = await axios.post('https://dbforgame.herokuapp.com/battle/en',
@@ -94,7 +94,7 @@ export const THUNK_ACTION_getPhraseFromDbEnglish = (playerWs, enemyPlayerWs, db_
     }
 }
 
-export const THUNK_ACTION_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, evasion, db_room) => async (dispatch) => {
+export const THUNK_getPhraseFromDbRussian = (playerWs, enemyPlayerWs, evasion, db_room) => async (dispatch) => {
     if (playerWs.battlePlayer.defendHead === true && enemyPlayerWs.battlePlayer.attackHead === true) {
 
         try {

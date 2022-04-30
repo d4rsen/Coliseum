@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ACTION_punchFromPlayerToMob } from '../../../../redux/actions/mobsActions'
 import { ACTION_punchFromMobToPlayer } from '../../../../redux/actions/playerActions'
-import { THUNK_ACTION_getMobFromDb } from '../../../../redux/actions/thunks/thunkGetMobFromDbActions'
-import { THUNK_ACTION_getPlayerExpAndGoldForMobBattle } from '../../../../redux/actions/thunks/thunkPlayersFromDbActions'
+import { THUNK_getMobFromDb } from '../../../../redux/thunks/thunkGetMobFromDbActions'
+import { THUNK_getPlayerExpAndGoldForMobBattle } from '../../../../redux/thunks/thunkPlayersFromDbActions'
 import BackGround from '../../../common/BackGround/BackGround'
 import Character from '../../../common/Character/Character'
 import Mob from '../../../common/Mob/Mob'
@@ -22,10 +22,10 @@ const DungeonPage = () => {
     const navigate = useNavigate()
 
     useEffect(async () => {
-        await dispatch(THUNK_ACTION_getMobFromDb(Number(player.id)))
+        await dispatch(THUNK_getMobFromDb(Number(player.id)))
 
         return async () => {
-            await dispatch(THUNK_ACTION_getMobFromDb(Number(player.id)))
+            await dispatch(THUNK_getMobFromDb(Number(player.id)))
         }
     }, [])
 
@@ -33,14 +33,14 @@ const DungeonPage = () => {
         if (playerHp <= 0) {
             setBattleResult('loss')
             setActive(true)
-            dispatch(THUNK_ACTION_getPlayerExpAndGoldForMobBattle(
+            dispatch(THUNK_getPlayerExpAndGoldForMobBattle(
                 player.id, false, Number(mob.loot.id))
             )
         }
         if (mobHp <= 0) {
             setBattleResult('win')
             setActive(true)
-            dispatch(THUNK_ACTION_getPlayerExpAndGoldForMobBattle(
+            dispatch(THUNK_getPlayerExpAndGoldForMobBattle(
                 player.id, true, Number(mob.loot.id))
             )
         }

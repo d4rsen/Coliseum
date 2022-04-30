@@ -14,9 +14,9 @@ import {
 } from '../../../redux/actions/battleActions'
 import { ACTION_getEnemyPlayer, ACTION_unsetEnemyPlayer } from '../../../redux/actions/enemyPlayerActions'
 import { ACTION_punchFromEnemyPlayerToPlayer } from '../../../redux/actions/playerActions'
-import { THUNK_ACTION_closeRoom } from '../../../redux/actions/thunks/thunkGetRoomFromDbActions'
-import { THUNK_ACTION_getPhraseFromDbEnglish } from '../../../redux/actions/thunks/thunkPhraseActions'
-import { THUNK_ACTION_getPlayerExpAndGoldForBattle } from '../../../redux/actions/thunks/thunkPlayersFromDbActions'
+import { THUNK_closeRoom } from '../../../redux/thunks/thunkGetRoomFromDbActions'
+import { THUNK_getPhraseFromDbEnglish } from '../../../redux/thunks/thunkPhraseActions'
+import { THUNK_getPlayerExpAndGoldForBattle } from '../../../redux/thunks/thunkPlayersFromDbActions'
 import AttackDefendButtons from '../AttackDefendButtons/AttackDefendButtons'
 import Modal from '../Modal/Modal'
 import './ColiseumButtons.scss'
@@ -92,7 +92,7 @@ const ColiseumButtons = ({socket}) => {
             }
             if ((data.player_one.player.hp <= 0) || (data.player_two.player.hp <= 0)) {
                 setIsPlaying(false)
-                dispatch(THUNK_ACTION_closeRoom(room.id))
+                dispatch(THUNK_closeRoom(room.id))
             }
 
             if (data.player_one.player.id !== player.id) {
@@ -101,17 +101,17 @@ const ColiseumButtons = ({socket}) => {
                 if (playerWs.player.hp <= 0) {
                     setActive(true)
                     setBattleResult('loss')
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false, room))
+                    dispatch(THUNK_getPlayerExpAndGoldForBattle(playerWs.player.id, false, room))
                 }
                 if (enemyPlayerWs.player.hp <= 0) {
                     setActive(true)
                     setBattleResult('win')
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true, room))
+                    dispatch(THUNK_getPlayerExpAndGoldForBattle(playerWs.player.id, true, room))
                 }
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
                 dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))
-                dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, db_room))
+                dispatch(THUNK_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, db_room))
                 unsetHandler()
             }
 
@@ -121,17 +121,17 @@ const ColiseumButtons = ({socket}) => {
                 if (playerWs.player.hp <= 0) {
                     setActive(true)
                     setBattleResult('loss')
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, false, room))
+                    dispatch(THUNK_getPlayerExpAndGoldForBattle(playerWs.player.id, false, room))
                 }
                 if (enemyPlayerWs.player.hp <= 0) {
                     setActive(true)
                     setBattleResult('win')
-                    dispatch(THUNK_ACTION_getPlayerExpAndGoldForBattle(playerWs.player.id, true, room))
+                    dispatch(THUNK_getPlayerExpAndGoldForBattle(playerWs.player.id, true, room))
                 }
                 dispatch(ACTION_getEnemyPlayer(enemyPlayerWs.player))
                 dispatch(ACTION_getEnemyStateFromWS(enemyPlayerWs.battlePlayer))
                 dispatch(ACTION_punchFromEnemyPlayerToPlayer(enemyPlayerWs.player.total_stats.dmg, playerWs.battlePlayer, enemyPlayerWs.battlePlayer, playerWs))
-                dispatch(THUNK_ACTION_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, db_room))
+                dispatch(THUNK_getPhraseFromDbEnglish(playerWs, enemyPlayerWs, db_room))
                 unsetHandler()
             }
         })
