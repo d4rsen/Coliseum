@@ -5,6 +5,7 @@ import { ACTION_punchFromPlayerToMob } from '../../../../redux/actions/mobsActio
 import { ACTION_punchFromMobToPlayer } from '../../../../redux/actions/playerActions'
 import { THUNK_getMobFromDb } from '../../../../redux/thunks/thunkGetMobFromDbActions'
 import { THUNK_getPlayerExpAndGoldForMobBattle } from '../../../../redux/thunks/thunkPlayersFromDbActions'
+import { UNSET_MOB } from '../../../../redux/types/mobsTypes'
 import BackGround from '../../../common/BackGround/BackGround'
 import Character from '../../../common/Character/Character'
 import Mob from '../../../common/Mob/Mob'
@@ -22,9 +23,12 @@ const DungeonPage = () => {
     const navigate = useNavigate()
 
     useEffect(async () => {
+        setActive(false)
         await dispatch(THUNK_getMobFromDb(Number(player.id)))
 
         return async () => {
+            setActive(false)
+            dispatch({type: UNSET_MOB})
             await dispatch(THUNK_getMobFromDb(Number(player.id)))
         }
     }, [])
@@ -36,8 +40,7 @@ const DungeonPage = () => {
             dispatch(THUNK_getPlayerExpAndGoldForMobBattle(
                 player.id, false, Number(mob.loot.id))
             )
-        }
-        if (mobHp <= 0) {
+        } else if (mobHp <= 0) {
             setBattleResult('win')
             setActive(true)
             dispatch(THUNK_getPlayerExpAndGoldForMobBattle(
@@ -52,7 +55,11 @@ const DungeonPage = () => {
         dispatch(ACTION_punchFromMobToPlayer(mob.creepStats.dmg))
     }
 
-    const quitHandler = () => navigate('/')
+    const quitHandler = () => {
+        setActive(false)
+        dispatch({type: UNSET_MOB})
+        navigate('/')
+    }
 
     return (
         <div className="dungeonPage">
